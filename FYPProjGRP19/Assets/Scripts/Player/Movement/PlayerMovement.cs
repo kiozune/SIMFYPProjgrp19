@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = -9.8f;
     [SerializeField]
     private Transform characterModel; // The actual model to rotate
+    [Tooltip("Control Value of rotation of the character")]
+    public float rotationSpeed = 5f;  
 
     [Header("Character Groundcheck")]
     [SerializeField]
@@ -28,9 +30,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private Vector3 mousePoint;
 
+
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+    }
+    private void Start()
+    {
     }
 
     void Update()
@@ -56,7 +62,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Create a ray from the camera through the mouse position
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero); // Assuming the ground is parallel to the XZ plane
+
+        // Define the ground plane at y = 0, assuming the ground is parallel to the XZ plane
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero); // The ground plane is at y = 0
         float rayLength;
 
         if (groundPlane.Raycast(ray, out rayLength))
@@ -65,19 +73,28 @@ public class PlayerMovement : MonoBehaviour
             Vector3 mousePoint = ray.GetPoint(rayLength);
 
             // Compute the direction from the character to the mouse point
-            Vector3 directionToMouse = new Vector3(mousePoint.x, transform.position.y, mousePoint.z) - transform.position;
+            Vector3 directionToMouse = new Vector3(mousePoint.x, 0, mousePoint.z) - transform.position;
 
-            // If the direction is very small, no need to rotate
+            // Check if the direction is significant
             if (directionToMouse.sqrMagnitude > Mathf.Epsilon)
             {
-                // Calculate the rotation needed to look at the mouse point
+                // Calculate the target rotation to look at the mouse point
                 Quaternion targetRotation = Quaternion.LookRotation(directionToMouse);
 
-                // Apply the rotation to the character model
-                characterModel.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+                // Extract the Yaw (rotation around Y) component from the target rotation
+                Vector3 eulerAngles = targetRotation.eulerAngles;
+                eulerAngles.x = 0; // Set X to 0 to keep the character upright
+                eulerAngles.z = 0; // Set Z to 0 to avoid any tilt
+
+                // Apply the rotation only around the Y-axis
+                Quaternion newRotation = Quaternion.Euler(eulerAngles);
+
+                // Smoothly rotate towards the target rotation
+                characterModel.rotation = Quaternion.Slerp(characterModel.rotation, newRotation, Time.deltaTime * rotationSpeed);
             }
         }
     }
+
 
     void ApplyGravity()
     {
@@ -91,19 +108,4 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         charController.Move(velocity * Time.deltaTime);
     }
-
-    //private void ondrawgizmos()
-    //{
-    //    if (camera.main == null) return;
-
-    //    gizmos.color = color.red;
-    //    ray ray = camera.main.screenpointtoray(input.mouseposition);
-    //    gizmos.drawray(ray.origin, ray.direction * 100); // draw the raycast for visualization
-
-    //    if (mousepoint != vector3.zero)
-    //    {
-    //        gizmos.color = color.blue;
-    //        gizmos.drawsphere(mousepoint, 0.2f); // draw a sphere at the mouse point for visualization
-    //    }
-    //}
 }
