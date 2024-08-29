@@ -10,6 +10,8 @@ public class ProjectileDir : MonoBehaviour
     private float maxAliveTime = 1.0f;
     [SerializeField]
     private float currTime = 0.0f;
+    [SerializeField]
+    private GameObject vfxExplosion;
 
     // This function is called to set the direction of the projectile
     public void SetDirection(Vector3 newDirection)
@@ -24,6 +26,22 @@ public class ProjectileDir : MonoBehaviour
         currTime += Time.deltaTime;
          if (currTime > maxAliveTime)
         {
+            Instantiate<GameObject>(vfxExplosion,transform.position,Quaternion.identity); ;
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Hit!");
+        if (other.CompareTag("Obstacles"))
+        {
+            Instantiate<GameObject>(vfxExplosion, transform.position, Quaternion.identity); ;
+            Destroy(this.gameObject);
+        }
+        else if(other.CompareTag("Enemy"))
+        {
+            Instantiate<GameObject>(vfxExplosion, transform.position, Quaternion.identity); ;
             Destroy(this.gameObject);
         }
     }
