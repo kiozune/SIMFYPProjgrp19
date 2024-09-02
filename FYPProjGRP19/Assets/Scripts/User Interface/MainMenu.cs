@@ -95,4 +95,20 @@ public class MainMenu : MonoBehaviour
     {
         exitGame();
     }
+    public void rangeHover()
+    {
+        robotAnimator.SetTrigger("ranged_idle");
+    }
+    public void meleeHover()
+    {
+        robotAnimator.SetTrigger("melee_idle");
+    }
+    public void backHover()
+    {
+        robotAnimator.SetTrigger("scared");
+    }
+    public void resetAnimation()
+    {
+        robotAnimator.SetTrigger("angry");
+    }
 }
