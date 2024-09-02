@@ -1,0 +1,2318 @@
+fileFormatVersion: 2
+guid: c9ca08446f0c7f64ab4afb7fe77c018d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scifi Background_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4d8cdd08ca4ba4490a57a2dcf1264d
+      internalID: -1207801324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff1c1b6bf24a4e4587460c8a0c3fac4
+      internalID: -293413122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6251832af0e6b1d4ba7a7ba4020ad95a
+      internalID: -1665163602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5416ec539bd0fe428a522d1ce7e7c2f
+      internalID: -723886410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e108eb493d88449996931be4f72ade
+      internalID: -1334425221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_5
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf1128a32bbb1d4eae205d9a5ce13a0
+      internalID: -1121764486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_6
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a17cc7807f3fe43abb3465ca015c79
+      internalID: -1490744269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_7
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd8d595558d84a498e4931a04e8a709
+      internalID: 949932274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_8
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7eed4b6df14634bbec05a90608e77e
+      internalID: -205992653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_9
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be58bf156c8d3945b8b362255482df1
+      internalID: 1768083201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_10
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2249
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcb64d8c95c6494f9142c931563a20d
+      internalID: 45850136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86122a6383febb4196b22f429a0b603
+      internalID: -105235918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a26e6204f96c6a4ca11e1790c66ebea
+      internalID: -47207460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f361273697711a943b73677458cfe495
+      internalID: 1589268280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_14
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490d77f7daca4db4f8f420c894512328
+      internalID: 1120248347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd238691776ba946abd3417bf307832
+      internalID: 684890450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_16
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547ad70410bd92343a81b0e6de0244a8
+      internalID: -1967150806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_17
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a0294b2af88f84baa8a0cb935190de
+      internalID: -236580096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_18
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20aabbe2c6c98ce45887be5b8cf29680
+      internalID: -486053257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_19
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc96911e42b8ea438460a2092b099ef
+      internalID: -1056201492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_20
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b890a5cf0fce2440bb10b05a1b57218
+      internalID: 381929842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_21
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1969
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff98d7f6ae537f043b1d72851ff6c4c2
+      internalID: 1081274255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56605dcec5a2cf54d8f8ae7dacc5d13e
+      internalID: -91111666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_23
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad70e2eb12dcf4e42bc4d7ab3613b7e9
+      internalID: 823998338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_24
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c0957bf296e8940a5f466ab51cc511
+      internalID: -1624848080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_25
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019af4defc9920a42bb56f45bca91d0f
+      internalID: -1090935194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_26
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c5f8273393ab0478ca19dcceb8da44
+      internalID: 1898153979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_27
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02435715d5cdc5448937d5d5427201d0
+      internalID: 729269865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_28
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773f909162885e945a6b651b7b4e0cd9
+      internalID: -1273237941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_29
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf0123f94ee28549af8d9ba0022d06e
+      internalID: 1106050977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_30
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2257fd9382c0a4bbf1ffc9e4ddde4a
+      internalID: -960700351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_31
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013c8e99c7eb199448480642390c4c81
+      internalID: -1167700661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_32
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1689
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58ef09bfd17f6f42b0c9e9debf6f687
+      internalID: 1083123316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf24ace9eb01cc4c8a7020ddf532a68
+      internalID: -863362910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_34
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a93bd8cd6448d54e96d5040d4c9ebe0
+      internalID: -258819763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_35
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49960605fafa7640afc0845b0c0963d
+      internalID: -2105825843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_36
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc5d0c7d183e504c8c8aaef50478848
+      internalID: -311210856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_37
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc59517e95c811841a1428ea06dcaf5d
+      internalID: 1039032829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_38
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8023b235f78b2a941b89e39f336dbfd8
+      internalID: -2104507551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_39
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04232c6df18aec4e923132d95b878ce
+      internalID: 1099556299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_40
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b927c3ab7d3c0a14c8d29848e9409edd
+      internalID: 1165044106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_41
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3205cc26baa31a4486e32d27c3dbb2d
+      internalID: 493711484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_42
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b82eefdba7ea440ba6c100da050c19
+      internalID: -2096459362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_43
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1409
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8511b510a4c84409ab7b4623ff157d
+      internalID: -978593042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc33a28c515f0345aa255427f7a462a
+      internalID: -519812154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_45
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851612ffb288de94bb0ff534099d5a37
+      internalID: -2071658996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_46
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e078a7107d5c8184e99a9b9ad705c066
+      internalID: 406052522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_47
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dfed682ae3902c4db99183d3420cf34
+      internalID: -1810824585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_48
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc01af655cb8ee4987f3345289ff83c
+      internalID: 1413275460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_49
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f41ac87521cb924c96a77bc06223792
+      internalID: -976672628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_50
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7bfc5adabe835241bb771972b77e498
+      internalID: 1084509702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_51
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470bf3440b9d01a4fa49b03e73f3b73b
+      internalID: 122565464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_52
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4301e7800cde1479f9fb71d2654815
+      internalID: -306847889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_53
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af79b685800c15469175f1c081880ff
+      internalID: -1691888164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_54
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1129
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4044bc76a4aaac46b45b69fdbab7c2f
+      internalID: -492960042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243f390d62dc27745a68a1d36eb78f96
+      internalID: 348396723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_56
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad49bd01f242794688b7470d70faf95
+      internalID: -2775899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_57
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79b5c49fa3c6ae48ad9f4fc324b230c
+      internalID: 1595484478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_58
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36fd24ed71669a43a2cb59dd3843fb0
+      internalID: -1896319567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_59
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00338ca82a2c19940861b156da944263
+      internalID: -870122529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_60
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8735d1ba350374b8f878c111916ce1
+      internalID: -1587660032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_61
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff770f52669a8b49bd3849bafa6a27a
+      internalID: -1390002955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_62
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055595e367e52df408b0951fd37e0f86
+      internalID: 817067243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_63
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a71b9b7eb54b8443ace0a1d8f5ca836
+      internalID: -1686107198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_64
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33142ff64653d124b98641d7f85f5703
+      internalID: -10097965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_65
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 849
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c059d20ba23e6534d997d9d52ba6079d
+      internalID: 596552053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a2446f93b8e3d4abc55f8ce5fb4d9a
+      internalID: 625434373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_67
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501bbbc559b0e934986b0da4bd32826e
+      internalID: 1184839474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_68
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55484653689917844b127a472c947fa4
+      internalID: -1475336815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_69
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af24720388cb104999c4f60fc82d3e3
+      internalID: -207741420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_70
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377d1cb3cafa35040a1afdea40e419ae
+      internalID: 743637655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_71
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2408a0698f781ab42b8d26fc60969dd5
+      internalID: -2086753298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_72
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6322b45fdd1c61346aef32a2e0430a16
+      internalID: 1827829283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_73
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fe75d4e20388a4c974b4c463f28258
+      internalID: -1819017618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_74
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb356f207d7d8c449f7bee7b2fd30b6
+      internalID: -1080191182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_75
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fba4958cb472e84ebf980bfe8cab0a5
+      internalID: -1620464667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_76
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 569
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d7d024c1eedda4b92ba7571c8736ec
+      internalID: 1449071111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917c0f45dd131324d8e800864327eaa0
+      internalID: 586925445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_78
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d66fcdbe9ac9b24892d33755cde31c1
+      internalID: 1817998793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_79
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9c1b121ced7764391965447f5b6b57
+      internalID: 415598387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_80
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7be0bbb1579764c934056b5826eb41
+      internalID: 1743404572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_81
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f381180b34bc5b4ba14f070cf881452
+      internalID: 592882020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_82
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473eaf34314bf984dbd692e1ae300f1c
+      internalID: -1741778476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_83
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409ac84e5d267a2468587b4f6ce0fe6c
+      internalID: -1628612823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_84
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ad4991f53d56f4b8031f6c31019f1c
+      internalID: -1079430341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_85
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbeab18d9317e624485e2126399cda9b
+      internalID: -1729518703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_86
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b01a99e633c48c4fb53ba63e077320d
+      internalID: -770329884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_87
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 289
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffd1704d100dd442ac32ef1e3a226ff
+      internalID: 277329420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bfa49d00c6dbc42886da894146e9de
+      internalID: -971027959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_89
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1762bccd41499e340bcda851827811f5
+      internalID: 2078967369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_90
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da34a9f71623c184b824261bb6e9f89a
+      internalID: 1266163276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_91
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fbde4057a0ecd49a40b4e159e29a77
+      internalID: 280965816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_92
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28bf43ad4ab0544399d2a56e7a881a9
+      internalID: -1459156056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_93
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64899e5aaa48634384d95da08ff40c4
+      internalID: -1888061414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_94
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0afc19aacec1a2449b0c00f91de1eb28
+      internalID: 965882096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_95
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032f57c3983e7504b95a81919b0ae41a
+      internalID: -1162342881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_96
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6877b32260ef91a46816751d10962a34
+      internalID: -24242729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_97
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e434c29c6c2c047b0bb17c5c0ad31a
+      internalID: -934627197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scifi Background_98
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 9
+        width: 300
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c13e48583e91642b84dca9bf799d4c
+      internalID: -1747720191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Scifi Background_0: -1207801324
+      Scifi Background_1: -293413122
+      Scifi Background_10: 45850136
+      Scifi Background_11: -105235918
+      Scifi Background_12: -47207460
+      Scifi Background_13: 1589268280
+      Scifi Background_14: 1120248347
+      Scifi Background_15: 684890450
+      Scifi Background_16: -1967150806
+      Scifi Background_17: -236580096
+      Scifi Background_18: -486053257
+      Scifi Background_19: -1056201492
+      Scifi Background_2: -1665163602
+      Scifi Background_20: 381929842
+      Scifi Background_21: 1081274255
+      Scifi Background_22: -91111666
+      Scifi Background_23: 823998338
+      Scifi Background_24: -1624848080
+      Scifi Background_25: -1090935194
+      Scifi Background_26: 1898153979
+      Scifi Background_27: 729269865
+      Scifi Background_28: -1273237941
+      Scifi Background_29: 1106050977
+      Scifi Background_3: -723886410
+      Scifi Background_30: -960700351
+      Scifi Background_31: -1167700661
+      Scifi Background_32: 1083123316
+      Scifi Background_33: -863362910
+      Scifi Background_34: -258819763
+      Scifi Background_35: -2105825843
+      Scifi Background_36: -311210856
+      Scifi Background_37: 1039032829
+      Scifi Background_38: -2104507551
+      Scifi Background_39: 1099556299
+      Scifi Background_4: -1334425221
+      Scifi Background_40: 1165044106
+      Scifi Background_41: 493711484
+      Scifi Background_42: -2096459362
+      Scifi Background_43: -978593042
+      Scifi Background_44: -519812154
+      Scifi Background_45: -2071658996
+      Scifi Background_46: 406052522
+      Scifi Background_47: -1810824585
+      Scifi Background_48: 1413275460
+      Scifi Background_49: -976672628
+      Scifi Background_5: -1121764486
+      Scifi Background_50: 1084509702
+      Scifi Background_51: 122565464
+      Scifi Background_52: -306847889
+      Scifi Background_53: -1691888164
+      Scifi Background_54: -492960042
+      Scifi Background_55: 348396723
+      Scifi Background_56: -2775899
+      Scifi Background_57: 1595484478
+      Scifi Background_58: -1896319567
+      Scifi Background_59: -870122529
+      Scifi Background_6: -1490744269
+      Scifi Background_60: -1587660032
+      Scifi Background_61: -1390002955
+      Scifi Background_62: 817067243
+      Scifi Background_63: -1686107198
+      Scifi Background_64: -10097965
+      Scifi Background_65: 596552053
+      Scifi Background_66: 625434373
+      Scifi Background_67: 1184839474
+      Scifi Background_68: -1475336815
+      Scifi Background_69: -207741420
+      Scifi Background_7: 949932274
+      Scifi Background_70: 743637655
+      Scifi Background_71: -2086753298
+      Scifi Background_72: 1827829283
+      Scifi Background_73: -1819017618
+      Scifi Background_74: -1080191182
+      Scifi Background_75: -1620464667
+      Scifi Background_76: 1449071111
+      Scifi Background_77: 586925445
+      Scifi Background_78: 1817998793
+      Scifi Background_79: 415598387
+      Scifi Background_8: -205992653
+      Scifi Background_80: 1743404572
+      Scifi Background_81: 592882020
+      Scifi Background_82: -1741778476
+      Scifi Background_83: -1628612823
+      Scifi Background_84: -1079430341
+      Scifi Background_85: -1729518703
+      Scifi Background_86: -770329884
+      Scifi Background_87: 277329420
+      Scifi Background_88: -971027959
+      Scifi Background_89: 2078967369
+      Scifi Background_9: 1768083201
+      Scifi Background_90: 1266163276
+      Scifi Background_91: 280965816
+      Scifi Background_92: -1459156056
+      Scifi Background_93: -1888061414
+      Scifi Background_94: 965882096
+      Scifi Background_95: -1162342881
+      Scifi Background_96: -24242729
+      Scifi Background_97: -934627197
+      Scifi Background_98: -1747720191
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
