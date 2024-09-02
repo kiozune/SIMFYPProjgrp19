@@ -10,7 +10,17 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject robotModel;
     [SerializeField]
+    private GameObject robotStageSelect;
+    [SerializeField]
     private Animator robotAnimator;
+    [SerializeField]
+    private Animator robotStageAnimator;
+
+    [Header("Stage select Values")]
+    [SerializeField]
+    private bool isMelee = false;
+    [SerializeField]
+    private bool isRanged = false;
 
     [Header("UI Elements")]
     [SerializeField]
@@ -18,6 +28,9 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject[] mainMenuBtnList;
+
+    [SerializeField]
+    private GameObject[] stageSelectList;
 
     [SerializeField]
     private AudioSource sfxSource;
@@ -28,6 +41,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         robotAnimator = robotModel.GetComponent<Animator>();
+        robotStageAnimator = robotStageSelect.GetComponent<Animator>();
         sfxSource.clip = audioClipList[0];
     }
 
@@ -69,26 +83,78 @@ public class MainMenu : MonoBehaviour
 
     public void onMeleeClicked()
     {
-        //Delete previous player pref settings first
-        PlayerPrefs.DeleteKey("meleeWeapon");
-        PlayerPrefs.DeleteKey("rangeWeapon");
+        isMelee = true;
+        isRanged = false;
+       
         sfxSource.Play();
-        //Melee wep check if user selects melee it will set melee to true and range to false
-        PlayerPrefs.SetInt("Meleewep", 1);
-        PlayerPrefs.SetInt("RangeWep", 0);
 
-        SceneManager.LoadScene("First Level");
+        for (int i = 0; i < playButtonList.Length; ++i)
+        {
+            playButtonList[i].SetActive(false);
+        }
+        for (int j = 0; j < stageSelectList.Length; ++j)
+        {
+            stageSelectList[j].SetActive(true);
+        }
+        robotStageSelect.SetActive(true);
+        robotModel.SetActive(false);
+        robotStageAnimator.SetTrigger("happy");
     }
     public void onRangeClicked()
     {
+        isRanged = true;
+        isMelee = false;
 
-        PlayerPrefs.DeleteKey("meleeWeapon");
-        PlayerPrefs.DeleteKey("rangeWeapon");
         sfxSource.Play();
-        PlayerPrefs.SetInt("Meleewep", 0);
-        PlayerPrefs.SetInt("Rangewep", 1);
 
+        for (int i = 0; i < playButtonList.Length; ++i)
+        {
+            playButtonList[i].SetActive(false);
+        }
+        for (int j = 0; j < stageSelectList.Length; ++j)
+        {
+            stageSelectList[j].SetActive(true);
+        }
+        robotStageSelect.SetActive(true);
+        robotModel.SetActive(false);
+        robotStageAnimator.SetTrigger("happy");
+    }
+
+    public void onAncientStageSelect()
+    {
+        if (isMelee)
+        {
+            //Delete previous player pref settings first
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+            //Melee wep check if user selects melee it will set melee to true and range to false
+            PlayerPrefs.SetInt("Meleewep", 1);
+            PlayerPrefs.SetInt("Rangewep", 0);
+        }
+        if(isRanged)
+        {
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+
+            PlayerPrefs.SetInt("Meleewep", 0);
+            PlayerPrefs.SetInt("Rangewep", 1);
+        }
         SceneManager.LoadScene("First Level");
+    }
+    public void fromStageSelectBack()
+    {
+        robotModel.SetActive(true);
+        robotStageSelect.SetActive(false);
+        robotAnimator.SetTrigger("angry");
+        sfxSource.Play();
+        for (int i = 0; i < playButtonList.Length; ++i)
+        {
+            playButtonList[i].SetActive(true);
+        }
+        for (int j = 0; j < stageSelectList.Length; ++j)
+        {
+            stageSelectList[j].SetActive(false);
+        }
     }
 
     public void exitGame()

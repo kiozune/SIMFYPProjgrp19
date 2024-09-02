@@ -48,7 +48,7 @@ public class WeaponAttack : MonoBehaviour
         playerAnimator = gameObject.GetComponent<Animator>();
         //taking in player prefs from main menu
         meleeWeapon = PlayerPrefs.GetInt("Meleewep") == 1;
-        rangeWeapon = PlayerPrefs.GetInt("RangeWep") == 1;
+        rangeWeapon = PlayerPrefs.GetInt("Rangewep") == 1;
     }
 
     // Update is called once per frame
