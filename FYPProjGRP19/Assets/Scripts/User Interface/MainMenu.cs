@@ -93,6 +93,10 @@ public class MainMenu : MonoBehaviour
 
     public void exitGame()
     {
-        exitGame();
+        Application.Quit();
+        // for use in editor
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif 
     }
 }
