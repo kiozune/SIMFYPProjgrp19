@@ -19,10 +19,14 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake()
     {
-        gPauseMenu = GameObject.Find("Menu Background");
-        gConfirmation = GameObject.Find("Confirmation Prompt");
-        gDimmedBG = GameObject.Find("Dimmed Background");
-        gSettingsMenu = GameObject.Find("Settings");
+        if (gPauseMenu == null)
+            gPauseMenu = GameObject.Find("Menu Background");
+        if (gConfirmation == null)
+            gConfirmation = GameObject.Find("Confirmation Prompt");
+        if (gDimmedBG == null)
+            gDimmedBG = GameObject.Find("Dimmed Background");
+        if (gSettingsMenu == null)
+            gSettingsMenu = GameObject.Find("Settings");
     }
 
     private void Start()
@@ -30,7 +34,7 @@ public class PauseMenu : MonoBehaviour
         gPauseMenu.SetActive(false); // hide canvas from player 
         gConfirmation.SetActive(false); // hide confirmation prompt
         gDimmedBG.SetActive(false); // hide dimmed background
-        gSettingsMenu.SetActive(false); // hide settigns menu
+        gSettingsMenu.SetActive(false); // hide settings menu
     }
 
     private void Update()
@@ -38,15 +42,17 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gPauseMenu.SetActive(!gPauseMenu.activeInHierarchy);
-            if (!gPauseMenu.activeInHierarchy) // make dimmed background dependent on pause menu
+            if (!gPauseMenu.activeInHierarchy) // make dimmed background and time scale dependent on pause menu
+            {
                 gDimmedBG.SetActive(false);
-            else gDimmedBG.SetActive(true);
-            gSettingsMenu.SetActive(false); // ensure settigns menu closes as well
-
-            // time scale dependent on pause menu
-            if (gPauseMenu.active)
+                Time.timeScale = 1.0f;
+            }
+            else 
+            {
+                gDimmedBG.SetActive(true); 
                 Time.timeScale = 0f;
-            else Time.timeScale = 1.0f;
+            } 
+            gSettingsMenu.SetActive(false); // ensure settigns menu closes 
         }
     }  
 

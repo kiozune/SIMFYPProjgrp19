@@ -380,7 +380,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4987931668222366658}
+      - m_Target: {fileID: 7921823147448432131}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -391,18 +391,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4235374845604517431}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &820442004966107169
 GameObject:
@@ -3660,6 +3648,7 @@ GameObject:
   - component: {fileID: 3088718394647839652}
   - component: {fileID: 7389851448380892116}
   - component: {fileID: 7715409257946375655}
+  - component: {fileID: 5386000174532692274}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -3727,6 +3716,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5386000174532692274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921823147448432131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2def211b6ae8c489de8a1ab72f54fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 1e13d241ca6024044bc0f3e3013db5fd, type: 2}
+  sfxMixer: {fileID: 24100000, guid: c51a773520434264d878e39efdd50c93, type: 2}
+  musicMixer: {fileID: 24100000, guid: b151bd9194c8bb6418f3e723a5c250d9, type: 2}
+  masterParamName: MasterVol
+  sfxParamName: SFXVol
+  musicParamName: MusicVol
+  masterSlider: {fileID: 151797997606842371}
+  sfxSlider: {fileID: 8272319051186768739}
+  musicSlider: {fileID: 5128344944420967987}
 --- !u!1 &7984302874779798068
 GameObject:
   m_ObjectHideFlags: 0
