@@ -4,29 +4,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
-{  
-    private int iBtnPressed; // to be able to reuse the confirmation screen  
+{
+    private GameObject gPauseMenu, // reference to the pause menu
+        gConfirmation, // reference to the confirmation canvas
+        gDimmedBG; // reference to canvas
+    private int iBtnPressed; // to be able to reuse the confirmation screen
     [SerializeField] private TextMeshProUGUI confirmationHeader;
-
-    [Header("Menus and Sub-Menus")]
-    [SerializeField] private GameObject gDimmedBG;
-    [SerializeField] private GameObject gPauseMenu;
-    [SerializeField] private GameObject gConfirmation;
-    [Header("Settings")]
-    [SerializeField] private GameObject gSettingsMenu;
-    [SerializeField] private GameObject gGraphicsMenu;
-    [SerializeField] private GameObject gAudioMenu;
 
     private void Awake()
     {
-        if (gPauseMenu == null)
-            gPauseMenu = GameObject.Find("Menu Background");
-        if (gConfirmation == null)
-            gConfirmation = GameObject.Find("Confirmation Prompt");
-        if (gDimmedBG == null)
-            gDimmedBG = GameObject.Find("Dimmed Background");
-        if (gSettingsMenu == null)
-            gSettingsMenu = GameObject.Find("Settings");
+        gPauseMenu = GameObject.Find("Menu Background");
+        gConfirmation = GameObject.Find("Confirmation Prompt");
+        gDimmedBG = GameObject.Find("Dimmed Background");
     }
 
     private void Start()
@@ -34,7 +23,6 @@ public class PauseMenu : MonoBehaviour
         gPauseMenu.SetActive(false); // hide canvas from player 
         gConfirmation.SetActive(false); // hide confirmation prompt
         gDimmedBG.SetActive(false); // hide dimmed background
-        gSettingsMenu.SetActive(false); // hide settings menu
     }
 
     private void Update()
@@ -42,27 +30,13 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gPauseMenu.SetActive(!gPauseMenu.activeInHierarchy);
-            if (!gPauseMenu.activeInHierarchy) // make dimmed background and time scale dependent on pause menu
-            {
-                gDimmedBG.SetActive(false);
-                Time.timeScale = 1.0f;
-            }
-            else 
-            {
-                gDimmedBG.SetActive(true); 
+            gDimmedBG.SetActive(!gDimmedBG.activeInHierarchy);
+
+            if (Time.timeScale == 1.0f)
                 Time.timeScale = 0f;
-            } 
-            gSettingsMenu.SetActive(false); // ensure settigns menu closes 
+            else Time.timeScale = 1.0f;
         }
     }  
-
-    public void OpenSettingsMenu()
-    {
-        gPauseMenu.SetActive(false);
-        gSettingsMenu.SetActive(true);
-        gGraphicsMenu.SetActive(false);
-        gAudioMenu.SetActive(false);
-    }
 
     public void Resume()
     {
@@ -86,14 +60,12 @@ public class PauseMenu : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload scene
                 break;
             case 1: // return to hub
-                // currently not in use - main menu acts as the hub
-                // this section runs on the assumption that the hub is a separate scene that the player can traverse around with their character
                 Resume();
-                SceneManager.LoadScene("Main Menu"); // load scene named here
+                SceneManager.LoadScene(""); // load scene named here
                 break;
             case 2: // main menu
                 Resume();
-                SceneManager.LoadScene("Main Menu"); // load scene named MainMenu
+                SceneManager.LoadScene("MainMenu"); // load scene named MainMenu
                 break;
             default: // quit game
                 Application.Quit();
@@ -101,7 +73,6 @@ public class PauseMenu : MonoBehaviour
                 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
                 #endif
-
                 break;
         }
     } 
