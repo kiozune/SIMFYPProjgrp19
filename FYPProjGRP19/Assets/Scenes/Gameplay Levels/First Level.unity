@@ -926,6 +926,7 @@ Transform:
   m_Children:
   - {fileID: 1720379725}
   - {fileID: 1028017647}
+  - {fileID: 1793262247}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697363760 stripped
@@ -1410,7 +1411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1028017647
 Transform:
   m_ObjectHideFlags: 0
@@ -2226,7 +2227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1720379725
 Transform:
   m_ObjectHideFlags: 0
@@ -2274,6 +2275,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1527765880}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1793262246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 676758296}
+    m_Modifications:
+    - target: {fileID: 1118480616277728239, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_Name
+      value: Oldfishing Village Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674419396703875178, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.049608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.935516
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30.146484
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663706308228731397, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 73b1c017cacbc5a4581007c867be6282, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+--- !u!4 &1793262247 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4731852683232078910, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+  m_PrefabInstance: {fileID: 1793262246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1899957816
 GameObject:
   m_ObjectHideFlags: 0
