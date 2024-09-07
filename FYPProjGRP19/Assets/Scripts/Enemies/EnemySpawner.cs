@@ -10,6 +10,10 @@ public class EnemySpawner : MonoBehaviour
     public int maxEnemiesToSpawn = 50;      // Maximum number of enemies to spawn
     public int maxAttemptsPerEnemy = 10;    // Max number of attempts to find a valid spawn point for each enemy
     public float spawnInterval = 2f;        // Time interval between spawning enemies
+    public Camera mainCamera;               // Reference to the main camera
+    public float cameraBufferDistance = 5f; // Additional buffer distance outside camera view
+    public float maxSpawnDistance = 30f;    // Maximum distance beyond the camera for spawning
+    public float minSpawnDistance = 5f;     // Minimum distance just outside the camera for spawning
 
     private int currentEnemyCount = 0;      // Tracks the current number of spawned enemies
 
@@ -34,6 +38,9 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemyNearObstacles()
     {
+        // Calculate the camera frustum planes (the viewable area of the camera)
+        Plane[] cameraFrustumPlanes = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+
         // Loop through all child obstacles of this GameObject
         foreach (Transform obstacle in transform)
         {
@@ -43,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
             Vector3 spawnPosition = Vector3.zero; // Initialize spawnPosition with a default value
             bool validPositionFound = false;
 
-            // Try to find a valid spawn point along the bounds of this obstacle
+            // Try to find a valid spawn point along the bounds of this obstacle and outside camera view
             for (int i = 0; i < maxAttemptsPerEnemy; i++)
             {
                 // Get the bounds of the obstacle (works with both Colliders and Renderers)
@@ -69,13 +76,20 @@ public class EnemySpawner : MonoBehaviour
                     Random.Range(bounds.min.z, bounds.max.z)
                 );
 
-                // Find a valid position within the NavMesh near the random point
-                NavMeshHit hit;
-                if (NavMesh.SamplePosition(randomPointInBounds, out hit, navMeshCheckRadius, NavMesh.AllAreas))
+                // Check if the random point is outside the camera view and within the required distance
+                float distanceFromCamera = Vector3.Distance(mainCamera.transform.position, randomPointInBounds);
+                if (!IsInCameraView(cameraFrustumPlanes, randomPointInBounds) &&
+                    distanceFromCamera >= minSpawnDistance &&
+                    distanceFromCamera <= maxSpawnDistance)
                 {
-                    spawnPosition = hit.position;
-                    validPositionFound = true;
-                    break;
+                    // Find a valid position within the NavMesh near the random point
+                    NavMeshHit hit;
+                    if (NavMesh.SamplePosition(randomPointInBounds, out hit, navMeshCheckRadius, NavMesh.AllAreas))
+                    {
+                        spawnPosition = hit.position;
+                        validPositionFound = true;
+                        break;
+                    }
                 }
             }
 
@@ -92,8 +106,18 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
-                Debug.Log("Failed to find valid spawn point on the NavMesh near obstacle: " + obstacle.name);
+                Debug.Log("Failed to find valid spawn point outside camera view near obstacle: " + obstacle.name);
             }
         }
+    }
+
+    // Helper function to check if a position is within the camera's view
+    bool IsInCameraView(Plane[] cameraFrustumPlanes, Vector3 position)
+    {
+        // Add a buffer distance to ensure the enemy is slightly outside the camera's view
+        Vector3 bufferedPosition = position + (position - mainCamera.transform.position).normalized * cameraBufferDistance;
+
+        // Check if the buffered position is inside the camera's frustum
+        return GeometryUtility.TestPlanesAABB(cameraFrustumPlanes, new Bounds(bufferedPosition, Vector3.one));
     }
 }
