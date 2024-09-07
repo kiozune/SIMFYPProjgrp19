@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: d6d3a169ad794942a21da6a552d62f6f
 folderAsset: yes
+<<<<<<< HEAD
+DefaultImporter:
+  externalObjects: {}
+=======
 timeCreated: 1436068007
 licenseType: Pro
 DefaultImporter:
+>>>>>>> parent of 84b324a (Merge branch 'Kenneth-Branch')
   userData: 
   assetBundleName: 
   assetBundleVariant: 

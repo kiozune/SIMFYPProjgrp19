@@ -33,6 +33,9 @@ public class MainMenu : MonoBehaviour
     private GameObject[] stageSelectList;
 
     [SerializeField]
+    private GameObject settingsButton;
+
+    [SerializeField]
     private AudioSource sfxSource;
     [SerializeField]
     private AudioClip[] audioClipList;
@@ -176,5 +179,23 @@ public class MainMenu : MonoBehaviour
     public void resetAnimation()
     {
         robotAnimator.SetTrigger("angry");
+    }
+    public void onSettingsClick()
+    {
+        settingsButton.SetActive(true);
+        sfxSource.Play();
+        for (int j = 0; j < mainMenuBtnList.Length; ++j)
+        {
+            if(j != 1)
+            mainMenuBtnList[j].SetActive(false);
+        }
+    }
+    public void onBacksettingsClicked()
+    {
+        sfxSource.Play();
+        for (int j = 0; j < mainMenuBtnList.Length; ++j)
+        {
+                mainMenuBtnList[j].SetActive(true);
+        }
     }
 }
