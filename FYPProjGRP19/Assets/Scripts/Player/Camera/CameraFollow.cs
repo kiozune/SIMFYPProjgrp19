@@ -58,10 +58,10 @@ public class CameraFollow : MonoBehaviour
         // Make detected obstacles transparent
         foreach (RaycastHit hit in hits)
         {
-            Renderer renderer = hit.collider.GetComponent<Renderer>();
-            if (renderer != null)
+            Renderer[] renderers = hit.collider.GetComponentsInChildren<Renderer>();
+            foreach (Renderer renderer in renderers)
             {
-                SetTransparency(renderer, 0.3f); // Set transparency level
+                SetTransparency(renderer, 0.3f); // Set transparency level for all renderers in the object
                 currentObstacles.Add(renderer);
             }
         }
@@ -69,31 +69,34 @@ public class CameraFollow : MonoBehaviour
 
     void SetTransparency(Renderer renderer, float alpha)
     {
-        Material material = renderer.material;
-        Color color = material.color;
-        color.a = alpha;
-        material.color = color;
+        // Loop through all materials on the object
+        foreach (Material material in renderer.materials)
+        {
+            Color color = material.color;
+            color.a = alpha;  // Set alpha transparency
+            material.color = color;
 
-        // Ensure the material's rendering mode supports transparency
-        if (alpha < 1f)
-        {
-            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            material.SetInt("_ZWrite", 0);
-            material.DisableKeyword("_ALPHATEST_ON");
-            material.EnableKeyword("_ALPHABLEND_ON");
-            material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
-        }
-        else
-        {
-            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-            material.SetInt("_ZWrite", 1);
-            material.DisableKeyword("_ALPHATEST_ON");
-            material.DisableKeyword("_ALPHABLEND_ON");
-            material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Geometry;
+            // Ensure the material's rendering mode supports transparency
+            if (alpha < 1f) // If alpha is less than 1, make the material transparent
+            {
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                material.SetInt("_ZWrite", 0);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.EnableKeyword("_ALPHABLEND_ON");
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+            }
+            else  // Restore material to opaque if alpha is 1 (fully visible)
+            {
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                material.SetInt("_ZWrite", 1);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.DisableKeyword("_ALPHABLEND_ON");
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Geometry;
+            }
         }
     }
 }

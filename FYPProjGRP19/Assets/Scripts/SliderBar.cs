@@ -15,7 +15,8 @@ public class SliderBar : MonoBehaviour
     private void Awake()
     {
         slider = GetComponent<Slider>();
-        cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>(); 
+        cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        
     }
 
     /// <summary>
