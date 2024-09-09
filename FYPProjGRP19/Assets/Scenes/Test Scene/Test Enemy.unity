@@ -506,6 +506,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540641646}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &671960961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4825468203025354315, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
+  m_PrefabInstance: {fileID: 999418308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &999418308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -540,7 +545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4630232887531373416, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630232887531373416, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
+      propertyPath: rangeWeapon
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4825468203025354315, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
       propertyPath: m_Name
@@ -613,13 +622,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4825468203025354315, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 999418310}
   m_SourcePrefab: {fileID: 100100000, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
 --- !u!4 &999418309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8978740036827836530, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
   m_PrefabInstance: {fileID: 999418308}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &999418310
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671960961}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1332077151
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,16 +705,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3fb589de4280e4abd7e1765cfa46fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8916086083108663752, guid: 1aef20f4d00601e49b24ca2dcd460d8f, type: 3}
-  navMeshCheckRadius: 2
+  enemies:
+  - enemyPrefab: {fileID: 5016558242872714341, guid: 10682c0160ebd5d4bb5efe69fcde8e8b, type: 3}
+    minRange: 0
+    maxRange: 50
+    isUnique: 0
+  - enemyPrefab: {fileID: 5151888041534447703, guid: 63504b10ada115a4687f738a38ed5d38, type: 3}
+    minRange: 51
+    maxRange: 100
+    isUnique: 0
   player: {fileID: 259019338}
+  mainCamera: {fileID: 1446786676}
+  navMeshCheckRadius: 2
   maxEnemiesToSpawn: 100
   maxAttemptsPerEnemy: 20
-  spawnInterval: 2
-  mainCamera: {fileID: 1446786676}
   cameraBufferDistance: 5
-  maxSpawnDistance: 10
+  maxSpawnDistance: 30
   minSpawnDistance: 5
+  initialSpawnInterval: 5
+  spawnRateIncreaseInterval: 10
+  spawnRateDecreaseFactor: 0.9
+  minSpawnInterval: 1
 --- !u!1 &1357364401
 GameObject:
   m_ObjectHideFlags: 0
