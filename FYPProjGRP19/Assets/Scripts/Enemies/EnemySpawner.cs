@@ -178,7 +178,15 @@ public class EnemySpawner : MonoBehaviour
                     {
                         spawnPosition = hit.position;
                         validPositionFound = true;
+
+                        // Log the position and the radius used
+                        Debug.Log("Valid NavMesh position found at: " + hit.position + " within radius: " + navMeshCheckRadius);
+
                         break;
+                    }
+                    else
+                    {
+                        Debug.Log("No valid NavMesh position found within radius: " + navMeshCheckRadius + " for point: " + randomPointInBounds);
                     }
                 }
             }
