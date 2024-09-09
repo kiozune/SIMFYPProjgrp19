@@ -73,6 +73,7 @@ public class MainMenu : MonoBehaviour
     {
         robotModel.SetActive(false);
         robotAnimator.SetTrigger("normal");
+        robotStageAnimator.SetTrigger("normal");
         sfxSource.Play();
         for (int i = 0; i < playButtonList.Length; ++i)
         {
@@ -101,7 +102,7 @@ public class MainMenu : MonoBehaviour
         }
         robotStageSelect.SetActive(true);
         robotModel.SetActive(false);
-        robotStageAnimator.SetTrigger("happy");
+        robotStageAnimator.SetTrigger("shuffleDance");
     }
     public void onRangeClicked()
     {
@@ -120,7 +121,7 @@ public class MainMenu : MonoBehaviour
         }
         robotStageSelect.SetActive(true);
         robotModel.SetActive(false);
-        robotStageAnimator.SetTrigger("happy");
+        robotStageAnimator.SetTrigger("shuffleDance");
     }
 
     public void onAncientStageSelect()
