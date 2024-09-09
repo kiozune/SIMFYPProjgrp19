@@ -61,11 +61,11 @@ public class PauseMenu : MonoBehaviour
                 break;
             case 1: // return to hub
                 Resume();
-                SceneManager.LoadScene(""); // load scene named here
+                SceneManager.LoadScene("Main Menu"); // load scene named here
                 break;
             case 2: // main menu
                 Resume();
-                SceneManager.LoadScene("MainMenu"); // load scene named MainMenu
+                SceneManager.LoadScene("Main Menu"); // load scene named MainMenu
                 break;
             default: // quit game
                 Application.Quit();
