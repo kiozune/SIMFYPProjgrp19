@@ -4,12 +4,14 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public Transform player;          // Reference to the player's transform
-    public float hp = 100f;           // Enemy health points
+    public float maxHP = 100f;           // Enemy health points
+    private float currentHP = 100f;
     public float damageFromProjectile = 20f;  // Amount of damage taken from each projectile hit
 
     private NavMeshAgent agent;       // Reference to the NavMeshAgent component
     private Animator animator;        // Reference to the Animator component
     private Collider parentCollider;  // Reference to the Collider of the parent object
+    private SliderBar sliderBar;
 
     void Start()
     {
@@ -39,6 +41,15 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.LogError("Player is not assigned in the EnemyAI script.");
         }
+
+        // Initialize sliderBar if it's attached to this object or elsewhere
+        sliderBar = GetComponentInChildren<SliderBar>(); // Or find it in another way depending on its location
+        if (sliderBar == null)
+        {
+            Debug.LogError("SliderBar is not assigned or found.");
+        }
+
+        currentHP = maxHP;
     }
 
     void Update()
@@ -60,7 +71,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (hp <= 0)
+        if (currentHP <= 0)
         {
             Destroy(gameObject);
         }
@@ -68,14 +79,11 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        hp -= damage;  // Reduce the enemy's HP by the damage amount
+        currentHP -= damage;  // Reduce the enemy's HP by the damage amount
 
-        Debug.Log("Enemy HP: " + hp);
+        sliderBar.UpdateBar(currentHP, maxHP);
 
-        if (hp <= 0)
-        {
-            Destroy(gameObject);
-        }
+        Debug.Log("Enemy HP: " + currentHP);
     }
 
     void OnTriggerEnter(Collider other)

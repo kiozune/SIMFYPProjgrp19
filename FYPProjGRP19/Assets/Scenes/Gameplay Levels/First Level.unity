@@ -1325,8 +1325,8 @@ MonoBehaviour:
   player: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
-  maxEnemiesToSpawn: 1
-  maxAttemptsPerEnemy: 1
+  maxEnemiesToSpawn: 100
+  maxAttemptsPerEnemy: 5
   cameraBufferDistance: 5
   maxSpawnDistance: 30
   minSpawnDistance: 5
