@@ -13,6 +13,10 @@ public class EnemyAI : MonoBehaviour
     private Collider parentCollider;  // Reference to the Collider of the parent object
     private SliderBar sliderBar;
 
+    [Header("Enemy EXP")]
+    [SerializeField]
+    private int experiencePoints = 50;
+
     void Start()
     {
         // Get the NavMeshAgent component attached to this enemy
@@ -85,4 +89,20 @@ public class EnemyAI : MonoBehaviour
 
         Debug.Log("Enemy HP: " + currentHP);
     }
+
+    public bool checkHealth()
+    {
+        if (currentHP <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public int awardEXP()
+    {
+        return experiencePoints;
+    } 
 }

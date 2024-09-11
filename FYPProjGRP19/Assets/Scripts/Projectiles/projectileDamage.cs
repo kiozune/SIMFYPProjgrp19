@@ -9,7 +9,7 @@ public class projectileDamage : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Damage for the projectile to enemy")]
-    private float damage = 15;
+    private float damage = 55;
     
    
     // Start is called before the first frame update
@@ -27,12 +27,12 @@ public class projectileDamage : MonoBehaviour
     {
         if (other.CompareTag("BasicEnemy"))
         {
-            other.gameObject.GetComponent<BasicEnemyHP>().takeDamage(damage);
-            if (other.GetComponent<BasicEnemyHP>().checkHealth())
+            other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
+            if (other.GetComponent<EnemyAI>().checkHealth())
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-                player.GetComponent<PlayerLevel>().AddEXP(other.gameObject.GetComponent<BasicEnemyHP>().awardEXP());
+                player.GetComponent<PlayerLevel>().AddEXP(other.gameObject.GetComponent<EnemyAI>().awardEXP());
                 player.GetComponent<PlayerLevel>().UpdateXPSlider();
             }
         }

@@ -11,7 +11,7 @@ public class BasicEnemyHP : MonoBehaviour
     private float Health = 100f;
     [SerializeField]
     [Tooltip("Award EXP to the players on death")]
-    private int experiencePoints = 10;
+    private int experiencePoints = 35;
     
     
     // Start is called before the first frame update

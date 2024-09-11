@@ -1510,7 +1510,7 @@ GameObject:
   - component: {fileID: 1837854570782248437}
   m_Layer: 0
   m_Name: FishmanBase 1
-  m_TagString: Untagged
+  m_TagString: BasicEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1567,8 +1567,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  hp: 100
+  maxHP: 100
   damageFromProjectile: 20
+  experiencePoints: 25
 --- !u!195 &8734999947426299841
 NavMeshAgent:
   m_ObjectHideFlags: 0
