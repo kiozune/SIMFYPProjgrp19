@@ -85,13 +85,4 @@ public class EnemyAI : MonoBehaviour
 
         Debug.Log("Enemy HP: " + currentHP);
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Projectile"))
-        {
-            TakeDamage(damageFromProjectile);
-            Destroy(other.gameObject);
-        }
-    }
 }
