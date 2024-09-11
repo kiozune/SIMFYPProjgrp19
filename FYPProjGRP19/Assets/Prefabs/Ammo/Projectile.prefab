@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2004511230423694365}
   - component: {fileID: 3754203620021639331}
   - component: {fileID: 8307190552481428588}
+  - component: {fileID: 7854138078085218086}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -150,3 +151,16 @@ MonoBehaviour:
   maxAliveTime: 1
   currTime: 0
   vfxExplosion: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+--- !u!114 &7854138078085218086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936097998932565490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8b172754901b34b8f3378fada8ab45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
