@@ -519,6 +519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1414671730}
     m_Modifications:
+    - target: {fileID: 1138721498414053241, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3355756650148450212, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -550,6 +554,10 @@ PrefabInstance:
     - target: {fileID: 4630232887531373416, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
       propertyPath: rangeWeapon
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630232887531373416, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
+      propertyPath: playerAnimator
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4825468203025354315, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
       propertyPath: m_Name
@@ -619,7 +627,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1138721498414053241, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -706,18 +715,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemyPrefab: {fileID: 5016558242872714341, guid: 10682c0160ebd5d4bb5efe69fcde8e8b, type: 3}
+  - enemyPrefab: {fileID: 7595189231921639269, guid: fcfeaa4d38cfde341aa89070ef990159, type: 3}
     minRange: 0
-    maxRange: 50
-    isUnique: 0
-  - enemyPrefab: {fileID: 5151888041534447703, guid: 63504b10ada115a4687f738a38ed5d38, type: 3}
-    minRange: 51
     maxRange: 100
     isUnique: 0
   player: {fileID: 259019338}
   mainCamera: {fileID: 1446786676}
   navMeshCheckRadius: 2
-  maxEnemiesToSpawn: 100
+  maxEnemiesToSpawn: 1
   maxAttemptsPerEnemy: 20
   cameraBufferDistance: 5
   maxSpawnDistance: 30

@@ -1318,15 +1318,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemyPrefab: {fileID: 5016558242872714341, guid: 10682c0160ebd5d4bb5efe69fcde8e8b, type: 3}
+  - enemyPrefab: {fileID: 7595189231921639269, guid: fcfeaa4d38cfde341aa89070ef990159, type: 3}
     minRange: 0
     maxRange: 100
     isUnique: 0
   player: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
-  maxEnemiesToSpawn: 50
-  maxAttemptsPerEnemy: 10
+  maxEnemiesToSpawn: 1
+  maxAttemptsPerEnemy: 1
   cameraBufferDistance: 5
   maxSpawnDistance: 30
   minSpawnDistance: 5
