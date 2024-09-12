@@ -23,6 +23,10 @@ public class projectileDamage : MonoBehaviour
     {
         
     }
+    public void setDamage(float actualDamage)
+    {
+        damage = actualDamage;
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("BasicEnemy"))

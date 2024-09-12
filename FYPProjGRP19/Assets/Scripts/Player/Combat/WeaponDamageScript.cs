@@ -71,4 +71,10 @@ public class WeaponDamageScript : MonoBehaviour
     {
         ifHitting = isHit;
     }
+
+    public void upgradeDamage(float addDamage)
+    {
+        Debug.Log("Damage Upgraded");
+        damageValue += addDamage;
+    }
 }

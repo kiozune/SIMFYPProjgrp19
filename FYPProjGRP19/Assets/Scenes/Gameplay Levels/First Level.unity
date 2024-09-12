@@ -4536,6 +4536,8 @@ MonoBehaviour:
   exptoLevel: 100
   expLevelMultiplier: 1.3
   vfxLevelUp: {fileID: 419411002348774512, guid: 247a3e752e93a864db063f5c85fd8391, type: 3}
+  playerChar: {fileID: 2065286867}
+  bonusDamage: 10
   xpSlider: {fileID: 1508172972}
 --- !u!114 &2065286874
 MonoBehaviour:

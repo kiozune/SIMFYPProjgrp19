@@ -17,6 +17,12 @@ public class PlayerLevel : MonoBehaviour
     [SerializeField]
     private GameObject vfxLevelUp;
 
+    [Header("Level UP Stat bonuses")]
+    [SerializeField]
+    private GameObject playerChar;
+    [SerializeField]
+    private float bonusDamage = 10f;
+
     [Header("EXP Slider")]
     [SerializeField]
     private Slider xpSlider;
@@ -49,6 +55,10 @@ public class PlayerLevel : MonoBehaviour
         currentEXP -= exptoLevel;
         currentLevel++;
         exptoLevel = Mathf.RoundToInt(exptoLevel * expLevelMultiplier);
+        WeaponDamageScript meleeWepScript = playerChar.GetComponentInChildren<WeaponDamageScript>();
+        meleeWepScript.upgradeDamage(bonusDamage);
+        WeaponAttack rangedDamage = playerChar.GetComponent<WeaponAttack>();
+        rangedDamage.addDamage(bonusDamage);
         GameObject levelUPVFX = Instantiate(vfxLevelUp, transform.position, Quaternion.identity);
     }
 

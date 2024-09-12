@@ -144,6 +144,8 @@ public class WeaponAttack : MonoBehaviour
         Vector3 shootDirection = firePoint.transform.forward;
         GameObject projectileInstance = Instantiate(projectiles, firePoint.transform.position, Quaternion.LookRotation(shootDirection));
         ProjectileDir projectileDir = projectileInstance.GetComponent<ProjectileDir>();
+        projectileDamage projectileDamage = projectileInstance.GetComponent<projectileDamage>();
+        projectileDamage.setDamage(damage);
 
         if (projectileDir != null)
         {
