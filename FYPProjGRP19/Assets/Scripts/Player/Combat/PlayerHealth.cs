@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField]
     private Slider healthSlider;
+    [SerializeField]
+    private GameObject gameOverScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currHealth <= 0)
+        {
+            gameOverScreen.SetActive(true);
+        }
     }
     public void UpdateHealthSlider()
     {
