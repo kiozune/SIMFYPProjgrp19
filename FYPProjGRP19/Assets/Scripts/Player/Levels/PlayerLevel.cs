@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerLevel : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerLevel : MonoBehaviour
     private float expLevelMultiplier = 1.3f;
     [SerializeField]
     private GameObject vfxLevelUp;
+    [SerializeField]
+    public TMP_Text levelUpText;
 
     [Header("Level UP Stat bonuses")]
     [SerializeField]
@@ -61,6 +64,7 @@ public class PlayerLevel : MonoBehaviour
         WeaponAttack rangedDamage = playerChar.GetComponent<WeaponAttack>();
         rangedDamage.addDamage(bonusDamage);
         GameObject levelUPVFX = Instantiate(vfxLevelUp, transform.position, Quaternion.identity);
+        levelUpText.SetText(currentLevel.ToString());
     }
 
     public void UpdateXPSlider()
