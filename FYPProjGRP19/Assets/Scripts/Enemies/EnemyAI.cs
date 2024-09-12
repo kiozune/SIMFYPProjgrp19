@@ -4,14 +4,19 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public Transform player;          // Reference to the player's transform
-    public float maxHP = 100f;           // Enemy health points
+    public float maxHP = 100f;        // Enemy health points
     private float currentHP = 100f;
     public float damageFromProjectile = 20f;  // Amount of damage taken from each projectile hit
+    public float attackDamage = 20f;  // Damage the enemy does to the player
+    public float attackRange = 5f;    // Range within which the enemy can attack the player
+    public float attackCooldown = 2f; // Time between each attack
 
     private NavMeshAgent agent;       // Reference to the NavMeshAgent component
     private Animator animator;        // Reference to the Animator component
     private Collider parentCollider;  // Reference to the Collider of the parent object
     private SliderBar sliderBar;
+
+    private float attackTimer = 0f;   // Timer to control the attack cooldown
 
     [Header("Enemy EXP")]
     [SerializeField]
@@ -19,65 +24,82 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        // Get the NavMeshAgent component attached to this enemy
         agent = GetComponent<NavMeshAgent>();
-        if (agent == null)
-        {
-            Debug.LogError("NavMeshAgent is not attached to the enemy.");
-        }
+        if (agent == null) Debug.LogError("NavMeshAgent is not attached to the enemy.");
 
-        // Get the Animator component attached to this enemy
         animator = GetComponent<Animator>();
-        if (animator == null)
-        {
-            Debug.LogError("Animator component is not attached to the enemy.");
-        }
+        if (animator == null) Debug.LogError("Animator component is not attached to the enemy.");
 
-        // Get the Collider from the parent object (it should be attached to the same GameObject as this script)
         parentCollider = GetComponent<Collider>();
-        if (parentCollider == null)
-        {
-            Debug.LogError("Parent object collider not found.");
-        }
+        if (parentCollider == null) Debug.LogError("Parent object collider not found.");
 
-        // Check if the player is assigned
-        if (player == null)
-        {
-            Debug.LogError("Player is not assigned in the EnemyAI script.");
-        }
+        if (player == null) Debug.LogError("Player is not assigned in the EnemyAI script.");
 
-        // Initialize sliderBar if it's attached to this object or elsewhere
-        sliderBar = GetComponentInChildren<SliderBar>(); // Or find it in another way depending on its location
-        if (sliderBar == null)
-        {
-            Debug.LogError("SliderBar is not assigned or found.");
-        }
+        sliderBar = GetComponentInChildren<SliderBar>();
+        if (sliderBar == null) Debug.LogError("SliderBar is not assigned or found.");
 
         currentHP = maxHP;
     }
 
     void Update()
     {
-        if (player != null && agent != null)
+        if (currentHP > 0)
         {
-            agent.SetDestination(player.position);
-        }
-
-        if (agent != null && animator != null)
-        {
-            if (agent.velocity.magnitude > 0.1f)
+            if (player != null && agent != null)
             {
-                animator.SetBool("isWalking", true);
+                float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+                // If within attack range, stop moving and attack
+                if (distanceToPlayer <= attackRange)
+                {
+                    agent.isStopped = true;
+
+                    // Check if we can attack (based on cooldown)
+                    if (attackTimer <= 0f)
+                    {
+                        AttackPlayer();
+                        attackTimer = attackCooldown;  // Reset the attack cooldown
+                    }
+                    else
+                    {
+                        attackTimer -= Time.deltaTime;  // Decrease the timer
+                    }
+                }
+                else
+                {
+                    // Move towards the player if out of range
+                    agent.isStopped = false;
+                    agent.SetDestination(player.position);
+                }
             }
-            else
+
+            if (agent != null && animator != null)
             {
-                animator.SetBool("isWalking", false);
+                if (agent.velocity.magnitude > 0.1f)
+                {
+                    animator.SetBool("isWalking", true);
+                }
+                else
+                {
+                    animator.SetBool("isWalking", false);
+                }
             }
         }
-
-        if (currentHP <= 0)
+        else
         {
-            Destroy(gameObject);
+            animator.SetTrigger("Death");
+            Destroy(gameObject,2.2f);
+        }
+    }
+
+    private void AttackPlayer()
+    {
+        animator.SetTrigger("Attack");  // Play attack animation
+
+        PlayerHealth playerHP = player.gameObject.GetComponent<PlayerHealth>();
+        if (playerHP != null)
+        {
+            playerHP.takeDamage(attackDamage);  // Apply damage to the player
         }
     }
 
@@ -92,21 +114,16 @@ public class EnemyAI : MonoBehaviour
 
     public bool checkHealth()
     {
-        if (currentHP <= 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return currentHP <= 0;
     }
+
     public float returnHealthValue()
     {
         return currentHP;
     }
+
     public int awardEXP()
     {
         return experiencePoints;
-    } 
+    }
 }
