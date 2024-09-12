@@ -3261,7 +3261,7 @@ GameObject:
   - component: {fileID: 1256168901}
   - component: {fileID: 1256168900}
   m_Layer: 5
-  m_Name: Jammo Anchor
+  m_Name: Jammo Anchor - Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4081,7 +4081,7 @@ GameObject:
   - component: {fileID: 1594495857}
   - component: {fileID: 1594495856}
   m_Layer: 5
-  m_Name: Jammo Anchor
+  m_Name: Jammo Anchor - Wpn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

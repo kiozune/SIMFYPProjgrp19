@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: entityAnchor
       value: 
       objectReference: {fileID: 2065286868}
+    - target: {fileID: 5166916636217440959, guid: f7e001fab9b332e429f2eb3c7a5e0c67, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5568333194492857555, guid: f7e001fab9b332e429f2eb3c7a5e0c67, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1969,6 +1973,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 496824909960619450, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151276840223487263, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939546433007488442, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155818171788049674, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2244270201992810004, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
@@ -2027,6 +2043,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2409022567407867991, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3204023900755348742, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3231969900884765040, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
       propertyPath: m_BlockingMask.m_Bits
       value: 0
@@ -2070,6 +2094,10 @@ PrefabInstance:
     - target: {fileID: 3600791087774281342, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6743981405907606233, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4651,6 +4679,14 @@ PrefabInstance:
     - target: {fileID: 2352940986730086607, guid: 1f269601df1ad8a47ac668a58dc1372f, type: 3}
       propertyPath: m_Name
       value: Game Over Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2916529838216848881, guid: 1f269601df1ad8a47ac668a58dc1372f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181853032239082451, guid: 1f269601df1ad8a47ac668a58dc1372f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7648647153877312472, guid: 1f269601df1ad8a47ac668a58dc1372f, type: 3}
       propertyPath: m_LocalPosition.x
