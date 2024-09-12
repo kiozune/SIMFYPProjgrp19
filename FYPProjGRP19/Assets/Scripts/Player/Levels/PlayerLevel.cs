@@ -31,6 +31,7 @@ public class PlayerLevel : MonoBehaviour
     void Start()
     {
         UpdateXPSlider();
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame

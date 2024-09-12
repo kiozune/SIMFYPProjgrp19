@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private Slider healthSlider;
     [SerializeField]
     private GameObject gameOverScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currHealth <= 0)
         {
-            gameOverScreen.SetActive(true);
+            gameOverScreen.GetComponent<GameOver>().GameOverScreen();
         }
     }
     public void UpdateHealthSlider()
