@@ -25,7 +25,7 @@ public class WeaponAttack : MonoBehaviour
 
     [Header("Animation Timer")]
     [SerializeField]
-    private float attackDuration = 1.10f; // The full duration of the attack
+    private float attackDuration = 0.5f; // The full duration of the attack
     [SerializeField]
     private float rangedAttackDuration = 0.17f;
 
@@ -37,11 +37,21 @@ public class WeaponAttack : MonoBehaviour
     [SerializeField]
     private GameObject projectiles;
 
+    [Header("Melee Weapon")]
+    [SerializeField]
+    private GameObject meleeWeaponObject;
+    [SerializeField]
+    private float damage = 55f;
+    [SerializeField]
+    WeaponDamageScript wepDamageScript;
+
     // This will be accessed by PlayerMovement to check if the player is attacking
     public bool isAttacking { get; private set; }
 
     [SerializeField]
     private bool rangeAttacking = false;
+
+   
 
     void Start()
     {
@@ -49,9 +59,14 @@ public class WeaponAttack : MonoBehaviour
         meleeWeapon = PlayerPrefs.GetInt("Meleewep") == 1;
         rangeWeapon = PlayerPrefs.GetInt("Rangewep") == 1;
     }
+    
 
     void Update()
     {
+        if (wepDamageScript == null)
+        {
+            wepDamageScript = gameObject.GetComponentInChildren<WeaponDamageScript>();
+        }
         if (meleeWeapon)
         {
             playerAnimator.SetTrigger("melee");
@@ -81,13 +96,16 @@ public class WeaponAttack : MonoBehaviour
         // Set isAttacking to true and start the attack animation
         isAttacking = true;
         playerAnimator.SetBool("swordAttack", true);
-
+        meleeWeaponObject.GetComponent<BoxCollider>().enabled = true;
+        wepDamageScript.setBoolHit(true);
         // Wait for the full duration of the attack (1.10 seconds)
         yield return new WaitForSeconds(attackDuration);
 
         // Reset the attack animation and allow movement again
         playerAnimator.SetBool("swordAttack", false);
         isAttacking = false;
+        meleeWeaponObject.GetComponent<BoxCollider>().enabled = false;
+        wepDamageScript.setBoolHit(false);
     }
 
     private void HandleRangedAttack()
@@ -131,5 +149,14 @@ public class WeaponAttack : MonoBehaviour
         {
             projectileDir.SetDirection(shootDirection);
         }
+    }
+    //getters setters for damage
+    public float returnDamageValue()
+    {
+        return damage;
+    }
+    public void addDamage(float damageValue)
+    {
+        damage += damageValue;
     }
 }

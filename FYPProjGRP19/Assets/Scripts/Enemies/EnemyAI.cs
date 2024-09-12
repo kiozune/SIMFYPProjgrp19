@@ -101,6 +101,10 @@ public class EnemyAI : MonoBehaviour
             return false;
         }
     }
+    public float returnHealthValue()
+    {
+        return currentHP;
+    }
     public int awardEXP()
     {
         return experiencePoints;
