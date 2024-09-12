@@ -781,7 +781,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7f80f9fc560d7cd48b1e7ccc6bae6437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1571,7 +1571,7 @@ MonoBehaviour:
   maxHP: 100
   damageFromProjectile: 20
   attackDamage: 20
-  attackRange: 2
+  attackRange: 2.5
   attackCooldown: 2
   experiencePoints: 50
 --- !u!195 &8734999947426299841
