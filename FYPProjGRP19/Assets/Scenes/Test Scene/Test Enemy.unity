@@ -717,8 +717,19 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 7595189231921639269, guid: fcfeaa4d38cfde341aa89070ef990159, type: 3}
     minRange: 0
+    maxRange: 45
+    isUnique: 0
+    attackType: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 6e76100eb0100a74dba1ef4b36b7863b, type: 3}
+    minRange: 46
+    maxRange: 90
+    isUnique: 0
+    attackType: 1
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 450e0e6bf65d12840958e477f17253a7, type: 3}
+    minRange: 91
     maxRange: 100
     isUnique: 0
+    attackType: 2
   player: {fileID: 259019338}
   mainCamera: {fileID: 1446786676}
   navMeshCheckRadius: 2

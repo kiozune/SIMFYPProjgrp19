@@ -10,7 +10,9 @@ public class EnemyData
     public int minRange;                     // Minimum dice roll number for this enemy
     public int maxRange;                     // Maximum dice roll number for this enemy
     public bool isUnique;                    // Whether this enemy type is unique (can't spawn consecutively)
+    public AttackType attackType;            // The attack type for this enemy
 }
+
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -110,19 +112,18 @@ public class EnemySpawner : MonoBehaviour
     // Function to spawn a specific enemy
     void SpawnEnemy(EnemyData enemyData)
     {
-        // Find a valid spawn point near obstacles or based on your existing logic
         Vector3 spawnPosition = FindValidSpawnPosition();
 
         if (spawnPosition != Vector3.zero)
         {
-            // Spawn the enemy at the valid position
             GameObject enemy = Instantiate(enemyData.enemyPrefab, spawnPosition, Quaternion.identity);
 
-            // Assign the player reference to the EnemyAI script
+            // Assign the player reference and attack type to the EnemyAI script
             EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
             if (enemyAI != null)
             {
                 enemyAI.player = player;
+                enemyAI.attackType = enemyData.attackType;  // Assign the attack type
             }
 
             currentEnemyCount++; // Increment the enemy count

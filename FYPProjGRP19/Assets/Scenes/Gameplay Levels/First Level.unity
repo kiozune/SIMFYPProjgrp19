@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1297,8 +1297,19 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 7595189231921639269, guid: fcfeaa4d38cfde341aa89070ef990159, type: 3}
     minRange: 0
-    maxRange: 100
+    maxRange: 45
     isUnique: 0
+    attackType: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 6e76100eb0100a74dba1ef4b36b7863b, type: 3}
+    minRange: 46
+    maxRange: 90
+    isUnique: 0
+    attackType: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 450e0e6bf65d12840958e477f17253a7, type: 3}
+    minRange: 91
+    maxRange: 100
+    isUnique: 1
+    attackType: 2
   player: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
