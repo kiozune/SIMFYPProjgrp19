@@ -7069,6 +7069,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 481554, guid: c6b7fb383a3534b039692b5485b6e739, type: 3}
   m_PrefabInstance: {fileID: 1909383363}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1921359888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921359889}
+  m_Layer: 0
+  m_Name: Old Singapore Village
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1921359889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921359888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.138212, y: 92.41216, z: -69.89966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5157772265102255443}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1926369344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7844,11 +7876,77 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oldfishing Village Level
       objectReference: {fileID: 0}
+    - target: {fileID: 7108975404523101042, guid: f1d954aab5d86b44b93037a07cafd343, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d954aab5d86b44b93037a07cafd343, type: 3}
+--- !u!1001 &5157772265102255442
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1921359889}
+    m_Modifications:
+    - target: {fileID: 5212635758200331601, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_Name
+      value: museum_village_duppel_-_house_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.138212
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -117.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 69.89966
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+--- !u!4 &5157772265102255443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5818894034301518004, guid: fd44136701358ec4e9be98990df280f7, type: 3}
+  m_PrefabInstance: {fileID: 5157772265102255442}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7867,3 +7965,4 @@ SceneRoots:
   - {fileID: 2018089358}
   - {fileID: 1628517013}
   - {fileID: 4884791927255624278}
+  - {fileID: 1921359889}
