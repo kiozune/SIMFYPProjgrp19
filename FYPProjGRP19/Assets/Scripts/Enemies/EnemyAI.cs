@@ -87,6 +87,8 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            agent.isStopped = true;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
             animator.SetTrigger("Death");
             Destroy(gameObject,2.2f);
         }

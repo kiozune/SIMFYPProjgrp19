@@ -800,6 +800,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &553870250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553870251}
+  m_Layer: 0
+  m_Name: ------System Manager-----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &553870251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553870250}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1840743269}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &577571980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3600791087774281342, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
@@ -1601,6 +1633,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897373874}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &900722585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+  m_PrefabInstance: {fileID: 7985056827710711165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &914363022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2201,6 @@ GameObject:
   - component: {fileID: 1128289528}
   - component: {fileID: 1128289531}
   - component: {fileID: 1128289530}
-  - component: {fileID: 1128289529}
   - component: {fileID: 1128289532}
   m_Layer: 8
   m_Name: Melee
@@ -2188,27 +2224,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021991630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1128289529
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128289527}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 4.36, z: 1.91}
-  m_Center: {x: 0, y: 0.16, z: 0.48}
 --- !u!23 &1128289530
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2274,6 +2289,10 @@ MonoBehaviour:
   damageValue: 55
   ifHitting: 0
   enemiesInRange: []
+  meleeCollider: {fileID: 0}
+  meleeRange: 2
+  meleeWidth: 1
+  meleeHeight: 1
 --- !u!1 &1130620477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,6 +3099,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2065286874}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2065286876}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2065286875}
   m_SourcePrefab: {fileID: 100100000, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
 --- !u!4 &1422829366 stripped
 Transform:
@@ -4724,6 +4749,55 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.05, y: 3.22, z: 6.54}
   m_Center: {x: 0, y: 1.76, z: 0}
+--- !u!1 &1840743268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840743269}
+  - component: {fileID: 1840743270}
+  m_Layer: 0
+  m_Name: PlayerUpgrade Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1840743269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840743268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 553870251}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1840743270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840743268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a63c539b504d548adadd57dae3c262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageIncrease: 5
+  rangeIncrease: 1
+  aoeIncrease: 1
+  player: {fileID: 2065286867}
+  upgradeScreen: {fileID: 900722585}
 --- !u!1 &1899957816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4944,7 +5018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dde655510cddb9418f26a8cb2867169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charController: {fileID: 0}
+  charController: {fileID: 2065286871}
   playerAnimController: {fileID: 2065286872}
   speed: 10
   gravity: -9.8
@@ -4956,7 +5030,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
-  weaponAttack: {fileID: 0}
+  weaponAttack: {fileID: 2065286870}
 --- !u!114 &2065286870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4978,11 +5052,13 @@ MonoBehaviour:
   rangedAttackDuration: 0.5
   fireRate: 0.5
   currRate: 0
+  bonusAOEExplosionRange: 0.5
   projectiles: {fileID: 8936097998932565490, guid: ec898592f73d8fb458ba944cee3ba4da, type: 3}
   meleeWeaponObject: {fileID: 1128289527}
-  damage: 55
-  wepDamageScript: {fileID: 0}
+  damage: 20
+  wepDamageScript: {fileID: 2065286876}
   rangeAttacking: 0
+  enableAOE: 0
 --- !u!143 &2065286871
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5032,8 +5108,8 @@ MonoBehaviour:
   expLevelMultiplier: 1.3
   vfxLevelUp: {fileID: 419411002348774512, guid: 247a3e752e93a864db063f5c85fd8391, type: 3}
   levelUpText: {fileID: 1086002950368930747}
+  levelUpOverlay: {fileID: 900722585}
   playerChar: {fileID: 2065286867}
-  bonusDamage: 10
   xpSlider: {fileID: 1508172972}
 --- !u!114 &2065286874
 MonoBehaviour:
@@ -5051,6 +5127,46 @@ MonoBehaviour:
   maxHealth: 1000
   healthSlider: {fileID: 1482601067}
   gameOverScreen: {fileID: 930153970}
+--- !u!65 &2065286875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065286867}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.69, y: 1, z: 0.38}
+  m_Center: {x: 0, y: 0.81, z: 1}
+--- !u!114 &2065286876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065286867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a55a63b765bf5141ac4c6c3bcc21606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageValue: 55
+  ifHitting: 0
+  enemiesInRange: []
+  meleeCollider: {fileID: 2065286875}
+  meleeRange: 2
+  meleeWidth: 1
+  meleeHeight: 1
 --- !u!1001 &1086002950368930745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5323,6 +5439,34 @@ PrefabInstance:
       propertyPath: m_text
       value: Weapon Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1840743270}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: handlePlayerRangeIncrease
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleUpgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4135534732396245187, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_text
       value: Upper Soul
@@ -5331,13 +5475,41 @@ PrefabInstance:
       propertyPath: m_text
       value: Increases the damage done by 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1840743270}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: handlePlayerDamageIncrease
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleUpgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_Name
       value: Upgrade Screen
       objectReference: {fileID: 0}
     - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9201368651924323407, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5398,3 +5570,4 @@ SceneRoots:
   - {fileID: 229049748}
   - {fileID: 1699999817}
   - {fileID: 1160027035}
+  - {fileID: 553870251}
