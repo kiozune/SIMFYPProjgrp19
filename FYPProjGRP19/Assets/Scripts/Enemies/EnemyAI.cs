@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class EnemyAI : MonoBehaviour
     public float attackDamage = 20f;  // Damage the enemy does to the player
     public float attackRange = 5f;    // Range within which the enemy can attack the player
     public float attackCooldown = 2f; // Time between each attack
+    public bool rangeEnemy;
+    public bool normalEnemy;
+    public Sprite normalEnemyImage;
+    public Sprite rangeImage;
+    public Image mobIcon;
 
     private NavMeshAgent agent;       // Reference to the NavMeshAgent component
     private Animator animator;        // Reference to the Animator component
@@ -39,6 +45,14 @@ public class EnemyAI : MonoBehaviour
         if (sliderBar == null) Debug.LogError("SliderBar is not assigned or found.");
 
         currentHP = maxHP;
+        if (rangeEnemy)
+        {
+            changeRangeIcon();
+        }
+        if(normalEnemy)
+        {
+            changeMeleeIcon();
+        }
     }
 
     void Update()
@@ -127,5 +141,14 @@ public class EnemyAI : MonoBehaviour
     public int awardEXP()
     {
         return experiencePoints;
+    }
+    private void changeMeleeIcon()
+    {
+        mobIcon.sprite = normalEnemyImage;
+
+    }
+    private void changeRangeIcon()
+    {
+        mobIcon.sprite = rangeImage;
     }
 }

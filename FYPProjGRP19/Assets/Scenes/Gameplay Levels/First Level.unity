@@ -2269,6 +2269,10 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 7595189231921639269, guid: fcfeaa4d38cfde341aa89070ef990159, type: 3}
     minRange: 0
+    maxRange: 50
+    isUnique: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 4de76f204274e3e44a4c41021416d21f, type: 3}
+    minRange: 51
     maxRange: 100
     isUnique: 0
   player: {fileID: 2065286868}
