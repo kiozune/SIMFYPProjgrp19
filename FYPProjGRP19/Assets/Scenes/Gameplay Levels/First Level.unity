@@ -1297,20 +1297,17 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 7595189231921639269, guid: fcfeaa4d38cfde341aa89070ef990159, type: 3}
     minRange: 0
-    maxRange: 45
+    maxRange: 60
     isUnique: 0
-    attackType: 0
   - enemyPrefab: {fileID: 7595189231921639269, guid: 6e76100eb0100a74dba1ef4b36b7863b, type: 3}
-    minRange: 46
-    maxRange: 90
+    minRange: 61
+    maxRange: 99
     isUnique: 0
-    attackType: 0
   - enemyPrefab: {fileID: 7595189231921639269, guid: 450e0e6bf65d12840958e477f17253a7, type: 3}
-    minRange: 91
+    minRange: 100
     maxRange: 100
     isUnique: 1
-    attackType: 2
-  player: {fileID: 2065286868}
+  playerTransform: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
   maxEnemiesToSpawn: 50
@@ -1322,6 +1319,19 @@ MonoBehaviour:
   spawnRateIncreaseInterval: 10
   spawnRateDecreaseFactor: 0.9
   minSpawnInterval: 1
+--- !u!114 &781012996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781012992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acea5ae05db97ab48bc56395b8ba4b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2065286868}
 --- !u!1 &781811139
 GameObject:
   m_ObjectHideFlags: 0
@@ -4713,6 +4723,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8137555842533854514, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 781012994}
+    - targetCorrespondingSourceObject: {fileID: 8137555842533854514, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 781012996}
   m_SourcePrefab: {fileID: 100100000, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
 --- !u!4 &1793262247 stripped
 Transform:

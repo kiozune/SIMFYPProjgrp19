@@ -1503,12 +1503,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3903816619939355787}
   - component: {fileID: 445878140493066474}
-  - component: {fileID: 3379128127858943603}
   - component: {fileID: 8734999947426299841}
   - component: {fileID: 3855722867067444711}
   - component: {fileID: 4141751404073747776}
   - component: {fileID: 1837854570782248437}
   - component: {fileID: 8155385691687062380}
+  - component: {fileID: 4524956154687988097}
   m_Layer: 0
   m_Name: FishmanElite
   m_TagString: BasicEnemy
@@ -1555,31 +1555,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3379128127858943603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7595189231921639269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 579a04dc48950104b9bbea14d4d8cb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  maxHP: 100
-  damageFromProjectile: 20
-  meleeAttackDamage: 20
-  rangedAttackRange: 10
-  meleeAttackRange: 3
-  attackCooldown: 2
-  experiencePoints: 50
-  attackType: 0
-  projectilePrefab: {fileID: 8936097998932565490, guid: 6576f861db7f55046a541e5a71690f40, type: 3}
-  projectileSpeed: 10
-  eliteHPBonus: 50
-  eliteAttackBonus: 10
 --- !u!195 &8734999947426299841
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1681,6 +1656,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4524956154687988097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595189231921639269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6305cf84add528d42aaa1bbbe4495a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 200
+  damage: 30
+  attackRange: 5
+  attackCooldown: 2
+  expPts: 100
 --- !u!1 &7607541927072285548
 GameObject:
   m_ObjectHideFlags: 0

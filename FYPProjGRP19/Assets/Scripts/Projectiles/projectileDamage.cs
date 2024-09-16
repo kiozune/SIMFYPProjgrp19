@@ -1,3 +1,4 @@
+using EnemyInterface;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class projectileDamage : MonoBehaviour
     [SerializeField]
     [Tooltip("Damage for the projectile to enemy")]
     private float damage = 55;
-    
    
     // Start is called before the first frame update
     void Start()
@@ -29,15 +29,27 @@ public class projectileDamage : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BasicEnemy"))
+        // Try to get the IEnemy component from the collided object
+        IEnemy enemy = other.GetComponent<IEnemy>();
+
+        if (enemy != null)  // If the collided object is an enemy
         {
-            other.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
-            if (other.GetComponent<EnemyAI>().checkHealth())
+            // Apply damage to the enemy
+            enemy.TakeDamage(damage);
+
+            // Check if the enemy is defeated
+            if (enemy.hp <= 0)
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-                player.GetComponent<PlayerLevel>().AddEXP(other.gameObject.GetComponent<EnemyAI>().awardEXP());
-                player.GetComponent<PlayerLevel>().UpdateXPSlider();
+                if (player != null)
+                {
+                    PlayerLevel playerLevel = player.GetComponent<PlayerLevel>();
+                    if (playerLevel != null)
+                    {
+                        playerLevel.AddEXP(enemy.expGained);
+                        playerLevel.UpdateXPSlider();
+                    }
+                }
             }
         }
     }

@@ -10,7 +10,6 @@ public class EnemyData
     public int minRange;                     // Minimum dice roll number for this enemy
     public int maxRange;                     // Maximum dice roll number for this enemy
     public bool isUnique;                    // Whether this enemy type is unique (can't spawn consecutively)
-    public AttackType attackType;            // The attack type for this enemy
 }
 
 
@@ -18,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [Header("Input")]
     public List<EnemyData> enemies;          // List of enemies with their associated numbers
-    public Transform player;                 // Reference to the player
+    public Transform playerTransform;                 // Reference to the player
     public Camera mainCamera;                // Reference to the main camera
 
     [Header("Enemy Spawn Conditions")]
@@ -45,6 +44,15 @@ public class EnemySpawner : MonoBehaviour
     {
         // Set the initial spawn interval
         currentSpawnInterval = initialSpawnInterval;
+
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerTransform = player.transform;
+            }
+        }
 
         // Start the coroutine to spawn enemies over time
         StartCoroutine(SpawnEnemiesOverTime());
@@ -118,12 +126,11 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyData.enemyPrefab, spawnPosition, Quaternion.identity);
 
-            // Assign the player reference and attack type to the EnemyAI script
+            // Assign the player reference to the EnemyAI script
             EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
             if (enemyAI != null)
             {
-                enemyAI.player = player;
-                enemyAI.attackType = enemyData.attackType;  // Assign the attack type
+                enemyAI.setPlayerTransform(playerTransform);
             }
 
             currentEnemyCount++; // Increment the enemy count
