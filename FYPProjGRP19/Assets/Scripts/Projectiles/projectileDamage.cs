@@ -41,8 +41,9 @@ public class projectileDamage : MonoBehaviour
         {
             if (isAOEEnabled)
             {
-                // Apply AOE damage to all enemies within a radius
-                ApplyAOEDamage(other.transform.position);
+                // Apply full damage to the primary target and AOE damage to others
+                ApplySingleTargetDamage(other.gameObject);
+                ApplyAOEDamage(other.transform.position, other.gameObject);
             }
             else
             {
@@ -65,20 +66,20 @@ public class projectileDamage : MonoBehaviour
         }
     }
 
-    private void ApplyAOEDamage(Vector3 hitPosition)
+    private void ApplyAOEDamage(Vector3 hitPosition, GameObject primaryTarget)
     {
         // Find all colliders in the AOE radius
         Collider[] hitEnemies = Physics.OverlapSphere(hitPosition, aoeRadius);
 
         foreach (Collider hit in hitEnemies)
         {
-            if (hit.CompareTag("BasicEnemy"))
+            if (hit.CompareTag("BasicEnemy") && hit.gameObject != primaryTarget)
             {
                 EnemyAI enemyAI = hit.GetComponent<EnemyAI>();
                 if (enemyAI != null)
                 {
-                    // Apply damage to each enemy in range
-                    enemyAI.TakeDamage(damage);
+                    // Any other target than the primary will take 25% of the damage thrown
+                    enemyAI.TakeDamage(damage * 0.25f);
                     if (enemyAI.checkHealth())
                     {
                         AwardPlayerEXP(enemyAI);
