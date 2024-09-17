@@ -39,9 +39,9 @@ public class projectileDamage : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         // Try to get the IEnemy component from the collided object
-        IEnemy enemy = other.GetComponent<IEnemy>();
+        EnemyAI enemyAI = other.GetComponent<EnemyAI>();
 
-        if (enemy != null)  // If the collided object is an enemy
+        if (enemyAI != null)  // If the collided object is an enemy
         {
             if (isAOEEnabled)
             {
@@ -60,10 +60,10 @@ public class projectileDamage : MonoBehaviour
     private void ApplySingleTargetDamage(GameObject enemy)
     {
         EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
-        if (enemyAI != null)
+        if (enemy != null)
         {
             enemyAI.TakeDamage(damage);
-            if (enemyAI.checkHealth())
+            if (enemyAI.getHealth() <= 0)
             {
                 AwardPlayerEXP(enemyAI);
             }
@@ -84,7 +84,7 @@ public class projectileDamage : MonoBehaviour
                 {
                     // Any other target than the primary will take 25% of the damage thrown
                     enemyAI.TakeDamage(damage * 0.25f);
-                    if (enemyAI.checkHealth())
+                    if (enemyAI.getHealth() <= 0)
                     {
                         AwardPlayerEXP(enemyAI);
                     }

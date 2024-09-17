@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45072836, g: 0.49355227, b: 0.5667317, a: 1}
+  m_IndirectSpecularColor: {r: 0.4506969, g: 0.4935509, b: 0.5666936, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2272,8 +2272,8 @@ MonoBehaviour:
     maxRange: 50
     isUnique: 0
   - enemyPrefab: {fileID: 7595189231921639269, guid: 4de76f204274e3e44a4c41021416d21f, type: 3}
-    minRange: 51
-    maxRange: 100
+    minRange: 0
+    maxRange: 0
     isUnique: 0
   - enemyPrefab: {fileID: 7595189231921639269, guid: 6e76100eb0100a74dba1ef4b36b7863b, type: 3}
     minRange: 61
@@ -2307,7 +2307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acea5ae05db97ab48bc56395b8ba4b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2065286868}
 --- !u!1 &781811139
 GameObject:
   m_ObjectHideFlags: 0

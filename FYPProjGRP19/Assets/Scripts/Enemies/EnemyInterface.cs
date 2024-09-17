@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace EnemyInterface
 {
@@ -9,6 +10,7 @@ namespace EnemyInterface
     {
         int expGained { get; }
         float hp { get; }
+        Sprite icon { get; }
 
         void TakeDamage(float damage);
     }

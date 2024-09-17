@@ -62,16 +62,16 @@ public class WeaponDamageScript : MonoBehaviour
 
     private void ApplyDamage(GameObject enemy)
     {
-        EnemyAI healthScript = enemy.GetComponent<EnemyAI>();
-        if (healthScript != null)
+        EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+        if (enemyAI != null)
         {
-            healthScript.TakeDamage(damageValue);
+            enemyAI.TakeDamage(damageValue);
         }
-        if (healthScript.getHealth() <= 0)
+        if (enemyAI.getHealth() <= 0)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            player.GetComponent<PlayerLevel>().AddEXP(enemy.gameObject.GetComponent<EnemyAI>().getEXP());
+            player.GetComponent<PlayerLevel>().AddEXP(enemy.gameObject.GetComponent<EnemyAI>().awardEXP());
             player.GetComponent<PlayerLevel>().UpdateXPSlider();
             enemiesInRange.Remove(enemy);
         }

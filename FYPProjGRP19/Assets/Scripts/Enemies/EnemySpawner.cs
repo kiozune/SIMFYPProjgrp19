@@ -126,12 +126,14 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyData.enemyPrefab, spawnPosition, Quaternion.identity);
 
+            /*
             // Assign the player reference to the EnemyAI script
             EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
             if (enemyAI != null)
             {
                 enemyAI.setPlayerTransform(playerTransform);
             }
+            */
 
             currentEnemyCount++; // Increment the enemy count
         }
