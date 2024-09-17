@@ -1568,6 +1568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  rockPrefab: {fileID: 3844816652429521609, guid: d1226b28ad94e65419c826a7163d1c4b, type: 3}
+  throwPoint: {fileID: 0}
   maxHP: 100
   damageFromProjectile: 20
   attackDamage: 20
