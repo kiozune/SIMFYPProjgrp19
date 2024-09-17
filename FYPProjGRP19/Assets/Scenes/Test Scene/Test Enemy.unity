@@ -333,11 +333,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250539378}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &259019338 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8264160689471359618, guid: 0b746c8176151f54dab9d3d37a7fa0bb, type: 3}
-  m_PrefabInstance: {fileID: 999418308}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &466883939
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,18 +714,15 @@ MonoBehaviour:
     minRange: 0
     maxRange: 45
     isUnique: 0
-    attackType: 0
   - enemyPrefab: {fileID: 7595189231921639269, guid: 6e76100eb0100a74dba1ef4b36b7863b, type: 3}
     minRange: 46
     maxRange: 90
     isUnique: 0
-    attackType: 1
   - enemyPrefab: {fileID: 7595189231921639269, guid: 450e0e6bf65d12840958e477f17253a7, type: 3}
     minRange: 91
     maxRange: 100
     isUnique: 0
-    attackType: 2
-  player: {fileID: 259019338}
+  playerTransform: {fileID: 0}
   mainCamera: {fileID: 1446786676}
   navMeshCheckRadius: 2
   maxEnemiesToSpawn: 1
@@ -851,7 +843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1414671730
 Transform:
   m_ObjectHideFlags: 0
