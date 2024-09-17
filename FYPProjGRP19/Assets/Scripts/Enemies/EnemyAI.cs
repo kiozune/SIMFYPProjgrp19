@@ -7,6 +7,7 @@ using UnityEngine.UI;
 //Base Class
 //All Enemy Types inherit from this script
 //Enemy will track player using Tag in their own script (may be modified)
+//Add Methods here
 
 public class EnemyAI : MonoBehaviour
 {
