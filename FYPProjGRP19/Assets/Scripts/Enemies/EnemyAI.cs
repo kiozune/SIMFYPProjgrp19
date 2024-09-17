@@ -58,4 +58,18 @@ public class EnemyAI : MonoBehaviour
     {
         return enemy.expGained;
     }
+
+    public int awardEXP()
+    {
+        return experiencePoints;
+    }
+    private void changeMeleeIcon()
+    {
+        mobIcon.sprite = normalEnemyImage;
+
+    }
+    private void changeRangeIcon()
+    {
+        mobIcon.sprite = rangeImage;
+    }
 }

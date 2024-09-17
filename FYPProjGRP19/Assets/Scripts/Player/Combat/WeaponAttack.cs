@@ -35,6 +35,8 @@ public class WeaponAttack : MonoBehaviour
     [SerializeField]
     private float currRate = 0.0f;
     [SerializeField]
+    private float bonusAOEExplosionRange = 0.5f;
+    [SerializeField]
     private GameObject projectiles;
 
     [Header("Melee Weapon")]
@@ -50,6 +52,9 @@ public class WeaponAttack : MonoBehaviour
 
     [SerializeField]
     private bool rangeAttacking = false;
+
+    [SerializeField]
+    private bool enableAOE = false;
 
    
 
@@ -96,7 +101,7 @@ public class WeaponAttack : MonoBehaviour
         // Set isAttacking to true and start the attack animation
         isAttacking = true;
         playerAnimator.SetBool("swordAttack", true);
-        meleeWeaponObject.GetComponent<BoxCollider>().enabled = true;
+       gameObject.GetComponent<BoxCollider>().enabled = true;
         wepDamageScript.setBoolHit(true);
         // Wait for the full duration of the attack (1.10 seconds)
         yield return new WaitForSeconds(attackDuration);
@@ -146,6 +151,7 @@ public class WeaponAttack : MonoBehaviour
         ProjectileDir projectileDir = projectileInstance.GetComponent<ProjectileDir>();
         projectileDamage projectileDamage = projectileInstance.GetComponent<projectileDamage>();
         projectileDamage.setDamage(damage);
+        projectileDamage.setAOEEnabled(enableAOE,bonusAOEExplosionRange);
 
         if (projectileDir != null)
         {
@@ -160,5 +166,10 @@ public class WeaponAttack : MonoBehaviour
     public void addDamage(float damageValue)
     {
         damage += damageValue;
+    }
+    public void setAOEBool()
+    {
+            enableAOE = true;
+        
     }
 }
