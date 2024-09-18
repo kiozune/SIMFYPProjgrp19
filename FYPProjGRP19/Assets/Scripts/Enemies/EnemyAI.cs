@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -11,20 +10,36 @@ using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
-    protected float currentHP;
-    protected float maxHP = 100f;
-    protected int expPoints = 50;
-    protected float attackRange = 2f;
-    protected float attackCooldown = 2f;
-    protected float attackTimer = 0f;
-    //public Sprite normalEnemyImage;
+    public Transform player;          // Reference to the player's transform
+    public GameObject rockPrefab;     // The rock projectile prefab
+    public Transform throwPoint;      // The point from which the rock is thrown
+    public float maxHP = 100f;        // Enemy health points
+    private float currentHP = 100f;
+    public float damageFromProjectile = 20f;  // Amount of damage taken from each projectile hit
+    public float attackDamage = 20f;  // Damage the enemy does to the player
+    public float attackRange = 5f;    // Range within which the enemy can attack the player
+    public float attackCooldown = 2f; // Time between each attack
+    [Header("Enemy Bool Checks")]
+    [SerializeField]
+    private bool isThrowing = false;
+    [SerializeField]
+    private bool rangeEnemy;
+    [SerializeField]
+    private bool normalEnemy;
+    [Header("UI")]
+    [SerializeField]
+    private Sprite normalEnemyImage;
+    [SerializeField]
+    private Sprite rangeImage;
+    [SerializeField]
+    private Image mobIcon;
 
-    //Inspector Elements
-    protected Transform playerTransform;
-    protected NavMeshAgent agent;
-    protected Animator animator;
-    protected Collider objCollider;
-    protected Sprite enemyImage;
+    [Header("NavMesh Agent")]
+    [SerializeField]
+    private NavMeshAgent agent;       // Reference to the NavMeshAgent component
+    private Animator animator;        // Reference to the Animator component
+    private Collider parentCollider;  // Reference to the Collider of the parent object
+    private SliderBar sliderBar;
 
     protected virtual void Awake()
     {
@@ -70,8 +85,15 @@ public class EnemyAI : MonoBehaviour
 
                     if (attackTimer <= 0f)
                     {
-                        EnemyAttack();
-                        attackTimer = attackCooldown;  // Reset cooldown
+                        if (rangeEnemy)
+                        {
+                            ThrowProjectile();  // Ranged attack
+                        }
+                        else
+                        {
+                            AttackPlayer();  // Melee attack
+                        }
+                        attackTimer = attackCooldown;
                     }
                     else
                     {
@@ -125,5 +147,67 @@ public class EnemyAI : MonoBehaviour
     public float getHealth()
     {
         return currentHP;
+    }
+
+    public int awardEXP()
+    {
+        return experiencePoints;
+    }
+    private IEnumerator ThrowProjectileWithDelay(float delay)
+    {
+        // Wait
+        yield return new WaitForSeconds(delay);
+
+        GameObject rock = Instantiate(rockPrefab, throwPoint.position, Quaternion.identity);
+
+        ProjectileDirEnemy projectile = rock.GetComponent<ProjectileDirEnemy>();
+
+        if (projectile != null)
+        {
+            Vector3 targetPosition = player.position;
+            Vector3 throwDirection = CalculateThrowDirection(throwPoint.position, targetPosition);
+
+            // Set the direction of the projectile
+            projectile.SetDirection(throwDirection);
+        }
+        isThrowing = false;
+    }
+    private void ThrowProjectile()
+    {
+        if (isThrowing)
+        {
+            return;
+        }
+        // Rotate the enemy to face the player
+        Vector3 lookDirection = player.position - transform.position;
+        lookDirection.y = 0; // <- safety it doesnt rotate Y Axis
+        transform.rotation = Quaternion.LookRotation(lookDirection);
+
+        animator.SetTrigger("Attack");
+
+        // Start the coroutine to instantiate the rock after a delay
+        StartCoroutine(ThrowProjectileWithDelay(1.25f)); // 2-second delay
+        isThrowing = true;
+    }
+
+    // Simplified throw direction calculation with an arc
+    private Vector3 CalculateThrowDirection(Vector3 start, Vector3 target)
+    {
+        // Get the direction to the player
+        Vector3 direction = (target - start).normalized;
+
+        // Give it an upward arc
+        direction.y = 0.5f;
+
+        return direction;
+    }
+    private void changeMeleeIcon()
+    {
+        mobIcon.sprite = normalEnemyImage;
+
+    }
+    private void changeRangeIcon()
+    {
+        mobIcon.sprite = rangeImage;
     }
 }

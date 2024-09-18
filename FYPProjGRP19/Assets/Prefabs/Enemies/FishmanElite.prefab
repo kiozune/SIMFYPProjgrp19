@@ -1555,6 +1555,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3379128127858943603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595189231921639269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579a04dc48950104b9bbea14d4d8cb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rockPrefab: {fileID: 3844816652429521609, guid: d1226b28ad94e65419c826a7163d1c4b, type: 3}
+  throwPoint: {fileID: 0}
+  maxHP: 100
+  damageFromProjectile: 20
+  attackDamage: 20
+  attackRange: 2.5
+  attackCooldown: 2
+  rangeEnemy: 0
+  normalEnemy: 1
+  normalEnemyImage: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
+  rangeImage: {fileID: 21300000, guid: 873275f6c2ebc204d9238bdae9f6ff38, type: 3}
+  mobIcon: {fileID: 4204963480832588466}
+  experiencePoints: 50
 --- !u!195 &8734999947426299841
 NavMeshAgent:
   m_ObjectHideFlags: 0
