@@ -5,15 +5,31 @@ using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("Player Transforma value")]
+    [SerializeField]
     public Transform player;          // Reference to the player's transform
-    public GameObject rockPrefab;     // The rock projectile prefab
-    public Transform throwPoint;      // The point from which the rock is thrown
-    public float maxHP = 100f;        // Enemy health points
+    [Header("Rock prefab values")]
+    [SerializeField]
+    private GameObject rockPrefab;     // The rock projectile prefab
+    [SerializeField]
+    private Transform throwPoint;      // The point from which the rock is thrown
+
+    [Header("Enemy attribute Values")]
+    [SerializeField]
+    private float maxHP = 100f;        // Enemy health points
+    [SerializeField]
     private float currentHP = 100f;
-    public float damageFromProjectile = 20f;  // Amount of damage taken from each projectile hit
-    public float attackDamage = 20f;  // Damage the enemy does to the player
-    public float attackRange = 5f;    // Range within which the enemy can attack the player
-    public float attackCooldown = 2f; // Time between each attack
+    [SerializeField]
+    private float damageFromProjectile = 20f;  // Amount of damage taken from each projectile hit
+    [SerializeField]
+    private float attackDamage = 20f;  // Damage the enemy does to the player
+    [SerializeField]
+    private float attackRange = 5f;    // Range within which the enemy can attack the player
+    [SerializeField]
+    private float attackCooldown = 2f; // Time between each attack
+    [SerializeField]
+    private float nextHealthThreshold;
+
     [Header("Enemy Bool Checks")]
     [SerializeField]
     private bool isThrowing = false;
@@ -21,6 +37,10 @@ public class EnemyAI : MonoBehaviour
     private bool rangeEnemy;
     [SerializeField]
     private bool normalEnemy;
+    [SerializeField]
+    private bool soundPlayed = false;
+    [SerializeField]
+    private bool hasDroppedLoot = false;
     [Header("UI")]
     [SerializeField]
     private Sprite normalEnemyImage;
@@ -28,6 +48,14 @@ public class EnemyAI : MonoBehaviour
     private Sprite rangeImage;
     [SerializeField]
     private Image mobIcon;
+    
+    [Header("VFX/SFX")]
+    [SerializeField] 
+    private GameObject hitVFXPrefab;
+    [SerializeField] 
+    private AudioClip hitSoundClip;
+    [SerializeField]
+    private AudioSource audioSource;
 
     [Header("NavMesh Agent")]
     [SerializeField]
@@ -67,6 +95,8 @@ public class EnemyAI : MonoBehaviour
         {
             changeMeleeIcon();
         }
+        //Setting the threshold for SFX
+        nextHealthThreshold = maxHP * 0.6f;
     }
 
     void Update()
@@ -125,7 +155,7 @@ public class EnemyAI : MonoBehaviour
             agent.isStopped = true;
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
             animator.SetTrigger("Death");
-            Destroy(gameObject,2.2f);
+            StartCoroutine(HandleDeathAfterAnimation());
         }
     }
 
@@ -143,12 +173,31 @@ public class EnemyAI : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHP -= damage;  // Reduce the enemy's HP by the damage amount
-
         sliderBar.UpdateBar(currentHP, maxHP);
 
-        Debug.Log("Enemy HP: " + currentHP);
-    }
+       // Debug.Log("Enemy HP: " + currentHP);
 
+        //Play the VFX on the enemy Body
+        if (hitVFXPrefab != null)
+        {
+            Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
+        }
+
+      
+        if (currentHP <= nextHealthThreshold)
+        {
+            // Play sound  below threshold
+            PlayHitSound();
+        }
+    }
+    private void PlayHitSound()
+    {
+        if (!soundPlayed)
+        {
+            SoundManager.Instance.PlayHitSound();
+            soundPlayed = true;
+        }
+    }
     public bool checkHealth()
     {
         return currentHP <= 0;
@@ -220,4 +269,23 @@ public class EnemyAI : MonoBehaviour
     {
         mobIcon.sprite = rangeImage;
     }
+    private IEnumerator HandleDeathAfterAnimation()
+    {
+        //Wait for 2.2 seconds before running the rest of the function
+        yield return new WaitForSeconds(2.2f);
+
+        if (!hasDroppedLoot)
+        {
+            LootDrops lootDrop = GetComponent<LootDrops>();
+            if (lootDrop != null)
+            {
+                lootDrop.DropLoot();
+            }
+            hasDroppedLoot = true;
+        }
+
+        // Destroy the enemy game object after loot drop
+        Destroy(gameObject);
+    }
+
 }
