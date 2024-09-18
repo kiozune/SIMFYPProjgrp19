@@ -41,12 +41,14 @@ public class projectileDamage : MonoBehaviour
         {
             if (isAOEEnabled)
             {
+                SoundManager.Instance.PlayExplosionSound();
                 // Apply full damage to the primary target and AOE damage to others
                 ApplySingleTargetDamage(other.gameObject);
                 ApplyAOEDamage(other.transform.position, other.gameObject);
             }
             else
             {
+                SoundManager.Instance.PlayArrowHitSound();
                 // Single target damage
                 ApplySingleTargetDamage(other.gameObject);
             }

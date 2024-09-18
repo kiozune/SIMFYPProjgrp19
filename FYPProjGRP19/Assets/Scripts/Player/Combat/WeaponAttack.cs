@@ -120,6 +120,7 @@ public class WeaponAttack : MonoBehaviour
 
         if (Input.GetMouseButton(0) && Time.time > currRate && !rangeAttacking)
         {
+            SoundManager.Instance.PlayShootSound();
             StartCoroutine(PerformRangedAttack());
         }
     }
