@@ -41,6 +41,8 @@ public class EnemyAI : MonoBehaviour
     private bool soundPlayed = false;
     [SerializeField]
     private bool hasDroppedLoot = false;
+    [SerializeField]
+    private bool isDead = false;
     [Header("UI")]
     [SerializeField]
     private Sprite normalEnemyImage;
@@ -154,6 +156,11 @@ public class EnemyAI : MonoBehaviour
         {
             agent.isStopped = true;
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            if (isDead == false)
+            {
+                SoundManager.Instance.PlayDeathSound();
+                isDead = true;
+            }
             animator.SetTrigger("Death");
             StartCoroutine(HandleDeathAfterAnimation());
         }
@@ -281,6 +288,7 @@ public class EnemyAI : MonoBehaviour
             {
                 lootDrop.DropLoot();
             }
+
             hasDroppedLoot = true;
         }
 

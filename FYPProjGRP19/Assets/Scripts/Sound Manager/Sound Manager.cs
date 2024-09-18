@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     private AudioClip explosionClip;
     [SerializeField]
     private AudioClip arrowHitClip;
+    [SerializeField]
+    private AudioClip fishmanDeathClip;
 
     private void Awake()
     {
@@ -55,6 +57,13 @@ public class SoundManager : MonoBehaviour
         if (audioSource != null && arrowHitClip != null)
         {
             audioSource.PlayOneShot(arrowHitClip);
+        }
+    }
+    public void PlayDeathSound()
+    {
+        if (audioSource != null && fishmanDeathClip != null)
+        {
+            audioSource.PlayOneShot(fishmanDeathClip);
         }
     }
 }

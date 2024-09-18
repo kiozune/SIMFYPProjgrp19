@@ -101,7 +101,7 @@ public class WeaponAttack : MonoBehaviour
         // Set isAttacking to true and start the attack animation
         isAttacking = true;
         playerAnimator.SetBool("swordAttack", true);
-       gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
         wepDamageScript.setBoolHit(true);
         // Wait for the full duration of the attack (1.10 seconds)
         yield return new WaitForSeconds(attackDuration);
@@ -109,7 +109,7 @@ public class WeaponAttack : MonoBehaviour
         // Reset the attack animation and allow movement again
         playerAnimator.SetBool("swordAttack", false);
         isAttacking = false;
-        meleeWeaponObject.GetComponent<BoxCollider>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         wepDamageScript.setBoolHit(false);
     }
 
