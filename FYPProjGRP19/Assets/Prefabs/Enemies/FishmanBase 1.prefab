@@ -806,7 +806,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -3410867993790584747, guid: dee3a37def20b484e950b2abd29e5050, type: 3}
+  m_Mesh: {fileID: 1749353005097157103, guid: ea8de01aedd18a745bbbe36ef7d72377, type: 3}
   m_Bones:
   - {fileID: 3020972599896812559}
   - {fileID: 6813511205148491509}
@@ -1583,6 +1583,7 @@ MonoBehaviour:
   normalEnemy: 1
   soundPlayed: 0
   hasDroppedLoot: 0
+  isDead: 0
   normalEnemyImage: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
   rangeImage: {fileID: 21300000, guid: 873275f6c2ebc204d9238bdae9f6ff38, type: 3}
   mobIcon: {fileID: 4204963480832588466}
