@@ -1539,7 +1539,7 @@ GameObject:
   - component: {fileID: 4141751404073747776}
   - component: {fileID: 1837854570782248437}
   - component: {fileID: 8155385691687062380}
-  - component: {fileID: 7745409315849170380}
+  - component: {fileID: 3515820885466584657}
   m_Layer: 0
   m_Name: FishmanRange
   m_TagString: BasicEnemy
@@ -1688,7 +1688,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7745409315849170380
+--- !u!114 &3515820885466584657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1697,15 +1697,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 7595189231921639269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e7504f4f4e34f46bfc79282c6f79d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 73acd08038ed4c6438ee15be34bd8c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyProjectile: {fileID: 8936097998932565490, guid: 6576f861db7f55046a541e5a71690f40, type: 3}
-  projectileSpawn: {fileID: 5782488135971668552}
+  player: {fileID: 0}
   maxHP: 100
-  attackRange: 7
+  damageFromProjectile: 20
+  meleeAttackDamage: 20
+  rangedAttackRange: 10
+  meleeAttackRange: 3
   attackCooldown: 2
-  expPts: 50
+  experiencePoints: 50
+  attackType: 1
+  projectilePrefab: {fileID: 8936097998932565490, guid: 6576f861db7f55046a541e5a71690f40, type: 3}
+  projectileSpawnPoint: {fileID: 0}
+  projectileSpeed: 10
+  eliteHPBonus: 50
+  eliteAttackBonus: 10
 --- !u!1 &7607541927072285548
 GameObject:
   m_ObjectHideFlags: 0

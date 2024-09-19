@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 4141751404073747776}
   - component: {fileID: 1837854570782248437}
   - component: {fileID: 8155385691687062380}
-  - component: {fileID: 4524956154687988097}
+  - component: {fileID: 8296283821008365627}
   m_Layer: 0
   m_Name: FishmanElite
   m_TagString: BasicEnemy
@@ -1555,32 +1555,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3379128127858943603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7595189231921639269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 579a04dc48950104b9bbea14d4d8cb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  rockPrefab: {fileID: 3844816652429521609, guid: d1226b28ad94e65419c826a7163d1c4b, type: 3}
-  throwPoint: {fileID: 0}
-  maxHP: 100
-  damageFromProjectile: 20
-  attackDamage: 20
-  attackRange: 2.5
-  attackCooldown: 2
-  rangeEnemy: 0
-  normalEnemy: 1
-  normalEnemyImage: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
-  rangeImage: {fileID: 21300000, guid: 873275f6c2ebc204d9238bdae9f6ff38, type: 3}
-  mobIcon: {fileID: 4204963480832588466}
-  experiencePoints: 50
 --- !u!195 &8734999947426299841
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1682,7 +1656,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4524956154687988097
+--- !u!114 &8296283821008365627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1691,14 +1665,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 7595189231921639269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6305cf84add528d42aaa1bbbe4495a5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 73acd08038ed4c6438ee15be34bd8c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 200
-  damage: 30
-  attackRange: 5
+  player: {fileID: 0}
+  maxHP: 100
+  damageFromProjectile: 20
+  meleeAttackDamage: 20
+  rangedAttackRange: 10
+  meleeAttackRange: 3
   attackCooldown: 2
-  expPts: 100
+  experiencePoints: 50
+  attackType: 2
+  projectilePrefab: {fileID: 0}
+  projectileSpawnPoint: {fileID: 0}
+  projectileSpeed: 10
+  eliteHPBonus: 50
+  eliteAttackBonus: 10
 --- !u!1 &7607541927072285548
 GameObject:
   m_ObjectHideFlags: 0

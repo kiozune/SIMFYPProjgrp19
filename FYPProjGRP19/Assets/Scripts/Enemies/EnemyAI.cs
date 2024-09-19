@@ -1,109 +1,89 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
-//Base Class
-//All Enemy Types inherit from this script
-//Enemy will track player using Tag in their own script (may be modified)
-//Add Methods here
+public enum AttackType
+{
+    Melee,
+    Range,
+    Elite
+}
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform player;          // Reference to the player's transform
-    public GameObject rockPrefab;     // The rock projectile prefab
-    public Transform throwPoint;      // The point from which the rock is thrown
-    public float maxHP = 100f;        // Enemy health points
+    public Transform player;                  // Reference to the player's transform
+    public float maxHP = 100f;                // Enemy health points
     private float currentHP = 100f;
     public float damageFromProjectile = 20f;  // Amount of damage taken from each projectile hit
-    public float attackDamage = 20f;  // Damage the enemy does to the player
-    public float attackRange = 5f;    // Range within which the enemy can attack the player
-    public float attackCooldown = 2f; // Time between each attack
-    [Header("Enemy Bool Checks")]
-    [SerializeField]
-    private bool isThrowing = false;
-    [SerializeField]
-    private bool rangeEnemy;
-    [SerializeField]
-    private bool normalEnemy;
-    [Header("UI")]
-    [SerializeField]
-    private Sprite normalEnemyImage;
-    [SerializeField]
-    private Sprite rangeImage;
-    [SerializeField]
-    private Image mobIcon;
+    public float meleeAttackDamage = 20f;     // Melee attack damage
+    public float rangedAttackRange = 10f;     // Range at which the ranged enemy shoots projectiles
+    public float meleeAttackRange = 3f;       // Range for melee attacks
+    public float attackCooldown = 2f;         // Time between each attack
 
-    [Header("NavMesh Agent")]
-    [SerializeField]
-    private NavMeshAgent agent;       // Reference to the NavMeshAgent component
-    private Animator animator;        // Reference to the Animator component
-    private Collider parentCollider;  // Reference to the Collider of the parent object
+    private NavMeshAgent agent;               // Reference to the NavMeshAgent component
+    private Animator animator;                // Reference to the Animator component
+    private Collider parentCollider;          // Reference to the Collider of the parent object
     private SliderBar sliderBar;
 
-    protected virtual void Awake()
+    private float attackTimer = 0f;           // Timer to control the attack cooldown
+
+    [Header("Enemy EXP")]
+    [SerializeField]
+    private int experiencePoints = 50;
+
+    [Header("Attack Type")]
+    public AttackType attackType;             // The type of attack the enemy performs
+    public GameObject projectilePrefab;       // Projectile prefab for ranged attack
+    public Transform projectileSpawnPoint;    // The spawn point for projectiles
+    public float projectileSpeed = 10f;       // Speed of the projectile
+    public float eliteHPBonus = 50f;          // Extra HP for Elite enemies
+    public float eliteAttackBonus = 10f;      // Extra attack damage for Elite enemies
+
+    void Start()
     {
-        //Get components from object
         agent = GetComponent<NavMeshAgent>();
         if (agent == null) Debug.LogError("NavMeshAgent is not attached to the enemy.");
 
         animator = GetComponent<Animator>();
         if (animator == null) Debug.LogError("Animator component is not attached to the enemy.");
 
-        objCollider = GetComponent<Collider>();
-        if (objCollider == null) Debug.LogError("Parent object collider not found.");
+        parentCollider = GetComponent<Collider>();
+        if (parentCollider == null) Debug.LogError("Parent object collider not found.");
 
-        currentHP = maxHP;  // Set currentHP to maxHP
+        if (player == null) Debug.LogError("Player is not assigned in the EnemyAI script.");
 
-        // Find the player by tag and set their transform
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            playerTransform = player.transform;
-        }
-        else
-        {
-            Debug.LogError("Player not found in the scene!");
-        }
-    }
-    protected virtual void Start()
-    {
+        sliderBar = GetComponentInChildren<SliderBar>();
+        if (sliderBar == null) Debug.LogError("SliderBar is not assigned or found.");
+
         currentHP = maxHP;
+
+        // Adjust stats based on attack type
+        if (attackType == AttackType.Elite)
+        {
+            currentHP += eliteHPBonus;        // Extra health for elite enemies
+            meleeAttackDamage += eliteAttackBonus; // Extra melee damage for elite enemies
+        }
     }
 
-    protected virtual void Update()
+    void Update()
     {
-        if (currentHP > 0)  // If enemy has health
+        if (currentHP > 0)
         {
-            if (playerTransform != null && agent != null)  // If player and agent exist
+            if (player != null && agent != null)
             {
-                float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);  // Check distance between player and enemy
+                float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-                if (distanceToPlayer < attackRange)  // If player is in attack range
+                // Attack based on attack type and distance
+                switch (attackType)
                 {
-                    agent.isStopped = true;  // Stop enemy movement
-
-                    if (attackTimer <= 0f)
-                    {
-                        if (rangeEnemy)
-                        {
-                            ThrowProjectile();  // Ranged attack
-                        }
-                        else
-                        {
-                            AttackPlayer();  // Melee attack
-                        }
-                        attackTimer = attackCooldown;
-                    }
-                    else
-                    {
-                        attackTimer -= Time.deltaTime;
-                    }
-                }
-                else
-                {
-                    agent.isStopped = false;
-                    agent.SetDestination(playerTransform.position);  // Move towards the player
+                    case AttackType.Melee:
+                        HandleMeleeBehavior(distanceToPlayer);
+                        break;
+                    case AttackType.Range:
+                        HandleRangedBehavior(distanceToPlayer);
+                        break;
+                    case AttackType.Elite:
+                        HandleEliteBehavior(distanceToPlayer);
+                        break;
                 }
             }
 
@@ -121,30 +101,120 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            agent.isStopped = true;
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;
             animator.SetTrigger("Death");
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 2.2f);
         }
     }
 
-    protected virtual void EnemyAttack()
+    // Handle melee enemies' behavior
+    private void HandleMeleeBehavior(float distanceToPlayer)
     {
-        animator.SetTrigger("Attack");
+        if (distanceToPlayer <= meleeAttackRange)
+        {
+            agent.isStopped = true;
+
+            if (attackTimer <= 0f)
+            {
+                PerformMeleeAttack();
+                attackTimer = attackCooldown;  // Reset cooldown
+            }
+            else
+            {
+                attackTimer -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            agent.isStopped = false;
+            agent.SetDestination(player.position);
+        }
+    }
+
+    // Handle ranged enemies' behavior
+    private void HandleRangedBehavior(float distanceToPlayer)
+    {
+        if (distanceToPlayer <= rangedAttackRange)
+        {
+            agent.isStopped = true;
+
+            if (attackTimer <= 0f)
+            {
+                PerformRangedAttack();
+                attackTimer = attackCooldown;  // Reset cooldown
+            }
+            else
+            {
+                attackTimer -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            // Keep ranged enemy at a comfortable distance
+            if (distanceToPlayer > rangedAttackRange)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(player.position);
+            }
+        }
+    }
+
+    // Handle elite enemies' behavior (stronger melee)
+    private void HandleEliteBehavior(float distanceToPlayer)
+    {
+        HandleMeleeBehavior(distanceToPlayer);
+    }
+
+    private void PerformMeleeAttack()
+    {
+        animator.SetTrigger("Attack");  // Play melee attack animation
+
+        PlayerHealth playerHP = player.gameObject.GetComponent<PlayerHealth>();
+        if (playerHP != null)
+        {
+            playerHP.takeDamage(meleeAttackDamage);  // Apply melee damage to the player
+        }
+    }
+
+    private void PerformRangedAttack()
+    {
+        animator.SetTrigger("Attack");  // Play ranged attack animation
+
+        // Check if the projectile prefab and spawn point are valid
+        if (projectilePrefab != null && projectileSpawnPoint != null)
+        {
+            // Instantiate the projectile at the spawn point in front of the enemy
+            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+
+            // Get the Rigidbody of the projectile and launch it toward the player
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                // Calculate direction towards the player from the spawn point
+                Vector3 direction = (player.position - projectileSpawnPoint.position).normalized;
+                rb.velocity = direction * projectileSpeed;  // Apply velocity to the projectile
+                Debug.Log("Projectile launched from in front of the enemy!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Projectile prefab or spawn point is missing.");
+        }
     }
 
     public void TakeDamage(float damage)
     {
-        currentHP -= damage;
-        Debug.Log(currentHP);
+        currentHP -= damage;  // Reduce the enemy's HP by the damage amount
+        //sliderBar.UpdateBar(currentHP, maxHP);
+
+        Debug.Log("Enemy HP: " + currentHP);
     }
 
-    public virtual int awardEXP()
+    public bool checkHealth()
     {
-        return expPoints;
+        return currentHP <= 0;
     }
 
-    public float getHealth()
+    public float returnHealthValue()
     {
         return currentHP;
     }
@@ -152,62 +222,5 @@ public class EnemyAI : MonoBehaviour
     public int awardEXP()
     {
         return experiencePoints;
-    }
-    private IEnumerator ThrowProjectileWithDelay(float delay)
-    {
-        // Wait
-        yield return new WaitForSeconds(delay);
-
-        GameObject rock = Instantiate(rockPrefab, throwPoint.position, Quaternion.identity);
-
-        ProjectileDirEnemy projectile = rock.GetComponent<ProjectileDirEnemy>();
-
-        if (projectile != null)
-        {
-            Vector3 targetPosition = player.position;
-            Vector3 throwDirection = CalculateThrowDirection(throwPoint.position, targetPosition);
-
-            // Set the direction of the projectile
-            projectile.SetDirection(throwDirection);
-        }
-        isThrowing = false;
-    }
-    private void ThrowProjectile()
-    {
-        if (isThrowing)
-        {
-            return;
-        }
-        // Rotate the enemy to face the player
-        Vector3 lookDirection = player.position - transform.position;
-        lookDirection.y = 0; // <- safety it doesnt rotate Y Axis
-        transform.rotation = Quaternion.LookRotation(lookDirection);
-
-        animator.SetTrigger("Attack");
-
-        // Start the coroutine to instantiate the rock after a delay
-        StartCoroutine(ThrowProjectileWithDelay(1.25f)); // 2-second delay
-        isThrowing = true;
-    }
-
-    // Simplified throw direction calculation with an arc
-    private Vector3 CalculateThrowDirection(Vector3 start, Vector3 target)
-    {
-        // Get the direction to the player
-        Vector3 direction = (target - start).normalized;
-
-        // Give it an upward arc
-        direction.y = 0.5f;
-
-        return direction;
-    }
-    private void changeMeleeIcon()
-    {
-        mobIcon.sprite = normalEnemyImage;
-
-    }
-    private void changeRangeIcon()
-    {
-        mobIcon.sprite = rangeImage;
     }
 }

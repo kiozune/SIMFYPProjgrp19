@@ -63,7 +63,7 @@ public class projectileDamage : MonoBehaviour
         if (enemy != null)
         {
             enemyAI.TakeDamage(damage);
-            if (enemyAI.getHealth() <= 0)
+            if (enemyAI.checkHealth())
             {
                 AwardPlayerEXP(enemyAI);
             }
@@ -84,7 +84,7 @@ public class projectileDamage : MonoBehaviour
                 {
                     // Any other target than the primary will take 25% of the damage thrown
                     enemyAI.TakeDamage(damage * 0.25f);
-                    if (enemyAI.getHealth() <= 0)
+                    if (enemyAI.checkHealth())
                     {
                         AwardPlayerEXP(enemyAI);
                     }

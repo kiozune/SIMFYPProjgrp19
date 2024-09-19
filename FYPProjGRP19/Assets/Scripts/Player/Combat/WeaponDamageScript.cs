@@ -67,7 +67,7 @@ public class WeaponDamageScript : MonoBehaviour
         {
             enemyAI.TakeDamage(damageValue);
         }
-        if (enemyAI.getHealth() <= 0)
+        if (enemyAI.checkHealth())
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
