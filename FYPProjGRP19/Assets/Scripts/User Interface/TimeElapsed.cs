@@ -49,6 +49,6 @@ public class TimeElapsed : MonoBehaviour
     }
     public void loadMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("BossArena");
     }
 }
