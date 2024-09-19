@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemyPrefab: {fileID: 7539601246600176673, guid: 356a07bf15edcd44c98e7807e6a4ec9e, type: 3}
+  - enemyPrefab: {fileID: 8017769013027927542, guid: d87219000e8e4614c8ca17173977d18b, type: 3}
     minRange: 0
     maxRange: 100
     isUnique: 1
