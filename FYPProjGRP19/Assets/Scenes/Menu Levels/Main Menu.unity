@@ -3960,7 +3960,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1577431337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2087615972}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: onMuseumClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1577431337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5223,7 +5235,6 @@ MonoBehaviour:
   - {fileID: 1505389648}
   - {fileID: 786983723}
   settingsButton: {fileID: 898346751}
-  Logo: {fileID: 460094347}
   sfxSource: {fileID: 2087615974}
   audioClipList:
   - {fileID: 8300000, guid: 9b6a347082f36d3489751592fb3510f4, type: 3}

@@ -15,6 +15,8 @@ public class WeaponAttack : MonoBehaviour
     [SerializeField]
     private GameObject meleeAttachment;
     [SerializeField]
+    private GameObject bowPrefab;
+    [SerializeField]
     private GameObject firePoint;
 
     [Header("Class Check")]
@@ -89,6 +91,7 @@ public class WeaponAttack : MonoBehaviour
     {
         meleeAttachment.SetActive(true);
         firePoint.SetActive(false);
+        bowPrefab.SetActive(false);
 
         if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
@@ -117,6 +120,7 @@ public class WeaponAttack : MonoBehaviour
     {
         meleeAttachment.SetActive(false);
         firePoint.SetActive(true);
+        bowPrefab.SetActive(true);
 
         if (Input.GetMouseButton(0) && Time.time > currRate && !rangeAttacking)
         {

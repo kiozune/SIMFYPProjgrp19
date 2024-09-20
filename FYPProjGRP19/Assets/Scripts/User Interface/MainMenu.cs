@@ -203,4 +203,8 @@ public class MainMenu : MonoBehaviour
                 mainMenuBtnList[j].SetActive(true);
         }
     }
+    public void onMuseumClicked()
+    {
+        SceneManager.LoadScene("Museum");
+    }
 }
