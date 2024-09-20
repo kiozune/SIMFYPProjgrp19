@@ -1578,14 +1578,19 @@ MonoBehaviour:
   attackRange: 2.5
   attackCooldown: 2
   nextHealthThreshold: 0
+  jumpCooldown: 3
+  jumpTimer: 0
+  jumpDistance: 6
+  canJump: 1
   isThrowing: 0
   rangeEnemy: 0
   normalEnemy: 1
+  eliteEnemy: 0
   soundPlayed: 0
   hasDroppedLoot: 0
   isDead: 0
-  normalEnemyImage: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
-  rangeImage: {fileID: 21300000, guid: 873275f6c2ebc204d9238bdae9f6ff38, type: 3}
+  normalEnemyImage: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
+  rangeImage: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
   mobIcon: {fileID: 4204963480832588466}
   hitVFXPrefab: {fileID: 0}
   hitSoundClip: {fileID: 8300000, guid: 4a3d848e991ea1f45a1b0a825603cd42, type: 3}
@@ -2008,6 +2013,10 @@ PrefabInstance:
       propertyPath: entityAnchor
       value: 
       objectReference: {fileID: 3903816619939355787}
+    - target: {fileID: 4929546069969341356, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
     - target: {fileID: 4967333327555388468, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

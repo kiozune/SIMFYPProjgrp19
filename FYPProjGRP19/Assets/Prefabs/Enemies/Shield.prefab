@@ -347,7 +347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 873275f6c2ebc204d9238bdae9f6ff38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd933526afde7e24497e20fa351dc9e4, type: 3}
+      propertyPath: m_TagString
+      value: BasicEnemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -671,10 +675,10 @@ MonoBehaviour:
   player: {fileID: 0}
   rockPrefab: {fileID: 3844816652429521609, guid: d1226b28ad94e65419c826a7163d1c4b, type: 3}
   throwPoint: {fileID: 0}
-  maxHP: 100
-  currentHP: 100
+  maxHP: 500
+  currentHP: 500
   damageFromProjectile: 20
-  attackDamage: 20
+  attackDamage: 50
   attackRange: 3.5
   attackCooldown: 2
   nextHealthThreshold: 0
@@ -689,7 +693,7 @@ MonoBehaviour:
   soundPlayed: 0
   hasDroppedLoot: 0
   isDead: 0
-  normalEnemyImage: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
+  normalEnemyImage: {fileID: 21300000, guid: 873275f6c2ebc204d9238bdae9f6ff38, type: 3}
   rangeImage: {fileID: 21300000, guid: 873275f6c2ebc204d9238bdae9f6ff38, type: 3}
   mobIcon: {fileID: 4204963480832588466, guid: fcfeaa4d38cfde341aa89070ef990159, type: 3}
   hitVFXPrefab: {fileID: 0}
@@ -709,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overallDropChance: 50
+  overallDropChance: 70
   lootTable:
   - item: {fileID: 2257822529701239008, guid: 7a61444daf3fb0c45aaf8f01c30a8cea, type: 3}
     dropChance: 50

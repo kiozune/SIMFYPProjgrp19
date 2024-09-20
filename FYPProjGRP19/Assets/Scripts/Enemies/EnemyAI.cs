@@ -231,6 +231,14 @@ public class EnemyAI : MonoBehaviour
             // Play sound  below threshold
             PlayHitSound();
         }
+        if (currentHP <= 0)
+        {
+            HandleDeath();  // Trigger death when health is 0 or below
+        }
+        else if (currentHP <= nextHealthThreshold && !soundPlayed)
+        {
+            PlayHitSound();
+        }
     }
     private void PlayHitSound()
     {

@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -674,9 +674,14 @@ MonoBehaviour:
   attackRange: 3.5
   attackCooldown: 2
   nextHealthThreshold: 0
+  jumpCooldown: 20
+  jumpTimer: 0
+  jumpDistance: 6
+  canJump: 1
   isThrowing: 0
   rangeEnemy: 0
   normalEnemy: 1
+  eliteEnemy: 0
   soundPlayed: 0
   hasDroppedLoot: 0
   isDead: 0

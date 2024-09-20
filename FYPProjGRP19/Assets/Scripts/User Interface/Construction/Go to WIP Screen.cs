@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GotoWIPScreen : MonoBehaviour
 {
-    private float transitionTime = 5f;
+    private float transitionTime = 8f;
     private float currTime;
 
     // Start is called before the first frame update

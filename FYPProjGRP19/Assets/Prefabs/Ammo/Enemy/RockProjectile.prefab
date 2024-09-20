@@ -163,4 +163,4 @@ MonoBehaviour:
   speed: 10
   maxAliveTime: 2
   currTime: 0
-  vfxExplosion: {fileID: 7455372202216957759, guid: 5357b7f40e1451744886942913efe75f, type: 3}
+  vfxExplosion: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
