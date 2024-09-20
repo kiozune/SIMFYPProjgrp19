@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - BasicEnemy
   - Projectile
+  - PlayerEyes
+  - SF_Door
+  - Ground
   layers:
   - Default
   - TransparentFX
