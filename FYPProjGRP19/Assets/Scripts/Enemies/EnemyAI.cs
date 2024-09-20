@@ -29,14 +29,25 @@ public class EnemyAI : MonoBehaviour
     private float attackCooldown = 2f; // Time between each attack
     [SerializeField]
     private float nextHealthThreshold;
+    [SerializeField]
+    private float jumpCooldown = 20f;
+    [SerializeField]
+    private float jumpTimer = 0f;
+
+    [SerializeField]
+    private float jumpDistance = 6f;
 
     [Header("Enemy Bool Checks")]
+    [SerializeField]
+    private bool canJump = true; 
     [SerializeField]
     private bool isThrowing = false;
     [SerializeField]
     private bool rangeEnemy;
     [SerializeField]
     private bool normalEnemy;
+    [SerializeField]
+    private bool eliteEnemy;
     [SerializeField]
     private bool soundPlayed = false;
     [SerializeField]
@@ -109,32 +120,34 @@ public class EnemyAI : MonoBehaviour
             {
                 float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-                // If within attack range, stop moving and attack
-                if (distanceToPlayer <= attackRange)
+                if (eliteEnemy && distanceToPlayer <= jumpDistance && canJump)
+                {
+                    JumpToPlayer();
+                }
+                else if (distanceToPlayer <= attackRange)
                 {
                     agent.isStopped = true;
 
-                    // Check if we can attack (based on cooldown)
                     if (attackTimer <= 0f)
                     {
                         if (rangeEnemy)
                         {
-                            ThrowProjectile();  // Ranged attack
+                            ThrowProjectile();
                         }
                         else
                         {
-                            AttackPlayer();  // Melee attack
+                            AttackPlayer();
                         }
                         attackTimer = attackCooldown;
                     }
                     else
                     {
-                        attackTimer -= Time.deltaTime;  // Decrease the timer
+                        attackTimer -= Time.deltaTime;
                     }
                 }
                 else
                 {
-                    // Move towards the player if out of range
+                    // If the player is out of range, AI will move
                     agent.isStopped = false;
                     agent.SetDestination(player.position);
                 }
@@ -151,18 +164,40 @@ public class EnemyAI : MonoBehaviour
                     animator.SetBool("isWalking", false);
                 }
             }
+
+            // Handle jump cooldown
+            if (!canJump)
+            {
+                jumpTimer -= Time.deltaTime;
+                if (jumpTimer <= 0f)
+                {
+                    canJump = true; // Reset jump ability
+                }
+            }
+        }
+    }
+    private void MoveTowardsPlayer()
+    {
+        agent.isStopped = false;
+        agent.SetDestination(player.position);
+    }
+    private void HandleAttackOrThrow()
+    {
+        if (attackTimer <= 0f)
+        {
+            if (rangeEnemy)
+            {
+                ThrowProjectile();  // For ranged enemies
+            }
+            else
+            {
+                AttackPlayer();  // For melee enemies
+            }
+            attackTimer = attackCooldown;  // Reset attack cooldown
         }
         else
         {
-            agent.isStopped = true;
-            gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            if (isDead == false)
-            {
-                SoundManager.Instance.PlayDeathSound();
-                isDead = true;
-            }
-            animator.SetTrigger("Death");
-            StartCoroutine(HandleDeathAfterAnimation());
+            attackTimer -= Time.deltaTime;  // Decrease attack timer
         }
     }
 
@@ -276,6 +311,65 @@ public class EnemyAI : MonoBehaviour
     {
         mobIcon.sprite = rangeImage;
     }
+    private void JumpToPlayer()
+    {
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        {
+            // Rotate to face the player
+            Vector3 lookDirection = player.position - transform.position;
+            lookDirection.y = 0;
+            transform.rotation = Quaternion.LookRotation(lookDirection);
+
+            // Trigger jump animation
+            animator.SetTrigger("Jump");
+
+            // Temporarily disable NavMeshAgent to allow custom jump movement
+            agent.isStopped = true;
+            agent.enabled = false;
+
+            // Start the jump movement
+            StartCoroutine(HandleJump());
+            canJump = false; // Disable jumping
+            jumpTimer = jumpCooldown; // Start jump cooldown
+        }
+    }
+    private IEnumerator HandleJump()
+    {
+        float jumpDuration = 1f;  // Duration of the jump
+        float elapsedTime = 0f;
+
+        Vector3 startPosition = transform.position;
+
+        // Define the target position slightly above the player's position
+        Vector3 targetPosition = player.position;
+        targetPosition.y = startPosition.y; // Keep the same height
+
+        // Calculate the distance to jump
+        float jumpHeight = 2f;  // Adjust this value for height
+        Vector3 jumpArcOffset = new Vector3(0, jumpHeight, 0); // Jump height offset
+
+        // Disable the NavMeshAgent for jump
+        agent.enabled = false;
+
+        while (elapsedTime < jumpDuration)
+        {
+            // Move the enemy in the jump arc
+            float t = elapsedTime / jumpDuration;
+            Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, t) + jumpArcOffset * Mathf.Sin(t * Mathf.PI); // Arc effect
+
+            transform.position = newPosition;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Snap to the final position after the jump
+        transform.position = targetPosition;
+
+        // Re-enable the NavMeshAgent after landing
+        agent.enabled = true;
+        agent.isStopped = false;  // Allow movement again
+    }
     private IEnumerator HandleDeathAfterAnimation()
     {
         //Wait for 2.2 seconds before running the rest of the function
@@ -295,5 +389,35 @@ public class EnemyAI : MonoBehaviour
         // Destroy the enemy game object after loot drop
         Destroy(gameObject);
     }
+    private void HandleDeath()
+    {
+        // Stop the enemy from moving and disable the NavMeshAgent
+        agent.isStopped = true;
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
 
+        // Trigger death animation
+        if (!isDead)
+        {
+            SoundManager.Instance.PlayDeathSound();  // Play death sound
+            isDead = true;
+        }
+
+        animator.SetTrigger("Death");  // Play death animation
+        StartCoroutine(HandleDeathAfterAnimation());  // Coroutine to handle death cleanup
+    }
+    private void HandleMovementAnimation()
+    {
+        if (agent != null && animator != null)
+        {
+            // Check if the agent is moving by checking its velocity
+            if (agent.velocity.magnitude > 0.1f)
+            {
+                animator.SetBool("isWalking", true);  // Start walk animation
+            }
+            else
+            {
+                animator.SetBool("isWalking", false);  // Stop walk animation
+            }
+        }
+    }
 }
