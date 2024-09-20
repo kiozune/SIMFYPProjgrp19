@@ -4912,6 +4912,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 527795243984186830, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 36.850445
+      objectReference: {fileID: 0}
+    - target: {fileID: 527795243984186830, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 29.660162
+      objectReference: {fileID: 0}
+    - target: {fileID: 527795243984186830, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.8071
+      objectReference: {fileID: 0}
+    - target: {fileID: 527795243984186830, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.4108
+      objectReference: {fileID: 0}
     - target: {fileID: 1118480616277728239, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
       propertyPath: m_Name
       value: Oldfishing Village Level
@@ -5768,6 +5784,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5446435789938483661, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 36.948215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446435789938483661, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 23.545464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446435789938483661, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 100.6339
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446435789938483661, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.8048
+      objectReference: {fileID: 0}
     - target: {fileID: 5911456437332845166, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -5987,7 +6019,7 @@ PrefabInstance:
     - target: {fileID: 7663706308228731397, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 73b1c017cacbc5a4581007c867be6282, type: 2}
+      objectReference: {fileID: 23800000, guid: e8e9826f7d2ba35438acc437be586fa1, type: 2}
     - target: {fileID: 7663706308228731397, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
       propertyPath: m_LayerMask.m_Bits
       value: 231
@@ -5997,7 +6029,9 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9055352647954521683, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
+    - {fileID: 1209081437198483004, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7031340881158471065, guid: 0eb9350d29bdb204f9a13a9b479882cf, type: 3}
