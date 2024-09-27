@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class MainMenu : MonoBehaviourPunCallbacks
 {
@@ -54,9 +55,9 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [SerializeField] 
     private GameObject readyButton;
     [SerializeField] 
-    private Text chatDisplay;
+    private TextMeshProUGUI chatDisplay;
     [SerializeField] 
-    private InputField chatInputField;
+    private TMP_InputField chatInputField;
     [SerializeField] 
     private Button sendChatButton;
     [SerializeField]
@@ -69,6 +70,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
     private bool isConnectingToRoom = false;
     [SerializeField]
     private PhotonView photonView;
+    [SerializeField]
+    private ScrollRect chatScrollRect;
 
     // Start is called before the first frame update
     void Start()
@@ -186,9 +189,22 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined multiplayer room. Waiting for the second player...");
         SetNickname();
-        readyButton.SetActive(true); // Show ready button
-        multiplayerButton.SetActive(false);
-        singleplayerButton.SetActive(false);
+
+        // Only the player who created the room can select the stage
+        if (PhotonNetwork.IsMasterClient)
+        {
+            readyButton.SetActive(false); // Ready button hidden until stage is selected
+                                          // Show stage select buttons
+            for (int i = 0; i < stageSelectList.Length; ++i)
+            {
+                stageSelectList[i].SetActive(true);
+            }
+        }
+        else
+        {
+            // Joiner cannot select stage, waits for the other player
+            chatDisplay.text += "Waiting for host to select a stage...\n";
+        }
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
@@ -197,9 +213,19 @@ public class MainMenu : MonoBehaviourPunCallbacks
     }
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        // Show message when a second player joins
-        Debug.Log("Player joined. Both players in room.");
-        chatDisplay.text += "Player joined the room.\n";
+    Debug.Log("OnPlayerEnteredRoom triggered."); // Debugging check
+    Debug.Log("Player joined: " + newPlayer.NickName);
+    chatDisplay.text += "Player joined the room.\n";
+
+        // Only host handles stage selection
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            readyButton.SetActive(false); // No ready button for joiner until stage is selected
+            for (int i = 0; i < stageSelectList.Length; ++i)
+            {
+                stageSelectList[i].SetActive(false); // Hide stage select for joiner
+            }
+        }
     }
     // Handle the chat message sending
     public void SendChatMessage()
@@ -233,6 +259,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void UpdateChat(string message)
     {
         chatDisplay.text += message + "\n";
+        Canvas.ForceUpdateCanvases();
+        chatScrollRect.verticalNormalizedPosition = 0f;  // This moves the scroll bar to the bottom
     }
     [PunRPC]
     public void ShowSelectedStage(string stageName)
@@ -352,6 +380,9 @@ public class MainMenu : MonoBehaviourPunCallbacks
                 PlayerPrefs.SetInt("Meleewep", 0);
                 PlayerPrefs.SetInt("Rangewep", 1);
             }
+
+            // Set stage selected
+            isStageSelected = true;
 
             // Send stage selection to other player
             photonView.RPC("ShowSelectedStage", RpcTarget.All, "Ancient Stage");
