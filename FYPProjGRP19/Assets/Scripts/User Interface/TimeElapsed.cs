@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimeElapsed : MonoBehaviour
 {
@@ -28,6 +29,15 @@ public class TimeElapsed : MonoBehaviour
         seconds = Mathf.FloorToInt(timeElapsed % 60f);
 
         timeText.text = "Time Elapsed: " + string.Format("{0:00}:{1:00}", minutes, seconds);
+        if(Input.GetKeyDown(KeyCode.PageDown))
+        {
+            timeElapsed = 899;
+            Debug.Log(timeElapsed);
+        }
+        if (minutes >= 15)
+        {
+            loadMainMenu();
+        }
     }
     public int RetrieveSeconds()
     {
@@ -36,5 +46,9 @@ public class TimeElapsed : MonoBehaviour
     public int RetrieveMinutes()
     {
         return minutes;
+    }
+    public void loadMainMenu()
+    {
+        SceneManager.LoadScene("Boss Level");
     }
 }

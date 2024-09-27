@@ -806,7 +806,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -3410867993790584747, guid: dee3a37def20b484e950b2abd29e5050, type: 3}
+  m_Mesh: {fileID: 1749353005097157103, guid: ea8de01aedd18a745bbbe36ef7d72377, type: 3}
   m_Bones:
   - {fileID: 3020972599896812559}
   - {fileID: 6813511205148491509}
@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 4141751404073747776}
   - component: {fileID: 1837854570782248437}
   - component: {fileID: 8155385691687062380}
-  - component: {fileID: 8296283821008365627}
+  - component: {fileID: -3686284971239045571}
   m_Layer: 0
   m_Name: FishmanElite
   m_TagString: BasicEnemy
@@ -1555,6 +1555,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3379128127858943603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595189231921639269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579a04dc48950104b9bbea14d4d8cb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rockPrefab: {fileID: 3844816652429521609, guid: d1226b28ad94e65419c826a7163d1c4b, type: 3}
+  throwPoint: {fileID: 0}
+  maxHP: 100
+  currentHP: 100
+  damageFromProjectile: 20
+  attackDamage: 20
+  attackRange: 2.5
+  attackCooldown: 2
+  nextHealthThreshold: 0
+  jumpCooldown: 3
+  jumpTimer: 0
+  jumpDistance: 6
+  canJump: 1
+  isThrowing: 0
+  rangeEnemy: 0
+  normalEnemy: 1
+  eliteEnemy: 0
+  soundPlayed: 0
+  hasDroppedLoot: 0
+  isDead: 0
+  normalEnemyImage: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
+  rangeImage: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
+  mobIcon: {fileID: 4204963480832588466}
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 8300000, guid: 4a3d848e991ea1f45a1b0a825603cd42, type: 3}
+  audioSource: {fileID: 0}
+  agent: {fileID: 0}
+  experiencePoints: 50
 --- !u!195 &8734999947426299841
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1656,7 +1697,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8296283821008365627
+--- !u!114 &-3686284971239045571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1665,23 +1706,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7595189231921639269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73acd08038ed4c6438ee15be34bd8c02, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  maxHP: 100
-  damageFromProjectile: 20
-  meleeAttackDamage: 20
-  rangedAttackRange: 10
-  meleeAttackRange: 3
-  attackCooldown: 2
-  experiencePoints: 50
-  attackType: 2
-  projectilePrefab: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
-  projectileSpeed: 10
-  eliteHPBonus: 50
-  eliteAttackBonus: 10
+  overallDropChance: 50
+  lootTable:
+  - item: {fileID: 2257822529701239008, guid: 7a61444daf3fb0c45aaf8f01c30a8cea, type: 3}
+    dropChance: 50
+  - item: {fileID: 7784616543427588305, guid: 7988bf1fc64dfc746a75eb6ad67c29d8, type: 3}
+    dropChance: 20
 --- !u!1 &7607541927072285548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2016,10 @@ PrefabInstance:
       propertyPath: entityAnchor
       value: 
       objectReference: {fileID: 3903816619939355787}
+    - target: {fileID: 4929546069969341356, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
     - target: {fileID: 4967333327555388468, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

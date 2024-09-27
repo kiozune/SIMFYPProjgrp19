@@ -33,7 +33,7 @@ public class ProjectileDirEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enemy Hit!");
+       // Debug.Log("Enemy Hit!");
         if (other.CompareTag("Obstacles"))
         {
             Instantiate<GameObject>(vfxExplosion, transform.position, Quaternion.identity); ;

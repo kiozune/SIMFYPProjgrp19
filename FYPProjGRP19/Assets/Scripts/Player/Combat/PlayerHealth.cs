@@ -43,4 +43,20 @@ public class PlayerHealth : MonoBehaviour
         currHealth -= damage;
         UpdateHealthSlider();
     }
+    public void addHealth(float hp)
+    {
+        if (currHealth != maxHealth)
+        {
+            if (maxHealth - currHealth > hp)
+            {
+                currHealth += hp;
+                UpdateHealthSlider();
+            }
+            else
+            {
+                currHealth += (maxHealth - currHealth);
+                UpdateHealthSlider();
+            }
+        }
+    }
 }
