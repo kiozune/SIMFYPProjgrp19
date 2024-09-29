@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 64473920423785200, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6324593708932212193, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -576,6 +580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 496824909960619450, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3600791087774281342, guid: b6c6dc964ab1c9741bfb85a6c9db3f8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -702,15 +710,97 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map Variation 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9033008797294935702, guid: f41680a50e9f27347b53525aa587466c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41680a50e9f27347b53525aa587466c, type: 3}
+--- !u!1001 &2030485710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5176023981229097004, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_Name
+      value: Map Variation 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.047703
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.675178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.30095464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461540972746306030, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 359663897}
+    - target: {fileID: 5461540972746306030, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 397336152}
+    - target: {fileID: 5752651329413551631, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: xpSlider
+      value: 
+      objectReference: {fileID: 359663899}
+    - target: {fileID: 5752651329413551631, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: levelUpText
+      value: 
+      objectReference: {fileID: 359663898}
+    - target: {fileID: 5752651329413551631, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: levelUpOverlay
+      value: 
+      objectReference: {fileID: 1430300253}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 543961073}
   - {fileID: 1904006975}
+  - {fileID: 2030485710}
   - {fileID: 880643788}
