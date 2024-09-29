@@ -1,12 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-
-public enum AttackType
-{
-    Melee,
-    Range,
-    Elite
-}
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -44,7 +39,7 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Enemy Bool Checks")]
     [SerializeField]
-    private bool canJump = true; 
+    private bool canJump = true;
     [SerializeField]
     private bool isThrowing = false;
     [SerializeField]
@@ -66,33 +61,27 @@ public class EnemyAI : MonoBehaviour
     private Sprite rangeImage;
     [SerializeField]
     private Image mobIcon;
-    
+
     [Header("VFX/SFX")]
-    [SerializeField] 
+    [SerializeField]
     private GameObject hitVFXPrefab;
-    [SerializeField] 
+    [SerializeField]
     private AudioClip hitSoundClip;
     [SerializeField]
     private AudioSource audioSource;
 
-    private NavMeshAgent agent;               // Reference to the NavMeshAgent component
-    private Animator animator;                // Reference to the Animator component
-    private Collider parentCollider;          // Reference to the Collider of the parent object
+    [Header("NavMesh Agent")]
+    [SerializeField]
+    private NavMeshAgent agent;       // Reference to the NavMeshAgent component
+    private Animator animator;        // Reference to the Animator component
+    private Collider parentCollider;  // Reference to the Collider of the parent object
     private SliderBar sliderBar;
 
-    private float attackTimer = 0f;           // Timer to control the attack cooldown
+    private float attackTimer = 0f;   // Timer to control the attack cooldown
 
     [Header("Enemy EXP")]
     [SerializeField]
     private int experiencePoints = 50;
-
-    [Header("Attack Type")]
-    public AttackType attackType;             // The type of attack the enemy performs
-    public GameObject projectilePrefab;       // Projectile prefab for ranged attack
-    public Transform projectileSpawnPoint;    // The spawn point for projectiles
-    public float projectileSpeed = 10f;       // Speed of the projectile
-    public float eliteHPBonus = 50f;          // Extra HP for Elite enemies
-    public float eliteAttackBonus = 10f;      // Extra attack damage for Elite enemies
 
     void Start()
     {
@@ -111,12 +100,13 @@ public class EnemyAI : MonoBehaviour
         if (sliderBar == null) Debug.LogError("SliderBar is not assigned or found.");
 
         currentHP = maxHP;
-
-        // Adjust stats based on attack type
-        if (attackType == AttackType.Elite)
+        if (rangeEnemy)
         {
-            currentHP += eliteHPBonus;        // Extra health for elite enemies
-            meleeAttackDamage += eliteAttackBonus; // Extra melee damage for elite enemies
+            changeRangeIcon();
+        }
+        if (normalEnemy)
+        {
+            changeMeleeIcon();
         }
         //Setting the threshold for SFX
         nextHealthThreshold = maxHP * 0.6f;
@@ -211,98 +201,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Handle melee enemies' behavior
-    private void HandleMeleeBehavior(float distanceToPlayer)
+    private void AttackPlayer()
     {
-        if (distanceToPlayer <= meleeAttackRange)
-        {
-            agent.isStopped = true;
-
-            if (attackTimer <= 0f)
-            {
-                PerformMeleeAttack();
-                attackTimer = attackCooldown;  // Reset cooldown
-            }
-            else
-            {
-                attackTimer -= Time.deltaTime;
-            }
-        }
-        else
-        {
-            agent.isStopped = false;
-            agent.SetDestination(player.position);
-        }
-    }
-
-    // Handle ranged enemies' behavior
-    private void HandleRangedBehavior(float distanceToPlayer)
-    {
-        if (distanceToPlayer <= rangedAttackRange)
-        {
-            agent.isStopped = true;
-
-            if (attackTimer <= 0f)
-            {
-                PerformRangedAttack();
-                attackTimer = attackCooldown;  // Reset cooldown
-            }
-            else
-            {
-                attackTimer -= Time.deltaTime;
-            }
-        }
-        else
-        {
-            // Keep ranged enemy at a comfortable distance
-            if (distanceToPlayer > rangedAttackRange)
-            {
-                agent.isStopped = false;
-                agent.SetDestination(player.position);
-            }
-        }
-    }
-
-    // Handle elite enemies' behavior (stronger melee)
-    private void HandleEliteBehavior(float distanceToPlayer)
-    {
-        HandleMeleeBehavior(distanceToPlayer);
-    }
-
-    private void PerformMeleeAttack()
-    {
-        animator.SetTrigger("Attack");  // Play melee attack animation
+        animator.SetTrigger("Attack");  // Play attack animation
 
         PlayerHealth playerHP = player.gameObject.GetComponent<PlayerHealth>();
         if (playerHP != null)
         {
-            playerHP.takeDamage(meleeAttackDamage);  // Apply melee damage to the player
-        }
-    }
-
-    private void PerformRangedAttack()
-    {
-        animator.SetTrigger("Attack");  // Play ranged attack animation
-
-        // Check if the projectile prefab and spawn point are valid
-        if (projectilePrefab != null && projectileSpawnPoint != null)
-        {
-            // Instantiate the projectile at the spawn point in front of the enemy
-            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
-
-            // Get the Rigidbody of the projectile and launch it toward the player
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                // Calculate direction towards the player from the spawn point
-                Vector3 direction = (player.position - projectileSpawnPoint.position).normalized;
-                rb.velocity = direction * projectileSpeed;  // Apply velocity to the projectile
-                Debug.Log("Projectile launched from in front of the enemy!");
-            }
-        }
-        else
-        {
-            Debug.LogError("Projectile prefab or spawn point is missing.");
+            playerHP.takeDamage(attackDamage);  // Apply damage to the player
         }
     }
 
@@ -311,7 +217,7 @@ public class EnemyAI : MonoBehaviour
         currentHP -= damage;  // Reduce the enemy's HP by the damage amount
         sliderBar.UpdateBar(currentHP, maxHP);
 
-       // Debug.Log("Enemy HP: " + currentHP);
+        // Debug.Log("Enemy HP: " + currentHP);
 
         //Play the VFX on the enemy Body
         if (hitVFXPrefab != null)
@@ -319,7 +225,7 @@ public class EnemyAI : MonoBehaviour
             Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
         }
 
-      
+
         if (currentHP <= nextHealthThreshold)
         {
             // Play sound  below threshold
