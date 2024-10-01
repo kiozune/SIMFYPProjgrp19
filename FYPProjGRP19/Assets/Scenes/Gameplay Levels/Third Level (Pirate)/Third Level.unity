@@ -731,6 +731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map Variation 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5176023981229097004, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5342983539066829167, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.047703
@@ -796,6 +800,103 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+--- !u!1001 &376552752077139637
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932986407006392412, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086535450447169122, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_Name
+      value: Map Variation 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521031888277321892, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530325109910835702, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659249455539627391, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963535685076903250, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: xpSlider
+      value: 
+      objectReference: {fileID: 359663899}
+    - target: {fileID: 5963535685076903250, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: levelUpText
+      value: 
+      objectReference: {fileID: 359663898}
+    - target: {fileID: 5963535685076903250, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: levelUpOverlay
+      value: 
+      objectReference: {fileID: 1430300253}
+    - target: {fileID: 6259004505850413747, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 359663897}
+    - target: {fileID: 6259004505850413747, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 397336152}
+    - target: {fileID: 7904427031012767594, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267725327376452597, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -803,4 +904,5 @@ SceneRoots:
   - {fileID: 543961073}
   - {fileID: 1904006975}
   - {fileID: 2030485710}
+  - {fileID: 376552752077139637}
   - {fileID: 880643788}
