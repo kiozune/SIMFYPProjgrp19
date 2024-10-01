@@ -23,4 +23,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay Levels/Boss Level/Boss Level.unity
     guid: c855246d2d6d12442898a2d012a8988f
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: a3224568d41ccfb488dab4201e5082fd, type: 2}
