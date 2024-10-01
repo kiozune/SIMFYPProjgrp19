@@ -430,7 +430,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3fb589de4280e4abd7e1765cfa46fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - enemyPrefab: {fileID: 7661913416156267389, guid: c0a366aa3199be04ea472404fae124b9, type: 3}
+    minRange: 11
+    maxRange: 51
+    isUnique: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 4de76f204274e3e44a4c41021416d21f, type: 3}
+    minRange: 52
+    maxRange: 100
+    isUnique: 0
+  - enemyPrefab: {fileID: 799553680108326318, guid: 356a07bf15edcd44c98e7807e6a4ec9e, type: 3}
+    minRange: 0
+    maxRange: 10
+    isUnique: 0
   player: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
@@ -18363,8 +18375,7 @@ Transform:
   m_LocalPosition: {x: 219.81085, y: 63.876617, z: 144.78899}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2008414741}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &854710609
@@ -19395,7 +19406,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3fb589de4280e4abd7e1765cfa46fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - enemyPrefab: {fileID: 7661913416156267389, guid: c0a366aa3199be04ea472404fae124b9, type: 3}
+    minRange: 11
+    maxRange: 51
+    isUnique: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 4de76f204274e3e44a4c41021416d21f, type: 3}
+    minRange: 52
+    maxRange: 100
+    isUnique: 0
+  - enemyPrefab: {fileID: 799553680108326318, guid: 356a07bf15edcd44c98e7807e6a4ec9e, type: 3}
+    minRange: 0
+    maxRange: 10
+    isUnique: 0
   player: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
@@ -22436,7 +22459,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3fb589de4280e4abd7e1765cfa46fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - enemyPrefab: {fileID: 7661913416156267389, guid: c0a366aa3199be04ea472404fae124b9, type: 3}
+    minRange: 11
+    maxRange: 51
+    isUnique: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 4de76f204274e3e44a4c41021416d21f, type: 3}
+    minRange: 52
+    maxRange: 100
+    isUnique: 0
+  - enemyPrefab: {fileID: 799553680108326318, guid: 356a07bf15edcd44c98e7807e6a4ec9e, type: 3}
+    minRange: 0
+    maxRange: 10
+    isUnique: 0
   player: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
@@ -26112,7 +26147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3fb589de4280e4abd7e1765cfa46fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - enemyPrefab: {fileID: 7661913416156267389, guid: c0a366aa3199be04ea472404fae124b9, type: 3}
+    minRange: 11
+    maxRange: 51
+    isUnique: 0
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 4de76f204274e3e44a4c41021416d21f, type: 3}
+    minRange: 52
+    maxRange: 100
+    isUnique: 0
+  - enemyPrefab: {fileID: 799553680108326318, guid: 356a07bf15edcd44c98e7807e6a4ec9e, type: 3}
+    minRange: 0
+    maxRange: 10
+    isUnique: 0
   player: {fileID: 2065286868}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
@@ -43046,11 +43093,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 481554, guid: 97877e0d2d703a544b2e179aed646e40, type: 3}
   m_PrefabInstance: {fileID: 2007099558}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2008414741 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-  m_PrefabInstance: {fileID: 3742093587812994592}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2010277869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45443,95 +45485,95 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dafcec821d3516a478f9daf339e2b064, type: 3}
---- !u!1001 &3742093587812994592
+--- !u!1001 &4830919524846853628
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 847814004}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 284660005429549783, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 211647765900922016, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2065286868}
-    - target: {fileID: 284660005429549783, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 211647765900922016, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 500803532}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 2187762194842348114, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 2187762194842348114, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 2299223188355217398, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
+      propertyPath: m_Name
+      value: 13th Century Singapore Map 2 V1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813695529650573249, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 2813695529650573249, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 3208486670849488167, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 3208486670849488167, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.641754
+      value: 182.99828
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -248.7908
+      value: -138.24994
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 68.41687
+      value: 267.85773
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2636326332747803432, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+    - target: {fileID: 5486074873038852418, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3470760366768428258, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2065286868}
-    - target: {fileID: 3470760366768428258, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 500803532}
-    - target: {fileID: 4331595671144501538, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2065286868}
-    - target: {fileID: 4331595671144501538, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 500803532}
-    - target: {fileID: 7566050296222026297, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-      propertyPath: m_Name
-      value: 13th Century Singapore Map 2 V1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7795829760473459806, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2065286868}
-    - target: {fileID: 7795829760473459806, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 500803532}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 159020801140c284e9f4cd859d177c2f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 13edfc0f65f149248815ed154c1792b0, type: 3}
 --- !u!1001 &7985056827710711165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45698,3 +45740,4 @@ SceneRoots:
   - {fileID: 1131554959}
   - {fileID: 1476424363}
   - {fileID: 847814004}
+  - {fileID: 4830919524846853628}
