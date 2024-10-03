@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform groundCheck;
     [SerializeField]
+    private GameObject groundFloor;
+    [SerializeField]
     private float groundCheckDistance = 0.4f;
     [SerializeField]
     private LayerMask whatIsGround;
@@ -44,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
         weaponAttack = GetComponent<WeaponAttack>(); // Get the WeaponAttack component
+        groundFloor = GameObject.FindGameObjectWithTag("Ground");
+        groundCheck = groundFloor.transform;
 
         playerInputActions = new PlayerInputAction();
 
