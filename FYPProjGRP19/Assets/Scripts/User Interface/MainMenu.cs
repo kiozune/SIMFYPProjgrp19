@@ -71,6 +71,8 @@ public class MainMenu : MonoBehaviour
     }
     public void onSinglePlayerClicked()
     {
+        isMultiplayer = false;
+        PlayerPrefs.SetInt("Multiplayer", 0); // Store that singleplayer is selected
         robotModel.SetActive(true);
         robotAnimator.SetTrigger("angry");
         sfxSource.Play();
@@ -80,8 +82,24 @@ public class MainMenu : MonoBehaviour
         }
         singleplayerButton.SetActive(false);
         multiplayerButton.SetActive(false);
-        isMultiplayer = false;
     }
+
+    public void onMultiplayerClicked()
+    {
+        isMultiplayer = true;
+        PlayerPrefs.SetInt("Multiplayer", 1); // Store that multiplayer is selected
+        robotModel.SetActive(true);
+        robotAnimator.SetTrigger("angry");
+        sfxSource.Play();
+        for (int i = 0; i < playButtonList.Length; ++i)
+        {
+            playButtonList[i].SetActive(true);
+        }
+        singleplayerButton.SetActive(false);
+        multiplayerButton.SetActive(false);
+    }
+
+
     public void onBackclicked()
     {
         robotModel.SetActive(false);
