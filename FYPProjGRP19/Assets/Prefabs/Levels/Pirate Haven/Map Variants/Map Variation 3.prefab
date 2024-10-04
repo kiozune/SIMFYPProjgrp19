@@ -9633,6 +9633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenStaircase (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7561503271769966388, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.06
@@ -10083,6 +10087,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6682894077942892040, guid: 25ac759efb426bd4b94c0d86aeafac49, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7181900728334321382, guid: 25ac759efb426bd4b94c0d86aeafac49, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -10307,6 +10315,10 @@ PrefabInstance:
     - target: {fileID: 19128258992812583, guid: f707191a539c0ae4989d856bea091177, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 19128258992812583, guid: f707191a539c0ae4989d856bea091177, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 105275524074246503, guid: f707191a539c0ae4989d856bea091177, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10841,6 +10853,10 @@ PrefabInstance:
     - target: {fileID: 7795495822139428794, guid: 292044f5315c9e94e8bf3f16974b5e42, type: 3}
       propertyPath: m_Name
       value: Plank (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7795495822139428794, guid: 292044f5315c9e94e8bf3f16974b5e42, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13018,6 +13034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenStaircase (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7561503271769966388, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.13
@@ -13993,6 +14013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenStaircase (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7561503271769966388, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.79
@@ -14694,6 +14718,10 @@ PrefabInstance:
     - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_Name
       value: WoodenStaircase (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7561503271769966388, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15999,6 +16027,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6445861509532523236, guid: a9b4030b71d90474d80a59d6f29c3d8e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8503484520525231523, guid: a9b4030b71d90474d80a59d6f29c3d8e, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -16374,6 +16406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenStaircase (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7561503271769966388, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.89
@@ -16561,6 +16597,10 @@ PrefabInstance:
     - target: {fileID: 7795495822139428794, guid: 292044f5315c9e94e8bf3f16974b5e42, type: 3}
       propertyPath: m_Name
       value: Plank
+      objectReference: {fileID: 0}
+    - target: {fileID: 7795495822139428794, guid: 292044f5315c9e94e8bf3f16974b5e42, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16944,6 +16984,10 @@ PrefabInstance:
     - target: {fileID: 3288155046874829109, guid: b5b345652819a96468b021a97fe70a51, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288155046874829109, guid: b5b345652819a96468b021a97fe70a51, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4930976236632091903, guid: b5b345652819a96468b021a97fe70a51, type: 3}
       propertyPath: m_Layer
@@ -17847,6 +17891,10 @@ PrefabInstance:
     - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_Name
       value: WoodenStaircase
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179876373328944526, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7561503271769966388, guid: 0717ddfa49aa86541ad92cfab0319346, type: 3}
       propertyPath: m_LocalPosition.x
