@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
     [Header("Player Transforma value")]
     [SerializeField]
     public Transform player;          // Reference to the player's transform
+    [SerializeField]
+    private GameObject playerPrefab;
     [Header("Rock prefab values")]
     [SerializeField]
     private GameObject rockPrefab;     // The rock projectile prefab
@@ -94,6 +96,8 @@ public class EnemyAI : MonoBehaviour
         parentCollider = GetComponent<Collider>();
         if (parentCollider == null) Debug.LogError("Parent object collider not found.");
 
+        playerPrefab = GameObject.FindGameObjectWithTag("Player");
+        player = playerPrefab.transform;
         if (player == null) Debug.LogError("Player is not assigned in the EnemyAI script.");
 
         sliderBar = GetComponentInChildren<SliderBar>();
