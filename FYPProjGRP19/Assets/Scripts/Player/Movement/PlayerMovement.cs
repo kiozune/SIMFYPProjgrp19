@@ -103,20 +103,30 @@ public class PlayerMovement : MonoBehaviour
     // Rotate model using mouse input
     void RotateModelWithMouse()
     {
-        if (Camera.main == null) return; // Ensure there's a main camera
+        if (Camera.main == null)
+        {
+            Debug.LogError("Main Camera not found in the scene!");
+            return;
+        }
 
+        // Cast a ray from the camera to the mouse position on the screen
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero); // Horizontal plane (Y-up)
         float rayLength;
 
         if (groundPlane.Raycast(ray, out rayLength))
         {
+            // Get the point where the ray intersects the ground plane
             Vector3 mousePoint = ray.GetPoint(rayLength);
-            Vector3 directionToLook = new Vector3(mousePoint.x, 0, mousePoint.z) - transform.position;
 
+            // Calculate the direction to look, keeping the Y-axis (height) zero
+            Vector3 directionToLook = new Vector3(mousePoint.x, transform.position.y, mousePoint.z) - transform.position;
+
+            // Ensure the direction is non-zero before rotating
             if (directionToLook.sqrMagnitude > Mathf.Epsilon)
             {
-                Quaternion targetRotation = Quaternion.LookRotation(directionToLook);
+                // Only rotate on the Y-axis (horizontal rotation)
+                Quaternion targetRotation = Quaternion.LookRotation(new Vector3(directionToLook.x, 0, directionToLook.z));
                 characterModel.rotation = Quaternion.Slerp(characterModel.rotation, targetRotation, Time.deltaTime * rotationSpeed);
             }
         }

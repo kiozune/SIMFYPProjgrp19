@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 48238440}
   m_Layer: 0
   m_Name: Player Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -561,15 +561,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3224650486291245903, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -17.56
       objectReference: {fileID: 0}
     - target: {fileID: 3224650486291245903, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.44
       objectReference: {fileID: 0}
     - target: {fileID: 3224650486291245903, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -22.04
       objectReference: {fileID: 0}
     - target: {fileID: 3224650486291245903, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
       propertyPath: m_LocalRotation.w
@@ -609,6 +609,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3224650486291245903, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
   m_PrefabInstance: {fileID: 1208397991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1364403219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8425803009074685102, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 47.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445743882204618278, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
 --- !u!1 &1379066025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1152,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8046919773514455673, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8267725327376452597, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -1114,3 +1175,4 @@ SceneRoots:
   - {fileID: 376552752077139637}
   - {fileID: 1379066026}
   - {fileID: 880643788}
+  - {fileID: 1364403219}
