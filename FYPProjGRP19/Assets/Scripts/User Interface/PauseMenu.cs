@@ -84,14 +84,8 @@ public class PauseMenu : MonoBehaviour
             case 0: // restart scene/level
                 Resume();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name); // reload scene
-                break;
-            case 1: // return to hub
-                // currently not in use - main menu acts as the hub
-                // this section runs on the assumption that the hub is a separate scene that the player can traverse around with their character
-                Resume();
-                SceneManager.LoadScene("Main Menu"); // load scene named here
-                break;
-            case 2: // main menu
+                break; 
+            case 1: // main menu
                 Resume();
                 SceneManager.LoadScene("Main Menu"); // load scene named MainMenu
                 break;
@@ -110,23 +104,17 @@ public class PauseMenu : MonoBehaviour
     {
         iBtnPressed = 0;
         ConfirmationPrompt("RESTART THE LEVEL");
-    }
-
-    public void ReturnToHub()
-    {
-        iBtnPressed = 1;
-        ConfirmationPrompt("RETURN TO HUB");
-    }
+    } 
 
     public void MainMenu()
     {
-        iBtnPressed = 2;
+        iBtnPressed = 1;
         ConfirmationPrompt("RETURN MAIN MENU");
     }
 
     public void QuitGame()
     {
-        iBtnPressed = 3;
+        iBtnPressed = 2;
         ConfirmationPrompt("QUIT GAME");
     }
 }
