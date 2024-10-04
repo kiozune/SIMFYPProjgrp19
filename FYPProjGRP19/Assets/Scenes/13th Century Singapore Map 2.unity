@@ -20518,6 +20518,7 @@ Transform:
   - {fileID: 8253582194330753250}
   - {fileID: 387726172}
   - {fileID: 210009628}
+  - {fileID: 1112863978}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &848332544
@@ -27849,6 +27850,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112860281}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1112863978 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+  m_PrefabInstance: {fileID: 5975543236967110954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1115652626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29087,7 +29093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1160027035
 Transform:
   m_ObjectHideFlags: 0
@@ -29385,7 +29391,7 @@ Transform:
   m_GameObject: {fileID: 1177551017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 204.8643, y: 734.0667, z: -551.3129}
+  m_LocalPosition: {x: 204.8643, y: 729.1, z: -551.3129}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51559,7 +51565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6324593708932212193, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6982924668344661009, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_Value
@@ -51599,11 +51605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7019131656528928643, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7019131656528928643, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432196253736134239, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -51847,6 +51853,111 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba0118ad37c98f94db726d20a5b27cb3, type: 3}
+--- !u!1001 &5975543236967110954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 847814004}
+    m_Modifications:
+    - target: {fileID: 757560931253766820, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 757560931253766820, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 1547905018500250045, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 1547905018500250045, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 1818759565799568407, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 1818759565799568407, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 2768383372636486207, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_Name
+      value: 13th Century Singapore Map 2 V1.8.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111316307825754645, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 3111316307825754645, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -114.30907
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -78.50253
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -33.483353
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597133529408662076, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908688595879079703, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 4908688595879079703, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    - target: {fileID: 6730071352592522703, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2065286868}
+    - target: {fileID: 6730071352592522703, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 500803532}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 162f1b264ad70b94aa80669274b31b8c, type: 3}
 --- !u!1001 &6119233838328477632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51898,6 +52009,10 @@ PrefabInstance:
     - target: {fileID: 5889192251102809552, guid: f93cc4e163c8aa648bc143e36fbdefda, type: 3}
       propertyPath: m_Name
       value: 13th Century Singapore Map 2 V1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889192251102809552, guid: f93cc4e163c8aa648bc143e36fbdefda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7458338549942557730, guid: f93cc4e163c8aa648bc143e36fbdefda, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52391,10 +52506,10 @@ SceneRoots:
   - {fileID: 229049748}
   - {fileID: 1160027035}
   - {fileID: 553870251}
-  - {fileID: 556081627}
   - {fileID: 485881689}
   - {fileID: 133554082}
   - {fileID: 1698058054}
+  - {fileID: 556081627}
   - {fileID: 114685346}
   - {fileID: 1769544932}
   - {fileID: 776191702}
