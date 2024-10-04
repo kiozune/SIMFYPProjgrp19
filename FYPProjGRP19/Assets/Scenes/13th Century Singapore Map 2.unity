@@ -13720,7 +13720,7 @@ GameObject:
   - component: {fileID: 556081625}
   m_Layer: 0
   m_Name: Old Fishing Village Map 2 Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -51735,6 +51735,10 @@ PrefabInstance:
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 556081627}
+    - target: {fileID: 7260449701333071851, guid: dafcec821d3516a478f9daf339e2b064, type: 3}
+      propertyPath: groundFloor
+      value: 
+      objectReference: {fileID: 556081624}
     - target: {fileID: 8315114968252540883, guid: dafcec821d3516a478f9daf339e2b064, type: 3}
       propertyPath: xpSlider
       value: 
