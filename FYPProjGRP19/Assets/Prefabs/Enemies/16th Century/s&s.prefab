@@ -97,7 +97,7 @@ MonoBehaviour:
   currentHP: 100
   damageFromProjectile: 20
   attackDamage: 20
-  attackRange: 5
+  attackRange: 3
   attackCooldown: 2
   nextHealthThreshold: 0
   jumpCooldown: 20
