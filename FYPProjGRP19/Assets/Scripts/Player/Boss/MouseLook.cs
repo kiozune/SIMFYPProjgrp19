@@ -3,15 +3,18 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 100f;  // Sensitivity for mouse movement
-    public Transform playerBody;           // Player body reference for horizontal rotation
+    public Transform playerBody;  // Player body reference for horizontal rotation
 
-    private float xRotation = 0f;          // To store vertical rotation of the camera
+    private float xRotation = 0f;  // To store vertical rotation of the camera
 
     void Start()
     {
         // Lock the cursor to the center of the screen and hide it
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;  // Hide the cursor
+
+        // Initialize the xRotation to the current rotation of the camera
+        xRotation = transform.localRotation.eulerAngles.x;
     }
 
     void Update()
@@ -24,7 +27,7 @@ public class MouseLook : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
 
         // Rotate the camera vertically (up/down movement)
-        xRotation -= mouseY;                      // Invert Y-axis input for natural control
+        xRotation -= mouseY;  // Invert Y-axis input for natural control
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);  // Clamp rotation to avoid flipping
 
         // Apply the vertical rotation to the camera (the script should be attached to the camera)

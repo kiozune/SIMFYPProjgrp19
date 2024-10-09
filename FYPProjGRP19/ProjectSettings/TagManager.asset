@@ -11,6 +11,8 @@ TagManager:
   - PlayerEyes
   - SF_Door
   - Ground
+  - Boss
+  - SwordFish
   layers:
   - Default
   - TransparentFX
