@@ -3090,6 +3090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5970885731631505194}
+  - component: {fileID: 5006740656152884681}
   m_Layer: 0
   m_Name: Boundaries
   m_TagString: Untagged
@@ -3189,6 +3190,43 @@ Transform:
   - {fileID: 8152837084404845340}
   m_Father: {fileID: 5290490475353714202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5006740656152884681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144725371590700692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3fb589de4280e4abd7e1765cfa46fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - enemyPrefab: {fileID: 3672031733917450319, guid: e0343d582d8dba747be672ce02269cde, type: 3}
+    minRange: 0
+    maxRange: 40
+    isUnique: 0
+  - enemyPrefab: {fileID: 6533958181113266788, guid: d076781a91a54d1409f056ed8fc343f1, type: 3}
+    minRange: 41
+    maxRange: 80
+    isUnique: 0
+  - enemyPrefab: {fileID: 4716266797768379134, guid: 2d1f25f41906f9141b123618c4a3e733, type: 3}
+    minRange: 81
+    maxRange: 100
+    isUnique: 1
+  player: {fileID: 0}
+  mainCamera: {fileID: 0}
+  navMeshCheckRadius: 2
+  maxEnemiesToSpawn: 50
+  maxAttemptsPerEnemy: 10
+  cameraBufferDistance: 5
+  maxSpawnDistance: 30
+  minSpawnDistance: 5
+  initialSpawnInterval: 5
+  spawnRateIncreaseInterval: 10
+  spawnRateDecreaseFactor: 0.9
+  minSpawnInterval: 1
 --- !u!1 &3312150667815681797
 GameObject:
   m_ObjectHideFlags: 0
