@@ -17,8 +17,7 @@ public class PirateEnemyAI : MonoBehaviour
     [SerializeField] private float maxHP = 100f;
     private float currentHP = 100f;
     [SerializeField] public float attackDamage = 20f; 
-    [SerializeField] private float eliteDamage = 40f;  
-    [SerializeField] private float dashCooldown = 5f; // cooldown for elites
+    [SerializeField] private float eliteDamage = 40f;   
     [SerializeField] private float nextHealthThreshold;
     // attack ranges
     private float attackRange;
@@ -30,7 +29,7 @@ public class PirateEnemyAI : MonoBehaviour
     [SerializeField] private GameObject blockCollider; // for melee skeleton
     // ranged attack
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private Transform attackPoint;
+    // [SerializeField] private Transform attackPoint; // idk why this isn't working
 
 
     [Header("Bool checks")]
@@ -89,7 +88,7 @@ public class PirateEnemyAI : MonoBehaviour
             attackRange = rangeDistance;
 
             if (projectilePrefab == null) Debug.LogError("[Ranged Enemy] Projectile prefab has not been assigned");
-            if (attackPoint = null) Debug.LogError("[Ranged Enemy] Attack origin point has not been assigned");
+            // if (attackPoint = null) Debug.LogError("[Ranged Enemy] Attack origin point has not been assigned");
         } else if (isElite)
         {
             mobIcon.sprite = eliteSprite;
@@ -331,4 +330,6 @@ public class PirateEnemyAI : MonoBehaviour
             soundPlayed = true;
         }
     }
+
+    public int awardEXP() { return experiencePoints; }
 }
