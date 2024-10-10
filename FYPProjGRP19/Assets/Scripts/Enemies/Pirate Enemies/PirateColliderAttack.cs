@@ -4,12 +4,20 @@ using UnityEngine;
  
 
 public class PirateColliderAttack : MonoBehaviour
-{
+{ 
+    [SerializeField] private bool isFromBasicEnemy; 
+    [SerializeField] private bool isFromBoss; 
     private float damage;
 
     private void Start()
     {
-        damage = gameObject.GetComponentInParent<PirateEnemyAI>().attackDamage;
+        if (!isFromBasicEnemy && !isFromBoss) 
+            Debug.LogError("[" + name + "] A bool value hasn't been set");
+        else
+        {
+            if (isFromBasicEnemy) damage = gameObject.GetComponentInParent<PirateEnemyAI>().attackDamage;
+            else if (isFromBoss) damage = gameObject.GetComponentInParent<PirateBossAI>().attackDamage; 
+        }
     }
 
     private void OnTriggerEnter(Collider other)

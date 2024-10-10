@@ -15,7 +15,7 @@ public class PirateEnemyAI : MonoBehaviour
     [Header("Enemy attributes")]
     // standard attributes for all pirate enemies
     [SerializeField] private float maxHP = 100f;
-    private float currentHP = 100f;
+    [SerializeField] private float currentHP = 100f;
     [SerializeField] public float attackDamage = 20f; 
     [SerializeField] private float eliteDamage = 40f;   
     [SerializeField] private float nextHealthThreshold;
@@ -282,6 +282,7 @@ public class PirateEnemyAI : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
+        Debug.Log("[" + name + "]" + currentHP); // mainly as a check for function call
         sliderBar.UpdateBar(currentHP, maxHP);
 
         // hit VFX

@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gideon_Undertow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4204051e23521fd40bd8da8a69c147b9, type: 3}
+      propertyPath: m_TagString
+      value: BasicEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3165108557529083816, guid: 4204051e23521fd40bd8da8a69c147b9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -165,3 +169,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09aa97c44218f574994fabc8fb941a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossName: Gideon Undertow the Undead Captain
+  maxHP: 1000
+  attackDamage: 40
+  attackRange: 2.5
+  attackCollider: {fileID: 0}
+  rangedPrefab: {fileID: 0}
+  attackPoint: {fileID: 0}
+  inPhase2: 0
+  bossHPBar: {fileID: 0}
+  bossNameTxt: {fileID: 0}
