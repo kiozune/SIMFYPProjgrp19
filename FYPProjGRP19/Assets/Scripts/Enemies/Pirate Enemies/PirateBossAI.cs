@@ -88,6 +88,9 @@ public class PirateBossAI : MonoBehaviour
         rangedTimerStarted = true; // prevent the first action from being a ranged attack
         rangedTimer = 0;
         // lastNode = -1;
+
+        // set UI
+        bossNameTxt.SetText(bossName);
     }
 
     private void Update()
