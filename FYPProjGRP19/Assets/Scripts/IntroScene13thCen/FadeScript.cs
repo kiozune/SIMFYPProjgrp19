@@ -6,26 +6,36 @@ using UnityEngine.UI;
 
 public class FadeScript : MonoBehaviour
 {
-    
     // Assign the TextMeshProUGUI component in the inspector
     public TextMeshProUGUI textToFade; 
-    
+
     // Assign the Image component for the black background
     public Image background;      
-    
-    // Duration of the fade-in effect
+
+    // Set the Duration of the fade-in effect
     public float fadeInDuration = 3.0f;
-    
-    // Duration to display the text and background before fading out
+
+    // Set the Duration to display the text and background before fading out
     public float displayDuration = 3.0f;
-    
-    // Duration of the fade-out effect
+
+    // Set Duration of the fade-out effect
     public float fadeOutDuration = 3.0f; // Duration of the fade-out effect
+
+    // Reference to an array of EnemySpawner scripts
+    public EnemySpawner[] enemySpawners;
 
     // Start the fade-in process
     private void Start()
     {
-        
+        // Disable all EnemySpawners before starting the fade
+        foreach (var spawner in enemySpawners)
+        {
+            if (spawner != null)
+            {
+                spawner.enabled = false; // Disable each enemy spawner
+            }
+        }
+
         StartCoroutine(FadeInAndOut());
     }
 
@@ -39,6 +49,15 @@ public class FadeScript : MonoBehaviour
 
         // Fade Out
         yield return Fade(1f, 0f, fadeOutDuration);
+
+        // Re-enable all EnemySpawners after the fade-out
+        foreach (var spawner in enemySpawners)
+        {
+            if (spawner != null)
+            {
+                spawner.enabled = true; // Enable each enemy spawner
+            }
+        }
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha, float duration)

@@ -208,7 +208,6 @@ public class EnemyAI : MonoBehaviour
     private void AttackPlayer()
     {
         animator.SetTrigger("Attack");  // Play attack animation
-
         PlayerHealth playerHP = player.gameObject.GetComponent<PlayerHealth>();
         if (playerHP != null)
         {
@@ -221,7 +220,7 @@ public class EnemyAI : MonoBehaviour
         currentHP -= damage;  // Reduce the enemy's HP by the damage amount
         sliderBar.UpdateBar(currentHP, maxHP);
 
-       // Debug.Log("Enemy HP: " + currentHP);
+        Debug.Log("Enemy HP: " + currentHP);
 
         //Play the VFX on the enemy Body
         if (hitVFXPrefab != null)
