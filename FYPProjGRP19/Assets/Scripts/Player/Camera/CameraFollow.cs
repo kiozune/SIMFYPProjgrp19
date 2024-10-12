@@ -26,6 +26,16 @@ public class CameraFollow : MonoBehaviour
 
     private List<Renderer> currentObstacles = new List<Renderer>(); // List to track current obstacles
 
+    void Start()
+    {
+       
+    }
+    void Update()
+    {
+            if(target == null)
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     private void LateUpdate()
     {
         if (target != null)

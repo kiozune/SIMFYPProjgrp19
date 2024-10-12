@@ -11,6 +11,8 @@ public class TimeElapsed : MonoBehaviour
     private int seconds;
     [SerializeField]
     private TextMeshProUGUI timeText;
+    [SerializeField]
+    private string levelTransition;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +33,10 @@ public class TimeElapsed : MonoBehaviour
         timeText.text = "Time Elapsed: " + string.Format("{0:00}:{1:00}", minutes, seconds);
         if(Input.GetKeyDown(KeyCode.PageDown))
         {
-            timeElapsed = 899;
+            timeElapsed = 359;
             Debug.Log(timeElapsed);
         }
-        if (minutes >= 15)
+        if (minutes >= 6)
         {
             loadMainMenu();
         }
@@ -49,6 +51,6 @@ public class TimeElapsed : MonoBehaviour
     }
     public void loadMainMenu()
     {
-        SceneManager.LoadScene("Boss Level");
+        SceneManager.LoadScene(levelTransition);
     }
 }
