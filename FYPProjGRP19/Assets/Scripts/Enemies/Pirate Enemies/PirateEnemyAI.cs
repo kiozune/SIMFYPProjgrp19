@@ -1,5 +1,4 @@
-using System.Collections;
-using Unity.VisualScripting;
+using System.Collections; 
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI; 
@@ -7,18 +6,18 @@ using UnityEngine.UI;
 // enforce other components
 [RequireComponent(typeof(LootDrops))]
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(EnemyHP))]
 public class PirateEnemyAI : MonoBehaviour
 {
     [Header("Player values")]
     private Transform playerTransform; 
 
     [Header("Enemy attributes")]
-    // standard attributes for all pirate enemies
-    [SerializeField] private float maxHP = 100f;
-    [SerializeField] private float currentHP = 100f;
+    // standard attributes for all pirate enemies 
     [SerializeField] public float attackDamage = 20f; 
     [SerializeField] private float eliteDamage = 40f;   
     [SerializeField] private float nextHealthThreshold;
+    private EnemyHP hpScript;
     // attack ranges
     private float attackRange;
     [SerializeField] private float dashDistance = 15f; // distance of the dash attack 
@@ -38,32 +37,18 @@ public class PirateEnemyAI : MonoBehaviour
     [SerializeField] private bool isElite; // dash enemy
     // other bools
     private bool isAttacking; // used to prevent repeat attacks when unintended
-    private bool isWalking; // to prevent repeat animation triggers
-    private bool soundPlayed;
-    private bool isDead = false;
+    private bool isWalking; // to prevent repeat animation triggers  
     private bool hasDroppedLoot;
+    private bool isDead;
 
     [Header("UI")]
     [SerializeField] private Sprite meleeSprite;
     [SerializeField] private Sprite rangedSprite;
     [SerializeField] private Sprite eliteSprite;
-    [SerializeField] private Image mobIcon;
-
-    [Header("VFX/SFX")]
-    [SerializeField]
-    private GameObject hitVFXPrefab;
-    [SerializeField]
-    private AudioClip hitSoundClip;
-    [SerializeField]
-    private AudioSource audioSource;
+    [SerializeField] private Image mobIcon; 
      
     private NavMeshAgent agent;
-    private Animator animator; 
-    private SliderBar sliderBar;
-
-    [Header("Enemy EXP")]
-    [SerializeField]
-    private int experiencePoints = 50;
+    private Animator animator;   
 
     private void Awake()
     {
@@ -71,15 +56,13 @@ public class PirateEnemyAI : MonoBehaviour
         if (playerTransform == null) Debug.LogError("Player could not be found");
 
         animator = GetComponent<Animator>();
-        if (animator == null) Debug.LogError("Animator could not be found."); 
-
-        sliderBar = GetComponentInChildren<SliderBar>();
-        if (sliderBar == null) Debug.LogError("SliderBar could not be found.");
+        if (animator == null) Debug.LogError("Animator could not be found.");  
 
         agent = GetComponent<NavMeshAgent>();
         if (agent == null) Debug.LogError("NavMeshAgent could not be found.");
 
-        currentHP = maxHP;
+        hpScript = GetComponent<EnemyHP>();
+        if (hpScript == null) Debug.LogError("EnemyHP script could not be found.");
 
         // change HP bar icon and adjust attack range
         if (isRanged)
@@ -106,16 +89,14 @@ public class PirateEnemyAI : MonoBehaviour
             else attackCollider.SetActive(false);
             if (blockCollider == null) Debug.LogError("[Melee Enemy] Block collider has not been assigned");
             else blockCollider.SetActive(false);
-        }
-
-        // setting the threshold for SFX
-        nextHealthThreshold = maxHP * 0.6f;
+        } 
 
         isAttacking = false; 
     }
 
     private void Update()
     {
+        isDead = hpScript.IsDead();
         if (!isDead)
         {
             if (playerTransform != null && agent != null)
@@ -277,21 +258,7 @@ public class PirateEnemyAI : MonoBehaviour
         lookAtPos.y = 0; // prevent looking up or down
         Quaternion rotation = Quaternion.LookRotation(lookAtPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f);
-    }
-
-    public void TakeDamage(float damage)
-    {
-        currentHP -= damage;
-        Debug.Log("[" + name + "]" + currentHP); // mainly as a check for function call
-        sliderBar.UpdateBar(currentHP, maxHP);
-
-        // hit VFX
-        if (hitVFXPrefab != null)
-            Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
-
-        if (currentHP <= 0 && !isDead) HandleDeath();
-        else if (currentHP <= nextHealthThreshold && !soundPlayed) PlayHitSound();
-    }
+    } 
 
     private void HandleDeath()
     {
@@ -321,16 +288,5 @@ public class PirateEnemyAI : MonoBehaviour
 
         // Destroy the enemy game object after loot drop
         Destroy(gameObject);
-    }
-
-    private void PlayHitSound()
-    {
-        if (!soundPlayed)
-        {
-            SoundManager.Instance.PlayHitSound();
-            soundPlayed = true;
-        }
-    }
-
-    public int awardEXP() { return experiencePoints; }
+    } 
 }

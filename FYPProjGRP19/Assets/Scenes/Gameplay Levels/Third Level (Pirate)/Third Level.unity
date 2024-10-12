@@ -256,6 +256,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1250006585441647585, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
+      propertyPath: levelTransition
+      value: Pirate Boss Level
+      objectReference: {fileID: 0}
     - target: {fileID: 4550875963790974687, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 142.20001
@@ -836,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9201368651924323407, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1424,11 +1428,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 249493047750404480, guid: e0343d582d8dba747be672ce02269cde, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249493047750404480, guid: e0343d582d8dba747be672ce02269cde, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 758945419544362009, guid: e0343d582d8dba747be672ce02269cde, type: 3}
       propertyPath: m_IsActive
@@ -1440,7 +1444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3672031733917450319, guid: e0343d582d8dba747be672ce02269cde, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5364431552334727876, guid: e0343d582d8dba747be672ce02269cde, type: 3}
       propertyPath: m_Enabled

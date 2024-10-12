@@ -5,6 +5,7 @@ using TMPro;
 using System.Collections; 
 
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(EnemyHP))]
 public class PirateBossAI : MonoBehaviour
 {
     [Header("Player values")]
@@ -12,11 +13,11 @@ public class PirateBossAI : MonoBehaviour
 
     [Header("Enemy attributes")]
     [SerializeField] private string bossName = "Gideon Undertow the Undead Captain";
-    [SerializeField] private float maxHP = 1000f;
-    private float currentHP;
+    private EnemyHP hpScript;
 
     [Header("Melee Attack")]
     public float attackDamage = 40f;
+    private float maxHealth;
     [SerializeField] private float attackRange = 2.5f;
     [SerializeField,
         Tooltip("The collider used to attack the player (melee) - likely attached to the hand")]
@@ -28,29 +29,23 @@ public class PirateBossAI : MonoBehaviour
     [SerializeField] private float rangedCooldown = 10f;
     private float rangedTimer;
 
+    [Header("Cannons")]
+    [SerializeField] private GameObject[] cannons;
+
     [Header("Bool checks")]
-    [SerializeField] private bool inPhase2 = false; // determine if boss is in second phase
-    [SerializeField] private bool cannonsActivated = false; // determine if cannons have been activated
+    [SerializeField] private bool inPhase2 = false; // determine if boss is in second phase  
     private bool isAttacking;
     private bool rangedTimerStarted;
-    private bool isWalking; // to prevent repeat calls for walking animation
-    private bool soundPlayed;
+    private bool isWalking; // to prevent repeat calls for walking animation 
+    private bool changingPhase;
     private bool isDead = false;
-    private bool hasDroppedLoot;
+    private bool hasDroppedLoot; 
 
-
-    [Header("UI")]
-    [SerializeField] private SliderBar bossHPBar;
+    [Header("UI")] 
     [SerializeField] private TMP_Text bossNameTxt;
 
-    [Header("VFX/SFX")]
-    [SerializeField] private GameObject hitVFXPrefab;
-    [SerializeField] private AudioClip hitSoundClip;
-    [SerializeField] private AudioSource audioSource;
-
     [Header("NavMesh/Movement")]
-    /*[SerializeField,
-        Tooltip("Ensure each node is located at a valid spot on the NavMeshSurface")] private Transform[] movementNodes;*/
+    [SerializeField] private Transform navMeshNode;
     [SerializeField, Range(0,100)] private int startRangedAttackChance = 20;
     private int rangedAttackChance;
     [SerializeField, Range(0, 100)] private int rangedAttackChanceIncrement = 20;
@@ -61,8 +56,8 @@ public class PirateBossAI : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = GameObject.FindWithTag("Player").transform;
-        if (playerTransform == null) Debug.LogError("Player could not be found");
+        /*playerTransform = GameObject.FindWithTag("Player").transform;
+        if (playerTransform == null) Debug.LogError("Player could not be found");*/
 
         animator = GetComponent<Animator>();
         if (animator == null) Debug.LogError("Animator could not be found.");
@@ -75,18 +70,26 @@ public class PirateBossAI : MonoBehaviour
             agent.acceleration = 10f;
         }
 
+        hpScript = GetComponent<EnemyHP>();
+        if (hpScript == null) Debug.LogError("EnemyHP script could not be found.");
+        else maxHealth = hpScript.GetCurrentHealth();
+
         // more missing assignment handling
         if (rangedPrefabs.Length == 0) Debug.LogError("Projectile prefabs not assigned.");
-        if (attackPoint == null) Debug.LogError("Attack point was not assigned."); 
-        if (bossHPBar == null) Debug.LogError("HP bar was not assigned.");
+        if (attackPoint == null) Debug.LogError("Attack point was not assigned.");  // not functioning
         if (attackCollider == null) Debug.LogError("Attack collider was not assigned.");
-        else attackCollider.SetActive(false); // prevent damage from player at the beginning
-        // if (movementNodes.Length == 0) Debug.LogWarning("No NavMesh movement nodes were assigned.");
+        else attackCollider.SetActive(false); // prevent damage from player at the beginning  
+        if (cannons.Length == 0) Debug.LogError("No cannons have been assigned.");
+        else
+        { 
+            foreach (GameObject cannon in cannons)
+                cannon.SetActive(false);
+        }
 
-        currentHP = maxHP;
         rangedAttackChance = startRangedAttackChance;
         rangedTimerStarted = true; // prevent the first action from being a ranged attack
         rangedTimer = 0;
+        changingPhase = false;
         // lastNode = -1;
 
         // set UI
@@ -95,7 +98,11 @@ public class PirateBossAI : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead)
+        if (playerTransform == null) playerTransform = GameObject.FindWithTag("Player").transform;
+        isDead = hpScript.IsDead();
+        if (hpScript.GetCurrentHealth() <= (float)maxHealth / 2 && !inPhase2) StartCoroutine(StartPhaseTwo());
+        // if (!inPhase2 && !changingPhase) StartCoroutine(StartPhaseTwo()); // uncomment this and comment above to test phase 2
+        if (!isDead && !changingPhase)
         {
             if (inPhase2) PhaseTwo();
             else PhaseOne();
@@ -154,9 +161,81 @@ public class PirateBossAI : MonoBehaviour
         }
     } 
 
+    private IEnumerator StartPhaseTwo()
+    {
+        changingPhase = true;
+
+        animator.SetTrigger("Walk");
+        agent.SetDestination(navMeshNode.position);
+
+        while (transform.position != agent.destination)
+            yield return null;
+
+        animator.SetTrigger("Cannon Attack");
+        GetComponent<CapsuleCollider>().enabled = false; // prevent damage
+
+        yield return new WaitForSeconds(7f); // when the boss is pointing
+
+        foreach (GameObject cannon in cannons) 
+            cannon.SetActive(true); 
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length - 7f);
+
+        GetComponent<CapsuleCollider>().enabled = true;
+        changingPhase = false;
+        inPhase2 = true; 
+    }
+
     private void PhaseTwo()
     {
+        if (playerTransform != null && agent != null)
+        {
+            // Debug.Log("Ranged attack chance: " + rangedAttackChance);
+            if (rangedAttackChance >= 100 && !isAttacking && rangedTimer >= rangedCooldown) // guaranteed ranged attack
+            {
+                // Debug.Log("Guaranteed ranged attack");
+                rangedAttackChance = startRangedAttackChance;
+                StartCoroutine(RangedAttack(4));
+            }
+            else
+            {
+                int attackCheck = Random.Range(1, 101);
+                // Debug.Log("Attack check: " + attackCheck);
+                if (attackCheck <= rangedAttackChance && !isAttacking && rangedTimer >= rangedCooldown)
+                {
+                    rangedAttackChance = startRangedAttackChance;
+                    StartCoroutine(RangedAttack(2));
+                }
+                else
+                {
+                    float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
+                    if (distanceToPlayer <= attackRange && !isAttacking) // close enough to attack and not already attacking
+                    {
+                        isWalking = false;
+                        agent.isStopped = true;
+                        rangedAttackChance += rangedAttackChanceIncrement;
+
+                        StartCoroutine(MeleeAttack());
+                    }
+                    if (!isAttacking) // prevent walk cycle from interrupting attack
+                    {
+                        // Debug.Log(name + " is walking!");
+                        agent.isStopped = false; // ensure agent can move
+                        agent.SetDestination(playerTransform.position);
+
+                        if (!isWalking)
+                        {
+                            animator.SetTrigger("Walk");
+                            isWalking = true; // prevent repeat triggers
+                        }
+                    }
+                }
+            }
+
+            if (rangedTimerStarted)
+                rangedTimer += Time.deltaTime;
+        }
     }
 
     private string RandomizeAttackHand()
@@ -164,19 +243,7 @@ public class PirateBossAI : MonoBehaviour
         int attackCheck = Random.Range(0, 2);
         if (attackCheck == 0) return "L Attack";
         else return "R Attack";
-    }
-
-    /*private GameObject RandomizeNode()
-    {
-        int node;
-        while (true) // ensure next destination is not the same as the last
-        {
-            node = Random.Range(0, rangedPrefabs.Length);
-            if (node != lastNode || lastNode == -1) break; // -1 will indicate this is the first time this function was called
-        }
-        lastNode = node;
-        return rangedPrefabs[node];
-    }*/
+    } 
 
     private IEnumerator MeleeAttack()
     {
@@ -225,13 +292,11 @@ public class PirateBossAI : MonoBehaviour
 
             // randomize between projectiles
             int projectileRand = Random.Range(0, rangedPrefabs.Length);
-            /* I DONT KNOW WHY ATTACK POINT ISNT WORKING
             GameObject projectile = Instantiate(rangedPrefabs[projectileRand],
                 attackPoint.position, Quaternion.LookRotation(playerTransform.position));
-             */
-            Vector3 attackOrigin = new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z + 1f);
+            /*Vector3 attackOrigin = new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z + 1f);
             GameObject projectile = Instantiate(rangedPrefabs[projectileRand],
-                attackOrigin, Quaternion.LookRotation(playerTransform.position));
+                attackOrigin, Quaternion.LookRotation(playerTransform.position));*/
             ProjectileDirEnemy projectileDir = projectile.GetComponent<ProjectileDirEnemy>();
 
             if (projectileDir != null)
