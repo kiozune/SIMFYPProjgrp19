@@ -39,7 +39,7 @@ public class ProjectileDir : MonoBehaviour
             Instantiate<GameObject>(vfxExplosion, transform.position, Quaternion.identity); ;
             Destroy(this.gameObject);
         }
-        else if(other.CompareTag("BasicEnemy"))
+        else if(other.CompareTag("Enemy"))
         {
             Instantiate<GameObject>(vfxExplosion, transform.position, Quaternion.identity); ;
             Destroy(this.gameObject);
