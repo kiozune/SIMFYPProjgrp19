@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shark Elite
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09c194f77169e774291c5070434319e7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -188,6 +192,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09c194f77169e774291c5070434319e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3859741617738811048}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09c194f77169e774291c5070434319e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2287419443145934512}
   m_SourcePrefab: {fileID: 100100000, guid: 09c194f77169e774291c5070434319e7, type: 3}
 --- !u!1 &4716266797768379134 stripped
 GameObject:
@@ -227,8 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68beb8dcaf82d0743813189ce89426f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
-  currentHP: 100
   attackDamage: 20
   eliteDamage: 30
   nextHealthThreshold: 0
@@ -311,6 +316,26 @@ MonoBehaviour:
     dropChance: 50
   - item: {fileID: 7784616543427588305, guid: 7988bf1fc64dfc746a75eb6ad67c29d8, type: 3}
     dropChance: 20
+--- !u!114 &2287419443145934512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716266797768379134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 100
+  nextHealthThreshold: 0
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  sliderBar: {fileID: 1084870780247827353}
+  experiencePoints: 50
 --- !u!4 &5348124641787662404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 09c194f77169e774291c5070434319e7, type: 3}
@@ -463,5 +488,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1084870780247827353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4732768992513304418, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+  m_PrefabInstance: {fileID: 5665546373339170043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0082c0d7d60f300418a3e712aae975bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

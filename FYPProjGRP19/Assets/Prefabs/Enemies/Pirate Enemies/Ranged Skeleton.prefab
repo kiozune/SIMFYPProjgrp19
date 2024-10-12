@@ -163,6 +163,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6109103810636169110 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4732768992513304418, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+  m_PrefabInstance: {fileID: 1542986305527945460}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0082c0d7d60f300418a3e712aae975bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6354429916087997479 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5568333194492857555, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
@@ -300,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8ed68a3a383765a4bb2001de21d699c1, type: 3}
       propertyPath: m_TagString
-      value: BasicEnemy
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 8ed68a3a383765a4bb2001de21d699c1, type: 3}
       propertyPath: m_Controller
@@ -331,6 +342,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ed68a3a383765a4bb2001de21d699c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3253562737369451707}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ed68a3a383765a4bb2001de21d699c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6456642536125329829}
   m_SourcePrefab: {fileID: 100100000, guid: 8ed68a3a383765a4bb2001de21d699c1, type: 3}
 --- !u!4 &1542893440395959215 stripped
 Transform:
@@ -399,8 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68beb8dcaf82d0743813189ce89426f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
-  currentHP: 100
   attackDamage: 20
   eliteDamage: 40
   nextHealthThreshold: 0
@@ -443,3 +455,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.98, z: 0}
+--- !u!114 &6456642536125329829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533958181113266788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 100
+  nextHealthThreshold: 0
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  sliderBar: {fileID: 6109103810636169110}
+  experiencePoints: 50

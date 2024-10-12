@@ -1369,9 +1369,10 @@ GameObject:
   - component: {fileID: 6739728404745822922}
   - component: {fileID: 5232200490052783256}
   - component: {fileID: 7280341761368943572}
+  - component: {fileID: 1145300013274776321}
   m_Layer: 0
   m_Name: MeleeSkeleton
-  m_TagString: BasicEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1428,8 +1429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68beb8dcaf82d0743813189ce89426f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
-  currentHP: 100
   attackDamage: 20
   eliteDamage: 40
   nextHealthThreshold: 0
@@ -1512,6 +1511,26 @@ CapsuleCollider:
   m_Height: 2.06
   m_Direction: 1
   m_Center: {x: 0, y: 1.01, z: 0}
+--- !u!114 &1145300013274776321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3672031733917450319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 100
+  nextHealthThreshold: 0
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  sliderBar: {fileID: 5121984596001668981}
+  experiencePoints: 50
 --- !u!1 &3932201415435819317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,6 +2779,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5121984596001668981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4732768992513304418, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+  m_PrefabInstance: {fileID: 484943488481138711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0082c0d7d60f300418a3e712aae975bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &5475369999865337028 stripped
