@@ -26,6 +26,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(healthSlider == null)
+        {
+            healthSlider = GameObject.FindGameObjectWithTag("playerHP").GetComponent<Slider>();
+        }
         if (currHealth <= 0)
         {
             gameOverScreen.GetComponent<GameOver>().GameOverScreen();
