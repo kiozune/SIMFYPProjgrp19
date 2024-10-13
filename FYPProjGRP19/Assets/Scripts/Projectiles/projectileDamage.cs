@@ -38,10 +38,7 @@ public class projectileDamage : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        // Try to get the IEnemy component from the collided object
-        EnemyAI enemyAI = other.GetComponent<EnemyAI>();
-
-        if (enemyAI != null)  // If the collided object is an enemy
+        if (other.CompareTag("Enemy"))
         {
             if (isAOEEnabled)
             {
@@ -61,11 +58,12 @@ public class projectileDamage : MonoBehaviour
 
     private void ApplySingleTargetDamage(GameObject enemy)
     {
-        EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
-        if (enemy != null)
+        EnemyHP enemyAI = enemy.GetComponent<EnemyHP>();
+        if (enemyAI != null)
         {
             enemyAI.TakeDamage(damage);
-            if (enemyAI.checkHealth())
+            Debug.Log("Hit! " + damage);
+            if (enemyAI.IsDead())
             {
                 AwardPlayerEXP(enemyAI);
             }
@@ -81,12 +79,12 @@ public class projectileDamage : MonoBehaviour
         {
             if (hit.CompareTag("BasicEnemy") && hit.gameObject != primaryTarget)
             {
-                EnemyAI enemyAI = hit.GetComponent<EnemyAI>();
+                EnemyHP enemyAI = hit.GetComponent<EnemyHP>();
                 if (enemyAI != null)
                 {
                     // Any other target than the primary will take 25% of the damage thrown
                     enemyAI.TakeDamage(damage * 0.25f);
-                    if (enemyAI.checkHealth())
+                    if (enemyAI.IsDead())
                     {
                         AwardPlayerEXP(enemyAI);
                     }
@@ -95,7 +93,7 @@ public class projectileDamage : MonoBehaviour
         }
     }
 
-    private void AwardPlayerEXP(EnemyAI enemyAI)
+    private void AwardPlayerEXP(EnemyHP enemyAI)
     {
         // Find the player and award experience points
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -104,7 +102,7 @@ public class projectileDamage : MonoBehaviour
             PlayerLevel playerLevel = player.GetComponent<PlayerLevel>();
             if (playerLevel != null)
             {
-                playerLevel.AddEXP(enemyAI.awardEXP());
+                playerLevel.AddEXP(enemyAI.AwardEXP());
                 playerLevel.UpdateXPSlider();
             }
         }

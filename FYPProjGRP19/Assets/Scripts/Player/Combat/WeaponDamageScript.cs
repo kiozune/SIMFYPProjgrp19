@@ -53,7 +53,7 @@ public class WeaponDamageScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check if the object is an enemy
-        if (other.CompareTag("BasicEnemy"))
+        if (other.CompareTag("Enemy"))
         {
             // Remove enemy from the list
             enemiesInRange.Remove(other.gameObject);
@@ -62,16 +62,16 @@ public class WeaponDamageScript : MonoBehaviour
 
     private void ApplyDamage(GameObject enemy)
     {
-        EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
-        if (enemyAI != null)
+        EnemyHP healthScript = enemy.GetComponent<EnemyHP>();
+        if (healthScript != null)
         {
             enemyAI.TakeDamage(damageValue);
         }
-        if (enemyAI.checkHealth())
+        if (healthScript.GetCurrentHealth() <= 0)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            player.GetComponent<PlayerLevel>().AddEXP(enemy.gameObject.GetComponent<EnemyAI>().awardEXP());
+            player.GetComponent<PlayerLevel>().AddEXP(enemy.GetComponent<EnemyHP>().AwardEXP());
             player.GetComponent<PlayerLevel>().UpdateXPSlider();
             enemiesInRange.Remove(enemy);
         }

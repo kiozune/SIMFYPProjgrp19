@@ -1503,6 +1503,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3903816619939355787}
   - component: {fileID: 445878140493066474}
+  - component: {fileID: 3379128127858943603}
+  - component: {fileID: 3569452982006212734}
   - component: {fileID: 8734999947426299841}
   - component: {fileID: 3855722867067444711}
   - component: {fileID: 4141751404073747776}
@@ -1510,8 +1512,8 @@ GameObject:
   - component: {fileID: 8155385691687062380}
   - component: {fileID: -3686284971239045571}
   m_Layer: 0
-  m_Name: FishmanElite
-  m_TagString: BasicEnemy
+  m_Name: FishmanBase 1
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1568,33 +1570,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerPrefab: {fileID: 0}
   rockPrefab: {fileID: 3844816652429521609, guid: d1226b28ad94e65419c826a7163d1c4b, type: 3}
   throwPoint: {fileID: 0}
-  maxHP: 100
-  currentHP: 100
-  damageFromProjectile: 20
   attackDamage: 20
   attackRange: 2.5
   attackCooldown: 2
-  nextHealthThreshold: 0
   jumpCooldown: 3
-  jumpTimer: 0
   jumpDistance: 6
   canJump: 1
-  isThrowing: 0
   rangeEnemy: 0
   normalEnemy: 1
   eliteEnemy: 0
-  soundPlayed: 0
-  hasDroppedLoot: 0
-  isDead: 0
   normalEnemyImage: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
   rangeImage: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
   mobIcon: {fileID: 4204963480832588466}
+--- !u!114 &3569452982006212734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595189231921639269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 100
+  nextHealthThreshold: 0
   hitVFXPrefab: {fileID: 0}
-  hitSoundClip: {fileID: 8300000, guid: 4a3d848e991ea1f45a1b0a825603cd42, type: 3}
+  hitSoundClip: {fileID: 0}
   audioSource: {fileID: 0}
-  agent: {fileID: 0}
+  sliderBar: {fileID: 4583644466430809724}
   experiencePoints: 50
 --- !u!195 &8734999947426299841
 NavMeshAgent:
@@ -2183,5 +2192,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0082c0d7d60f300418a3e712aae975bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityAnchor: {fileID: 3903816619939355787}
-  sliderOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &4583644466430809724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4732768992513304418, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+  m_PrefabInstance: {fileID: 9093414202054684958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0082c0d7d60f300418a3e712aae975bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
