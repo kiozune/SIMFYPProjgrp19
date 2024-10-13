@@ -9,7 +9,9 @@ using System.Collections;
 public class PirateBossAI : MonoBehaviour
 {
     [Header("Player values")]
-    private Transform playerTransform;
+    private GameObject[] players; // array of players - account for multiplayer
+    private Transform playerTransform; // target player Transform
+    private int targetPlayerIdx = 0;
 
     [Header("Enemy attributes")]
     [SerializeField] private string bossName = "Gideon Undertow the Undead Captain";
@@ -29,7 +31,7 @@ public class PirateBossAI : MonoBehaviour
     [SerializeField] private float rangedCooldown = 10f;
     private float rangedTimer;
 
-    [Header("Cannons")]
+    [Header("Cannon Array")]
     [SerializeField] private GameObject[] cannons;
 
     [Header("Bool checks")]
@@ -94,6 +96,7 @@ public class PirateBossAI : MonoBehaviour
         rangedTimerStarted = true; // prevent the first action from being a ranged attack
         rangedTimer = 0;
         changingPhase = false;
+        targetPlayerIdx = 0;
         // lastNode = -1;
 
         // set UI
@@ -102,14 +105,33 @@ public class PirateBossAI : MonoBehaviour
 
     private void Update()
     {
-        if (playerTransform == null) playerTransform = GameObject.FindWithTag("Player").transform;
         isDead = hpScript.IsDead();
+        if (playerTransform == null)
+        {
+            players = GameObject.FindGameObjectsWithTag("Player");
+            playerTransform = players[targetPlayerIdx].transform; // set target to first player
+        }
+
         if (hpScript.GetCurrentHealth() <= (float)maxHealth / 2 && !inPhase2) StartCoroutine(StartPhaseTwo());
         // if (!inPhase2 && !changingPhase) StartCoroutine(StartPhaseTwo()); // uncomment this and comment above to test phase 2
         if (!isDead && !changingPhase)
-        {
+        { 
             if (inPhase2) PhaseTwo();
             else PhaseOne();
+        }
+    }
+
+    private void ChangeTarget()
+    {
+        int randInt = Random.Range(0, 2); // coin flip on switching targets
+        int isMultiplayer = PlayerPrefs.GetInt("Multiplayer", 0); // Default to singleplayer if not set
+        if (randInt == 0 && isMultiplayer != 0)
+        {
+            if (targetPlayerIdx == 0) // Player 1 
+                targetPlayerIdx = 1;
+            else // Player 2
+                targetPlayerIdx = 0;
+            playerTransform = players[targetPlayerIdx].transform;
         }
     }
 
@@ -286,6 +308,8 @@ public class PirateBossAI : MonoBehaviour
     /// <returns></returns>
     private IEnumerator RangedAttack(int numOfAttacks)
     {
+        ChangeTarget();
+
         isAttacking = true;
         agent.isStopped = true; // prevent movement
 
@@ -307,7 +331,8 @@ public class PirateBossAI : MonoBehaviour
             int projectileRand = Random.Range(0, rangedPrefabs.Length);
             GameObject projectile = Instantiate(rangedPrefabs[projectileRand],
                 attackPoint.position, Quaternion.LookRotation(playerTransform.position));
-            /*Vector3 attackOrigin = new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z + 1f);
+            /* // in the chance attackPoint stops working
+            Vector3 attackOrigin = new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z + 1f);
             GameObject projectile = Instantiate(rangedPrefabs[projectileRand],
                 attackOrigin, Quaternion.LookRotation(playerTransform.position));*/
             ProjectileDirEnemy projectileDir = projectile.GetComponent<ProjectileDirEnemy>();
@@ -333,7 +358,7 @@ public class PirateBossAI : MonoBehaviour
     {
         // Get the direction to the player
         Vector3 direction = (target - start).normalized;
-
+         
         // Give it an upward arc
         direction.y = 0.5f;
 

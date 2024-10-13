@@ -10,7 +10,8 @@ using UnityEngine.UI;
 public class PirateEnemyAI : MonoBehaviour
 {
     [Header("Player values")]
-    private Transform playerTransform; 
+    private Transform playerTransform;
+    private GameObject[] players; 
 
     [Header("Enemy attributes")]
     // standard attributes for all pirate enemies 
@@ -50,10 +51,10 @@ public class PirateEnemyAI : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;   
 
-    private void Awake()
+    private void Start()
     {
-        playerTransform = GameObject.FindWithTag("Player").transform;
-        if (playerTransform == null) Debug.LogError("Player could not be found");
+        /*playerTransform = GameObject.FindWithTag("Player").transform;
+        if (playerTransform == null) Debug.LogError("Player could not be found");*/
 
         animator = GetComponent<Animator>();
         if (animator == null) Debug.LogError("Animator could not be found.");  
@@ -91,7 +92,23 @@ public class PirateEnemyAI : MonoBehaviour
             else blockCollider.SetActive(false);
         } 
 
-        isAttacking = false; 
+        isAttacking = false;
+
+        // choose target player
+        int isMultiplayer = PlayerPrefs.GetInt("Multiplayer", 0); // Default to singleplayer if not set
+        players = GameObject.FindGameObjectsWithTag("Player");
+        if (isMultiplayer != 0) // multiple players
+        {
+            players = GameObject.FindGameObjectsWithTag("Player");
+            float distanceToPlayer1 = Vector3.Distance(transform.position, players[0].transform.position);
+            float distanceToPlayer2 = Vector3.Distance(transform.position, players[1].transform.position);
+
+            // compare distances
+            if (distanceToPlayer1 < distanceToPlayer2) // Player 1 is closer to the enemy than Player 2
+                playerTransform = players[0].transform;
+            else playerTransform = players[1].transform; // opposite is true or equidistant
+        }
+        else playerTransform = players[0].transform;
     }
 
     private void Update()

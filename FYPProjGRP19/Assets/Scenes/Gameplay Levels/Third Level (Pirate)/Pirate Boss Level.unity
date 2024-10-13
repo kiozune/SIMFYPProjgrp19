@@ -3426,7 +3426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825289865689331963, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
       propertyPath: inPhase2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6825289865689331963, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
       propertyPath: bossHPBar
@@ -4745,6 +4745,10 @@ PrefabInstance:
     - target: {fileID: 64473920423785200, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 609094878591981166, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2048657581418112934, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_IsActive
