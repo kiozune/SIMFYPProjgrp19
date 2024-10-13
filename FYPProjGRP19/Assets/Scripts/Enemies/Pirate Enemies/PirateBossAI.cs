@@ -43,9 +43,11 @@ public class PirateBossAI : MonoBehaviour
 
     [Header("UI")] 
     [SerializeField] private TMP_Text bossNameTxt;
+    [SerializeField] private Image bossHPSliderImg;
 
     [Header("NavMesh/Movement")]
     [SerializeField] private Transform navMeshNode;
+    [SerializeField] private Transform lookAtNode;
     [SerializeField, Range(0,100)] private int startRangedAttackChance = 20;
     private int rangedAttackChance;
     [SerializeField, Range(0, 100)] private int rangedAttackChanceIncrement = 20;
@@ -85,6 +87,8 @@ public class PirateBossAI : MonoBehaviour
             foreach (GameObject cannon in cannons)
                 cannon.SetActive(false);
         }
+        if (lookAtNode == null) Debug.LogError("No Look At Node has been assigned");
+        if (bossHPSliderImg == null) Debug.LogError("No Boss HP Slider Image has been assigned");
 
         rangedAttackChance = startRangedAttackChance;
         rangedTimerStarted = true; // prevent the first action from being a ranged attack
@@ -141,18 +145,18 @@ public class PirateBossAI : MonoBehaviour
                 
                         StartCoroutine(MeleeAttack());
                     }
-                    if (!isAttacking) // prevent walk cycle from interrupting attack
-                    {
-                        // Debug.Log(name + " is walking!");
-                        agent.isStopped = false; // ensure agent can move
-                        agent.SetDestination(playerTransform.position);
-                
-                        if (!isWalking)
-                        {
-                            animator.SetTrigger("Walk");
-                            isWalking = true; // prevent repeat triggers
-                        }
-                    }
+                }
+            }
+            if (!isAttacking) // prevent walk cycle from interrupting attack
+            {
+                // Debug.Log(name + " is walking!");
+                agent.isStopped = false; // ensure agent can move
+                agent.SetDestination(playerTransform.position);
+
+                if (!isWalking)
+                {
+                    animator.SetTrigger("Walk");
+                    isWalking = true; // prevent repeat triggers
                 }
             }
 
@@ -164,15 +168,23 @@ public class PirateBossAI : MonoBehaviour
     private IEnumerator StartPhaseTwo()
     {
         changingPhase = true;
+        Color32 hpColor = bossHPSliderImg.color;
+        bossHPSliderImg.color = new Color32(108, 177, 185, 255); // a blue-ish grey color
+        GetComponent<CapsuleCollider>().enabled = false; // prevent damage
 
         animator.SetTrigger("Walk");
         agent.SetDestination(navMeshNode.position);
 
         while (transform.position != agent.destination)
-            yield return null;
+            yield return null; 
+
+        // look towards the bow of the ship
+        Vector3 lookAtPos = lookAtNode.position - transform.position;
+        lookAtPos.y = 0; // prevent looking up or down
+        Quaternion rotation = Quaternion.LookRotation(lookAtPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f);
 
         animator.SetTrigger("Cannon Attack");
-        GetComponent<CapsuleCollider>().enabled = false; // prevent damage
 
         yield return new WaitForSeconds(7f); // when the boss is pointing
 
@@ -181,6 +193,7 @@ public class PirateBossAI : MonoBehaviour
 
         yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length - 7f);
 
+        bossHPSliderImg.color = hpColor; // return to original color
         GetComponent<CapsuleCollider>().enabled = true;
         changingPhase = false;
         inPhase2 = true; 
@@ -218,18 +231,18 @@ public class PirateBossAI : MonoBehaviour
 
                         StartCoroutine(MeleeAttack());
                     }
-                    if (!isAttacking) // prevent walk cycle from interrupting attack
-                    {
-                        // Debug.Log(name + " is walking!");
-                        agent.isStopped = false; // ensure agent can move
-                        agent.SetDestination(playerTransform.position);
+                }
+            }
+            if (!isAttacking) // prevent walk cycle from interrupting attack
+            {
+                // Debug.Log(name + " is walking!");
+                agent.isStopped = false; // ensure agent can move
+                agent.SetDestination(playerTransform.position);
 
-                        if (!isWalking)
-                        {
-                            animator.SetTrigger("Walk");
-                            isWalking = true; // prevent repeat triggers
-                        }
-                    }
+                if (!isWalking)
+                {
+                    animator.SetTrigger("Walk");
+                    isWalking = true; // prevent repeat triggers
                 }
             }
 

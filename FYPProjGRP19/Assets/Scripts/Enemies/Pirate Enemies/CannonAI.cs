@@ -5,8 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class CannonAI : MonoBehaviour
 {
-    private Transform playerTransform;
-    private Animation anim;
+    private Transform playerTransform; 
 
     [SerializeField] private float cooldown = 10f;
     [SerializeField] private GameObject projectilePrefab;
@@ -18,10 +17,7 @@ public class CannonAI : MonoBehaviour
     void Start()
     {
         /*playerTransform = GameObject.FindWithTag("Player").transform;
-        if (playerTransform == null) Debug.LogError("Player could not be found");*/
-
-        anim = GetComponent<Animation>();
-        if (anim == null) Debug.LogError("Animator could not be found.");
+        if (playerTransform == null) Debug.LogError("Player could not be found");*/ 
 
         if (projectilePrefab == null) Debug.LogError("Projectile prefab could not be found.");
          
@@ -33,7 +29,7 @@ public class CannonAI : MonoBehaviour
     void Update()
     {
         if (playerTransform == null) playerTransform = GameObject.FindWithTag("Player").transform;
-
+         
         if (!isAttacking)
             StartCoroutine(Attack());
     }
@@ -42,11 +38,8 @@ public class CannonAI : MonoBehaviour
     {
         isAttacking = true;
 
-        for (float i = 0; i <= cooldown; i += Time.deltaTime)
-        { 
-            LookAtPlayer();
-            yield return null;
-        }
+        for (float i = 0; i <= cooldown; i += Time.deltaTime) 
+            yield return null; 
 
         GameObject projectile = Instantiate(projectilePrefab,
             attackPoint.position, Quaternion.LookRotation(playerTransform.position));
@@ -61,15 +54,7 @@ public class CannonAI : MonoBehaviour
         }
 
         isAttacking = false;
-    }
-
-    private void LookAtPlayer()
-    {
-        Vector3 lookAtPos = playerTransform.position - transform.position;
-        lookAtPos.y = 0; // prevent looking up or down
-        Quaternion rotation = Quaternion.LookRotation(lookAtPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f);
-    }
+    } 
 
     // Simplified throw direction calculation with an arc
     private Vector3 CalculateThrowDirection(Vector3 start, Vector3 target)
