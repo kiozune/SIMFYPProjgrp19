@@ -112,8 +112,8 @@ public class PirateBossAI : MonoBehaviour
             playerTransform = players[targetPlayerIdx].transform; // set target to first player
         }
 
-        if (hpScript.GetCurrentHealth() <= (float)maxHealth / 2 && !inPhase2) StartCoroutine(StartPhaseTwo());
-        // if (!inPhase2 && !changingPhase) StartCoroutine(StartPhaseTwo()); // uncomment this and comment above to test phase 2
+        if (hpScript.GetCurrentHealth() <= (float)maxHealth / 2 && !inPhase2 && !changingPhase)
+            StartCoroutine(StartPhaseTwo());
         if (!isDead && !changingPhase)
         { 
             if (inPhase2) PhaseTwo();

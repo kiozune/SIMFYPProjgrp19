@@ -4946,6 +4946,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4426107971344123816, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: hitSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 26a21647b698668438dc0397750be9a8, type: 3}
+    - target: {fileID: 4426107971344123816, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
+      propertyPath: fishmanDeathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f99cc9880447d54f899cc448d1c1388, type: 3}
     - target: {fileID: 8425803009074685102, guid: 4ada84a5afa73164a958929e2b1a3bba, type: 3}
       propertyPath: m_Name
       value: SoundManager

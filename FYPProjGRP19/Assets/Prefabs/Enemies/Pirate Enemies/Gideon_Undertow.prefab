@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4989536038356008384}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.13, z: 1.39}
+  m_LocalPosition: {x: 0, y: -0.274, z: 1.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -367,9 +367,12 @@ MonoBehaviour:
   - {fileID: 3844816652429521609, guid: da9108dd30510af4fb8ae3ea0af195a1, type: 3}
   attackPoint: {fileID: 5812537642121773684}
   rangedCooldown: 10
+  cannons: []
   inPhase2: 0
-  cannonsActivated: 0
   bossNameTxt: {fileID: 0}
+  bossHPSliderImg: {fileID: 0}
+  navMeshNode: {fileID: 0}
+  lookAtNode: {fileID: 0}
   startRangedAttackChance: 20
   rangedAttackChanceIncrement: 20
 --- !u!114 &8078715964495964319

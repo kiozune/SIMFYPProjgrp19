@@ -36,13 +36,16 @@ public class EnemyHP : MonoBehaviour
     private void Start()
     {
         currentHP = maxHP;
-        nextHealthThreshold = maxHP * 0.6f;
+        nextHealthThreshold = maxHP * 0.6f;  
 
-        sliderBar = GetComponentInChildren<SliderBar>();
-        if (sliderBar == null) Debug.LogError("SliderBar is not assigned or found.");
-
-        enemyAI = GetComponent<EnemyAI>();  // Get reference to EnemyAI
-        if (enemyAI == null) Debug.LogError("EnemyAI is not assigned or found.");
+        if (sliderBar == null)
+        {
+            sliderBar = GetComponentInChildren<SliderBar>();
+        }
+        if (sliderBar == null)
+        {
+            Debug.LogError("SliderBar is not assigned or found.");
+        }
     }
 
     public void TakeDamage(float damage)
