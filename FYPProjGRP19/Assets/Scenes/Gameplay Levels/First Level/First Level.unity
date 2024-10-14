@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fed7e7ca15d754098d92dd7067bd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6200116995687643522, guid: dafcec821d3516a478f9daf339e2b064, type: 3}
+  target: {fileID: 0}
   offset: {x: 0, y: 10, z: -10}
   smoothSpeed: 0.125
   tiltAngle: 45
