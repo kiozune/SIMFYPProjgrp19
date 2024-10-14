@@ -11,10 +11,6 @@ TagManager:
   - PlayerEyes
   - SF_Door
   - Ground
-  - EXPhud
-  - EXPText
-  - UIUpgrade
-  - playerHP
   layers:
   - Default
   - TransparentFX

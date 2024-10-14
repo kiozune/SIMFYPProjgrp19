@@ -5,41 +5,57 @@ using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [Header("Player Reference")]
+    [Header("Player Transforma value")]
     [SerializeField]
-    public Transform player;           // Reference to the player's transform
+    public Transform player;          // Reference to the player's transform
     [SerializeField]
     private GameObject playerPrefab;
-
     [Header("Rock prefab values")]
     [SerializeField]
-    private GameObject rockPrefab;      // The rock projectile prefab
+    private GameObject rockPrefab;     // The rock projectile prefab
     [SerializeField]
-    private Transform throwPoint;       // The point from which the rock is thrown
+    private Transform throwPoint;      // The point from which the rock is thrown
 
-    [Header("Enemy Attributes")]
+    [Header("Enemy attribute Values")]
     [SerializeField]
-    private float attackDamage = 20f;   // Damage the enemy does to the player
+    private float maxHP = 100f;        // Enemy health points
     [SerializeField]
-    private float attackRange = 5f;     // Attack range
+    private float currentHP = 100f;
     [SerializeField]
-    private float attackCooldown = 2f;  // Time between each attack
+    private float damageFromProjectile = 20f;  // Amount of damage taken from each projectile hit
     [SerializeField]
-    private float jumpCooldown = 20f;   // Time between jumps
+    private float attackDamage = 20f;  // Damage the enemy does to the player
     [SerializeField]
-    private float jumpDistance = 6f;    // Jump distance
+    private float attackRange = 5f;    // Range within which the enemy can attack the player
+    [SerializeField]
+    private float attackCooldown = 2f; // Time between each attack
+    [SerializeField]
+    private float nextHealthThreshold;
+    [SerializeField]
+    private float jumpCooldown = 20f;
+    [SerializeField]
+    private float jumpTimer = 0f;
 
-    [Header("Enemy Type")]
     [SerializeField]
-    private bool canJump = true;
+    private float jumpDistance = 6f;
+
+    [Header("Enemy Bool Checks")]
+    [SerializeField]
+    private bool canJump = true; 
+    [SerializeField]
+    private bool isThrowing = false;
     [SerializeField]
     private bool rangeEnemy;
     [SerializeField]
     private bool normalEnemy;
     [SerializeField]
     private bool eliteEnemy;
-    private bool isThrowing = false;
-    
+    [SerializeField]
+    private bool soundPlayed = false;
+    [SerializeField]
+    private bool hasDroppedLoot = false;
+    [SerializeField]
+    private bool isDead = false;
     [Header("UI")]
     [SerializeField]
     private Sprite normalEnemyImage;
@@ -47,131 +63,265 @@ public class EnemyAI : MonoBehaviour
     private Sprite rangeImage;
     [SerializeField]
     private Image mobIcon;
+    
+    [Header("VFX/SFX")]
+    [SerializeField] 
+    private GameObject hitVFXPrefab;
+    [SerializeField] 
+    private AudioClip hitSoundClip;
+    [SerializeField]
+    private AudioSource audioSource;
 
-    private NavMeshAgent agent;        // NavMeshAgent for movement
-    private Animator animator;         // Animator for animations
-    private float attackTimer = 0f;    // Timer for attack cooldown
-    private float jumpTimer = 0f;      // Timer for jump cooldown
+    [Header("NavMesh Agent")]
+    [SerializeField]
+    private NavMeshAgent agent;       // Reference to the NavMeshAgent component
+    private Animator animator;        // Reference to the Animator component
+    private Collider parentCollider;  // Reference to the Collider of the parent object
+    private SliderBar sliderBar;
 
-    private void Start()
+    private float attackTimer = 0f;   // Timer to control the attack cooldown
+
+    [Header("Enemy EXP")]
+    [SerializeField]
+    private int experiencePoints = 50;
+
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        if (agent == null) Debug.LogError("NavMeshAgent is not attached to the enemy.");
+
         animator = GetComponent<Animator>();
+        if (animator == null) Debug.LogError("Animator component is not attached to the enemy.");
+
+        parentCollider = GetComponent<Collider>();
+        if (parentCollider == null) Debug.LogError("Parent object collider not found.");
 
         playerPrefab = GameObject.FindGameObjectWithTag("Player");
         player = playerPrefab.transform;
-        
-        if (rangeEnemy) changeRangeIcon();
-        if (normalEnemy) changeMeleeIcon();
+        if (player == null) Debug.LogError("Player is not assigned in the EnemyAI script.");
+
+        sliderBar = GetComponentInChildren<SliderBar>();
+        if (sliderBar == null) Debug.LogError("SliderBar is not assigned or found.");
+
+        currentHP = maxHP;
+        if (rangeEnemy)
+        {
+            changeRangeIcon();
+        }
+        if(normalEnemy)
+        {
+            changeMeleeIcon();
+        }
+        //Setting the threshold for SFX
+        nextHealthThreshold = maxHP * 0.6f;
     }
 
-    private void Update()
+    void Update()
     {
-        if (!GetComponent<EnemyHP>().IsDead())
+        if (currentHP > 0)
         {
-            HandleMovement();
-            HandleAttacksAndThrows();
-        }
-
-        HandleMovementAnimation();
-
-        // Jump cooldown
-        if (!canJump)
-        {
-            jumpTimer -= Time.deltaTime;
-            if (jumpTimer <= 0f)
+            if (player != null && agent != null)
             {
-                canJump = true;
+                float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+                if (eliteEnemy && distanceToPlayer <= jumpDistance && canJump)
+                {
+                    JumpToPlayer();
+                }
+                else if (distanceToPlayer <= attackRange)
+                {
+                    agent.isStopped = true;
+
+                    if (attackTimer <= 0f)
+                    {
+                        if (rangeEnemy)
+                        {
+                            ThrowProjectile();
+                        }
+                        else
+                        {
+                            AttackPlayer();
+                        }
+                        attackTimer = attackCooldown;
+                    }
+                    else
+                    {
+                        attackTimer -= Time.deltaTime;
+                    }
+                }
+                else
+                {
+                    // If the player is out of range, AI will move
+                    agent.isStopped = false;
+                    agent.SetDestination(player.position);
+                }
+            }
+
+            if (agent != null && animator != null)
+            {
+                if (agent.velocity.magnitude > 0.1f)
+                {
+                    animator.SetBool("isWalking", true);
+                }
+                else
+                {
+                    animator.SetBool("isWalking", false);
+                }
+            }
+
+            // Handle jump cooldown
+            if (!canJump)
+            {
+                jumpTimer -= Time.deltaTime;
+                if (jumpTimer <= 0f)
+                {
+                    canJump = true; // Reset jump ability
+                }
             }
         }
     }
-
-    private void HandleMovement()
+    private void MoveTowardsPlayer()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (eliteEnemy && distanceToPlayer <= jumpDistance && canJump)
-        {
-            JumpToPlayer();
-        }
-        else if (distanceToPlayer <= attackRange)
-        {
-            agent.isStopped = true;
-        }
-        else
-        {
-            agent.isStopped = false;
-            agent.SetDestination(player.position);
-        }
+        agent.isStopped = false;
+        agent.SetDestination(player.position);
     }
-
-    private void HandleAttacksAndThrows()
+    private void HandleAttackOrThrow()
     {
         if (attackTimer <= 0f)
         {
             if (rangeEnemy)
             {
-                ThrowProjectile();
+                ThrowProjectile();  // For ranged enemies
             }
             else
             {
-                AttackPlayer();
+                AttackPlayer();  // For melee enemies
             }
-            attackTimer = attackCooldown;
+            attackTimer = attackCooldown;  // Reset attack cooldown
         }
         else
         {
-            attackTimer -= Time.deltaTime;
+            attackTimer -= Time.deltaTime;  // Decrease attack timer
         }
     }
 
     private void AttackPlayer()
     {
-        animator.SetTrigger("Attack");
-        PlayerHealth playerHP = player.GetComponent<PlayerHealth>();
+        animator.SetTrigger("Attack");  // Play attack animation
+        PlayerHealth playerHP = player.gameObject.GetComponent<PlayerHealth>();
         if (playerHP != null)
         {
-            playerHP.takeDamage(attackDamage);
+            playerHP.takeDamage(attackDamage);  // Apply damage to the player
         }
     }
 
-    private void ThrowProjectile()
+    public void TakeDamage(float damage)
     {
-        if (isThrowing) return;
+        currentHP -= damage;  // Reduce the enemy's HP by the damage amount
+        sliderBar.UpdateBar(currentHP, maxHP);
 
-        Vector3 lookDirection = player.position - transform.position;
-        lookDirection.y = 0;
-        transform.rotation = Quaternion.LookRotation(lookDirection);
+        Debug.Log("Enemy HP: " + currentHP);
 
-        animator.SetTrigger("Attack");
+        //Play the VFX on the enemy Body
+        if (hitVFXPrefab != null)
+        {
+            Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
+        }
 
-        StartCoroutine(ThrowProjectileWithDelay(1.25f));
-        isThrowing = true;
+      
+        if (currentHP <= nextHealthThreshold)
+        {
+            // Play sound  below threshold
+            PlayHitSound();
+        }
+        if (currentHP <= 0)
+        {
+            HandleDeath();  // Trigger death when health is 0 or below
+        }
+        else if (currentHP <= nextHealthThreshold && !soundPlayed)
+        {
+            PlayHitSound();
+        }
+    }
+    private void PlayHitSound()
+    {
+        if (!soundPlayed)
+        {
+            SoundManager.Instance.PlayHitSound();
+            soundPlayed = true;
+        }
+    }
+    public bool checkHealth()
+    {
+        return currentHP <= 0;
     }
 
+    public float returnHealthValue()
+    {
+        return currentHP;
+    }
+
+    public int awardEXP()
+    {
+        return experiencePoints;
+    }
     private IEnumerator ThrowProjectileWithDelay(float delay)
     {
+        // Wait
         yield return new WaitForSeconds(delay);
 
         GameObject rock = Instantiate(rockPrefab, throwPoint.position, Quaternion.identity);
+
         ProjectileDirEnemy projectile = rock.GetComponent<ProjectileDirEnemy>();
 
         if (projectile != null)
         {
-            Vector3 throwDirection = CalculateThrowDirection(throwPoint.position, player.position);
+            Vector3 targetPosition = player.position;
+            Vector3 throwDirection = CalculateThrowDirection(throwPoint.position, targetPosition);
+
+            // Set the direction of the projectile
             projectile.SetDirection(throwDirection);
         }
-
         isThrowing = false;
     }
-
-    private Vector3 CalculateThrowDirection(Vector3 start, Vector3 target)
+    private void ThrowProjectile()
     {
-        Vector3 direction = (target - start).normalized;
-        direction.y = 0.5f; // Arc for projectile
-        return direction;
+        if (isThrowing)
+        {
+            return;
+        }
+        // Rotate the enemy to face the player
+        Vector3 lookDirection = player.position - transform.position;
+        lookDirection.y = 0; // <- safety it doesnt rotate Y Axis
+        transform.rotation = Quaternion.LookRotation(lookDirection);
+
+        animator.SetTrigger("Attack");
+
+        // Start the coroutine to instantiate the rock after a delay
+        StartCoroutine(ThrowProjectileWithDelay(1.25f)); // 2-second delay
+        isThrowing = true;
     }
 
+    // Simplified throw direction calculation with an arc
+    private Vector3 CalculateThrowDirection(Vector3 start, Vector3 target)
+    {
+        // Get the direction to the player
+        Vector3 direction = (target - start).normalized;
+
+        // Give it an upward arc
+        direction.y = 0.5f;
+
+        return direction;
+    }
+    private void changeMeleeIcon()
+    {
+        mobIcon.sprite = normalEnemyImage;
+
+    }
+    private void changeRangeIcon()
+    {
+        mobIcon.sprite = rangeImage;
+    }
     private void JumpToPlayer()
     {
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
@@ -231,48 +381,54 @@ public class EnemyAI : MonoBehaviour
         agent.enabled = true;
         agent.isStopped = false;  // Allow movement again
     }
-    public void HandleDeath()
-    {
-        // Stop enemy movement and handle death logic
-        agent.isStopped = true;
-        GetComponent<CapsuleCollider>().enabled = false;
-
-        animator.SetTrigger("Death");
-        StartCoroutine(HandleDeathAfterAnimation());
-    }
-
     private IEnumerator HandleDeathAfterAnimation()
     {
+        //Wait for 2.2 seconds before running the rest of the function
         yield return new WaitForSeconds(2.2f);
 
-        LootDrops lootDrop = GetComponent<LootDrops>();
-        if (lootDrop != null)
+        if (!hasDroppedLoot)
         {
-            lootDrop.DropLoot();
+            LootDrops lootDrop = GetComponent<LootDrops>();
+            if (lootDrop != null)
+            {
+                lootDrop.DropLoot();
+            }
+
+            hasDroppedLoot = true;
         }
 
+        // Destroy the enemy game object after loot drop
         Destroy(gameObject);
     }
+    private void HandleDeath()
+    {
+        // Stop the enemy from moving and disable the NavMeshAgent
+        agent.isStopped = true;
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
 
+        // Trigger death animation
+        if (!isDead)
+        {
+            SoundManager.Instance.PlayDeathSound();  // Play death sound
+            isDead = true;
+        }
+
+        animator.SetTrigger("Death");  // Play death animation
+        StartCoroutine(HandleDeathAfterAnimation());  // Coroutine to handle death cleanup
+    }
     private void HandleMovementAnimation()
     {
-        if (agent.velocity.magnitude > 0.1f)
+        if (agent != null && animator != null)
         {
-            animator.SetBool("isWalking", true);
+            // Check if the agent is moving by checking its velocity
+            if (agent.velocity.magnitude > 0.1f)
+            {
+                animator.SetBool("isWalking", true);  // Start walk animation
+            }
+            else
+            {
+                animator.SetBool("isWalking", false);  // Stop walk animation
+            }
         }
-        else
-        {
-            animator.SetBool("isWalking", false);
-        }
-    }
-
-    private void changeMeleeIcon()
-    {
-        mobIcon.sprite = normalEnemyImage;
-    }
-
-    private void changeRangeIcon()
-    {
-        mobIcon.sprite = rangeImage;
     }
 }
