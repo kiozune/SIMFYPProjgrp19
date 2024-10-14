@@ -65,7 +65,7 @@ public class WeaponDamageScript : MonoBehaviour
         EnemyHP healthScript = enemy.GetComponent<EnemyHP>();
         if (healthScript != null)
         {
-            enemyAI.TakeDamage(damageValue);
+            healthScript.TakeDamage(damageValue);
         }
         if (healthScript.GetCurrentHealth() <= 0)
         {

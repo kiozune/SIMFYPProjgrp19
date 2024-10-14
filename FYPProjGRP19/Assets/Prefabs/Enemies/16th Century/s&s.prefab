@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: s&s
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0701f9afd3574e34db1ca16727653f29, type: 3}
+      propertyPath: m_TagString
+      value: BasicEnemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93,32 +97,18 @@ MonoBehaviour:
   playerPrefab: {fileID: 0}
   rockPrefab: {fileID: 0}
   throwPoint: {fileID: 0}
-  maxHP: 100
-  currentHP: 100
-  damageFromProjectile: 20
   attackDamage: 20
   attackRange: 3
   attackCooldown: 2
-  nextHealthThreshold: 0
   jumpCooldown: 20
-  jumpTimer: 0
   jumpDistance: 6
   canJump: 1
-  isThrowing: 0
   rangeEnemy: 0
   normalEnemy: 0
   eliteEnemy: 0
-  soundPlayed: 0
-  hasDroppedLoot: 0
-  isDead: 0
   normalEnemyImage: {fileID: 0}
   rangeImage: {fileID: 0}
   mobIcon: {fileID: 0}
-  hitVFXPrefab: {fileID: 0}
-  hitSoundClip: {fileID: 0}
-  audioSource: {fileID: 0}
-  agent: {fileID: 0}
-  experiencePoints: 50
 --- !u!195 &4622897995232068529
 NavMeshAgent:
   m_ObjectHideFlags: 0
