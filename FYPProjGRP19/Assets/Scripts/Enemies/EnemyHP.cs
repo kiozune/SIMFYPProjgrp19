@@ -31,18 +31,25 @@ public class EnemyHP : MonoBehaviour
     [SerializeField]
     private int experiencePoints = 50;  // EXP awarded when the enemy dies
 
-    private EnemyAI enemyAI;            // Reference to EnemyAI script for interacting with other functionalities
+    [Header("Death Handling Script")]
+    [SerializeField]
+    private MonoBehaviour deathHandlerScript; // Reference to any script that implements HandleDeath
 
     private void Start()
     {
         currentHP = maxHP;
         nextHealthThreshold = maxHP * 0.6f;
+        if (sliderBar == null)
+        {
+            sliderBar = GetComponentInChildren<SliderBar>();
+        }
+        if (sliderBar == null)
+        {
+            Debug.LogError("SliderBar is not assigned or found.");
+        }
 
-        sliderBar = GetComponentInChildren<SliderBar>();
-        if (sliderBar == null) Debug.LogError("SliderBar is not assigned or found.");
-
-        enemyAI = GetComponent<EnemyAI>();  // Get reference to EnemyAI
-        if (enemyAI == null) Debug.LogError("EnemyAI is not assigned or found.");
+        // You can optionally log an error if no death handler is assigned, but this is not mandatory
+        if (deathHandlerScript == null) Debug.LogError("Death handler script is not assigned.");
     }
 
     public void TakeDamage(float damage)
@@ -63,15 +70,14 @@ public class EnemyHP : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            // Trigger death event
             HandleDeath();
         }
     }
+
     private void PlayHitSound()
     {
         if (!soundPlayed)
         {
-            
             SoundManager.Instance.PlayHitSound();
             soundPlayed = true;
         }
@@ -96,8 +102,12 @@ public class EnemyHP : MonoBehaviour
     {
         if (!isDead)
         {
-            // Call death handling from EnemyAI
-            enemyAI.HandleDeath();
+            // Check if the assigned script has a HandleDeath method and invoke it
+            if (deathHandlerScript != null)
+            {
+                //Call deathHandler Script
+                deathHandlerScript.Invoke("HandleDeath", 0f);
+            }
             isDead = true;
         }
     }
