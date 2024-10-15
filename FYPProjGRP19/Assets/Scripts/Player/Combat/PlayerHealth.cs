@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(healthSlider == null)
         {
-            healthSlider = GameObject.FindGameObjectWithTag("playerHP").GetComponent<Slider>();
+            //healthSlider = GameObject.FindGameObjectWithTag("playerHP").GetComponent<Slider>();
         }
         if (currHealth <= 0)
         {
