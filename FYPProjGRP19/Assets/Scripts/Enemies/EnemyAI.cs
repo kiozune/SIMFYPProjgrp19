@@ -234,16 +234,17 @@ public class EnemyAI : MonoBehaviour
     public void HandleDeath()
     {
         // Stop enemy movement and handle death logic
+        Debug.Log("Death Triggered");
         agent.isStopped = true;
         GetComponent<CapsuleCollider>().enabled = false;
-
+        animator.ResetTrigger("Attack");
         animator.SetTrigger("Death");
         StartCoroutine(HandleDeathAfterAnimation());
     }
 
     private IEnumerator HandleDeathAfterAnimation()
     {
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(3f);
 
         LootDrops lootDrop = GetComponent<LootDrops>();
         if (lootDrop != null)

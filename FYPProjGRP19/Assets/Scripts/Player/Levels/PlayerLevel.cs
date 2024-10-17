@@ -40,7 +40,7 @@ public class PlayerLevel : MonoBehaviour
         xpSliderObject = GameObject.FindGameObjectWithTag("EXPhud");
         xpTextObject = GameObject.FindGameObjectWithTag("EXPText");
         levelUpOverlay = GameObject.FindGameObjectWithTag("UIUpgrade");
-        levelUpOverlay.SetActive(false);
+        //levelUpOverlay.SetActive(false);
         xpSlider = xpSliderObject.GetComponent<Slider>();
         levelUpText = xpTextObject.GetComponent<TMP_Text>();
         Time.timeScale = 1.0f;
