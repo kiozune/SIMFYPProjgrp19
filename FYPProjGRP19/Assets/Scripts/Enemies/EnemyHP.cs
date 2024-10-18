@@ -93,6 +93,19 @@ public class EnemyHP : MonoBehaviour
         return currentHP;
     }
 
+    //calculate percentage health to trigger next enemy boss phase
+    public bool HalfHealth()
+    {
+        if (currentHP <= (maxHP / 2))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public int AwardEXP()
     {
         return experiencePoints;
@@ -102,6 +115,7 @@ public class EnemyHP : MonoBehaviour
     {
         if (!isDead)
         {
+            Debug.Log("Calling Death");
             // Check if the assigned script has a HandleDeath method and invoke it
             if (deathHandlerScript != null)
             {
@@ -109,6 +123,16 @@ public class EnemyHP : MonoBehaviour
                 deathHandlerScript.Invoke("HandleDeath", 0f);
             }
             isDead = true;
+        }
+    }
+
+    private void Update()
+    {
+        //Debug.Log("Current HP: " + currentHP);
+
+        if (IsDead() == true)
+        {
+            HandleDeath();
         }
     }
 }
