@@ -3551,7 +3551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 331265055}
-  levelTransition: Boss Level
 --- !u!1001 &999080592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7244,14 +7243,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 321387412811740871, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
-      propertyPath: m_TagString
-      value: playerHP
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048657581418112934, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
-      propertyPath: m_TagString
-      value: EXPhud
-      objectReference: {fileID: 0}
     - target: {fileID: 6324593708932212193, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7303,10 +7294,6 @@ PrefabInstance:
     - target: {fileID: 7019131656528928643, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7321352733305085523, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
-      propertyPath: m_TagString
-      value: EXPText
       objectReference: {fileID: 0}
     - target: {fileID: 8432196253736134239, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -7516,11 +7503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
-      propertyPath: m_TagString
-      value: UIUpgrade
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9201368651924323407, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_LocalPosition.x

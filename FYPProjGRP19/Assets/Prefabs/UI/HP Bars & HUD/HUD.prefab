@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 3798882094008573517}
   m_Layer: 0
   m_Name: Player HP
-  m_TagString: playerHP
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 3663330495529878113}
   m_Layer: 0
   m_Name: EXP Slider
-  m_TagString: EXPhud
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 7207808678876860405}
   m_Layer: 0
   m_Name: LevelText
-  m_TagString: EXPText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

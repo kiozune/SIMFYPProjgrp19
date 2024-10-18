@@ -30,19 +30,10 @@ public class PlayerLevel : MonoBehaviour
     [SerializeField]
     private Slider xpSlider;
 
-    private GameObject xpSliderObject;
-    private GameObject xpTextObject;
-
     // Start is called before the first frame update
     void Start()
     {
         UpdateXPSlider();
-        xpSliderObject = GameObject.FindGameObjectWithTag("EXPhud");
-        xpTextObject = GameObject.FindGameObjectWithTag("EXPText");
-        levelUpOverlay = GameObject.FindGameObjectWithTag("UIUpgrade");
-        levelUpOverlay.SetActive(false);
-        xpSlider = xpSliderObject.GetComponent<Slider>();
-        levelUpText = xpTextObject.GetComponent<TMP_Text>();
         Time.timeScale = 1.0f;
     }
 
