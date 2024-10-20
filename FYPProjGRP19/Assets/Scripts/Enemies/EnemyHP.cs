@@ -31,9 +31,9 @@ public class EnemyHP : MonoBehaviour
     [SerializeField]
     private int experiencePoints = 50;  // EXP awarded when the enemy dies
 
-    [Header("Death Handling Script")]
-    [SerializeField]
-    private MonoBehaviour deathHandlerScript; // Reference to any script that implements HandleDeath
+    //[Header("Death Handling Script")]
+    //[SerializeField]
+    //private MonoBehaviour deathHandlerScript; // Reference to any script that implements HandleDeath
 
     private void Start()
     {
@@ -49,7 +49,7 @@ public class EnemyHP : MonoBehaviour
         }
 
         // You can optionally log an error if no death handler is assigned, but this is not mandatory
-        if (deathHandlerScript == null) Debug.LogError("Death handler script is not assigned.");
+       // if (deathHandlerScript == null) Debug.LogError("Death handler script is not assigned.");
     }
 
     public void TakeDamage(float damage)
@@ -70,7 +70,7 @@ public class EnemyHP : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            HandleDeath();
+          //  HandleDeath();
         }
     }
 
@@ -111,28 +111,28 @@ public class EnemyHP : MonoBehaviour
         return experiencePoints;
     }
 
-    private void HandleDeath()
-    {
-        if (!isDead)
-        {
-            Debug.Log("Calling Death");
-            // Check if the assigned script has a HandleDeath method and invoke it
-            if (deathHandlerScript != null)
-            {
-                //Call deathHandler Script
-                deathHandlerScript.Invoke("HandleDeath", 0f);
-            }
-            isDead = true;
-        }
-    }
+    //private void HandleDeath()
+    //{
+    //    if (!isDead)
+    //    {
+    //        Debug.Log("Calling Death");
+    //        // Check if the assigned script has a HandleDeath method and invoke it
+    //        if (deathHandlerScript != null)
+    //        {
+    //            //Call deathHandler Script
+    //            deathHandlerScript.Invoke("HandleDeath", 0f);
+    //        }
+    //        isDead = true;
+    //    }
+    //}
 
-    private void Update()
-    {
-        //Debug.Log("Current HP: " + currentHP);
+    //private void Update()
+    //{
+    //    //Debug.Log("Current HP: " + currentHP);
 
-        if (IsDead() == true)
-        {
-            HandleDeath();
-        }
-    }
+    //    if (IsDead() == true)
+    //    {
+    //        HandleDeath();
+    //    }
+    //}
 }

@@ -38,7 +38,7 @@ public class projectileDamage : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BasicEnemy"))
+        if (other.CompareTag("Enemy"))
         {
             if (isAOEEnabled)
             {
@@ -76,7 +76,7 @@ public class projectileDamage : MonoBehaviour
 
         foreach (Collider hit in hitEnemies)
         {
-            if (hit.CompareTag("BasicEnemy") && hit.gameObject != primaryTarget)
+            if (hit.CompareTag("Enemy") && hit.gameObject != primaryTarget)
             {
                 EnemyAI enemyAI = hit.GetComponent<EnemyAI>();
                 if (enemyAI != null)
