@@ -1,42 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.ProBuilder.MeshOperations;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class Stage2Boss : MonoBehaviour
 {
     private Animator animator;
     public GameObject player;
     private NavMeshAgent agent;
+    private EnemyHP bossHP;
     public GameObject flag;
 
-    private EnemyHP bossHP;
     public float detectionRange = 15f;
     public float attackRange = 5f;
-    private float chaseTimer = 0;
-    private bool isRunning = false;  // To track if the boss is running
-    private bool isInRange = false;
-    private float cooldown = 0;
-    private bool phaseChange = false;
-    private bool nextPhase = false;
+    private float chaseTimer = 0f;
+    private float transition = 0f;
 
-    // Start is called before the first frame update
+    private float distanceToPlayer;
+    private bool inRange = false;
+    private bool isAttacking = false;
+    private bool isPhase = false;
+    private bool isChasing = false;
+    private string currentAnimation = "";
+    private int currentAttack = 0;
+    private bool isDead = false;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();    //Initialize Animator
         agent = GetComponent<NavMeshAgent>();  // Initialize NavMeshAgent
-        bossHP = GetComponent<EnemyHP>();
+        bossHP = GetComponent<EnemyHP>();       //Get HP elements
 
         agent.updateRotation = false;
-        
-        StartCoroutine(FindPlayer());
-        animator.SetTrigger("Idle");
 
-        if (bossHP.HalfHealth() == true)
+
+        StartCoroutine(FindPlayer());
+        StartCoroutine(ChangeAttack());
+
+        ChangeAnimation("Idle");
+
+        IEnumerator ChangeAttack()
         {
-            ResetAllAnimatorTriggers(animator);
-            animator.SetTrigger("Phase");
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0); // Get current state of layer 0
+
+            while (true)
+            {
+                yield return new WaitForSeconds(stateInfo.length);
+                ++currentAttack;
+                if (currentAttack >= 5)
+                {
+                    currentAttack = 0;
+                }
+            }
         }
     }
 
@@ -46,81 +66,357 @@ public class Stage2Boss : MonoBehaviour
         while (player == null)
         {
             player = GameObject.FindWithTag("Player");
+            //variables requiring constant frame update
+            
+
             yield return new WaitForSeconds(0.5f);  // Check every 0.5 seconds
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    //put conditionals in here
+    private void Update()
     {
-        agent.stoppingDistance = attackRange - 1;  // Stops when within attack range
+        //debug log
+        //Debug.Log("isChasing is " + isChasing);
+        //Debug.Log("chase timer is" + chaseTimer);
 
-        //Debug.Log("Boss Range is " + detectionRange);
-
-        //Debug.Log("CurrentHP: " + currentHP + " and PercentChange" + phaseChange);
-        if (player != null)
-        {
-            if (bossHP.HalfHealth() == true)
-            {
-                Phase2();
-            }
-            else
-            {
-                Phase1();
-            }
-            //DetectPlayer();  // Check if player is detected
-            //InRange();       // Check if player is in attack range
-        } 
-    }
-
-    void Phase1()
-    {
+        //check every frame
         DetectPlayer();
-        InRange();
-        if (isInRange)
+        CheckAnimation();
+
+        if (bossHP.GetCurrentHealth() <= 0)
         {
-            BasicCombo();
+            HandleDeath();
+        }
+        if (isPhase && isAttacking && !isChasing)
+        {
+            ChangeAnimation("BossSpecial2");
+        }
+        else if (!isPhase && isAttacking && !isChasing)
+        {
+            ChangeAnimation("BossAttack");
+        }
+
+        //if boss is at half health or lower, play midphase animation
+        if (bossHP.HalfHealth())
+        {
+            isPhase = true;
+            return;
+        }
+
+        //check chase
+        if (isChasing && inRange)
+        {
+            chaseTimer += Time.deltaTime;
         }
         else
         {
-            animator.ResetTrigger("Attack");
+            chaseTimer = 0f;
         }
-    }
 
-    void PhaseTransition()
-    {
-        if (!phaseChange)
+        //if chase and in range to attack
+        if (distanceToPlayer > attackRange)
         {
-            ResetAllAnimatorTriggers(animator);
-            animator.SetTrigger("Phase");
-            phaseChange = true;
+            isChasing = true;
+            isAttacking = false;
+            return;
+        }
+        else if (distanceToPlayer <= attackRange)
+        {
+            chaseTimer = 0f;
+            isChasing = false;
+            isAttacking = true;
+            return;
+        }
+        /*
+        //variables requiring constant frame update
+        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        //agent.stoppingDistance = attackRange - 1;  // Stops when within attack range
+
+        //start looking for Player
+        DetectPlayer(); //includes walk and run anim bools
+
+        //if the player is within the boss' attack range
+        if (distanceToPlayer <= attackRange)
+        {
+            //set mode
+            isAttacking = true;
+            //stop walking
+            animator.SetBool("Walk", false);
+            //stop walking while attacking
+            agent.ResetPath();
+            //play attack animation
+            animator.SetBool("Attack", true);
+        }
+        else if (distanceToPlayer > attackRange) //if player is outside boss' range
+        {
+            //set mode
+            isAttacking = false;
+            //stop attack animation
+            animator.SetBool("Attack", false);
+            //resume tracking player
+            DetectPlayer();
+        }
+
+        if (bossHP.HalfHealth())
+        {
+            isPhase = true;
+            transition = 5f;
+        }
+
+        if (isPhase)
+        {
+            agent.ResetPath();
+            animator.SetBool("Phase", true);
+            transition -= Time.deltaTime;
+        }
+
+        if (isPhase && transition <= 0)
+        {
+            animator.SetBool("Phase", false);
+        }
+        */
+    }
+    //check animation played
+    private void CheckAnimation()
+    {
+        if (isDead)
+        {
+            ChangeAnimation("BossDefeat");
+            return;
+        }
+        else if (chaseTimer >= 10)
+        {
+            ChangeAnimation("BossRun");
+            agent.SetDestination(player.transform.position);
+            FacePlayer();
+            //run at increased speed
+            agent.speed = 12f;
+            attackRange = 3f;
+        }
+        else if (isPhase && isAttacking)
+        {
+            agent.SetDestination(player.transform.position);
+            FacePlayer();
+            agent.ResetPath();
+            return;
+        }
+        /*
+        else if (isPhase)
+        {
+            ChangeAnimation("BossBuff");
+            return;
+        }
+        */
+        else if (isAttacking)
+        {
+            agent.SetDestination(player.transform.position);
+            FacePlayer();
+            agent.ResetPath();
+        }
+        //chase player
+        else if (inRange)
+        {
+            ChangeAnimation("BossWalk");
+            agent.SetDestination(player.transform.position);
+            FacePlayer();
+            agent.speed = 3.5f;
+            attackRange = 5f;
         }
         else
         {
-            animator.ResetTrigger("Phase");
-            nextPhase = true;
+            ChangeAnimation("BossIdle");
         }
-    }
-    //2nd Phase Attack Pattern
-    void Phase2()
-    {
-        //animator.ResetTrigger("Phase");
-        PhaseTransition();
 
-        DetectPlayer();
-        InRange();
 
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-
-        // Move using the NavMeshAgent only if the walk animation is playing
-        if (!stateInfo.IsName("BossBuff") && nextPhase)
+        /*
+        void CheckAttack()
         {
-            Moveset();
+            void IsInRange()
+            {
+                // Check if the player is within attack range
+                if (distanceToPlayer > attackRange)
+                {
+                    isAttacking = false;
+                    CheckAnimation();
+                    // If the player is outside the attack range, exit the function
+                    return;
+                }
+            }
+
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0); // Get current state of layer 0
+
+            if (currentAttack == 0 && distanceToPlayer <= attackRange)
+            {
+                ChangeAnimation("BossSpecial1");
+                agent.SetDestination(player.transform.position);
+                FacePlayer();
+                IsInRange();
+                return;
+            }
+            else if (currentAttack == 1 && distanceToPlayer <= attackRange)
+            {
+                ChangeAnimation("BossSpecial2");
+                agent.SetDestination(player.transform.position);
+                FacePlayer();
+                IsInRange();
+                return;
+            }
+            else if (currentAttack == 2 && distanceToPlayer <= attackRange)
+            {
+                ChangeAnimation("BossSummonFlag");
+                if (stateInfo.IsName("BossSummonFlag") && stateInfo.normalizedTime >= 1.0f)
+                {
+                    SpecialSummonFlag();
+                }
+                IsInRange();
+                return;
+            }
+            else if (currentAttack == 3 && distanceToPlayer <= attackRange)
+            {
+                ChangeAnimation("BossSpecial1");
+                agent.SetDestination(player.transform.position);
+                FacePlayer();
+                IsInRange();
+                return;
+            }
+            else if (currentAttack == 4 && distanceToPlayer <= attackRange)
+            {
+                ChangeAnimation("BossSpecial2");
+                agent.SetDestination(player.transform.position);
+                FacePlayer();
+                IsInRange();
+                return;
+            }
+            else if (currentAttack == 5 && distanceToPlayer <= attackRange)
+            {
+                ChangeAnimation("BossSummonFlag");
+                if (stateInfo.IsName("BossSummonFlag") && stateInfo.normalizedTime >= 1.0f)
+                {
+                    SpecialSummonFlag();
+                }
+                IsInRange();
+                return;
+            }
+        }
+        */
+
+    }
+    public void HandleDeath()
+    {
+        // Stop enemy movement and handle death logic
+        Debug.Log("Death Triggered");
+        agent.isStopped = true;
+        GetComponent<CapsuleCollider>().enabled = false;
+        inRange = false;
+        isAttacking = false;
+        isPhase = false;
+        isChasing = false;
+        isDead = true;
+    }
+
+    //changes animation
+    public void ChangeAnimation(string animation, float crossfade = 0.2f, float time = 0)
+    {
+        if (time > 0)
+        {
+            StartCoroutine(Wait());
+        }
+        else
+        {
+            Validate();
+        }
+
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(time - crossfade);
+            Validate();
+        }
+
+        void Validate()
+        {
+            if (currentAnimation != animation)
+            {
+                currentAnimation = animation;
+
+                if (currentAnimation == "")
+                {
+                    CheckAnimation();
+                }
+                else
+                {
+                    animator.CrossFade(animation, crossfade);
+                }
+            }
         }
     }
 
-        // Ensure the boss is always facing the player
-        void FacePlayer()
+    void DetectPlayer()
+    {
+        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        //if the player is within the initial detection range
+        if (distanceToPlayer <= detectionRange)
+        {
+            //increase detection range to arena range
+            detectionRange = 50f;
+
+            inRange = true;
+        }
+        else //if player is outside of attack range
+        {
+            inRange = false;
+        }
+    }
+    /*
+    //method to detect the player
+    void DetectPlayer()
+    {
+        //if the player is within the initial detection range
+        if (distanceToPlayer <= detectionRange) 
+        {
+            //increase detection range to arena range
+            detectionRange = 50f;
+
+            //start walking towards player
+            animator.SetBool("Walk", true);
+            agent.SetDestination(player.transform.position);
+            FacePlayer();
+
+            //if player is outside of attack range
+            if (distanceToPlayer > attackRange && !isAttacking)
+            {
+                //start timer to chase
+                chaseTimer += Time.deltaTime;
+
+                //if chase timer is over 15 seconds
+                if (chaseTimer > 15 && !isAttacking)
+                {
+                    //run at increased speed
+                    agent.speed = 12f;
+                    attackRange = 3f;
+                    animator.SetBool("Run", true);
+                }
+            }
+            else if (distanceToPlayer <= attackRange) //if player is within attack range
+            {
+                //reset chase timer
+                //reset boss settings and go back to walking
+                agent.speed = 3.5f;
+                attackRange = 5f;
+                animator.SetBool("Run", false);
+                chaseTimer = 0f;
+            }
+        }
+        else //if player moves outside of detection range
+        {
+            //stop moving and play idle animation
+            animator.SetBool("Walk", false);
+            agent.ResetPath();
+        }
+    }
+    */
+
+    void FacePlayer()
     {
         if (player != null)
         {
@@ -134,177 +430,8 @@ public class Stage2Boss : MonoBehaviour
         }
     }
 
-
-    // Detect if the player is within detection range
-    void DetectPlayer()
-    {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        
-
-        if (distanceToPlayer <= detectionRange)
-        {
-            detectionRange = 50f;
-
-            animator.ResetTrigger("Idle");
-            if (!isRunning)  // Only trigger walk if not already running
-            {
-                animator.SetTrigger("Walk");
-                Debug.Log("Player Detected");
-
-                // Check if the walking animation has started before moving
-                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-
-                // Move using the NavMeshAgent only if the walk animation is playing
-                if (stateInfo.IsName("BossWalk") && !agent.pathPending && distanceToPlayer > agent.stoppingDistance)
-                {
-                    chaseTimer += Time.deltaTime;
-
-                    // After walking for 10 seconds, switch to running
-                    if (chaseTimer >= 10)
-                    {
-                        StartCoroutine(RunTowardsPlayer());  // Start running using a while loop in a coroutine
-                    }
-
-                    // Continuously update the destination to the player's position
-                    agent.SetDestination(player.transform.position);
-
-                    FacePlayer();
-                }
-            }
-        }
-        else
-        {
-            // If the player is out of detection range, reset the boss to idle
-            StopRunning();  // Reset running if player is lost
-            animator.SetTrigger("Idle");
-            Debug.Log("Player Lost");
-            attackRange = 5f;  // Reset attack range to default
-            agent.ResetPath();  // Stop the agent from moving
-        }
-    }
-
-    // Coroutine to handle running with a while loop
-    IEnumerator RunTowardsPlayer()
-    {
-        isRunning = true;
-        animator.SetBool("isRunning", true);
-        animator.ResetTrigger("Walk");
-        animator.SetTrigger("Run");
-        agent.speed = 12f;  // Increase speed to running
-        attackRange = 3f;   // Shrink attack range
-        Debug.Log("Boss is running");
-
-        while (isRunning)  // Keep running until a condition is met
-        {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-
-            if (distanceToPlayer <= attackRange)
-            {
-                // Stop running when within attack range
-                isRunning = false;
-                animator.SetBool("isRunning", false);
-                agent.ResetPath();  // Stop the agent from moving when attacking
-                animator.ResetTrigger("Run");
-                animator.SetTrigger("Attack");
-                attackRange = 5f;   
-                Debug.Log("Attacking Player");
-                yield break;  // Exit the coroutine
-            }
-
-            // Continuously update the destination to the player's position
-            agent.SetDestination(player.transform.position);
-            FacePlayer();
-
-            yield return null;  // Wait for the next frame
-        }
-    }
-
-    // Function to stop running and reset everything if the player is lost
-    void StopRunning()
-    {
-        if (isRunning)
-        {
-            StopCoroutine(RunTowardsPlayer());
-            chaseTimer = 0;
-            isRunning = false;
-            animator.SetBool("isRunning", false);
-            agent.speed = 3.5f;  // Reset speed to walk speed
-            attackRange = 5f;
-            animator.ResetTrigger("Run");
-            Debug.Log("Boss stopped running");
-        }
-    }
-
-    // Check if the player is in attack range
-    void InRange()
-    {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-
-        if (distanceToPlayer <= attackRange)
-        {
-
-            StopRunning();  // Stop running when attacking
-            animator.ResetTrigger("Walk");
-            isInRange = true;
-            FacePlayer();
-            if (attackRange == 3f)
-            {
-                attackRange = 5f;
-            }
-            //Debug.Log("Attacking Player");
-        }
-        else
-        {
-            isInRange = false;
-        }
-    }
-
-    //1st Phase Attack Pattern
-    void BasicCombo()
-    {
-        animator.SetTrigger("Attack");
-    }
-
-    //2nd Phase
-    void Moveset()
-    {
-            int diceRoll = Random.Range(1, 7);  // 10-sided dice roll (1 to 10)
-            if (cooldown <= 0)
-            {
-                if (diceRoll >= 1 && diceRoll < 4)   // roll 1-3 to summon flag
-                {
-                    SpecialSummonFlag();
-                    cooldown = 10f;
-                }
-                else if (diceRoll >= 4 && diceRoll < 6)  // roll 4-5 to do Special Attack 1
-                {
-                    animator.SetTrigger("Special1");
-                    cooldown = 5f;
-                }
-                else if (diceRoll == 6)  // roll 6 to do Special Attack 2
-                {
-                    animator.SetTrigger("Special2");
-                    cooldown = 5f;
-                }
-
-            }
-            else   // roll 7-10 to do normal combo
-            {
-                cooldown -= Time.deltaTime;
-                if (isInRange)
-                {
-                    BasicCombo();
-                }
-                else
-                {
-                    animator.ResetTrigger("Attack");
-                }
-            }
-    }
     void SpecialSummonFlag()
     {
-        animator.SetTrigger("Flag");
-
         // Define the radius around the boss where the flag will be summoned
         float summonRadius = 10f;
 
@@ -317,19 +444,20 @@ public class Stage2Boss : MonoBehaviour
         // Instantiate the flag at the generated position
         Instantiate(flag, summonPosition, Quaternion.identity);
 
-        Debug.Log("Summoned Flag at position: " + summonPosition);
+        //Debug.Log("Summoned Flag at position: " + summonPosition);
+
+        return;
     }
 
-
-    public void ResetAllAnimatorTriggers(Animator animator)
+    IEnumerator SummonOneFlag()
     {
-        foreach (var trigger in animator.parameters)
-        {
-            if (trigger.type == AnimatorControllerParameterType.Trigger)
-            {
-                animator.ResetTrigger(trigger.name);
-            }
-        }
+        SpecialSummonFlag();
+        yield return new WaitForEndOfFrame();
+    }
+    void ResetPhase()
+    {
+        isPhase = false;
+        animator.SetBool("Phase", false);
     }
 
     // This function will draw the detection range and attack range as gizmos in the scene view
