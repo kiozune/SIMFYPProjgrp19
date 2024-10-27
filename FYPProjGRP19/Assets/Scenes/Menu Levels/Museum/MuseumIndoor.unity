@@ -514,9 +514,45 @@ MonoBehaviour:
       cardImg: {fileID: 21300000, guid: d7bd20a1dbfc277488e77cb4b5210828, type: 3}
       cardDesc: 
   - catName: 1400s-1600s - Portuguese/Spanish
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1700s - Pirate Haven
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -926,9 +962,45 @@ MonoBehaviour:
       cardImg: {fileID: 21300000, guid: d7bd20a1dbfc277488e77cb4b5210828, type: 3}
       cardDesc: 
   - catName: 1400s-1600s - Portuguese/Spanish
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1700s - Pirate Haven
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -1340,9 +1412,45 @@ MonoBehaviour:
       cardImg: {fileID: 21300000, guid: d7bd20a1dbfc277488e77cb4b5210828, type: 3}
       cardDesc: 
   - catName: 1400s-1600s - Portuguese/Spanish
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1700s - Pirate Haven
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -2030,9 +2138,45 @@ MonoBehaviour:
       cardImg: {fileID: 21300000, guid: d7bd20a1dbfc277488e77cb4b5210828, type: 3}
       cardDesc: 
   - catName: 1400s-1600s - Portuguese/Spanish
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1700s - Pirate Haven
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -2833,9 +2977,45 @@ MonoBehaviour:
       cardImg: {fileID: 21300000, guid: d7bd20a1dbfc277488e77cb4b5210828, type: 3}
       cardDesc: 
   - catName: 1400s-1600s - Portuguese/Spanish
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1700s - Pirate Haven
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -4250,9 +4430,45 @@ MonoBehaviour:
       cardImg: {fileID: 21300000, guid: d7bd20a1dbfc277488e77cb4b5210828, type: 3}
       cardDesc: 
   - catName: 1400s-1600s - Portuguese/Spanish
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1700s - Pirate Haven
-    cards: []
+    cards:
+    - cardName: temp
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 2
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 3
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 4
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 5
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
+    - cardName: temp 6
+      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardDesc: 
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food

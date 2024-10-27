@@ -363,6 +363,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.648849
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 74.689384
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -402,6 +414,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -424,6 +440,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6591359244334701491}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4933611113829143731}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6321977380585108002}
   m_SourcePrefab: {fileID: 100100000, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
 --- !u!1 &1392652238627834475 stripped
 GameObject:
@@ -471,6 +493,54 @@ MonoBehaviour:
   - levelName: Future
     cardMat: {fileID: 2100000, guid: 84f9847300e4cdf489c465c46a9292b4, type: 2}
     cardIcons: []
+--- !u!65 &4933611113829143731
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392652238627834475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.021485206, y: 0.019999994, z: 0.02218374}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6321977380585108002
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392652238627834475}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1736244830845063377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}

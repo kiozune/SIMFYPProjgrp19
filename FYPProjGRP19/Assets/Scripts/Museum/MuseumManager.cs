@@ -139,6 +139,7 @@ public class MuseumManager : MonoBehaviour
             ViewCard[] viewCardScripts = cardGrp.GetComponentsInChildren<ViewCard>();
             foreach (ViewCard viewCard in viewCardScripts)
                 viewCard.UpdateCard(cardIdx);
+            Debug.Log(cardIdx);
         }
         // reset positions
         cardGrp.transform.position = startPos;

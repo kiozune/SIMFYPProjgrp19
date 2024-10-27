@@ -58,6 +58,9 @@ public class ViewCard : MonoBehaviour
         if (closeBtn == null) Debug.LogError("Close Btn could not be found");
         if (viewUI == null) Debug.LogError("Zoom In Background could not be found");
         else viewUI.SetActive(false);
+
+        startPos = card.transform.position;
+        startScale = card.transform.localScale;
     }
 
     public void UpdateCard(int page)
@@ -91,8 +94,6 @@ public class ViewCard : MonoBehaviour
     {
         // cardAnim.SetBool("isZoomedIn", true);
         float moveTime = 0.5f;
-        startPos = card.transform.position;
-        startScale = card.transform.localScale;
         float elapsedTime = 0;
         while (elapsedTime < moveTime)
         {

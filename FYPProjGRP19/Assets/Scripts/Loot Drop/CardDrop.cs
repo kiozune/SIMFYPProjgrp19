@@ -9,8 +9,6 @@ public class CardDropData
     [SerializeField,
         Tooltip("Level Name, primarily for tracking (dev)")] private string levelName;
     [SerializeField,
-        Tooltip("Card background materials, in the order of level progression")] public Material cardMat;
-    [SerializeField,
         Tooltip("Sprites for card drop images - for the UI")] public Sprite[] cardIcons;
 }
 public class CardDrop : MonoBehaviour
@@ -32,10 +30,6 @@ public class CardDrop : MonoBehaviour
     private void Start()
     {
         if (levelNum < 0 || levelNum > 5) Debug.LogError("Invalid level number entered");
-
-        // set card material
-        Renderer r = GetComponent<Renderer>();
-        r.material = cardDropData[levelNum].cardMat;
 
         // set the specific card
         cardIdx = Random.Range(0, cardDropData[levelNum].cardIcons.Length);
@@ -62,7 +56,7 @@ public class CardDrop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isObtained)
+        if (other.gameObject.CompareTag("Player") && !isObtained)
         {
             isObtained = true; // prevent multiple triggers
 
