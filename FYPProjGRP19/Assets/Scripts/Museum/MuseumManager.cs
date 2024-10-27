@@ -18,7 +18,7 @@ public class MuseumManager : MonoBehaviour
     [SerializeField] private GameObject nextPage;
     [SerializeField,
         Tooltip("Name of card category currently in view")]
-        private TMP_Text currentCatName;
+        private TMP_Text currentCatName; 
 
     [Header("Card Category Tracking")]
     [SerializeField] private CardCategory[] cardCategories;
@@ -32,7 +32,6 @@ public class MuseumManager : MonoBehaviour
     [SerializeField] private GameObject leftAnchor;
     [SerializeField] private GameObject centerAnchor;
     [SerializeField] private GameObject rightAnchor;
-    [SerializeField] private GameObject viewAnchor;
 
     [Header("Bool checks")]
     private bool isTurningPage = false;
@@ -54,7 +53,7 @@ public class MuseumManager : MonoBehaviour
         {
             nextPage = GameObject.Find("Next Page");
             if (nextPage == null) Debug.LogError("\"Next Page\" could not be found"); 
-        } 
+        }
 
         // category name text
         if (currentCatName == null)
@@ -85,11 +84,6 @@ public class MuseumManager : MonoBehaviour
             rightAnchor = GameObject.Find("Right Card Group Anchor");
             if (rightAnchor == null) Debug.LogError("Right anchor could not be found");
         }
-        if (viewAnchor == null)
-        {
-            viewAnchor = GameObject.Find("View Card Anchor");
-            if (viewAnchor == null) Debug.LogError("View anchor could not be found");
-        }
     }
 
     private void ChangeCardMat(GameObject[] cardArr, Material cardMat)
@@ -119,7 +113,14 @@ public class MuseumManager : MonoBehaviour
             else a.SetTrigger(triggerName);
         }
 
-        float animLength = 0.13f; //GetCurrentClipInfo(0).Length not returning expected value
+        if (anchor.name != "Left Card Group Anchor" && anchor.name != "Right Card Group Anchor")
+        {
+            ViewCard[] viewCardScripts = cardGrp.GetComponentsInChildren<ViewCard>();
+            foreach (ViewCard viewCard in viewCardScripts)
+                viewCard.UpdateCard(cardIdx);
+        }
+
+        float animLength = 0.065f; //GetCurrentClipInfo(0).Length not returning expected value
         Vector3 startPos = cardGrp.transform.position; 
         Vector3 endPos = anchor.transform.position;
         float elapsedTime = 0;
@@ -129,11 +130,16 @@ public class MuseumManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        
+
         // change the material of the center card group when off-screen
-            // for the illusion of swiping pages
-        if (anchor.name == "Left Card Group Anchor" || anchor.name == "Right Card Group Anchor") 
+        // for the illusion of swiping pages
+        if (anchor.name == "Left Card Group Anchor" || anchor.name == "Right Card Group Anchor")
+        {
             ChangeCardMat(cardArr, cardCategories[cardIdx].cardMaterial);
+            ViewCard[] viewCardScripts = cardGrp.GetComponentsInChildren<ViewCard>();
+            foreach (ViewCard viewCard in viewCardScripts)
+                viewCard.UpdateCard(cardIdx);
+        }
         // reset positions
         cardGrp.transform.position = startPos;
 
@@ -150,7 +156,7 @@ public class MuseumManager : MonoBehaviour
     /// </summary>
     public void NextPage()
     {
-        Debug.Log("Next Page button has been clicked!");
+        // Debug.Log("Next Page button has been clicked!");
         if (!isTurningPage)
         {
             isTurningPage = true; // prevent repeat animations 
@@ -171,7 +177,7 @@ public class MuseumManager : MonoBehaviour
     /// </summary>
     public void PrevPage()
     {
-        Debug.Log("Prev Page button has been clicked!");
+        // Debug.Log("Prev Page button has been clicked!");
         if (!isTurningPage)
         {
             isTurningPage = true; // prevent repeat animations
@@ -186,13 +192,5 @@ public class MuseumManager : MonoBehaviour
 
             UpdateCatName();
         }
-    }
-
-    /// <summary>
-    /// To be called by the card buttons
-    /// </summary>
-    public void ViewCard()
-    {
-        Animator a = GetComponentInChildren<Animator>(); // card animator
-    }
+    } 
 }
