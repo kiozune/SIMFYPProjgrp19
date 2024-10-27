@@ -18,7 +18,7 @@ public class CardDrop : MonoBehaviour
     [Header("Card Data")]
     [SerializeField,
         Tooltip("Level number\ni.e. 1300s = 0, 1400s-1600s = 1, Future level = 5"),
-        Range(0, 5)] private int levelNum;
+        Range(0, 4)] private int levelNum;
     [SerializeField] private CardDropData[] cardDropData;
     private int cardIdx;
     private string cardKey; // for PlayerPrefs
