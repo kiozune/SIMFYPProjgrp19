@@ -54599,6 +54599,10 @@ PrefabInstance:
       value: boss
       objectReference: {fileID: 0}
     - target: {fileID: 6315138670510335082, guid: 85d959442b8633a47beda245c4cd9f13, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315138670510335082, guid: 85d959442b8633a47beda245c4cd9f13, type: 3}
       propertyPath: m_TagString
       value: BasicEnemy
       objectReference: {fileID: 0}
