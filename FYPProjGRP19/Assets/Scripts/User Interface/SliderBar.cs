@@ -41,9 +41,7 @@ public class SliderBar : MonoBehaviour
     }
 
     private void Update() // mainly to fix positioning
-    {
-
-
+    { 
         if (entityAnchor != null) // for EXP bar, not needed, as it is fixed in a Canvas
         {
             transform.rotation = cam.transform.rotation; // keep facing the camera
@@ -53,8 +51,6 @@ public class SliderBar : MonoBehaviour
 
             if (sliderOffset != Vector3.zero) // only need to offset if offset is not (0,0,0)
                 transform.position = transform.position + sliderOffset;
-        }
-
-
+        } 
     }
 }
