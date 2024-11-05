@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NotCollectedCardMat
+  m_Name: DefaultCardMat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 9175865788635629755, guid: 337f88099f3de774c922af37f0d2bdfc, type: 3}
   m_ModifiedSerializedProperties: 0
