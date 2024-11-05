@@ -532,7 +532,7 @@ MonoBehaviour:
         elites who valued them for their beauty and elegance.
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
-    - cardName: Seirzed Cargo
+    - cardName: Seized Cargo
       cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
@@ -1179,7 +1179,7 @@ MonoBehaviour:
         elites who valued them for their beauty and elegance.
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
-    - cardName: Seirzed Cargo
+    - cardName: Seized Cargo
       cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
@@ -1695,7 +1695,7 @@ MonoBehaviour:
         elites who valued them for their beauty and elegance.
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
-    - cardName: Seirzed Cargo
+    - cardName: Seized Cargo
       cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
@@ -2487,7 +2487,7 @@ MonoBehaviour:
         elites who valued them for their beauty and elegance.
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
-    - cardName: Seirzed Cargo
+    - cardName: Seized Cargo
       cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
@@ -3392,7 +3392,7 @@ MonoBehaviour:
         elites who valued them for their beauty and elegance.
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
-    - cardName: Seirzed Cargo
+    - cardName: Seized Cargo
       cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
@@ -3644,7 +3644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &908937948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5046,7 +5046,7 @@ MonoBehaviour:
         elites who valued them for their beauty and elegance.
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
-    - cardName: Seirzed Cargo
+    - cardName: Seized Cargo
       cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
