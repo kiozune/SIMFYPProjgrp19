@@ -533,34 +533,34 @@ MonoBehaviour:
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
     - cardName: Seirzed Cargo
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
     - cardName: Santa Catarina
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
     - cardName: Religion
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
     - cardName: Orang Laut
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
     - cardName: Cannon
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
     - cardName: Bamboo Spear
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
         century. A Flemish trader noted that the Orang Laut were armed with spears
         made of wild palm without any iron, yet they throw the spears so hard that
@@ -569,35 +569,35 @@ MonoBehaviour:
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: ec2dd206eb674484a9578ca503477cd3, type: 3}
       cardDesc: Spices were valuable as they have many uses but were not grown everywhere.
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
     - cardName: Proa
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
     - cardName: Pulau Blakang Mati
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
         island behind which lies death", was considered to be a strategic location
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
     - cardName: The Pirate Haven
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
     - cardName: Lantaka
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
     - cardName: Keris
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
@@ -1047,34 +1047,34 @@ MonoBehaviour:
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
     - cardName: Seirzed Cargo
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
     - cardName: Santa Catarina
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
     - cardName: Religion
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
     - cardName: Orang Laut
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
     - cardName: Cannon
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
     - cardName: Bamboo Spear
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
         century. A Flemish trader noted that the Orang Laut were armed with spears
         made of wild palm without any iron, yet they throw the spears so hard that
@@ -1083,35 +1083,35 @@ MonoBehaviour:
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: ec2dd206eb674484a9578ca503477cd3, type: 3}
       cardDesc: Spices were valuable as they have many uses but were not grown everywhere.
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
     - cardName: Proa
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
     - cardName: Pulau Blakang Mati
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
         island behind which lies death", was considered to be a strategic location
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
     - cardName: The Pirate Haven
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
     - cardName: Lantaka
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
     - cardName: Keris
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
@@ -1563,34 +1563,34 @@ MonoBehaviour:
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
     - cardName: Seirzed Cargo
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
     - cardName: Santa Catarina
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
     - cardName: Religion
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
     - cardName: Orang Laut
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
     - cardName: Cannon
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
     - cardName: Bamboo Spear
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
         century. A Flemish trader noted that the Orang Laut were armed with spears
         made of wild palm without any iron, yet they throw the spears so hard that
@@ -1599,35 +1599,35 @@ MonoBehaviour:
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: ec2dd206eb674484a9578ca503477cd3, type: 3}
       cardDesc: Spices were valuable as they have many uses but were not grown everywhere.
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
     - cardName: Proa
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
     - cardName: Pulau Blakang Mati
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
         island behind which lies death", was considered to be a strategic location
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
     - cardName: The Pirate Haven
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
     - cardName: Lantaka
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
     - cardName: Keris
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
@@ -2355,34 +2355,34 @@ MonoBehaviour:
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
     - cardName: Seirzed Cargo
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
     - cardName: Santa Catarina
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
     - cardName: Religion
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
     - cardName: Orang Laut
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
     - cardName: Cannon
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
     - cardName: Bamboo Spear
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
         century. A Flemish trader noted that the Orang Laut were armed with spears
         made of wild palm without any iron, yet they throw the spears so hard that
@@ -2391,35 +2391,35 @@ MonoBehaviour:
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: ec2dd206eb674484a9578ca503477cd3, type: 3}
       cardDesc: Spices were valuable as they have many uses but were not grown everywhere.
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
     - cardName: Proa
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
     - cardName: Pulau Blakang Mati
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
         island behind which lies death", was considered to be a strategic location
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
     - cardName: The Pirate Haven
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
     - cardName: Lantaka
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
     - cardName: Keris
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
@@ -3260,34 +3260,34 @@ MonoBehaviour:
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
     - cardName: Seirzed Cargo
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
     - cardName: Santa Catarina
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
     - cardName: Religion
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
     - cardName: Orang Laut
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
     - cardName: Cannon
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
     - cardName: Bamboo Spear
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
         century. A Flemish trader noted that the Orang Laut were armed with spears
         made of wild palm without any iron, yet they throw the spears so hard that
@@ -3296,35 +3296,35 @@ MonoBehaviour:
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: ec2dd206eb674484a9578ca503477cd3, type: 3}
       cardDesc: Spices were valuable as they have many uses but were not grown everywhere.
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
     - cardName: Proa
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
     - cardName: Pulau Blakang Mati
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
         island behind which lies death", was considered to be a strategic location
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
     - cardName: The Pirate Haven
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
     - cardName: Lantaka
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
     - cardName: Keris
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
@@ -4779,34 +4779,34 @@ MonoBehaviour:
   - catName: 1400s-1600s - Portuguese/Spanish
     cards:
     - cardName: Seirzed Cargo
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
     - cardName: Santa Catarina
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
     - cardName: Religion
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
     - cardName: Orang Laut
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
     - cardName: Cannon
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
     - cardName: Bamboo Spear
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
         century. A Flemish trader noted that the Orang Laut were armed with spears
         made of wild palm without any iron, yet they throw the spears so hard that
@@ -4815,35 +4815,35 @@ MonoBehaviour:
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: ec2dd206eb674484a9578ca503477cd3, type: 3}
       cardDesc: Spices were valuable as they have many uses but were not grown everywhere.
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
     - cardName: Proa
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
     - cardName: Pulau Blakang Mati
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
         island behind which lies death", was considered to be a strategic location
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
     - cardName: The Pirate Haven
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
     - cardName: Lantaka
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
     - cardName: Keris
-      cardImg: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
+      cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
