@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class CardCategory {
@@ -38,6 +39,10 @@ public class MuseumManager : MonoBehaviour
 
     void Start()
     {
+        // ensure cursor is enabled upon load
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
         // pages
         if (prevPage == null)
         {
@@ -194,4 +199,9 @@ public class MuseumManager : MonoBehaviour
             UpdateCatName();
         }
     } 
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
