@@ -1607,7 +1607,7 @@ MonoBehaviour:
   currentHP: 100
   damageFromProjectile: 20
   attackDamage: 20
-  attackRange: 5
+  attackRange: 8
   attackCooldown: 2
   nextHealthThreshold: 0
   jumpCooldown: 20
@@ -1615,7 +1615,7 @@ MonoBehaviour:
   jumpDistance: 6
   canJump: 1
   isThrowing: 0
-  rangeEnemy: 0
+  rangeEnemy: 1
   normalEnemy: 0
   eliteEnemy: 0
   soundPlayed: 0
