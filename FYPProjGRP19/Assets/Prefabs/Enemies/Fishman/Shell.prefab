@@ -1870,19 +1870,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  rockPrefab: {fileID: 0}
+  throwPoint: {fileID: 0}
   maxHP: 100
+  currentHP: 100
   damageFromProjectile: 20
-  meleeAttackDamage: 20
-  rangedAttackRange: 10
-  meleeAttackRange: 3
+  attackDamage: 20
+  attackRange: 5
   attackCooldown: 2
+  nextHealthThreshold: 0
+  jumpCooldown: 20
+  jumpTimer: 0
+  jumpDistance: 6
+  canJump: 1
+  isThrowing: 0
+  rangeEnemy: 0
+  normalEnemy: 0
+  eliteEnemy: 0
+  soundPlayed: 0
+  hasDroppedLoot: 0
+  isDead: 0
+  normalEnemyImage: {fileID: 0}
+  rangeImage: {fileID: 0}
+  mobIcon: {fileID: 0}
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  agent: {fileID: 8152283059028561531}
   experiencePoints: 50
-  attackType: 0
-  projectilePrefab: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
-  projectileSpeed: 10
-  eliteHPBonus: 50
-  eliteAttackBonus: 10
 --- !u!143 &2690314495957516209
 CharacterController:
   m_ObjectHideFlags: 0
