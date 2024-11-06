@@ -3,6 +3,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+[System.Serializable]
+public class Question
+{
+    [SerializeField] public TMP_Text questionTxt;
+    [SerializeField] public AnswerButton[] btns;
+}
+
+[System.Serializable]
+public class AnswerButton
+{
+    [SerializeField] public TMP_Text txt;
+    [SerializeField] public Toggle btn;
+    [SerializeField] public bool isCorrect = false;
+}
 
 [System.Serializable]
 public class CardCategory {
@@ -23,7 +39,6 @@ public class MuseumManager : MonoBehaviour
 
     [Header("Card Category Tracking")]
     [SerializeField] private CardCategory[] cardCategories;
-    [SerializeField, Tooltip("Number of unique cards per level")] private int numOfCards = 6;
     [SerializeField] private GameObject[] prevCards;
     [SerializeField] private GameObject[] currentCards;
     [SerializeField] private GameObject[] nextCards;
@@ -33,6 +48,13 @@ public class MuseumManager : MonoBehaviour
     [SerializeField] private GameObject leftAnchor;
     [SerializeField] private GameObject centerAnchor;
     [SerializeField] private GameObject rightAnchor;
+
+    [Header("Quiz Stuff")]
+    [SerializeField] private GameObject quizBG;
+    [SerializeField] private GameObject warningMsg;
+    [SerializeField] private Question[] qns;
+    [SerializeField] private GameObject resultsPage;
+    [SerializeField] private TMP_Text score;
 
     [Header("Bool checks")]
     private bool isTurningPage = false;
@@ -89,6 +111,15 @@ public class MuseumManager : MonoBehaviour
             rightAnchor = GameObject.Find("Right Card Group Anchor");
             if (rightAnchor == null) Debug.LogError("Right anchor could not be found");
         }
+
+        // quiz stuff
+        if (quizBG == null) Debug.LogError("Quiz background has not be set");
+        else quizBG.SetActive(false);
+        if (warningMsg == null) Debug.LogError("Warning message has not be set");
+        else warningMsg.SetActive(false);
+        if (resultsPage == null) Debug.LogError("Results page has not been set");
+        else resultsPage.SetActive(false);
+        if (score == null) Debug.LogError("Score text has not been set");
     }
 
     private void ChangeCardMat(GameObject[] cardArr, Material cardMat)
@@ -203,5 +234,108 @@ public class MuseumManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void StartQuiz()
+    {
+        ViewCard viewCardScript = currentPage.GetComponentsInChildren<ViewCard>()[0]; // just need one of them
+        if (viewCardScript.GetCardsCollected() > 1)
+        {
+            quizBG.SetActive(true);
+            SetQuestions();
+        }
+        else StartCoroutine(ShowWarning());
+        
+    }
+
+    private void SetQuestions()
+    {
+        // ensure settings are reset
+        for (int i = 0; i < qns.Length; i++)
+        {
+            qns[i].btns[0].isCorrect = false;
+            qns[i].btns[1].isCorrect = false;
+        }
+
+        ViewCard viewCardScript = currentPage.GetComponentsInChildren<ViewCard>()[0]; // just need one of them
+        List<string> questions = viewCardScript.GetQuizComponents(0);
+        List<string> correct = viewCardScript.GetQuizComponents(1);
+        List<string> wrong = viewCardScript.GetQuizComponents(2);
+        List<int> cardIdxList = new();
+
+        for (int i = 0; i < qns.Length; i++)
+        {
+            int attempts = 0;
+            int maxAttempts = 50;  // Set a reasonable limit to prevent infinite loop
+            bool addedIdx = false;
+            while (!addedIdx)
+            {
+                int idx = Random.Range(0, questions.Count);
+                if (!cardIdxList.Contains(idx))
+                {
+                    cardIdxList.Add(idx);
+                    qns[i].questionTxt.SetText(questions[idx]);
+
+                    // Randomize answer order
+                    int btn = Random.Range(0, 2); // Should be 0 or 1
+                    qns[i].btns[btn].txt.SetText(correct[idx]);
+                    qns[i].btns[btn].isCorrect = true;
+                    qns[i].btns[1 - btn].txt.SetText(wrong[idx]);
+
+                    qns[i].btns[0].btn.isOn = false;
+                    qns[i].btns[1].btn.isOn = false;
+                    addedIdx = true;
+                }
+
+                // prevent infinite loop
+                attempts++;
+                if (attempts >= maxAttempts)
+                {
+                    Debug.LogError("Exceeded max attempts to find a unique question index.");
+                    break;
+                }
+            }
+        }
+    }
+
+    private IEnumerator ShowWarning()
+    {
+        warningMsg.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        warningMsg.SetActive(false);
+    }
+
+    public void CancelQuiz()
+    {
+        quizBG.SetActive(false);
+    }
+
+    public void CloseResults()
+    {
+        resultsPage.SetActive(false);
+    }
+
+    public void SubmitQuiz()
+    {
+        resultsPage.SetActive(true);
+        quizBG.SetActive(false);
+
+        score.SetText(CalcScore().ToString());
+    }
+
+    private int CalcScore()
+    {
+        int marks = 0;
+        for (int i = 0; i < qns.Length; i++)
+        {
+            for (int j = 0; j < qns[i].btns.Length; j++)
+            {
+                if (qns[i].btns[j].btn.gameObject.GetComponent<Toggle>().isOn && qns[i].btns[j].isCorrect)
+                    marks++;
+            }
+        }
+        return marks;
     }
 }
