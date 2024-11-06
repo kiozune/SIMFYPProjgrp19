@@ -2748,11 +2748,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemyPrefab: {fileID: 7661913416156267389, guid: c0a366aa3199be04ea472404fae124b9, type: 3}
+  - enemyPrefab: {fileID: 8017769013027927542, guid: d87219000e8e4614c8ca17173977d18b, type: 3}
     minRange: 11
     maxRange: 51
     isUnique: 0
-  - enemyPrefab: {fileID: 7595189231921639269, guid: 4de76f204274e3e44a4c41021416d21f, type: 3}
+  - enemyPrefab: {fileID: 7595189231921639269, guid: 6e76100eb0100a74dba1ef4b36b7863b, type: 3}
     minRange: 52
     maxRange: 100
     isUnique: 0
@@ -2760,7 +2760,7 @@ MonoBehaviour:
     minRange: 0
     maxRange: 10
     isUnique: 0
-  player: {fileID: 0}
+  playerTransform: {fileID: 0}
   mainCamera: {fileID: 500803532}
   navMeshCheckRadius: 2
   maxEnemiesToSpawn: 999999
