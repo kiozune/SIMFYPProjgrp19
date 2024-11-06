@@ -1401,7 +1401,7 @@ MonoBehaviour:
   groundCheckDistance: 0.4
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   isGrounded: 0
   weaponAttack: {fileID: 944678694}
 --- !u!114 &944678699
