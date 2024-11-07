@@ -781,7 +781,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f80f9fc560d7cd48b1e7ccc6bae6437, type: 2}
+  - {fileID: 2100000, guid: 804fe86f5f19d7e479c450304c42f312, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1542,7 +1542,7 @@ GameObject:
   - component: {fileID: 8155385691687062380}
   - component: {fileID: -8752732456944995245}
   m_Layer: 0
-  m_Name: FishmanBase_Range
+  m_Name: FishmanRange
   m_TagString: BasicEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,18 +1596,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7595189231921639269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 579a04dc48950104b9bbea14d4d8cb20, type: 3}
+  m_Script: {fileID: 11500000, guid: 73acd08038ed4c6438ee15be34bd8c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerPrefab: {fileID: 0}
   rockPrefab: {fileID: 3844816652429521609, guid: d1226b28ad94e65419c826a7163d1c4b, type: 3}
   throwPoint: {fileID: 3227592309249929434}
   maxHP: 100
   currentHP: 100
   damageFromProjectile: 20
   attackDamage: 20
-  attackRange: 10
-  attackCooldown: 3.8
+  attackRange: 8
+  attackCooldown: 2
   nextHealthThreshold: 0
   jumpCooldown: 20
   jumpTimer: 0
@@ -1620,14 +1621,14 @@ MonoBehaviour:
   soundPlayed: 0
   hasDroppedLoot: 0
   isDead: 0
-  normalEnemyImage: {fileID: 21300000, guid: 2584a1db5989a6644b263e9ec94b0d5f, type: 3}
-  rangeImage: {fileID: 21300000, guid: 2584a1db5989a6644b263e9ec94b0d5f, type: 3}
-  mobIcon: {fileID: 4204963480832588466}
+  normalEnemyImage: {fileID: 0}
+  rangeImage: {fileID: 0}
+  mobIcon: {fileID: 0}
   hitVFXPrefab: {fileID: 0}
   hitSoundClip: {fileID: 8300000, guid: 4a3d848e991ea1f45a1b0a825603cd42, type: 3}
   audioSource: {fileID: 0}
-  agent: {fileID: 0}
-  experiencePoints: 75
+  agent: {fileID: 8734999947426299841}
+  experiencePoints: 50
 --- !u!195 &8734999947426299841
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2053,6 +2054,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5166916636217440959, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5186480852257618195, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: m_Value
       value: 1
@@ -2192,14 +2197,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5568333194492857555, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
   m_PrefabInstance: {fileID: 9093414202054684958}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4204963480832588466 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4929546069969341356, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
-  m_PrefabInstance: {fileID: 9093414202054684958}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

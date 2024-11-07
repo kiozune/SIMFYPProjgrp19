@@ -26,6 +26,10 @@ public class CameraFollow : MonoBehaviour
 
     private List<Renderer> currentObstacles = new List<Renderer>(); // List to track current obstacles
 
+    private void Start()
+    {
+    }
+
     private void LateUpdate()
     {
         if (target != null)
@@ -66,8 +70,24 @@ public class CameraFollow : MonoBehaviour
             }
         }
     }
+    private void Update()
+    {
+        if (target == null)
+        {
+            // Automatically assign the target by finding the player object
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                target = player.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Player object with tag 'Player' not found. Please ensure the player has the 'Player' tag.");
+            }
+        }
+        }
 
-    void SetTransparency(Renderer renderer, float alpha)
+        void SetTransparency(Renderer renderer, float alpha)
     {
         // Loop through all materials on the object
         foreach (Material material in renderer.materials)

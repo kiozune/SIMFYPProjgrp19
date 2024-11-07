@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         UpdateHealthSlider();
+        gameOverScreen = GameObject.FindGameObjectWithTag("Gameover");
     }
 
     // Update is called once per frame

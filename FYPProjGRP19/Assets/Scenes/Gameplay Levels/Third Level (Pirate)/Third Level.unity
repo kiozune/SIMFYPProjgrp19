@@ -471,6 +471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Over Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 2352940986730086607, guid: 1f269601df1ad8a47ac668a58dc1372f, type: 3}
+      propertyPath: m_TagString
+      value: Gameover
+      objectReference: {fileID: 0}
     - target: {fileID: 7648647153877312472, guid: 1f269601df1ad8a47ac668a58dc1372f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -828,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9201368651924323407, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1047,7 +1051,7 @@ MonoBehaviour:
     minRange: 81
     maxRange: 100
     isUnique: 1
-  player: {fileID: 0}
+  playerTransform: {fileID: 0}
   mainCamera: {fileID: 48238442}
   navMeshCheckRadius: 2
   maxEnemiesToSpawn: 50
