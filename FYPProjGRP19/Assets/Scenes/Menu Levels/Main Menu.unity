@@ -2659,7 +2659,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 447493476}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2087615971}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &447493476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6044,7 +6056,6 @@ MonoBehaviour:
   robotStageAnimator: {fileID: 0}
   isMelee: 0
   isRanged: 0
-  isMultiplayer: 0
   playButtonList:
   - {fileID: 985111850}
   - {fileID: 1618368786}
@@ -6060,13 +6071,13 @@ MonoBehaviour:
   - {fileID: 369994839}
   - {fileID: 246782077}
   - {fileID: 1505389648}
+  - {fileID: 447493473}
   - {fileID: 786983723}
   settingsButton: {fileID: 898346751}
   sfxSource: {fileID: 2087615974}
   audioClipList:
   - {fileID: 8300000, guid: 9b6a347082f36d3489751592fb3510f4, type: 3}
   singleplayerButton: {fileID: 232406420}
-  multiplayerButton: {fileID: 0}
   backButton: {fileID: 1701738229}
 --- !u!4 &2087615973
 Transform:
