@@ -736,33 +736,69 @@ MonoBehaviour:
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
-      quiz: []
+      quiz:
+      - question: These items opened the eyes of merchants in Europe to the profitable
+          trade within Asia.
+        correctAns: Seized Cargo
+        wrongAns: Santa Catarina
+      - question: What does the Santa Catarina incident refer to?
+        correctAns: The wreckage of the ship Santa Catarina
+        wrongAns: The seizure of the cargo on the Santa Catarina
     - cardName: Santa Catarina
       cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
-      quiz: []
+      quiz:
+      - question: Which item was targeted for its precious cargo in 1603?
+        correctAns: Santa Catarina
+        wrongAns: The S.S. Anne
+      - question: What kind of ship was the Santa Catarina?
+        correctAns: A carrack, built to be stable in heavy seas
+        wrongAns: A small life saver boat
     - cardName: Religion
       cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
-      quiz: []
+      quiz:
+      - question: What had the Portuguese attempted to share and spread during their
+          time in Singapore?
+        correctAns: Religion
+        wrongAns: Orang Laut
+      - question: The majority of the population in Singapore (under Malacca) followed
+          what faith?
+        correctAns: Christianity
+        wrongAns: Islam
     - cardName: Orang Laut
       cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: _______ were people who lived and travelled
+          in their boats.'
+        correctAns: Orang Luat
+        wrongAns: Orangutan
+      - question: What happened when the Portuguese destroyed settlements in Singapore
+          (1613)?
+        correctAns: Singapore sank into obscurity
+        wrongAns: Singapore lost much of its goods and valuables
     - cardName: Cannon
       cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
-      quiz: []
+      quiz:
+      - question: 'True or False: Malay sailing vessels carried small cannons as
+          defence against piracy.'
+        correctAns: True
+        wrongAns: False
+      - question: Around how many cannons were captured in Malaka (1511-1521)?
+        correctAns: 3000
+        wrongAns: 4000
     - cardName: Bamboo Spear
       cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
@@ -770,7 +806,13 @@ MonoBehaviour:
         made of wild palm without any iron, yet they throw the spears so hard that
         they can penetrate an iron breastplate and any shield no matter how sturdy
         they are.
-      quiz: []
+      quiz:
+      - question: This was the main weapon of the Orang Luat (16th century).
+        correctAns: Bamboo spear
+        wrongAns: Cannon
+      - question: What were the bamboo spears used by the Orang Luat made of?
+        correctAns: Wild palm
+        wrongAns: Iron
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
@@ -779,13 +821,26 @@ MonoBehaviour:
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
-      quiz: []
+      quiz:
+      - question: This was valuable and had many uses, especially during the 1700s
+          in Singapore.
+        correctAns: Spices
+        wrongAns: Lantaka
+      - question: What significance did spices have?
+        correctAns: They drove the world's economies
+        wrongAns: They tasted really good
     - cardName: Proa
       cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
-      quiz: []
+      quiz:
+      - question: Which of the following is the correct description for a Proa?
+        correctAns: A fast and sharp-ended rowing/sail boat
+        wrongAns: A large carrack built to be stable in heavy seas
+      - question: 'True or False: Malayan pirates rarely used Proas.'
+        correctAns: False
+        wrongAns: True
     - cardName: Pulau Blakang Mati
       cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
@@ -793,26 +848,50 @@ MonoBehaviour:
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: ________ is the former name of Sentosa.'
+        correctAns: Pulau Blakang Mati
+        wrongAns: Forts Serapong
+      - question: Which of the following were forts found on Sentosa during the 1700s?
+        correctAns: Forts Serapong, Connaught, and Siloso
+        wrongAns: Forts Greymoor, Snowhawk, and Greenwall
     - cardName: The Pirate Haven
       cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
-      quiz: []
+      quiz:
+      - question: 'True or False: the Singapore Strait was never prone to piracy.'
+        correctAns: False
+        wrongAns: True
+      - question: What proved the presence of pirates around Sentosa?
+        correctAns: Heavy ship traffic and ambush locations
+        wrongAns: Shipwrecks and treasure maps
     - cardName: Lantaka
       cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
-      quiz: []
+      quiz:
+      - question: This was a type of bronze portable cannon or swivel gun.
+        correctAns: Lantaka
+        wrongAns: Keris
+      - question: 'Fill in the Blank: The Lantaka was commonly equipped by ________.'
+        correctAns: Seafaring vessels
+        wrongAns: Orang Luat
     - cardName: Keris
       cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
         kings.
-      quiz: []
+      quiz:
+      - question: This item can be used as both a weapon and an heirloom.
+        correctAns: Keris
+        wrongAns: Lantaka
+      - question: What is a Keris?
+        correctAns: A common dagger used since the 15th century
+        wrongAns: A portable cannon
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -821,43 +900,80 @@ MonoBehaviour:
         was seized and rationed by the Japanese military and very little was given
         to each person. These plants were grown to replace rice for carbohydrate
         intake as they could grow more easily.
-      quiz: []
+      quiz:
+      - question: What were carbohydrate staples in the 1800s?
+        correctAns: Tapioca, sweet potato, yam
+        wrongAns: Rice, potato, oats
+      - question: How much rice was rationed to people?
+        correctAns: Very little
+        wrongAns: A week's worth
     - cardName: Currency
       cardImg: {fileID: 21300000, guid: c4f001ae2a21bdb47997a8ad853293c6, type: 3}
       cardDesc: "This currency was issued by the Japanese, also called \u201CBanana
         money\u201D, features a banana tree on the note. However, due to runaway
         inflation the money was not worth much and one could only purchase a banana
         with a $10 note. It was eventually rendered worthless by the end of the war."
-      quiz: []
+      quiz:
+      - question: Why was the currency called "Banana money"?
+        correctAns: There is a banana tree on the note
+        wrongAns: The Japanese drove locals "bananas"
+      - question: Why was "Banana money" not worth a lot
+        correctAns: Runaway inflation
+        wrongAns: Bananas were very common
     - cardName: Radio
       cardImg: {fileID: 21300000, guid: 1225e8292ea3bc646a18a03f6cc8b0da, type: 3}
       cardDesc: This is a handmade radio made out of a matchbox used by prisoners
         of war(POWs). POWs are people who were captured by the Japanese military
-        during the war and they needed a way to tap into war new abroad.
-      quiz: []
+        during the war and they needed a way to tap into war news abroad.
+      quiz:
+      - question: Why did POWs make radios out of matchboxes?
+        correctAns: To tap into war news
+        wrongAns: To defy the Japanese
+      - question: What does POW mean?
+        correctAns: Prisoners of war
+        wrongAns: POWer block
     - cardName: Postcard
       cardImg: {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
       cardDesc: Postcards like these was propaganda to soften the image of Japanese
         soldiers with the ultimate goal of urging civilians to accept Japanese rule.The
         face of soldiers were deliberately left blank for the card receiving to fill
         in.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: The face of soldiers on _____ were deliberately
+          left blank.'
+        correctAns: Postcards
+        wrongAns: Books
+      - question: What were postcards used for during the 1800s?
+        correctAns: Propaganda; to soften the image of Japanese soldiers
+        wrongAns: To contact friends and family outside of war
     - cardName: Books
       cardImg: {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
       cardDesc: Japanese song and conversation books like these were used to teach
         locals Japanese and instill patriotism to Japan.The conversation book is
         targeted at Chinese speakers as it uses Chinese characters and romanisation
         to present Japanese characters phonetically.
-      quiz: []
+      quiz:
+      - question: 'True or False: Japanese song books were used to instil patriotism
+          in locals to Japan.'
+        correctAns: True
+        wrongAns: False
+      - question: Who did Japanese conversation books target?
+        correctAns: Chinese speakers
+        wrongAns: Non-Chinese speakers
     - cardName: Sewing Machine
       cardImg: {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
       cardDesc: Sewing machines were an indispensable tool in many households as
         there was severe shortages of basic necessities during this period. People
         were compelled to reuse materials from old clothes, curtains and bed sheets
         to make new garments and mend worn ones.
-      quiz: []
-  - catName: Future
-    cards: []
+      quiz:
+      - question: 'Fill in the Blank: ______ were indispensable tools in households
+          due to shortages of necessities.'
+        correctAns: Sewing machines
+        wrongAns: Radios
+      - question: What did people reuse to make new garments and mend old ones?
+        correctAns: Materials from old clothes
+        wrongAns: Materials from curtains
   cardIdx: 0
   card: {fileID: 280432453}
   cardImg: {fileID: 1659878743}
@@ -1450,33 +1566,69 @@ MonoBehaviour:
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
-      quiz: []
+      quiz:
+      - question: These items opened the eyes of merchants in Europe to the profitable
+          trade within Asia.
+        correctAns: Seized Cargo
+        wrongAns: Santa Catarina
+      - question: What does the Santa Catarina incident refer to?
+        correctAns: The wreckage of the ship Santa Catarina
+        wrongAns: The seizure of the cargo on the Santa Catarina
     - cardName: Santa Catarina
       cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
-      quiz: []
+      quiz:
+      - question: Which item was targeted for its precious cargo in 1603?
+        correctAns: Santa Catarina
+        wrongAns: The S.S. Anne
+      - question: What kind of ship was the Santa Catarina?
+        correctAns: A carrack, built to be stable in heavy seas
+        wrongAns: A small life saver boat
     - cardName: Religion
       cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
-      quiz: []
+      quiz:
+      - question: What had the Portuguese attempted to share and spread during their
+          time in Singapore?
+        correctAns: Religion
+        wrongAns: Orang Laut
+      - question: The majority of the population in Singapore (under Malacca) followed
+          what faith?
+        correctAns: Christianity
+        wrongAns: Islam
     - cardName: Orang Laut
       cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: _______ were people who lived and travelled
+          in their boats.'
+        correctAns: Orang Luat
+        wrongAns: Orangutan
+      - question: What happened when the Portuguese destroyed settlements in Singapore
+          (1613)?
+        correctAns: Singapore sank into obscurity
+        wrongAns: Singapore lost much of its goods and valuables
     - cardName: Cannon
       cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
-      quiz: []
+      quiz:
+      - question: 'True or False: Malay sailing vessels carried small cannons as
+          defence against piracy.'
+        correctAns: True
+        wrongAns: False
+      - question: Around how many cannons were captured in Malaka (1511-1521)?
+        correctAns: 3000
+        wrongAns: 4000
     - cardName: Bamboo Spear
       cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
@@ -1484,7 +1636,13 @@ MonoBehaviour:
         made of wild palm without any iron, yet they throw the spears so hard that
         they can penetrate an iron breastplate and any shield no matter how sturdy
         they are.
-      quiz: []
+      quiz:
+      - question: This was the main weapon of the Orang Luat (16th century).
+        correctAns: Bamboo spear
+        wrongAns: Cannon
+      - question: What were the bamboo spears used by the Orang Luat made of?
+        correctAns: Wild palm
+        wrongAns: Iron
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
@@ -1493,13 +1651,26 @@ MonoBehaviour:
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
-      quiz: []
+      quiz:
+      - question: This was valuable and had many uses, especially during the 1700s
+          in Singapore.
+        correctAns: Spices
+        wrongAns: Lantaka
+      - question: What significance did spices have?
+        correctAns: They drove the world's economies
+        wrongAns: They tasted really good
     - cardName: Proa
       cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
-      quiz: []
+      quiz:
+      - question: Which of the following is the correct description for a Proa?
+        correctAns: A fast and sharp-ended rowing/sail boat
+        wrongAns: A large carrack built to be stable in heavy seas
+      - question: 'True or False: Malayan pirates rarely used Proas.'
+        correctAns: False
+        wrongAns: True
     - cardName: Pulau Blakang Mati
       cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
@@ -1507,26 +1678,50 @@ MonoBehaviour:
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: ________ is the former name of Sentosa.'
+        correctAns: Pulau Blakang Mati
+        wrongAns: Forts Serapong
+      - question: Which of the following were forts found on Sentosa during the 1700s?
+        correctAns: Forts Serapong, Connaught, and Siloso
+        wrongAns: Forts Greymoor, Snowhawk, and Greenwall
     - cardName: The Pirate Haven
       cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
-      quiz: []
+      quiz:
+      - question: 'True or False: the Singapore Strait was never prone to piracy.'
+        correctAns: False
+        wrongAns: True
+      - question: What proved the presence of pirates around Sentosa?
+        correctAns: Heavy ship traffic and ambush locations
+        wrongAns: Shipwrecks and treasure maps
     - cardName: Lantaka
       cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
-      quiz: []
+      quiz:
+      - question: This was a type of bronze portable cannon or swivel gun.
+        correctAns: Lantaka
+        wrongAns: Keris
+      - question: 'Fill in the Blank: The Lantaka was commonly equipped by ________.'
+        correctAns: Seafaring vessels
+        wrongAns: Orang Luat
     - cardName: Keris
       cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
         kings.
-      quiz: []
+      quiz:
+      - question: This item can be used as both a weapon and an heirloom.
+        correctAns: Keris
+        wrongAns: Lantaka
+      - question: What is a Keris?
+        correctAns: A common dagger used since the 15th century
+        wrongAns: A portable cannon
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -1535,43 +1730,80 @@ MonoBehaviour:
         was seized and rationed by the Japanese military and very little was given
         to each person. These plants were grown to replace rice for carbohydrate
         intake as they could grow more easily.
-      quiz: []
+      quiz:
+      - question: What were carbohydrate staples in the 1800s?
+        correctAns: Tapioca, sweet potato, yam
+        wrongAns: Rice, potato, oats
+      - question: How much rice was rationed to people?
+        correctAns: Very little
+        wrongAns: A week's worth
     - cardName: Currency
       cardImg: {fileID: 21300000, guid: c4f001ae2a21bdb47997a8ad853293c6, type: 3}
       cardDesc: "This currency was issued by the Japanese, also called \u201CBanana
         money\u201D, features a banana tree on the note. However, due to runaway
         inflation the money was not worth much and one could only purchase a banana
         with a $10 note. It was eventually rendered worthless by the end of the war."
-      quiz: []
+      quiz:
+      - question: Why was the currency called "Banana money"?
+        correctAns: There is a banana tree on the note
+        wrongAns: The Japanese drove locals "bananas"
+      - question: Why was "Banana money" not worth a lot
+        correctAns: Runaway inflation
+        wrongAns: Bananas were very common
     - cardName: Radio
       cardImg: {fileID: 21300000, guid: 1225e8292ea3bc646a18a03f6cc8b0da, type: 3}
       cardDesc: This is a handmade radio made out of a matchbox used by prisoners
         of war(POWs). POWs are people who were captured by the Japanese military
-        during the war and they needed a way to tap into war new abroad.
-      quiz: []
+        during the war and they needed a way to tap into war news abroad.
+      quiz:
+      - question: Why did POWs make radios out of matchboxes?
+        correctAns: To tap into war news
+        wrongAns: To defy the Japanese
+      - question: What does POW mean?
+        correctAns: Prisoners of war
+        wrongAns: POWer block
     - cardName: Postcard
       cardImg: {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
       cardDesc: Postcards like these was propaganda to soften the image of Japanese
         soldiers with the ultimate goal of urging civilians to accept Japanese rule.The
         face of soldiers were deliberately left blank for the card receiving to fill
         in.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: The face of soldiers on _____ were deliberately
+          left blank.'
+        correctAns: Postcards
+        wrongAns: Books
+      - question: What were postcards used for during the 1800s?
+        correctAns: Propaganda; to soften the image of Japanese soldiers
+        wrongAns: To contact friends and family outside of war
     - cardName: Books
       cardImg: {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
       cardDesc: Japanese song and conversation books like these were used to teach
         locals Japanese and instill patriotism to Japan.The conversation book is
         targeted at Chinese speakers as it uses Chinese characters and romanisation
         to present Japanese characters phonetically.
-      quiz: []
+      quiz:
+      - question: 'True or False: Japanese song books were used to instil patriotism
+          in locals to Japan.'
+        correctAns: True
+        wrongAns: False
+      - question: Who did Japanese conversation books target?
+        correctAns: Chinese speakers
+        wrongAns: Non-Chinese speakers
     - cardName: Sewing Machine
       cardImg: {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
       cardDesc: Sewing machines were an indispensable tool in many households as
         there was severe shortages of basic necessities during this period. People
         were compelled to reuse materials from old clothes, curtains and bed sheets
         to make new garments and mend worn ones.
-      quiz: []
-  - catName: Future
-    cards: []
+      quiz:
+      - question: 'Fill in the Blank: ______ were indispensable tools in households
+          due to shortages of necessities.'
+        correctAns: Sewing machines
+        wrongAns: Radios
+      - question: What did people reuse to make new garments and mend old ones?
+        correctAns: Materials from old clothes
+        wrongAns: Materials from curtains
   cardIdx: 5
   card: {fileID: 1634194712}
   cardImg: {fileID: 391196682}
@@ -2183,33 +2415,69 @@ MonoBehaviour:
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
-      quiz: []
+      quiz:
+      - question: These items opened the eyes of merchants in Europe to the profitable
+          trade within Asia.
+        correctAns: Seized Cargo
+        wrongAns: Santa Catarina
+      - question: What does the Santa Catarina incident refer to?
+        correctAns: The wreckage of the ship Santa Catarina
+        wrongAns: The seizure of the cargo on the Santa Catarina
     - cardName: Santa Catarina
       cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
-      quiz: []
+      quiz:
+      - question: Which item was targeted for its precious cargo in 1603?
+        correctAns: Santa Catarina
+        wrongAns: The S.S. Anne
+      - question: What kind of ship was the Santa Catarina?
+        correctAns: A carrack, built to be stable in heavy seas
+        wrongAns: A small life saver boat
     - cardName: Religion
       cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
-      quiz: []
+      quiz:
+      - question: What had the Portuguese attempted to share and spread during their
+          time in Singapore?
+        correctAns: Religion
+        wrongAns: Orang Laut
+      - question: The majority of the population in Singapore (under Malacca) followed
+          what faith?
+        correctAns: Christianity
+        wrongAns: Islam
     - cardName: Orang Laut
       cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: _______ were people who lived and travelled
+          in their boats.'
+        correctAns: Orang Luat
+        wrongAns: Orangutan
+      - question: What happened when the Portuguese destroyed settlements in Singapore
+          (1613)?
+        correctAns: Singapore sank into obscurity
+        wrongAns: Singapore lost much of its goods and valuables
     - cardName: Cannon
       cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
-      quiz: []
+      quiz:
+      - question: 'True or False: Malay sailing vessels carried small cannons as
+          defence against piracy.'
+        correctAns: True
+        wrongAns: False
+      - question: Around how many cannons were captured in Malaka (1511-1521)?
+        correctAns: 3000
+        wrongAns: 4000
     - cardName: Bamboo Spear
       cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
@@ -2217,7 +2485,13 @@ MonoBehaviour:
         made of wild palm without any iron, yet they throw the spears so hard that
         they can penetrate an iron breastplate and any shield no matter how sturdy
         they are.
-      quiz: []
+      quiz:
+      - question: This was the main weapon of the Orang Luat (16th century).
+        correctAns: Bamboo spear
+        wrongAns: Cannon
+      - question: What were the bamboo spears used by the Orang Luat made of?
+        correctAns: Wild palm
+        wrongAns: Iron
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
@@ -2226,13 +2500,26 @@ MonoBehaviour:
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
-      quiz: []
+      quiz:
+      - question: This was valuable and had many uses, especially during the 1700s
+          in Singapore.
+        correctAns: Spices
+        wrongAns: Lantaka
+      - question: What significance did spices have?
+        correctAns: They drove the world's economies
+        wrongAns: They tasted really good
     - cardName: Proa
       cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
-      quiz: []
+      quiz:
+      - question: Which of the following is the correct description for a Proa?
+        correctAns: A fast and sharp-ended rowing/sail boat
+        wrongAns: A large carrack built to be stable in heavy seas
+      - question: 'True or False: Malayan pirates rarely used Proas.'
+        correctAns: False
+        wrongAns: True
     - cardName: Pulau Blakang Mati
       cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
@@ -2240,26 +2527,50 @@ MonoBehaviour:
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: ________ is the former name of Sentosa.'
+        correctAns: Pulau Blakang Mati
+        wrongAns: Forts Serapong
+      - question: Which of the following were forts found on Sentosa during the 1700s?
+        correctAns: Forts Serapong, Connaught, and Siloso
+        wrongAns: Forts Greymoor, Snowhawk, and Greenwall
     - cardName: The Pirate Haven
       cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
-      quiz: []
+      quiz:
+      - question: 'True or False: the Singapore Strait was never prone to piracy.'
+        correctAns: False
+        wrongAns: True
+      - question: What proved the presence of pirates around Sentosa?
+        correctAns: Heavy ship traffic and ambush locations
+        wrongAns: Shipwrecks and treasure maps
     - cardName: Lantaka
       cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
-      quiz: []
+      quiz:
+      - question: This was a type of bronze portable cannon or swivel gun.
+        correctAns: Lantaka
+        wrongAns: Keris
+      - question: 'Fill in the Blank: The Lantaka was commonly equipped by ________.'
+        correctAns: Seafaring vessels
+        wrongAns: Orang Luat
     - cardName: Keris
       cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
         kings.
-      quiz: []
+      quiz:
+      - question: This item can be used as both a weapon and an heirloom.
+        correctAns: Keris
+        wrongAns: Lantaka
+      - question: What is a Keris?
+        correctAns: A common dagger used since the 15th century
+        wrongAns: A portable cannon
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -2268,43 +2579,80 @@ MonoBehaviour:
         was seized and rationed by the Japanese military and very little was given
         to each person. These plants were grown to replace rice for carbohydrate
         intake as they could grow more easily.
-      quiz: []
+      quiz:
+      - question: What were carbohydrate staples in the 1800s?
+        correctAns: Tapioca, sweet potato, yam
+        wrongAns: Rice, potato, oats
+      - question: How much rice was rationed to people?
+        correctAns: Very little
+        wrongAns: A week's worth
     - cardName: Currency
       cardImg: {fileID: 21300000, guid: c4f001ae2a21bdb47997a8ad853293c6, type: 3}
       cardDesc: "This currency was issued by the Japanese, also called \u201CBanana
         money\u201D, features a banana tree on the note. However, due to runaway
         inflation the money was not worth much and one could only purchase a banana
         with a $10 note. It was eventually rendered worthless by the end of the war."
-      quiz: []
+      quiz:
+      - question: Why was the currency called "Banana money"?
+        correctAns: There is a banana tree on the note
+        wrongAns: The Japanese drove locals "bananas"
+      - question: Why was "Banana money" not worth a lot
+        correctAns: Runaway inflation
+        wrongAns: Bananas were very common
     - cardName: Radio
       cardImg: {fileID: 21300000, guid: 1225e8292ea3bc646a18a03f6cc8b0da, type: 3}
       cardDesc: This is a handmade radio made out of a matchbox used by prisoners
         of war(POWs). POWs are people who were captured by the Japanese military
-        during the war and they needed a way to tap into war new abroad.
-      quiz: []
+        during the war and they needed a way to tap into war news abroad.
+      quiz:
+      - question: Why did POWs make radios out of matchboxes?
+        correctAns: To tap into war news
+        wrongAns: To defy the Japanese
+      - question: What does POW mean?
+        correctAns: Prisoners of war
+        wrongAns: POWer block
     - cardName: Postcard
       cardImg: {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
       cardDesc: Postcards like these was propaganda to soften the image of Japanese
         soldiers with the ultimate goal of urging civilians to accept Japanese rule.The
         face of soldiers were deliberately left blank for the card receiving to fill
         in.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: The face of soldiers on _____ were deliberately
+          left blank.'
+        correctAns: Postcards
+        wrongAns: Books
+      - question: What were postcards used for during the 1800s?
+        correctAns: Propaganda; to soften the image of Japanese soldiers
+        wrongAns: To contact friends and family outside of war
     - cardName: Books
       cardImg: {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
       cardDesc: Japanese song and conversation books like these were used to teach
         locals Japanese and instill patriotism to Japan.The conversation book is
         targeted at Chinese speakers as it uses Chinese characters and romanisation
         to present Japanese characters phonetically.
-      quiz: []
+      quiz:
+      - question: 'True or False: Japanese song books were used to instil patriotism
+          in locals to Japan.'
+        correctAns: True
+        wrongAns: False
+      - question: Who did Japanese conversation books target?
+        correctAns: Chinese speakers
+        wrongAns: Non-Chinese speakers
     - cardName: Sewing Machine
       cardImg: {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
       cardDesc: Sewing machines were an indispensable tool in many households as
         there was severe shortages of basic necessities during this period. People
         were compelled to reuse materials from old clothes, curtains and bed sheets
         to make new garments and mend worn ones.
-      quiz: []
-  - catName: Future
-    cards: []
+      quiz:
+      - question: 'Fill in the Blank: ______ were indispensable tools in households
+          due to shortages of necessities.'
+        correctAns: Sewing machines
+        wrongAns: Radios
+      - question: What did people reuse to make new garments and mend old ones?
+        correctAns: Materials from old clothes
+        wrongAns: Materials from curtains
   cardIdx: 3
   card: {fileID: 1258007295}
   cardImg: {fileID: 1163031273}
@@ -3676,33 +4024,69 @@ MonoBehaviour:
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
-      quiz: []
+      quiz:
+      - question: These items opened the eyes of merchants in Europe to the profitable
+          trade within Asia.
+        correctAns: Seized Cargo
+        wrongAns: Santa Catarina
+      - question: What does the Santa Catarina incident refer to?
+        correctAns: The wreckage of the ship Santa Catarina
+        wrongAns: The seizure of the cargo on the Santa Catarina
     - cardName: Santa Catarina
       cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
-      quiz: []
+      quiz:
+      - question: Which item was targeted for its precious cargo in 1603?
+        correctAns: Santa Catarina
+        wrongAns: The S.S. Anne
+      - question: What kind of ship was the Santa Catarina?
+        correctAns: A carrack, built to be stable in heavy seas
+        wrongAns: A small life saver boat
     - cardName: Religion
       cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
-      quiz: []
+      quiz:
+      - question: What had the Portuguese attempted to share and spread during their
+          time in Singapore?
+        correctAns: Religion
+        wrongAns: Orang Laut
+      - question: The majority of the population in Singapore (under Malacca) followed
+          what faith?
+        correctAns: Christianity
+        wrongAns: Islam
     - cardName: Orang Laut
       cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: _______ were people who lived and travelled
+          in their boats.'
+        correctAns: Orang Luat
+        wrongAns: Orangutan
+      - question: What happened when the Portuguese destroyed settlements in Singapore
+          (1613)?
+        correctAns: Singapore sank into obscurity
+        wrongAns: Singapore lost much of its goods and valuables
     - cardName: Cannon
       cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
-      quiz: []
+      quiz:
+      - question: 'True or False: Malay sailing vessels carried small cannons as
+          defence against piracy.'
+        correctAns: True
+        wrongAns: False
+      - question: Around how many cannons were captured in Malaka (1511-1521)?
+        correctAns: 3000
+        wrongAns: 4000
     - cardName: Bamboo Spear
       cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
@@ -3710,7 +4094,13 @@ MonoBehaviour:
         made of wild palm without any iron, yet they throw the spears so hard that
         they can penetrate an iron breastplate and any shield no matter how sturdy
         they are.
-      quiz: []
+      quiz:
+      - question: This was the main weapon of the Orang Luat (16th century).
+        correctAns: Bamboo spear
+        wrongAns: Cannon
+      - question: What were the bamboo spears used by the Orang Luat made of?
+        correctAns: Wild palm
+        wrongAns: Iron
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
@@ -3719,13 +4109,26 @@ MonoBehaviour:
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
-      quiz: []
+      quiz:
+      - question: This was valuable and had many uses, especially during the 1700s
+          in Singapore.
+        correctAns: Spices
+        wrongAns: Lantaka
+      - question: What significance did spices have?
+        correctAns: They drove the world's economies
+        wrongAns: They tasted really good
     - cardName: Proa
       cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
-      quiz: []
+      quiz:
+      - question: Which of the following is the correct description for a Proa?
+        correctAns: A fast and sharp-ended rowing/sail boat
+        wrongAns: A large carrack built to be stable in heavy seas
+      - question: 'True or False: Malayan pirates rarely used Proas.'
+        correctAns: False
+        wrongAns: True
     - cardName: Pulau Blakang Mati
       cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
@@ -3733,26 +4136,50 @@ MonoBehaviour:
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: ________ is the former name of Sentosa.'
+        correctAns: Pulau Blakang Mati
+        wrongAns: Forts Serapong
+      - question: Which of the following were forts found on Sentosa during the 1700s?
+        correctAns: Forts Serapong, Connaught, and Siloso
+        wrongAns: Forts Greymoor, Snowhawk, and Greenwall
     - cardName: The Pirate Haven
       cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
-      quiz: []
+      quiz:
+      - question: 'True or False: the Singapore Strait was never prone to piracy.'
+        correctAns: False
+        wrongAns: True
+      - question: What proved the presence of pirates around Sentosa?
+        correctAns: Heavy ship traffic and ambush locations
+        wrongAns: Shipwrecks and treasure maps
     - cardName: Lantaka
       cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
-      quiz: []
+      quiz:
+      - question: This was a type of bronze portable cannon or swivel gun.
+        correctAns: Lantaka
+        wrongAns: Keris
+      - question: 'Fill in the Blank: The Lantaka was commonly equipped by ________.'
+        correctAns: Seafaring vessels
+        wrongAns: Orang Luat
     - cardName: Keris
       cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
         kings.
-      quiz: []
+      quiz:
+      - question: This item can be used as both a weapon and an heirloom.
+        correctAns: Keris
+        wrongAns: Lantaka
+      - question: What is a Keris?
+        correctAns: A common dagger used since the 15th century
+        wrongAns: A portable cannon
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -3761,43 +4188,80 @@ MonoBehaviour:
         was seized and rationed by the Japanese military and very little was given
         to each person. These plants were grown to replace rice for carbohydrate
         intake as they could grow more easily.
-      quiz: []
+      quiz:
+      - question: What were carbohydrate staples in the 1800s?
+        correctAns: Tapioca, sweet potato, yam
+        wrongAns: Rice, potato, oats
+      - question: How much rice was rationed to people?
+        correctAns: Very little
+        wrongAns: A week's worth
     - cardName: Currency
       cardImg: {fileID: 21300000, guid: c4f001ae2a21bdb47997a8ad853293c6, type: 3}
       cardDesc: "This currency was issued by the Japanese, also called \u201CBanana
         money\u201D, features a banana tree on the note. However, due to runaway
         inflation the money was not worth much and one could only purchase a banana
         with a $10 note. It was eventually rendered worthless by the end of the war."
-      quiz: []
+      quiz:
+      - question: Why was the currency called "Banana money"?
+        correctAns: There is a banana tree on the note
+        wrongAns: The Japanese drove locals "bananas"
+      - question: Why was "Banana money" not worth a lot
+        correctAns: Runaway inflation
+        wrongAns: Bananas were very common
     - cardName: Radio
       cardImg: {fileID: 21300000, guid: 1225e8292ea3bc646a18a03f6cc8b0da, type: 3}
       cardDesc: This is a handmade radio made out of a matchbox used by prisoners
         of war(POWs). POWs are people who were captured by the Japanese military
-        during the war and they needed a way to tap into war new abroad.
-      quiz: []
+        during the war and they needed a way to tap into war news abroad.
+      quiz:
+      - question: Why did POWs make radios out of matchboxes?
+        correctAns: To tap into war news
+        wrongAns: To defy the Japanese
+      - question: What does POW mean?
+        correctAns: Prisoners of war
+        wrongAns: POWer block
     - cardName: Postcard
       cardImg: {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
       cardDesc: Postcards like these was propaganda to soften the image of Japanese
         soldiers with the ultimate goal of urging civilians to accept Japanese rule.The
         face of soldiers were deliberately left blank for the card receiving to fill
         in.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: The face of soldiers on _____ were deliberately
+          left blank.'
+        correctAns: Postcards
+        wrongAns: Books
+      - question: What were postcards used for during the 1800s?
+        correctAns: Propaganda; to soften the image of Japanese soldiers
+        wrongAns: To contact friends and family outside of war
     - cardName: Books
       cardImg: {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
       cardDesc: Japanese song and conversation books like these were used to teach
         locals Japanese and instill patriotism to Japan.The conversation book is
         targeted at Chinese speakers as it uses Chinese characters and romanisation
         to present Japanese characters phonetically.
-      quiz: []
+      quiz:
+      - question: 'True or False: Japanese song books were used to instil patriotism
+          in locals to Japan.'
+        correctAns: True
+        wrongAns: False
+      - question: Who did Japanese conversation books target?
+        correctAns: Chinese speakers
+        wrongAns: Non-Chinese speakers
     - cardName: Sewing Machine
       cardImg: {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
       cardDesc: Sewing machines were an indispensable tool in many households as
         there was severe shortages of basic necessities during this period. People
         were compelled to reuse materials from old clothes, curtains and bed sheets
         to make new garments and mend worn ones.
-      quiz: []
-  - catName: Future
-    cards: []
+      quiz:
+      - question: 'Fill in the Blank: ______ were indispensable tools in households
+          due to shortages of necessities.'
+        correctAns: Sewing machines
+        wrongAns: Radios
+      - question: What did people reuse to make new garments and mend old ones?
+        correctAns: Materials from old clothes
+        wrongAns: Materials from curtains
   cardIdx: 2
   card: {fileID: 1236994939}
   cardImg: {fileID: 1643450037}
@@ -4811,33 +5275,69 @@ MonoBehaviour:
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
-      quiz: []
+      quiz:
+      - question: These items opened the eyes of merchants in Europe to the profitable
+          trade within Asia.
+        correctAns: Seized Cargo
+        wrongAns: Santa Catarina
+      - question: What does the Santa Catarina incident refer to?
+        correctAns: The wreckage of the ship Santa Catarina
+        wrongAns: The seizure of the cargo on the Santa Catarina
     - cardName: Santa Catarina
       cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
-      quiz: []
+      quiz:
+      - question: Which item was targeted for its precious cargo in 1603?
+        correctAns: Santa Catarina
+        wrongAns: The S.S. Anne
+      - question: What kind of ship was the Santa Catarina?
+        correctAns: A carrack, built to be stable in heavy seas
+        wrongAns: A small life saver boat
     - cardName: Religion
       cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
-      quiz: []
+      quiz:
+      - question: What had the Portuguese attempted to share and spread during their
+          time in Singapore?
+        correctAns: Religion
+        wrongAns: Orang Laut
+      - question: The majority of the population in Singapore (under Malacca) followed
+          what faith?
+        correctAns: Christianity
+        wrongAns: Islam
     - cardName: Orang Laut
       cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: _______ were people who lived and travelled
+          in their boats.'
+        correctAns: Orang Luat
+        wrongAns: Orangutan
+      - question: What happened when the Portuguese destroyed settlements in Singapore
+          (1613)?
+        correctAns: Singapore sank into obscurity
+        wrongAns: Singapore lost much of its goods and valuables
     - cardName: Cannon
       cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
-      quiz: []
+      quiz:
+      - question: 'True or False: Malay sailing vessels carried small cannons as
+          defence against piracy.'
+        correctAns: True
+        wrongAns: False
+      - question: Around how many cannons were captured in Malaka (1511-1521)?
+        correctAns: 3000
+        wrongAns: 4000
     - cardName: Bamboo Spear
       cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
@@ -4845,7 +5345,13 @@ MonoBehaviour:
         made of wild palm without any iron, yet they throw the spears so hard that
         they can penetrate an iron breastplate and any shield no matter how sturdy
         they are.
-      quiz: []
+      quiz:
+      - question: This was the main weapon of the Orang Luat (16th century).
+        correctAns: Bamboo spear
+        wrongAns: Cannon
+      - question: What were the bamboo spears used by the Orang Luat made of?
+        correctAns: Wild palm
+        wrongAns: Iron
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
@@ -4854,13 +5360,26 @@ MonoBehaviour:
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
-      quiz: []
+      quiz:
+      - question: This was valuable and had many uses, especially during the 1700s
+          in Singapore.
+        correctAns: Spices
+        wrongAns: Lantaka
+      - question: What significance did spices have?
+        correctAns: They drove the world's economies
+        wrongAns: They tasted really good
     - cardName: Proa
       cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
-      quiz: []
+      quiz:
+      - question: Which of the following is the correct description for a Proa?
+        correctAns: A fast and sharp-ended rowing/sail boat
+        wrongAns: A large carrack built to be stable in heavy seas
+      - question: 'True or False: Malayan pirates rarely used Proas.'
+        correctAns: False
+        wrongAns: True
     - cardName: Pulau Blakang Mati
       cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
@@ -4868,26 +5387,50 @@ MonoBehaviour:
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: ________ is the former name of Sentosa.'
+        correctAns: Pulau Blakang Mati
+        wrongAns: Forts Serapong
+      - question: Which of the following were forts found on Sentosa during the 1700s?
+        correctAns: Forts Serapong, Connaught, and Siloso
+        wrongAns: Forts Greymoor, Snowhawk, and Greenwall
     - cardName: The Pirate Haven
       cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
-      quiz: []
+      quiz:
+      - question: 'True or False: the Singapore Strait was never prone to piracy.'
+        correctAns: False
+        wrongAns: True
+      - question: What proved the presence of pirates around Sentosa?
+        correctAns: Heavy ship traffic and ambush locations
+        wrongAns: Shipwrecks and treasure maps
     - cardName: Lantaka
       cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
-      quiz: []
+      quiz:
+      - question: This was a type of bronze portable cannon or swivel gun.
+        correctAns: Lantaka
+        wrongAns: Keris
+      - question: 'Fill in the Blank: The Lantaka was commonly equipped by ________.'
+        correctAns: Seafaring vessels
+        wrongAns: Orang Luat
     - cardName: Keris
       cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
         kings.
-      quiz: []
+      quiz:
+      - question: This item can be used as both a weapon and an heirloom.
+        correctAns: Keris
+        wrongAns: Lantaka
+      - question: What is a Keris?
+        correctAns: A common dagger used since the 15th century
+        wrongAns: A portable cannon
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -4896,43 +5439,80 @@ MonoBehaviour:
         was seized and rationed by the Japanese military and very little was given
         to each person. These plants were grown to replace rice for carbohydrate
         intake as they could grow more easily.
-      quiz: []
+      quiz:
+      - question: What were carbohydrate staples in the 1800s?
+        correctAns: Tapioca, sweet potato, yam
+        wrongAns: Rice, potato, oats
+      - question: How much rice was rationed to people?
+        correctAns: Very little
+        wrongAns: A week's worth
     - cardName: Currency
       cardImg: {fileID: 21300000, guid: c4f001ae2a21bdb47997a8ad853293c6, type: 3}
       cardDesc: "This currency was issued by the Japanese, also called \u201CBanana
         money\u201D, features a banana tree on the note. However, due to runaway
         inflation the money was not worth much and one could only purchase a banana
         with a $10 note. It was eventually rendered worthless by the end of the war."
-      quiz: []
+      quiz:
+      - question: Why was the currency called "Banana money"?
+        correctAns: There is a banana tree on the note
+        wrongAns: The Japanese drove locals "bananas"
+      - question: Why was "Banana money" not worth a lot
+        correctAns: Runaway inflation
+        wrongAns: Bananas were very common
     - cardName: Radio
       cardImg: {fileID: 21300000, guid: 1225e8292ea3bc646a18a03f6cc8b0da, type: 3}
       cardDesc: This is a handmade radio made out of a matchbox used by prisoners
         of war(POWs). POWs are people who were captured by the Japanese military
-        during the war and they needed a way to tap into war new abroad.
-      quiz: []
+        during the war and they needed a way to tap into war news abroad.
+      quiz:
+      - question: Why did POWs make radios out of matchboxes?
+        correctAns: To tap into war news
+        wrongAns: To defy the Japanese
+      - question: What does POW mean?
+        correctAns: Prisoners of war
+        wrongAns: POWer block
     - cardName: Postcard
       cardImg: {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
       cardDesc: Postcards like these was propaganda to soften the image of Japanese
         soldiers with the ultimate goal of urging civilians to accept Japanese rule.The
         face of soldiers were deliberately left blank for the card receiving to fill
         in.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: The face of soldiers on _____ were deliberately
+          left blank.'
+        correctAns: Postcards
+        wrongAns: Books
+      - question: What were postcards used for during the 1800s?
+        correctAns: Propaganda; to soften the image of Japanese soldiers
+        wrongAns: To contact friends and family outside of war
     - cardName: Books
       cardImg: {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
       cardDesc: Japanese song and conversation books like these were used to teach
         locals Japanese and instill patriotism to Japan.The conversation book is
         targeted at Chinese speakers as it uses Chinese characters and romanisation
         to present Japanese characters phonetically.
-      quiz: []
+      quiz:
+      - question: 'True or False: Japanese song books were used to instil patriotism
+          in locals to Japan.'
+        correctAns: True
+        wrongAns: False
+      - question: Who did Japanese conversation books target?
+        correctAns: Chinese speakers
+        wrongAns: Non-Chinese speakers
     - cardName: Sewing Machine
       cardImg: {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
       cardDesc: Sewing machines were an indispensable tool in many households as
         there was severe shortages of basic necessities during this period. People
         were compelled to reuse materials from old clothes, curtains and bed sheets
         to make new garments and mend worn ones.
-      quiz: []
-  - catName: Future
-    cards: []
+      quiz:
+      - question: 'Fill in the Blank: ______ were indispensable tools in households
+          due to shortages of necessities.'
+        correctAns: Sewing machines
+        wrongAns: Radios
+      - question: What did people reuse to make new garments and mend old ones?
+        correctAns: Materials from old clothes
+        wrongAns: Materials from curtains
   cardIdx: 4
   card: {fileID: 1450687414}
   cardImg: {fileID: 1716314677}
@@ -8424,33 +9004,69 @@ MonoBehaviour:
       cardDesc: The Santa Catarina incident refers to the seizure of its cargo. The
         importance of this event is that it opened the eyes of merchants in Europe
         to the profitable trade within Asia, especially China.
-      quiz: []
+      quiz:
+      - question: These items opened the eyes of merchants in Europe to the profitable
+          trade within Asia.
+        correctAns: Seized Cargo
+        wrongAns: Santa Catarina
+      - question: What does the Santa Catarina incident refer to?
+        correctAns: The wreckage of the ship Santa Catarina
+        wrongAns: The seizure of the cargo on the Santa Catarina
     - cardName: Santa Catarina
       cardImg: {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
       cardDesc: The Santa Catarina was a carrack which was built large, to be stable
         in heavy seas and carry large cargo. Unfortunately, due to its use for carrying
         large cargo, it was targeted for its precious treasures in 1603.
-      quiz: []
+      quiz:
+      - question: Which item was targeted for its precious cargo in 1603?
+        correctAns: Santa Catarina
+        wrongAns: The S.S. Anne
+      - question: What kind of ship was the Santa Catarina?
+        correctAns: A carrack, built to be stable in heavy seas
+        wrongAns: A small life saver boat
     - cardName: Religion
       cardImg: {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
       cardDesc: When the Malacca Sultanate was under Portuguese rule, the Portuguese
         had tried to spread Christianity. However it was difficult as the majority
         of the population was Muslim.
-      quiz: []
+      quiz:
+      - question: What had the Portuguese attempted to share and spread during their
+          time in Singapore?
+        correctAns: Religion
+        wrongAns: Orang Laut
+      - question: The majority of the population in Singapore (under Malacca) followed
+          what faith?
+        correctAns: Christianity
+        wrongAns: Islam
     - cardName: Orang Laut
       cardImg: {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
       cardDesc: "Orang Laut is Malay for \u201CSea People\u201D as these people live
         and travel in their boats on the sea. When the Portuguese destroyed the settlement
         in Singapore in 1613 and Singapore sank into obscurity, the Orang Laut were
         likely the only occupants of the island."
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: _______ were people who lived and travelled
+          in their boats.'
+        correctAns: Orang Luat
+        wrongAns: Orangutan
+      - question: What happened when the Portuguese destroyed settlements in Singapore
+          (1613)?
+        correctAns: Singapore sank into obscurity
+        wrongAns: Singapore lost much of its goods and valuables
     - cardName: Cannon
       cardImg: {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
       cardDesc: Cannons were used by royal houses, traders and pirates. There was
         a capture of 3000 cannons at Melaka in 1511 and 1521, which indicated that
         cannons were already used in warfare. From the 16th century, Malay sailing
         vessels carried small cannons on board as defence against piracy.
-      quiz: []
+      quiz:
+      - question: 'True or False: Malay sailing vessels carried small cannons as
+          defence against piracy.'
+        correctAns: True
+        wrongAns: False
+      - question: Around how many cannons were captured in Malaka (1511-1521)?
+        correctAns: 3000
+        wrongAns: 4000
     - cardName: Bamboo Spear
       cardImg: {fileID: 21300000, guid: 5a9cadc7a3b0748448ae24de58da7ef6, type: 3}
       cardDesc: The bamboo spear is the main weapon of Orang Laut during the 16th
@@ -8458,7 +9074,13 @@ MonoBehaviour:
         made of wild palm without any iron, yet they throw the spears so hard that
         they can penetrate an iron breastplate and any shield no matter how sturdy
         they are.
-      quiz: []
+      quiz:
+      - question: This was the main weapon of the Orang Luat (16th century).
+        correctAns: Bamboo spear
+        wrongAns: Cannon
+      - question: What were the bamboo spears used by the Orang Luat made of?
+        correctAns: Wild palm
+        wrongAns: Iron
   - catName: 1700s - Pirate Haven
     cards:
     - cardName: Spices
@@ -8467,13 +9089,26 @@ MonoBehaviour:
         Spices drove the world economies in those days the way oil does today. There
         was an increase in piracy due to the economic importance to control the lucrative
         spice trade.
-      quiz: []
+      quiz:
+      - question: This was valuable and had many uses, especially during the 1700s
+          in Singapore.
+        correctAns: Spices
+        wrongAns: Lantaka
+      - question: What significance did spices have?
+        correctAns: They drove the world's economies
+        wrongAns: They tasted really good
     - cardName: Proa
       cardImg: {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
       cardDesc: Proa or more commonly known as prau or prahu, is a fast and sharp-ended
         rowing or sailing boat that is widely used in Malayan water and was once
         popular with Malayan pirates.
-      quiz: []
+      quiz:
+      - question: Which of the following is the correct description for a Proa?
+        correctAns: A fast and sharp-ended rowing/sail boat
+        wrongAns: A large carrack built to be stable in heavy seas
+      - question: 'True or False: Malayan pirates rarely used Proas.'
+        correctAns: False
+        wrongAns: True
     - cardName: Pulau Blakang Mati
       cardImg: {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
       cardDesc: Now known as Sentosa, this island, whose old name translates to "the
@@ -8481,26 +9116,50 @@ MonoBehaviour:
         for protection of shipping passages, leading to the creation of Forts Serapong,
         Connaught, and Siloso in the 1880s. This island, contrary to its modern image,
         bears a much darker image.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: ________ is the former name of Sentosa.'
+        correctAns: Pulau Blakang Mati
+        wrongAns: Forts Serapong
+      - question: Which of the following were forts found on Sentosa during the 1700s?
+        correctAns: Forts Serapong, Connaught, and Siloso
+        wrongAns: Forts Greymoor, Snowhawk, and Greenwall
     - cardName: The Pirate Haven
       cardImg: {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
       cardDesc: The Singapore Strait was once "excellent for piracy", evident by
         heavy ship traffic and numerous ambush locations on small forested islands
         such as Sentosa.
-      quiz: []
+      quiz:
+      - question: 'True or False: the Singapore Strait was never prone to piracy.'
+        correctAns: False
+        wrongAns: True
+      - question: What proved the presence of pirates around Sentosa?
+        correctAns: Heavy ship traffic and ambush locations
+        wrongAns: Shipwrecks and treasure maps
     - cardName: Lantaka
       cardImg: {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
       cardDesc: The Lantaka also known as rentaka was a type of bronze portable cannon
         or swivel gun. It was commonly equipped by seafaring vessels. The Malay piratical
         proas would carry four lantakas on each side.
-      quiz: []
+      quiz:
+      - question: This was a type of bronze portable cannon or swivel gun.
+        correctAns: Lantaka
+        wrongAns: Keris
+      - question: 'Fill in the Blank: The Lantaka was commonly equipped by ________.'
+        correctAns: Seafaring vessels
+        wrongAns: Orang Luat
     - cardName: Keris
       cardImg: {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
       cardDesc: Keris is a common dagger used since the 15th century. Pirates would
         be equipped with keris and other firearms for its activities. It can also
         take on ceremonial function or become a heirloom to confer legitimacy on
         kings.
-      quiz: []
+      quiz:
+      - question: This item can be used as both a weapon and an heirloom.
+        correctAns: Keris
+        wrongAns: Lantaka
+      - question: What is a Keris?
+        correctAns: A common dagger used since the 15th century
+        wrongAns: A portable cannon
   - catName: 1800s - Japanese Occupation
     cards:
     - cardName: Food
@@ -8509,43 +9168,80 @@ MonoBehaviour:
         was seized and rationed by the Japanese military and very little was given
         to each person. These plants were grown to replace rice for carbohydrate
         intake as they could grow more easily.
-      quiz: []
+      quiz:
+      - question: What were carbohydrate staples in the 1800s?
+        correctAns: Tapioca, sweet potato, yam
+        wrongAns: Rice, potato, oats
+      - question: How much rice was rationed to people?
+        correctAns: Very little
+        wrongAns: A week's worth
     - cardName: Currency
       cardImg: {fileID: 21300000, guid: c4f001ae2a21bdb47997a8ad853293c6, type: 3}
       cardDesc: "This currency was issued by the Japanese, also called \u201CBanana
         money\u201D, features a banana tree on the note. However, due to runaway
         inflation the money was not worth much and one could only purchase a banana
         with a $10 note. It was eventually rendered worthless by the end of the war."
-      quiz: []
+      quiz:
+      - question: Why was the currency called "Banana money"?
+        correctAns: There is a banana tree on the note
+        wrongAns: The Japanese drove locals "bananas"
+      - question: Why was "Banana money" not worth a lot
+        correctAns: Runaway inflation
+        wrongAns: Bananas were very common
     - cardName: Radio
       cardImg: {fileID: 21300000, guid: 1225e8292ea3bc646a18a03f6cc8b0da, type: 3}
       cardDesc: This is a handmade radio made out of a matchbox used by prisoners
         of war(POWs). POWs are people who were captured by the Japanese military
-        during the war and they needed a way to tap into war new abroad.
-      quiz: []
+        during the war and they needed a way to tap into war news abroad.
+      quiz:
+      - question: Why did POWs make radios out of matchboxes?
+        correctAns: To tap into war news
+        wrongAns: To defy the Japanese
+      - question: What does POW mean?
+        correctAns: Prisoners of war
+        wrongAns: POWer block
     - cardName: Postcard
       cardImg: {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
       cardDesc: Postcards like these was propaganda to soften the image of Japanese
         soldiers with the ultimate goal of urging civilians to accept Japanese rule.The
         face of soldiers were deliberately left blank for the card receiving to fill
         in.
-      quiz: []
+      quiz:
+      - question: 'Fill in the Blank: The face of soldiers on _____ were deliberately
+          left blank.'
+        correctAns: Postcards
+        wrongAns: Books
+      - question: What were postcards used for during the 1800s?
+        correctAns: Propaganda; to soften the image of Japanese soldiers
+        wrongAns: To contact friends and family outside of war
     - cardName: Books
       cardImg: {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
       cardDesc: Japanese song and conversation books like these were used to teach
         locals Japanese and instill patriotism to Japan.The conversation book is
         targeted at Chinese speakers as it uses Chinese characters and romanisation
         to present Japanese characters phonetically.
-      quiz: []
+      quiz:
+      - question: 'True or False: Japanese song books were used to instil patriotism
+          in locals to Japan.'
+        correctAns: True
+        wrongAns: False
+      - question: Who did Japanese conversation books target?
+        correctAns: Chinese speakers
+        wrongAns: Non-Chinese speakers
     - cardName: Sewing Machine
       cardImg: {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
       cardDesc: Sewing machines were an indispensable tool in many households as
         there was severe shortages of basic necessities during this period. People
         were compelled to reuse materials from old clothes, curtains and bed sheets
         to make new garments and mend worn ones.
-      quiz: []
-  - catName: Future
-    cards: []
+      quiz:
+      - question: 'Fill in the Blank: ______ were indispensable tools in households
+          due to shortages of necessities.'
+        correctAns: Sewing machines
+        wrongAns: Radios
+      - question: What did people reuse to make new garments and mend old ones?
+        correctAns: Materials from old clothes
+        wrongAns: Materials from curtains
   cardIdx: 1
   card: {fileID: 2004338527}
   cardImg: {fileID: 34174329}
