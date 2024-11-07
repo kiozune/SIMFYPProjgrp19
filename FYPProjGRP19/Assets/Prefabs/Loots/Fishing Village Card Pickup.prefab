@@ -498,8 +498,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
     - {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
     - {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
-  - levelName: Future
-    cardIcons: []
 --- !u!65 &8286290182039717388
 BoxCollider:
   m_ObjectHideFlags: 0
