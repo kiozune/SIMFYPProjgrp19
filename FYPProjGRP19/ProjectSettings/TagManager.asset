@@ -12,6 +12,7 @@ TagManager:
   - SF_Door
   - Ground
   - Card
+  - Gameover
   layers:
   - Default
   - TransparentFX

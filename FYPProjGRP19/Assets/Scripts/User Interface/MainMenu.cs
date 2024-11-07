@@ -159,6 +159,7 @@ public class MainMenu : MonoBehaviour
 
     public void onAncientStageSelect()
     {
+        int i = Random.Range(0, 3);
         if (isMelee)
         {
             PlayerPrefs.DeleteKey("Meleewep");
@@ -173,8 +174,19 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetInt("Meleewep", 0);
             PlayerPrefs.SetInt("Rangewep", 1);
         }
-
-        SceneManager.LoadScene("First Level");
+        switch(i)
+        {
+            case 0:
+                SceneManager.LoadScene("First Level");
+                break;
+            case 1:
+                SceneManager.LoadScene("13th Century Singapore Map 2");
+                break;
+            case 2:
+                SceneManager.LoadScene("Third Level");
+                break;
+        }
+        
     }
     public void fromStageSelectBack()
     {

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay Levels/First Level/First Level.unity
     guid: ac26d5eb87d641a46b40ed781dc5b61d
   - enabled: 1
+    path: Assets/Scenes/13th Century Singapore Map 2/13th Century Singapore Map 2.unity
+    guid: 87b43d65f412ab04e804e177b7dd69f2
+  - enabled: 1
     path: Assets/Scenes/Gameplay Levels/Boss Level/BossArena.unity
     guid: 7d9fa00a2ff51f749afb2bf8eb9a4788
   - enabled: 1
@@ -23,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay Levels/Boss Level/Boss Level.unity
     guid: c855246d2d6d12442898a2d012a8988f
+  - enabled: 1
+    path: Assets/Scenes/Gameplay Levels/Third Level (Pirate)/Third Level.unity
+    guid: 4ec4a6ed7a1171048aa659e979ed3663
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a3224568d41ccfb488dab4201e5082fd, type: 2}

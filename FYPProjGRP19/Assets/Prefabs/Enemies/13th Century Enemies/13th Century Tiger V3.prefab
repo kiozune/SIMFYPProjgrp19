@@ -4303,7 +4303,7 @@ GameObject:
   - component: {fileID: 760922651059538954}
   m_Layer: 0
   m_Name: 13th Century Tiger V3
-  m_TagString: BasicEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
