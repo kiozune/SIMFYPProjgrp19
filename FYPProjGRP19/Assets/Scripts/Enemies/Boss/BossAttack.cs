@@ -7,9 +7,11 @@ public class BossAttack : MonoBehaviour
     public float detectionRange = 10f;
     public float attackRange = 2f;
     public float attackCooldown = 2f;
-    public float rotationSpeed = 5f; // Speed at which the boss turns to face the player
+    public float rotationSpeed = 5f;
+    public float attackDamage = 50f; // Damage dealt to the player
 
     private float attackTimer;
+    private bool isAttacking = false;
     private Animator animator;
     private NavMeshAgent navMeshAgent;
 
@@ -18,7 +20,6 @@ public class BossAttack : MonoBehaviour
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        // Check if player reference is assigned
         if (player == null)
         {
             Debug.LogError("Player reference not set in BossAttack script!");
@@ -27,74 +28,85 @@ public class BossAttack : MonoBehaviour
         attackTimer = 0f;
     }
 
- void Update()
-{
-    float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-    Debug.Log("Distance to player: " + distanceToPlayer);
-
-    // Rotate towards the player
-    Vector3 directionToPlayer = (player.position - transform.position).normalized;
-    Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
-    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-
-    // Handle movement and attack logic
-    if (distanceToPlayer <= detectionRange)
+    void Update()
     {
-        if (distanceToPlayer > attackRange)
-        {
-            // Move towards the player
-            navMeshAgent.isStopped = false;
-            navMeshAgent.SetDestination(player.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            // Update walking animation
-            if (navMeshAgent.velocity.magnitude > 0.1f)
+        // Rotate towards the player
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+
+        // Handle movement and attack logic
+        if (distanceToPlayer <= detectionRange && !isAttacking)
+        {
+            if (distanceToPlayer > attackRange)
             {
-                animator.SetBool("isWalking", true);
-                animator.SetBool("isAttacking", false);
+                navMeshAgent.isStopped = false;
+                navMeshAgent.SetDestination(player.position);
+
+                if (navMeshAgent.velocity.magnitude > 0.1f)
+                {
+                    animator.SetBool("isWalking", true);
+                    animator.SetBool("isAttacking", false);
+                    animator.SetBool("isIdle", false);
+                }
+            }
+            else if (attackTimer <= 0f)
+            {
+                navMeshAgent.isStopped = true;
+                HandleAttack();
             }
         }
-        else
+        else if (!isAttacking)
         {
-            // Attack the player
-            navMeshAgent.isStopped = true; // Stop moving
-            HandleAttack();
+            navMeshAgent.isStopped = true;
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("isIdle", false);
+        }
+
+        if (attackTimer > 0f)
+        {
+            attackTimer -= Time.deltaTime;
         }
     }
-    else
+
+    void HandleAttack()
     {
-        // Player out of range, go to idle state
-        navMeshAgent.isStopped = true; // Stop moving
-        animator.SetBool("isWalking", false);
-        animator.SetBool("isAttacking", false); // Ensure attacking is false
+        if (!isAttacking)
+        {
+            isAttacking = true;
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isAttacking", true);
+            animator.SetBool("isIdle", false);
+            Attack();
+        }
     }
 
-    // Decrement attack timer if it's greater than zero
-    if (attackTimer > 0f)
-    {
-        attackTimer -= Time.deltaTime;
-    }
-}
-
-void HandleAttack()
-{
-    if (attackTimer <= 0f) // Check if the cooldown has expired
-    {
-        Attack();
-        attackTimer = attackCooldown; // Reset timer after attacking
-    }
-
-    // Interrupt walking animation for attacking
-    animator.SetBool("isWalking", false);
-    animator.SetBool("isAttacking", true);
-}
-
-void Attack()
+    void Attack()
 {
     Debug.Log("Boss attacks!");
-    // Add attack logic (damage, etc.)
+
+    // Deal damage to player
+    PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+    if (playerHealth != null)
+    {
+        playerHealth.takeDamage(attackDamage);
+    }
+
+    // Directly invoke EndAttack, or ensure the animator transitions back to idle
+    Invoke("EndAttack", animator.GetCurrentAnimatorStateInfo(0).length);
 }
 
-
+    void EndAttack()
+{
+    isAttacking = false;
+    attackTimer = attackCooldown;
+    animator.SetBool("isAttacking", false);
+    animator.SetBool("isWalking", false); // This will return to idle if not moving
+    animator.SetBool("isIdle", false);
+}
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
