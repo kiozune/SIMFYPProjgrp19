@@ -6,49 +6,57 @@ using UnityEngine.SceneManagement;
 
 public class TimeElapsed : MonoBehaviour
 {
-    private float timeElapsed;
+    private float timeRemaining;
     private int minutes;
     private int seconds;
     [SerializeField]
     private TextMeshProUGUI timeText;
+    [SerializeField]
+    private string bossLevel;
+
     // Start is called before the first frame update
     void Start()
     {
-        timeElapsed = 0f;
-        minutes = 0;
-        seconds = 0;
+        timeRemaining = 360f; // Set to 6 minutes (6 * 60 seconds)
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeElapsed += Time.deltaTime;
-
-
-        minutes = Mathf.FloorToInt(timeElapsed / 60f);
-        seconds = Mathf.FloorToInt(timeElapsed % 60f);
-
-        timeText.text = "Time Elapsed: " + string.Format("{0:00}:{1:00}", minutes, seconds);
-        if(Input.GetKeyDown(KeyCode.PageDown))
+        if (timeRemaining > 0)
         {
-            timeElapsed = 899;
-            Debug.Log(timeElapsed);
+            timeRemaining -= Time.deltaTime;
+
+            minutes = Mathf.FloorToInt(timeRemaining / 60f);
+            seconds = Mathf.FloorToInt(timeRemaining % 60f);
+
+            timeText.text = "Time Remaining: " + string.Format("{0:00}:{1:00}", minutes, seconds);
         }
-        if (minutes >= 15)
+        else
         {
             loadMainMenu();
         }
+
+        // Debug: Decrease time remaining quickly by pressing PageDown
+        if (Input.GetKeyDown(KeyCode.PageDown))
+        {
+            timeRemaining = 1; // Set to 1 second to quickly reach zero
+            Debug.Log(timeRemaining);
+        }
     }
+
     public int RetrieveSeconds()
     {
         return seconds;
     }
+
     public int RetrieveMinutes()
     {
         return minutes;
     }
+
     public void loadMainMenu()
     {
-        SceneManager.LoadScene("Boss Level");
+        SceneManager.LoadScene(bossLevel);
     }
 }

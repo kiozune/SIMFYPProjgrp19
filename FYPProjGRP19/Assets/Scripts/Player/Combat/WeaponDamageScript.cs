@@ -38,7 +38,7 @@ public class WeaponDamageScript : MonoBehaviour
         if (ifHitting)
         {
             // Check if the object is an enemy (you can check by tag or a specific component)
-            if (other.CompareTag("BasicEnemy"))
+            if (other.CompareTag("BasicEnemy") || other.CompareTag("Enemy"))
             {
                 // Add enemy to the list
                 enemiesInRange.Add(other.gameObject);

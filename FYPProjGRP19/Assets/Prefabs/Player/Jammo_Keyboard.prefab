@@ -1559,10 +1559,11 @@ MonoBehaviour:
   characterModel: {fileID: 3224650486291245903}
   rotationSpeed: 5
   groundCheck: {fileID: 0}
+  groundFloor: {fileID: 0}
   groundCheckDistance: 0.4
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   isGrounded: 0
   weaponAttack: {fileID: 5161641442070727831}
 --- !u!114 &2136078830215876921
@@ -1619,8 +1620,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1.69, y: 1, z: 0.38}
-  m_Center: {x: 0, y: 0.81, z: 1}
+  m_Size: {x: 1.69, y: 1, z: 0.88}
+  m_Center: {x: 0, y: 0.81, z: 1.09}
 --- !u!4 &3224650486291245903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 82a2914d8f86c62488456950c8330e38, type: 3}

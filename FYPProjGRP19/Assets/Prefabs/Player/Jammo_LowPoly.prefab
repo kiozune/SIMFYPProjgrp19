@@ -1426,10 +1426,11 @@ MonoBehaviour:
   characterModel: {fileID: 6200116995687643522}
   rotationSpeed: 5
   groundCheck: {fileID: 0}
+  groundFloor: {fileID: 0}
   groundCheckDistance: 0.4
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   isGrounded: 0
   weaponAttack: {fileID: 8759521443899076698}
 --- !u!114 &8609746080620249138

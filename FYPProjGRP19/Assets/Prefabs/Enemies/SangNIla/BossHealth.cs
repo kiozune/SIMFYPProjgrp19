@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
-    private float currentHealth;
+    public float currentHealth;  // Set to public for access in WeaponDamageScript
 
-    public Canvas bossHealthCanvas;  // Reference to the health bar on canvas (if needed)
-    public UnityEngine.UI.Slider healthSlider;  // Reference to health slider UI component
+    public Canvas bossHealthCanvas;  // Reference to the health bar on canvas
+    public Slider healthSlider;  // Reference to health slider UI component
 
     void Start()
     {
@@ -25,6 +26,11 @@ public class BossHealth : MonoBehaviour
         }
     }
 
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
     void UpdateHealthBar()
     {
         if (healthSlider != null)
@@ -36,7 +42,6 @@ public class BossHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Boss has died!");
-        // You can add animations or other logic for boss death here
-        Destroy(gameObject); // Or trigger death animation
+        Destroy(gameObject); // Trigger death
     }
 }
