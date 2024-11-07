@@ -159,7 +159,7 @@ public class MainMenu : MonoBehaviour
 
     public void onAncientStageSelect()
     {
-        int i = Random.Range(0, 3);
+        int i = Random.Range(0, 2);
         if (isMelee)
         {
             PlayerPrefs.DeleteKey("Meleewep");
@@ -181,9 +181,6 @@ public class MainMenu : MonoBehaviour
                 break;
             case 1:
                 SceneManager.LoadScene("13th Century Singapore Map 2");
-                break;
-            case 2:
-                SceneManager.LoadScene("Third Level");
                 break;
         }
         
@@ -249,5 +246,14 @@ public class MainMenu : MonoBehaviour
     public void onMuseumClicked()
     {
         SceneManager.LoadScene("Museum");
+    }
+
+    public void loadSeventeenCentury()
+    {
+        SceneManager.LoadScene("Third Level");
+    }
+    public void loadFourteenCentury()
+    {
+        SceneManager.LoadScene("16th Century");
     }
 }
