@@ -13,7 +13,6 @@ public class CannonAI : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform attackPoint;
 
-    private bool hasRisen;
     private bool isAttacking;
 
     void Start()
@@ -23,7 +22,6 @@ public class CannonAI : MonoBehaviour
 
         if (projectilePrefab == null) Debug.LogError("Projectile prefab could not be found.");
          
-        hasRisen = false; 
         isAttacking = false;
         targetPlayerIdx = 0;
     }

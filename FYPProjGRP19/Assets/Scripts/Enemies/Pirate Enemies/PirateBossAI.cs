@@ -5,7 +5,6 @@ using TMPro;
 using System.Collections; 
 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(EnemyHP))]
 public class PirateBossAI : MonoBehaviour
 {
     [Header("Player values")]
@@ -15,7 +14,7 @@ public class PirateBossAI : MonoBehaviour
 
     [Header("Enemy attributes")]
     [SerializeField] private string bossName = "Gideon Undertow the Undead Captain";
-    private EnemyHP hpScript;
+    private BossHealth hpScript;
 
     [Header("Melee Attack")]
     public float attackDamage = 40f;
@@ -74,7 +73,7 @@ public class PirateBossAI : MonoBehaviour
             agent.acceleration = 10f;
         }
 
-        hpScript = GetComponent<EnemyHP>();
+        hpScript = GetComponent<BossHealth>();
         if (hpScript == null) Debug.LogError("EnemyHP script could not be found.");
         else maxHealth = hpScript.GetCurrentHealth();
 
@@ -105,7 +104,7 @@ public class PirateBossAI : MonoBehaviour
 
     private void Update()
     {
-        isDead = hpScript.IsDead();
+        isDead = (hpScript.currentHealth == 0);
         if (playerTransform == null)
         {
             players = GameObject.FindGameObjectsWithTag("Player");
