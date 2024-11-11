@@ -53,7 +53,7 @@ public class WeaponDamageScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check if the object is an enemy
-        if (other.CompareTag("BasicEnemy"))
+        if (other.CompareTag("BasicEnemy") || other.CompareTag("Enemy"))
         {
             // Remove enemy from the list
             enemiesInRange.Remove(other.gameObject);
@@ -62,12 +62,13 @@ public class WeaponDamageScript : MonoBehaviour
 
     private void ApplyDamage(GameObject enemy)
     {
-        EnemyAI healthScript = enemy.GetComponent<EnemyAI>();
+        EnemyHP healthScript = enemy.GetComponent<EnemyHP>();
+        BossHealth bossHP = enemy.GetComponent<BossHealth>();
         if (healthScript != null)
         {
             healthScript.TakeDamage(damageValue);
         }
-        if (healthScript.returnHealthValue() <= 0)
+        if (healthScript != null && healthScript.IsDead())
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
@@ -75,6 +76,18 @@ public class WeaponDamageScript : MonoBehaviour
             player.GetComponent<PlayerLevel>().UpdateXPSlider();
             enemiesInRange.Remove(enemy);
         }
+        if (bossHP != null)
+        {
+            bossHP.TakeDamage(damageValue);
+        }
+        if (bossHP.GetCurrentHealth() < 0)
+        {
+            GameObject mainMenuGameObject = GameObject.FindGameObjectWithTag("Gameover");
+
+            mainMenuGameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+       
     }
 
     public bool AreAllEnemiesInRange(List<GameObject> allEnemies)

@@ -22,8 +22,6 @@ public class MainMenu : MonoBehaviour
     private bool isMelee = false;
     [SerializeField]
     private bool isRanged = false;
-    [SerializeField]
-    private bool isMultiplayer = false;
 
     [Header("UI Elements")]
     [SerializeField]
@@ -45,8 +43,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject singleplayerButton;
     [SerializeField]
-    private GameObject multiplayerButton;
-    [SerializeField]
     private GameObject backButton;
 
     // Start is called before the first frame update
@@ -62,7 +58,6 @@ public class MainMenu : MonoBehaviour
     public void onPlayClicked()
     {
         singleplayerButton.SetActive(true);
-        multiplayerButton.SetActive(true);
         backButton.SetActive(true);
         for (int j = 0; j < mainMenuBtnList.Length; ++j)
         {
@@ -71,7 +66,6 @@ public class MainMenu : MonoBehaviour
     }
     public void onSinglePlayerClicked()
     {
-        isMultiplayer = false;
         PlayerPrefs.SetInt("Multiplayer", 0); // Store that singleplayer is selected
         robotModel.SetActive(true);
         robotAnimator.SetTrigger("angry");
@@ -81,22 +75,6 @@ public class MainMenu : MonoBehaviour
             playButtonList[i].SetActive(true);
         }
         singleplayerButton.SetActive(false);
-        multiplayerButton.SetActive(false);
-    }
-
-    public void onMultiplayerClicked()
-    {
-        isMultiplayer = true;
-        PlayerPrefs.SetInt("Multiplayer", 1); // Store that multiplayer is selected
-        robotModel.SetActive(true);
-        robotAnimator.SetTrigger("angry");
-        sfxSource.Play();
-        for (int i = 0; i < playButtonList.Length; ++i)
-        {
-            playButtonList[i].SetActive(true);
-        }
-        singleplayerButton.SetActive(false);
-        multiplayerButton.SetActive(false);
     }
 
 
@@ -115,7 +93,6 @@ public class MainMenu : MonoBehaviour
             mainMenuBtnList[j].SetActive(true);
         }
         singleplayerButton.SetActive(false);
-        multiplayerButton.SetActive(false);
     }
 
     public void onMeleeClicked()
@@ -250,10 +227,56 @@ public class MainMenu : MonoBehaviour
 
     public void loadSeventeenCentury()
     {
+        if (isMelee)
+        {
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+            PlayerPrefs.SetInt("Meleewep", 1);
+            PlayerPrefs.SetInt("Rangewep", 0);
+        }
+        else if (isRanged)
+        {
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+            PlayerPrefs.SetInt("Meleewep", 0);
+            PlayerPrefs.SetInt("Rangewep", 1);
+        }
         SceneManager.LoadScene("Third Level");
     }
     public void loadFourteenCentury()
     {
+        if (isMelee)
+        {
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+            PlayerPrefs.SetInt("Meleewep", 1);
+            PlayerPrefs.SetInt("Rangewep", 0);
+        }
+        else if (isRanged)
+        {
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+            PlayerPrefs.SetInt("Meleewep", 0);
+            PlayerPrefs.SetInt("Rangewep", 1);
+        }
         SceneManager.LoadScene("16th Century");
+    }
+    public void loadEighteenCentury()
+    {
+        if (isMelee)
+        {
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+            PlayerPrefs.SetInt("Meleewep", 1);
+            PlayerPrefs.SetInt("Rangewep", 0);
+        }
+        else if (isRanged)
+        {
+            PlayerPrefs.DeleteKey("Meleewep");
+            PlayerPrefs.DeleteKey("Rangewep");
+            PlayerPrefs.SetInt("Meleewep", 0);
+            PlayerPrefs.SetInt("Rangewep", 1);
+        }
+        SceneManager.LoadScene("Japanese Level");
     }
 }
