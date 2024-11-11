@@ -852,6 +852,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3834124591e19a44815e9adcc373b63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 824338458}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a3834124591e19a44815e9adcc373b63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824338460}
     - targetCorrespondingSourceObject: {fileID: -4819223349682164798, guid: a3834124591e19a44815e9adcc373b63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1918687339}
@@ -1284,10 +1287,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eea94e62905f674599af0ea9c7e601f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 1000
+  currentHealth: 2000
   bossHealthCanvas: {fileID: 413930656}
   healthSlider: {fileID: 485093468}
+--- !u!136 &824338460
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824338450}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 20
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &829238484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,7 +2834,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.7117346
   m_Height: 2.360032
