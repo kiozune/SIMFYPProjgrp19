@@ -1,14 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.ProBuilder.MeshOperations;
-using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
-public class Stage2Boss : MonoBehaviour
+public class FutureBoss : MonoBehaviour
 {
     private Animator animator;
     public GameObject player;
@@ -17,17 +12,15 @@ public class Stage2Boss : MonoBehaviour
 
     public float detectionRange = 15f;
     public float attackRange = 5f;
-    private float chaseTimer = 0f;
 
     private float distanceToPlayer;
+    private string currentAnimation = "";
+
     private bool inRange = false;
     private bool isAttacking = false;
-    private bool isPhase = false;
-    private bool isChasing = false;
-    private string currentAnimation = "";
-    private int currentAttack = 0;
     private bool isDead = false;
 
+    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();    //Initialize Animator
@@ -48,20 +41,14 @@ public class Stage2Boss : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
             //variables requiring constant frame update
-            
 
             yield return new WaitForSeconds(0.5f);  // Check every 0.5 seconds
         }
     }
 
-    //put conditionals in here
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        //debug log
-        //Debug.Log("isChasing is " + isChasing);
-        //Debug.Log("chase timer is" + chaseTimer);
-
-        //check every frame
         DetectPlayer();
         CheckAnimation();
 
@@ -69,63 +56,19 @@ public class Stage2Boss : MonoBehaviour
         {
             HandleDeath();
         }
-        if (isPhase && isAttacking && !isChasing)
+        if (isAttacking && inRange)
         {
-            ChangeAnimation("BossSpecial2");
-        }
-        else if (!isPhase && isAttacking && !isChasing)
-        {
-            ChangeAnimation("BossAttack");
-        }
-
-        //if boss is at half health or lower, play midphase animation
-        if (bossHP.HalfHealth())
-        {
-            isPhase = true;
-            return;
-        }
-
-        //check chase
-        if (isChasing && inRange)
-        {
-            chaseTimer += Time.deltaTime;
-        }
-        else
-        {
-            chaseTimer = 0f;
-        }
-
-        //if chase and in range to attack
-        if (distanceToPlayer > attackRange)
-        {
-            isChasing = true;
-            isAttacking = false;
-            return;
-        }
-        else if (distanceToPlayer <= attackRange)
-        {
-            chaseTimer = 0f;
-            isChasing = false;
-            isAttacking = true;
-            return;
+            ChangeAnimation("Attack");
         }
     }
+
     //check animation played
     private void CheckAnimation()
     {
         if (isDead)
         {
-            ChangeAnimation("BossDefeat");
+            ChangeAnimation("Defeat");
             return;
-        }
-        else if (chaseTimer >= 10)
-        {
-            ChangeAnimation("BossRun");
-            agent.SetDestination(player.transform.position);
-            FacePlayer();
-            //run at increased speed
-            agent.speed = 12f;
-            attackRange = 3f;
         }
         else if (isAttacking)
         {
@@ -133,10 +76,9 @@ public class Stage2Boss : MonoBehaviour
             FacePlayer();
             agent.ResetPath();
         }
-        //chase player
         else if (inRange)
         {
-            ChangeAnimation("BossWalk");
+            ChangeAnimation("Walk");
             agent.SetDestination(player.transform.position);
             FacePlayer();
             agent.speed = 3.5f;
@@ -144,7 +86,7 @@ public class Stage2Boss : MonoBehaviour
         }
         else
         {
-            ChangeAnimation("BossIdle");
+            ChangeAnimation("Idle");
         }
     }
 
@@ -154,11 +96,13 @@ public class Stage2Boss : MonoBehaviour
         Debug.Log("Death Triggered");
         agent.isStopped = true;
         GetComponent<CapsuleCollider>().enabled = false;
+        /*
         inRange = false;
         isAttacking = false;
         isPhase = false;
         isChasing = false;
         isDead = true;
+        */
     }
 
     //changes animation
@@ -213,7 +157,6 @@ public class Stage2Boss : MonoBehaviour
             inRange = false;
         }
     }
-
     void FacePlayer()
     {
         if (player != null)
@@ -227,7 +170,6 @@ public class Stage2Boss : MonoBehaviour
             transform.rotation = lookRotation;  // Directly apply the rotation to avoid drift
         }
     }
-
 
     // This function will draw the detection range and attack range as gizmos in the scene view
     private void OnDrawGizmosSelected()
