@@ -4301,6 +4301,7 @@ GameObject:
   - component: {fileID: 3432155048793522596}
   - component: {fileID: 7686239648690768834}
   - component: {fileID: 760922651059538954}
+  - component: {fileID: 6662161457769124461}
   m_Layer: 0
   m_Name: 13th Century Tiger V3
   m_TagString: Enemy
@@ -4372,6 +4373,7 @@ MonoBehaviour:
   nextHealthThreshold: 0
   jumpCooldown: 20
   jumpTimer: 0
+  enemyHPscript: {fileID: 0}
   jumpDistance: 6
   canJump: 1
   isThrowing: 0
@@ -4460,6 +4462,26 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6662161457769124461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404749303726150493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 100
+  nextHealthThreshold: 0
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  sliderBar: {fileID: 6978959181688063546}
+  experiencePoints: 50
 --- !u!1 &3407850500556771752
 GameObject:
   m_ObjectHideFlags: 0

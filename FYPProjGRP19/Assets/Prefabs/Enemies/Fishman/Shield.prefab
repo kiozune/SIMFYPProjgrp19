@@ -557,6 +557,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dd933526afde7e24497e20fa351dc9e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6791966331868337103}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dd933526afde7e24497e20fa351dc9e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6003517986615399537}
   m_SourcePrefab: {fileID: 100100000, guid: dd933526afde7e24497e20fa351dc9e4, type: 3}
 --- !u!4 &23438810721736468 stripped
 Transform:
@@ -685,6 +688,7 @@ MonoBehaviour:
   nextHealthThreshold: 0
   jumpCooldown: 20
   jumpTimer: 0
+  enemyHPscript: {fileID: 0}
   jumpDistance: 6
   canJump: 1
   isThrowing: 1
@@ -720,3 +724,23 @@ MonoBehaviour:
     dropChance: 50
   - item: {fileID: 7784616543427588305, guid: 7988bf1fc64dfc746a75eb6ad67c29d8, type: 3}
     dropChance: 20
+--- !u!114 &6003517986615399537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799553680108326318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 500
+  currentHP: 500
+  nextHealthThreshold: 0
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  sliderBar: {fileID: 3701543917768792850}
+  experiencePoints: 120

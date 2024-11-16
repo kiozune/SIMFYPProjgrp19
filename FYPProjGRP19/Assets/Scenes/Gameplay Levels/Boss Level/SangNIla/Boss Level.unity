@@ -1291,6 +1291,7 @@ MonoBehaviour:
   currentHealth: 2000
   bossHealthCanvas: {fileID: 413930656}
   healthSlider: {fileID: 485093468}
+  nextScene: 16th Century
 --- !u!136 &824338460
 CapsuleCollider:
   m_ObjectHideFlags: 0

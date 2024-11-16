@@ -1509,6 +1509,7 @@ GameObject:
   - component: {fileID: 1837854570782248437}
   - component: {fileID: 8155385691687062380}
   - component: {fileID: 5961453703426016067}
+  - component: {fileID: 107526686881069187}
   m_Layer: 0
   m_Name: FishmanMelee
   m_TagString: BasicEnemy
@@ -1681,6 +1682,7 @@ MonoBehaviour:
   nextHealthThreshold: 0
   jumpCooldown: 20
   jumpTimer: 0
+  enemyHPscript: {fileID: 0}
   jumpDistance: 6
   canJump: 1
   isThrowing: 0
@@ -1698,6 +1700,26 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   agent: {fileID: 8734999947426299841}
   experiencePoints: 50
+--- !u!114 &107526686881069187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595189231921639269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 15
+  currentHP: 15
+  nextHealthThreshold: 0
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  sliderBar: {fileID: 0}
+  experiencePoints: 5
 --- !u!1 &7607541927072285548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,6 +2024,10 @@ PrefabInstance:
     - target: {fileID: 4967333327555388468, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166916636217440959, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5186480852257618195, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: m_Value

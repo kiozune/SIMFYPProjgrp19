@@ -13,6 +13,10 @@ TagManager:
   - Ground
   - Card
   - Gameover
+  - playerHP
+  - LevelUP
+  - LevelUPText
+  - UpgradeScreen
   layers:
   - Default
   - TransparentFX

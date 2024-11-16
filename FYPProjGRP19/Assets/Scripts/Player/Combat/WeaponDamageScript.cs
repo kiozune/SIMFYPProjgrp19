@@ -38,7 +38,15 @@ public class WeaponDamageScript : MonoBehaviour
         if (ifHitting)
         {
             // Check if the object is an enemy (you can check by tag or a specific component)
-            if (other.CompareTag("BasicEnemy") || other.CompareTag("Enemy"))
+            if (other.CompareTag("BasicEnemy"))
+            {
+                // Add enemy to the list
+                enemiesInRange.Add(other.gameObject);
+                Debug.Log("Hit!");
+                // Apply damage to the enemy
+                ApplyDamage(other.gameObject);
+            }  
+            if (other.CompareTag("Enemy"))
             {
                 // Add enemy to the list
                 enemiesInRange.Add(other.gameObject);
@@ -53,7 +61,12 @@ public class WeaponDamageScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check if the object is an enemy
-        if (other.CompareTag("BasicEnemy") || other.CompareTag("Enemy"))
+        if (other.CompareTag("BasicEnemy"))
+        {
+            // Remove enemy from the list
+            enemiesInRange.Remove(other.gameObject);
+        }
+        if (other.CompareTag("Enemy"))
         {
             // Remove enemy from the list
             enemiesInRange.Remove(other.gameObject);
@@ -73,6 +86,7 @@ public class WeaponDamageScript : MonoBehaviour
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
             player.GetComponent<PlayerLevel>().AddEXP(enemy.GetComponent<EnemyAI>().awardEXP());
+            player.GetComponent<PlayerLevel>().AddEXP(enemy.GetComponent<PirateEnemyAI>().awardEXP());
             player.GetComponent<PlayerLevel>().UpdateXPSlider();
             enemiesInRange.Remove(enemy);
         }
@@ -80,14 +94,6 @@ public class WeaponDamageScript : MonoBehaviour
         {
             bossHP.TakeDamage(damageValue);
         }
-        if (bossHP.GetCurrentHealth() < 0)
-        {
-            GameObject mainMenuGameObject = GameObject.FindGameObjectWithTag("Gameover");
-
-            mainMenuGameObject.SetActive(true);
-            Time.timeScale = 0f;
-        }
-       
     }
 
     public bool AreAllEnemiesInRange(List<GameObject> allEnemies)
