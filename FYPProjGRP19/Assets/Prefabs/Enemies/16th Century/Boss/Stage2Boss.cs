@@ -69,21 +69,6 @@ public class Stage2Boss : MonoBehaviour
         {
             HandleDeath();
         }
-        if (isPhase && isAttacking && !isChasing)
-        {
-            ChangeAnimation("BossSpecial2");
-        }
-        else if (!isPhase && isAttacking && !isChasing)
-        {
-            ChangeAnimation("BossAttack");
-        }
-
-        //if boss is at half health or lower, play midphase animation
-        if (bossHP.HalfHealth())
-        {
-            isPhase = true;
-            return;
-        }
 
         //check chase
         if (isChasing && inRange)
@@ -129,6 +114,7 @@ public class Stage2Boss : MonoBehaviour
         }
         else if (isAttacking)
         {
+            ChangeAnimation("BossAttack");
             agent.SetDestination(player.transform.position);
             FacePlayer();
             agent.ResetPath();
