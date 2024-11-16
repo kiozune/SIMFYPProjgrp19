@@ -1510,6 +1510,7 @@ GameObject:
   - component: {fileID: 8155385691687062380}
   - component: {fileID: 5961453703426016067}
   - component: {fileID: 107526686881069187}
+  - component: {fileID: 6157787920120321051}
   m_Layer: 0
   m_Name: FishmanMelee
   m_TagString: BasicEnemy
@@ -1673,8 +1674,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 0}
   rockPrefab: {fileID: 0}
   throwPoint: {fileID: 0}
-  maxHP: 100
-  currentHP: 100
+  maxHP: 15
+  currentHP: 15
   damageFromProjectile: 20
   attackDamage: 20
   attackRange: 2
@@ -1720,6 +1721,24 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   sliderBar: {fileID: 0}
   experiencePoints: 5
+--- !u!114 &6157787920120321051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595189231921639269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallDropChance: 50
+  lootTable:
+  - item: {fileID: 1392652238627834475, guid: 74c3ae96eb62f50468b8a802996c9052, type: 3}
+    dropChance: 1
+  - item: {fileID: 2257822529701239008, guid: 7a61444daf3fb0c45aaf8f01c30a8cea, type: 3}
+    dropChance: 30
 --- !u!1 &7607541927072285548
 GameObject:
   m_ObjectHideFlags: 0

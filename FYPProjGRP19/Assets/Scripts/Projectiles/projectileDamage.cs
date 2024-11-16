@@ -38,7 +38,7 @@ public class projectileDamage : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("BasicEnemy"))
         {
             if (isAOEEnabled)
             {
@@ -65,6 +65,15 @@ public class projectileDamage : MonoBehaviour
             if (enemyAI.checkHealth())
             {
                 AwardPlayerEXP(enemyAI);
+            }
+        }
+        PirateEnemyAI pirateAI = enemy.GetComponent<PirateEnemyAI>();
+        if (pirateAI != null)
+        {
+            pirateAI.TakeDamage(damage);
+            if (pirateAI.checkHealth())
+            {
+                pirateAI.awardEXP();
             }
         }
     }

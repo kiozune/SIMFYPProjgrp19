@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4493635305448205369}
   - component: {fileID: 3015978329151339718}
   - component: {fileID: 439474657304584117}
+  - component: {fileID: -1769388031304088445}
   m_Layer: 0
   m_Name: Bullet_Pistol
   m_TagString: Untagged
@@ -165,6 +166,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+--- !u!114 &-1769388031304088445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147895002730076875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallDropChance: 50
+  lootTable:
+  - item: {fileID: 1392652238627834475, guid: 22475ecbdb5659d4aa194560414b15fb, type: 3}
+    dropChance: 100
 --- !u!1 &7050082976577143579
 GameObject:
   m_ObjectHideFlags: 0

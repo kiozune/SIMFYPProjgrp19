@@ -321,6 +321,17 @@ public class PirateEnemyAI : MonoBehaviour
     {
         return experiencePoints;
     }
+    public bool checkHealth()
+    {
+        if (currentHP <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public void TakeDamage(float damage)
     {

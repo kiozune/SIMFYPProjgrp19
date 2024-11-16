@@ -195,6 +195,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0701f9afd3574e34db1ca16727653f29, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7302378286184097787}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0701f9afd3574e34db1ca16727653f29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4736311245139841672}
   m_SourcePrefab: {fileID: 100100000, guid: 0701f9afd3574e34db1ca16727653f29, type: 3}
 --- !u!4 &3952570811376567604 stripped
 Transform:
@@ -231,6 +234,7 @@ MonoBehaviour:
   nextHealthThreshold: 0
   jumpCooldown: 20
   jumpTimer: 0
+  enemyHPscript: {fileID: 0}
   jumpDistance: 6
   canJump: 1
   isThrowing: 0
@@ -360,3 +364,19 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   sliderBar: {fileID: 0}
   experiencePoints: 50
+--- !u!114 &4736311245139841672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4436479504166018958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallDropChance: 50
+  lootTable:
+  - item: {fileID: 1392652238627834475, guid: 22475ecbdb5659d4aa194560414b15fb, type: 3}
+    dropChance: 100
