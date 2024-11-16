@@ -78,9 +78,6 @@ PrefabInstance:
       addedObject: {fileID: 6527251660274486477}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9af824302502da46890c4f884c8ce89, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8235098119044555987}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9af824302502da46890c4f884c8ce89, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7917706956151335635}
   m_SourcePrefab: {fileID: 100100000, guid: b9af824302502da46890c4f884c8ce89, type: 3}
 --- !u!1 &581261587854636387 stripped
@@ -170,34 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a83ed2b9ec80384992a982b0ae0e7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8235098119044555987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581261587854636387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 579a04dc48950104b9bbea14d4d8cb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerPrefab: {fileID: 0}
-  rockPrefab: {fileID: 0}
-  throwPoint: {fileID: 0}
-  attackDamage: 20
-  attackRange: 1.95
-  attackCooldown: 2
-  jumpCooldown: 20
-  jumpDistance: 6
-  canJump: 0
-  rangeEnemy: 0
-  normalEnemy: 1
-  eliteEnemy: 0
-  normalEnemyImage: {fileID: 21300000, guid: 8d859410fae4fd54cb84d77ab262825e, type: 3}
-  rangeImage: {fileID: 21300000, guid: 0626b924325d1c34cafa6b22297f4e4f, type: 3}
-  mobIcon: {fileID: 0}
 --- !u!114 &7917706956151335635
 MonoBehaviour:
   m_ObjectHideFlags: 0
