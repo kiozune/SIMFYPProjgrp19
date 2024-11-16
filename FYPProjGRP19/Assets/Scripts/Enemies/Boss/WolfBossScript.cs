@@ -41,52 +41,55 @@ public class WolfBossScript : MonoBehaviour
     }
 
     void Update()
+{
+    float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+    // Check if the boss should enter the second phase
+    if (currentHealth <= maxHealth * 0.5f && !isSecondPhase)
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        EnterSecondPhase();
+    }
 
-        // Check if the boss should enter the second phase
-        if (currentHealth <= maxHealth * 0.5f && !isSecondPhase)
-        {
-            EnterSecondPhase();
-        }
+    // Handle different phases of behavior
+    if (isSecondPhase && chargeTimer <= 0f && !isCharging)
+    {
+        ChargeAttack();
+    }
+    else if (isPlayerInRange && distanceToPlayer > stoppingDistance && !isAttacking && !isCharging)
+    {
+        MoveTowardsPlayer();
+    }
+    else if (distanceToPlayer <= stoppingDistance && !isAttacking && attackTimer <= 0f && !isCharging)
+    {
+        AttackPlayer();
+    }
 
-        // Handle different phases of behavior
-        if (isSecondPhase && chargeTimer <= 0f && !isCharging)
-        {
-            ChargeAttack();
-        }
-        else if (isPlayerInRange && distanceToPlayer > stoppingDistance && !isAttacking && !isCharging)
-        {
-            MoveTowardsPlayer();
-        }
-        else if (distanceToPlayer <= stoppingDistance && !isAttacking && attackTimer <= 0f && !isCharging)
-        {
-            AttackPlayer();
-        }
+    // Handle attack cooldown
+    if (isAttacking)
+    {
+        attackTimer -= Time.deltaTime;
 
-        if (isAttacking)
+        // Ensure the attack animation finishes before setting the state back
+        if (attackTimer <= 0f)
         {
-            attackTimer -= Time.deltaTime;
-
-            if (attackTimer <= 0f)
-            {
-                isAttacking = false;
-                animator.SetBool("isAttacking", false);
-            }
-        }
-
-        if (isCharging)
-        {
-            chargeTimer -= Time.deltaTime;
-
-            if (chargeTimer <= 0f)
-            {
-                isCharging = false;
-                animator.SetBool("isCharging", false); // Stop charging animation
-                chargeTimer = chargeCooldown; // Reset cooldown for next charge
-            }
+            isAttacking = false;
+            animator.SetBool("isAttacking", false);
         }
     }
+
+    // Handle charge cooldown
+    if (isCharging)
+    {
+        chargeTimer -= Time.deltaTime;
+
+        if (chargeTimer <= 0f)
+        {
+            isCharging = false;
+            animator.SetBool("isCharging", false); // Stop charging animation
+            chargeTimer = chargeCooldown; // Reset cooldown for next charge
+        }
+    }
+}
 
     void MoveTowardsPlayer()
     {
@@ -102,18 +105,21 @@ public class WolfBossScript : MonoBehaviour
     }
 
     void AttackPlayer()
+{
+    // Prevent triggering attack multiple times if already attacking
+    if (attackTimer <= 0f && !isCharging && !isAttacking)
     {
         isAttacking = true;
-        animator.SetBool("isAttacking", true);
+        animator.SetTrigger("Attack"); // Use SetTrigger instead of SetBool
 
         if (playerHealth != null)
         {
             playerHealth.takeDamage(damage);
         }
 
-        attackTimer = attackCooldown;
+        attackTimer = attackCooldown; // Reset attack cooldown
     }
-
+}
     void ChargeAttack()
     {
         isCharging = true;
@@ -126,7 +132,7 @@ public class WolfBossScript : MonoBehaviour
     }
 
     // New function to handle taking damage
-    public void TakeDamage(int amount)
+    public void takeDamage(int amount)
     {
         currentHealth -= amount;
 
