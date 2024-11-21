@@ -664,53 +664,6 @@ Transform:
   - {fileID: 1664019898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1224519771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1224519772}
-  - component: {fileID: 1224519773}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1224519772
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224519771}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -55.58, y: -2.896, z: -62.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1379066026}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1224519773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224519771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5f575c4a55248e47beda9e1210dd573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyboardPrefab: {fileID: 1917156099601520988, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
-  ControllerPrefab: {fileID: 4894427693469473886, guid: 0ad50138692e706479cf89f109dd3760, type: 3}
-  spawnPoint: {fileID: 1224519772}
 --- !u!1001 &1338013935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -771,6 +724,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8739795775174399489, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: KeyboardPrefab
+      value: 
+      objectReference: {fileID: 1917156099601520988, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
+    - target: {fileID: 8739795775174399489, guid: bf779f5fa131ba44abdbd0ed9a339a0a, type: 3}
+      propertyPath: ControllerPrefab
+      value: 
+      objectReference: {fileID: 4894427693469473886, guid: 0ad50138692e706479cf89f109dd3760, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -867,7 +828,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 48238439}
-  - {fileID: 1224519772}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1430300251
@@ -878,13 +838,88 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 880643788}
     m_Modifications:
+    - target: {fileID: 1719548308655844407, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_text
+      value: 'Increases range for Melee by 0.5
+
+        Increases AOE for range by
+        1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991656566190428656, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_text
+      value: Damage Increase
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2143080263}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: handlePlayerRangeIncrease
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleUpgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715081741329776015, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135534732396245187, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_text
+      value: Range / AOE Increase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411573558410394671, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_text
+      value: Increases Damage by 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2143080263}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: handlePlayerDamageIncrease
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandleUpgrades, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6475700449855065451, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_Name
       value: Upgrade Screen
       objectReference: {fileID: 0}
     - target: {fileID: 8807969045236969416, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9201368651924323407, guid: a425167fd667b124fbbfb05fe7a8ae81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1143,6 +1178,14 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 48238442}
+    - target: {fileID: 964416645437932530, guid: f41680a50e9f27347b53525aa587466c, type: 3}
+      propertyPath: KeyboardPrefab
+      value: 
+      objectReference: {fileID: 1917156099601520988, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
+    - target: {fileID: 964416645437932530, guid: f41680a50e9f27347b53525aa587466c, type: 3}
+      propertyPath: ControllerPrefab
+      value: 
+      objectReference: {fileID: 4894427693469473886, guid: 0ad50138692e706479cf89f109dd3760, type: 3}
     - target: {fileID: 1299538078646878659, guid: f41680a50e9f27347b53525aa587466c, type: 3}
       propertyPath: healthSlider
       value: 
@@ -1263,6 +1306,55 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1846126517}
   m_SourcePrefab: {fileID: 100100000, guid: f41680a50e9f27347b53525aa587466c, type: 3}
+--- !u!1 &2143080262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2143080264}
+  - component: {fileID: 2143080263}
+  m_Layer: 0
+  m_Name: Upgrade Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2143080263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143080262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a63c539b504d548adadd57dae3c262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageIncrease: 5
+  rangeIncrease: 0.5
+  aoeIncrease: 1
+  player: {fileID: 0}
+  upgradeScreen: {fileID: 1430300253}
+--- !u!4 &2143080264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143080262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &376552752077139637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1379,6 +1471,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8302719682284704579, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: KeyboardPrefab
+      value: 
+      objectReference: {fileID: 1917156099601520988, guid: 4112cca8249bdef49baa534a1d2c1b83, type: 3}
+    - target: {fileID: 8302719682284704579, guid: 37a1afcb7a5550449b040e756b912853, type: 3}
+      propertyPath: ControllerPrefab
+      value: 
+      objectReference: {fileID: 4894427693469473886, guid: 0ad50138692e706479cf89f109dd3760, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1394,4 +1494,5 @@ SceneRoots:
   - {fileID: 376552752077139637}
   - {fileID: 1379066026}
   - {fileID: 880643788}
+  - {fileID: 2143080264}
   - {fileID: 1364403219}

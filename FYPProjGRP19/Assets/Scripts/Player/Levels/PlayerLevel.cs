@@ -34,11 +34,14 @@ public class PlayerLevel : MonoBehaviour
     void Start()
     {
         levelUpOverlay = GameObject.FindGameObjectWithTag("UpgradeScreen");
-        levelUpText = GameObject.FindGameObjectWithTag("LevelUPText").GetComponent<TMP_Text>();
-        xpSlider = GameObject.FindGameObjectWithTag("LevelUP").GetComponent<Slider>();
 
-        levelUpOverlay.SetActive(false);
-        UpdateXPSlider();
+        if (levelUpOverlay != null)
+        {
+            levelUpOverlay.SetActive(false);
+            levelUpText = GameObject.FindGameObjectWithTag("LevelUPText").GetComponent<TMP_Text>();
+            xpSlider = GameObject.FindGameObjectWithTag("LevelUP").GetComponent<Slider>();
+        }
+        if (xpSlider != null) UpdateXPSlider();
         Time.timeScale = 1.0f;
     }
 

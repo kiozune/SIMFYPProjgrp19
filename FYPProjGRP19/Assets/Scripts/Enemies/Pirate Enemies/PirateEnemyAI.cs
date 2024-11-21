@@ -289,6 +289,9 @@ public class PirateEnemyAI : MonoBehaviour
 
     public void HandleDeath()
     {
+        PlayerLevel lvlScript = players[0].GetComponent<PlayerLevel>();
+        lvlScript.AddEXP(experiencePoints);
+
         agent.isStopped = true;
         gameObject.GetComponent<Collider>().enabled = false;
 
@@ -335,12 +338,7 @@ public class PirateEnemyAI : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHP -= damage;  // Reduce the enemy's HP by the damage amount
-        sliderBar.UpdateBar(currentHP, maxHP);
-
-        Debug.Log("Enemy HP: " + currentHP);
-
-
+        hpScript.TakeDamage(damage);
 
         if (currentHP <= 0 || hpScript.IsDead())
         {
