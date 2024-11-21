@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy HP
       objectReference: {fileID: 0}
+    - target: {fileID: 4732768992513304418, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+      propertyPath: entityAnchor
+      value: 
+      objectReference: {fileID: 3952570811376567604}
     - target: {fileID: 5166916636217440959, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1

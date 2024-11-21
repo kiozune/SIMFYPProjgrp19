@@ -86,8 +86,11 @@ public class WeaponDamageScript : MonoBehaviour
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
             player.GetComponent<PlayerLevel>().AddEXP(enemy.GetComponent<EnemyAI>().awardEXP());
-            player.GetComponent<PlayerLevel>().AddEXP(enemy.GetComponent<PirateEnemyAI>().awardEXP());
-            player.GetComponent<PlayerLevel>().UpdateXPSlider();
+            if (player.GetComponent<PirateEnemyAI>() != null)
+            {
+                player.GetComponent<PlayerLevel>().AddEXP(enemy.GetComponent<PirateEnemyAI>().awardEXP());
+            }
+                player.GetComponent<PlayerLevel>().UpdateXPSlider();
             enemiesInRange.Remove(enemy);
         }
         if (bossHP != null)

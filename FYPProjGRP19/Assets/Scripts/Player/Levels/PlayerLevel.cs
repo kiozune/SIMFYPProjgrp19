@@ -37,6 +37,7 @@ public class PlayerLevel : MonoBehaviour
         levelUpText = GameObject.FindGameObjectWithTag("LevelUPText").GetComponent<TMP_Text>();
         xpSlider = GameObject.FindGameObjectWithTag("LevelUP").GetComponent<Slider>();
 
+        levelUpOverlay.SetActive(false);
         UpdateXPSlider();
         Time.timeScale = 1.0f;
     }
