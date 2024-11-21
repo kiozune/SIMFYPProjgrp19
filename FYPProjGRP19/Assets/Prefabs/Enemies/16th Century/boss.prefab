@@ -1403,6 +1403,7 @@ GameObject:
   - component: {fileID: 6729465336565431443}
   - component: {fileID: 8425525458045383844}
   - component: {fileID: 7376902769904640161}
+  - component: {fileID: 5720155270813585052}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -1485,7 +1486,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  flag: {fileID: 919132149155446097, guid: 67e66e96d81c17842be2b8db630d53d9, type: 3}
   detectionRange: 30
   attackRange: 6
 --- !u!195 &6729465336565431443
@@ -1530,7 +1530,6 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   sliderBar: {fileID: 0}
   experiencePoints: 50
-  deathHandlerScript: {fileID: 3759365817180373935}
 --- !u!143 &7376902769904640161
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1557,6 +1556,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5720155270813585052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315138670510335082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallDropChance: 50
+  lootTable:
+  - item: {fileID: 1392652238627834475, guid: 22475ecbdb5659d4aa194560414b15fb, type: 3}
+    dropChance: 100
 --- !u!1 &6380520865235058564
 GameObject:
   m_ObjectHideFlags: 0

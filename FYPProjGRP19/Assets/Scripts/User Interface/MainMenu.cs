@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private AudioClip[] audioClipList;
     [SerializeField]
-    private GameObject singleplayerButton;
+    private GameObject[] keyboardSelectBtn;
     [SerializeField]
     private GameObject backButton;
 
@@ -57,16 +57,18 @@ public class MainMenu : MonoBehaviour
 
     public void onPlayClicked()
     {
-        singleplayerButton.SetActive(true);
+        for (int i = 0; i < keyboardSelectBtn.Length; ++i)
+        {
+            keyboardSelectBtn[i].SetActive(true);
+        }
         backButton.SetActive(true);
         for (int j = 0; j < mainMenuBtnList.Length; ++j)
         {
             mainMenuBtnList[j].SetActive(false);
         }
     }
-    public void onSinglePlayerClicked()
+    public void onKeyboardSelect()
     {
-        PlayerPrefs.SetInt("Multiplayer", 0); // Store that singleplayer is selected
         robotModel.SetActive(true);
         robotAnimator.SetTrigger("angry");
         sfxSource.Play();
@@ -74,7 +76,32 @@ public class MainMenu : MonoBehaviour
         {
             playButtonList[i].SetActive(true);
         }
-        singleplayerButton.SetActive(false);
+        for (int i = 0; i < keyboardSelectBtn.Length; ++i)
+        {
+            keyboardSelectBtn[i].SetActive(false);
+        }
+
+        // Save the selection to PlayerPrefs
+        PlayerPrefs.SetString("InputType", "Keyboard");
+        PlayerPrefs.Save();
+    }
+    public void onControllerSelect()
+    {
+        robotModel.SetActive(true);
+        robotAnimator.SetTrigger("angry");
+        sfxSource.Play();
+        for (int i = 0; i < playButtonList.Length; ++i)
+        {
+            playButtonList[i].SetActive(true);
+        }
+        for (int i = 0; i < keyboardSelectBtn.Length; ++i)
+        {
+            keyboardSelectBtn[i].SetActive(false);
+        }
+
+        // Save the selection to PlayerPrefs
+        PlayerPrefs.SetString("InputType", "Controller");
+        PlayerPrefs.Save();
     }
 
 
@@ -92,7 +119,10 @@ public class MainMenu : MonoBehaviour
         {
             mainMenuBtnList[j].SetActive(true);
         }
-        singleplayerButton.SetActive(false);
+        for (int i = 0; i < keyboardSelectBtn.Length; ++i)
+        {
+            keyboardSelectBtn[i].SetActive(false);
+        }
     }
 
     public void onMeleeClicked()

@@ -2,6 +2,15 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class QuizQn
+{
+    [SerializeField] public string question;
+    [SerializeField] public string correctAns;
+    [SerializeField] public string wrongAns;
+}
 
 [System.Serializable]
 public class CardData
@@ -9,6 +18,7 @@ public class CardData
     [SerializeField] public string cardName;
     [SerializeField] public Sprite cardImg;
     [SerializeField] public string cardDesc;
+    [SerializeField] public QuizQn[] quiz;
 }
 
 [System.Serializable]
@@ -133,5 +143,53 @@ public class ViewCard : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    public int GetCardsCollected()
+    {
+        int cardsCollected = 0;
+        for (int i = 0; i < cards[catIdx].cards.Length; i++)
+        {
+            string key = "Card_" + catIdx.ToString() + "_" + i;
+            if (PlayerPrefs.GetInt(key, 0) == 1) cardsCollected++;
+        }
+        return cardsCollected;
+    }
+    
+    /// <summary>
+    /// Get either the question, correct, or wrong answer of the quiz   
+    /// </summary>
+    /// <param name="quizComponent">0 = question, 1 = correct answer, 2 = wrong answer</param>
+    /// <returns></returns>
+    public List<string> GetQuizComponents(int quizComponent)
+    {
+        List<string> list = new List<string>();
+        for (int i = 0; i < cards[catIdx].cards.Length; i++)
+        {
+            string key = "Card_" + catIdx.ToString() + "_" + i.ToString();
+            if (PlayerPrefs.GetInt(key, 0) == 1)
+            {
+                // Debug.Log(key);
+                foreach (var quiz in cards[catIdx].cards[i].quiz)
+                {
+                    switch (quizComponent)
+                    {
+                        case 0:
+                            list.Add(quiz.question); 
+                            break;
+                        case 1:
+                            list.Add(quiz.correctAns); 
+                            break;
+                        case 2:
+                            list.Add(quiz.wrongAns);
+                            break;
+                        default: // error handling
+                            Debug.LogError("Invalid quiz component");
+                            break;
+                    }
+                }
+            }
+        }
+        return list;
     }
 }

@@ -70,7 +70,17 @@ public class EnemyHP : MonoBehaviour
 
         if (currentHP <= 0)
         {
-          //  HandleDeath();
+            IsDead();
+            EnemyAI enemyaiScript = GetComponent<EnemyAI>();
+            if (enemyaiScript != null)
+            {
+                enemyaiScript.HandleDeath();
+            }
+            PirateEnemyAI enemeypirateAIScript = GetComponent<PirateEnemyAI>();
+            if (enemeypirateAIScript != null)
+            {
+                enemeypirateAIScript.HandleDeath();
+            }
         }
     }
 
@@ -78,7 +88,7 @@ public class EnemyHP : MonoBehaviour
     {
         if (!soundPlayed)
         {
-            SoundManager.Instance.PlayHitSound();
+            //SoundManager.Instance.PlayHitSound();
             soundPlayed = true;
         }
     }
@@ -110,29 +120,4 @@ public class EnemyHP : MonoBehaviour
     {
         return experiencePoints;
     }
-
-    //private void HandleDeath()
-    //{
-    //    if (!isDead)
-    //    {
-    //        Debug.Log("Calling Death");
-    //        // Check if the assigned script has a HandleDeath method and invoke it
-    //        if (deathHandlerScript != null)
-    //        {
-    //            //Call deathHandler Script
-    //            deathHandlerScript.Invoke("HandleDeath", 0f);
-    //        }
-    //        isDead = true;
-    //    }
-    //}
-
-    //private void Update()
-    //{
-    //    //Debug.Log("Current HP: " + currentHP);
-
-    //    if (IsDead() == true)
-    //    {
-    //        HandleDeath();
-    //    }
-    //}
 }

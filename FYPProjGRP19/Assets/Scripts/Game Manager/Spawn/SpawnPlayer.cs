@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class SpawnPlayer : MonoBehaviour
 {
-   [Header("Player Prefabs")]
-   [SerializeField]
-    private GameObject player1Prefab;
+    [Header("Player Prefabs")]
     [SerializeField]
-    private GameObject player2Prefab;
+    private GameObject KeyboardPrefab;
+    [SerializeField]
+    private GameObject ControllerPrefab;
     [Header("Spawn Point Position")]
     [SerializeField]
     private Transform spawnPoint;
 
     void Start()
+    {
         {
-            int isMultiplayer = PlayerPrefs.GetInt("Multiplayer", 0); // Default to singleplayer if not set
+            string inputType = PlayerPrefs.GetString("InputType", "Keyboard"); // Default to "Keyboard" if not set
 
-            if (isMultiplayer == 1)
+            if (inputType == "Keyboard")
             {
-                // Spawn two players for multiplayer
-                Instantiate(player1Prefab, new Vector3(-2 + spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z), Quaternion.identity);
-                Instantiate(player2Prefab, new Vector3(2 + spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z), Quaternion.identity);
+                Debug.Log("Keyboard selected. Configuring for keyboard input.");
+                Instantiate(KeyboardPrefab, new Vector3(-2 + spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z), Quaternion.identity);
             }
-            else
+            else if (inputType == "Controller")
             {
-                // Spawn one player for singleplayer
-                Instantiate(player1Prefab, new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z), Quaternion.identity);
+                Debug.Log("Controller selected. Configuring for controller input.");
+                Instantiate(ControllerPrefab, new Vector3(2 + spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z), Quaternion.identity);
             }
         }
+    }
 }

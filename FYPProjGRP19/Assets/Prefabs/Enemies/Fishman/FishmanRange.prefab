@@ -1541,6 +1541,7 @@ GameObject:
   - component: {fileID: 1837854570782248437}
   - component: {fileID: 8155385691687062380}
   - component: {fileID: -8752732456944995245}
+  - component: {fileID: 3309406465046254898}
   m_Layer: 0
   m_Name: FishmanRange
   m_TagString: BasicEnemy
@@ -1612,6 +1613,7 @@ MonoBehaviour:
   nextHealthThreshold: 0
   jumpCooldown: 20
   jumpTimer: 0
+  enemyHPscript: {fileID: 0}
   jumpDistance: 6
   canJump: 1
   isThrowing: 0
@@ -1745,9 +1747,29 @@ MonoBehaviour:
   overallDropChance: 50
   lootTable:
   - item: {fileID: 2257822529701239008, guid: 7a61444daf3fb0c45aaf8f01c30a8cea, type: 3}
-    dropChance: 50
-  - item: {fileID: 7784616543427588305, guid: 7988bf1fc64dfc746a75eb6ad67c29d8, type: 3}
     dropChance: 20
+  - item: {fileID: 1392652238627834475, guid: 74c3ae96eb62f50468b8a802996c9052, type: 3}
+    dropChance: 100
+--- !u!114 &3309406465046254898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7595189231921639269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 200
+  currentHP: 200
+  nextHealthThreshold: 0
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  sliderBar: {fileID: 4583644466430809724}
+  experiencePoints: 50
 --- !u!1 &7607541927072285548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,3 +2219,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5568333194492857555, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
   m_PrefabInstance: {fileID: 9093414202054684958}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4583644466430809724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4732768992513304418, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+  m_PrefabInstance: {fileID: 9093414202054684958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0082c0d7d60f300418a3e712aae975bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

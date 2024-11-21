@@ -475,9 +475,21 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 588fb96979e732340a7c71d69853c91b, type: 3}
     - {fileID: 21300000, guid: d7bd20a1dbfc277488e77cb4b5210828, type: 3}
   - levelName: 1400s-1600s - Portuguese/Spanish
-    cardIcons: []
+    cardIcons:
+    - {fileID: 21300000, guid: 1a8fd4668a4f2c64db7c107afa227cee, type: 3}
+    - {fileID: 21300000, guid: 9b6f7a78735d01a45833886ab7441be0, type: 3}
+    - {fileID: 21300000, guid: 6301f5bf16cbdae469dc8259d6ef92fb, type: 3}
+    - {fileID: 21300000, guid: dea1d123941f1f94aa598100b51f9e7e, type: 3}
+    - {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
+    - {fileID: 21300000, guid: 369a539092010694684366a8a1210429, type: 3}
   - levelName: 1700s - Pirate Haven
-    cardIcons: []
+    cardIcons:
+    - {fileID: 21300000, guid: ec2dd206eb674484a9578ca503477cd3, type: 3}
+    - {fileID: 21300000, guid: fce3cad4647682f499954b2dff05ee43, type: 3}
+    - {fileID: 21300000, guid: 809ce0a348665b8478650df64114ba41, type: 3}
+    - {fileID: 21300000, guid: bd76401ac3588c5498ae803b3a7dbefe, type: 3}
+    - {fileID: 21300000, guid: 78111b093c6187a46b86a471f9e00558, type: 3}
+    - {fileID: 21300000, guid: a09957fef962e484595ba50515a9ffdf, type: 3}
   - levelName: 1800s - Japanese Occupation
     cardIcons:
     - {fileID: 21300000, guid: 557e33da9b39dcf40b9aa36e5bc4e162, type: 3}
@@ -486,8 +498,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: aa83cb4e0eb98c641a7fff807dd937cf, type: 3}
     - {fileID: 21300000, guid: 446755a08284e884898f1dd8059ed09c, type: 3}
     - {fileID: 21300000, guid: 67b2ebc2c0a722144bd9bafc189981ad, type: 3}
-  - levelName: Future
-    cardIcons: []
 --- !u!54 &2066335949716301607
 Rigidbody:
   m_ObjectHideFlags: 0

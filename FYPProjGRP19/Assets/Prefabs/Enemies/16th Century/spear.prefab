@@ -231,6 +231,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ea39b3e7d1e8dc418666c86e0085d60, type: 3}
       insertIndex: -1
       addedObject: {fileID: -3350712951486792580}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ea39b3e7d1e8dc418666c86e0085d60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -523545702172132263}
   m_SourcePrefab: {fileID: 100100000, guid: 4ea39b3e7d1e8dc418666c86e0085d60, type: 3}
 --- !u!4 &2702538598864752460 stripped
 Transform:
@@ -329,18 +332,33 @@ MonoBehaviour:
   playerPrefab: {fileID: 0}
   rockPrefab: {fileID: 0}
   throwPoint: {fileID: 0}
+  maxHP: 100
+  currentHP: 100
+  damageFromProjectile: 20
   attackDamage: 20
   attackRange: 3.5
   attackCooldown: 2
+  nextHealthThreshold: 0
   jumpCooldown: 20
+  jumpTimer: 0
+  enemyHPscript: {fileID: 0}
   jumpDistance: 6
   canJump: 1
+  isThrowing: 0
   rangeEnemy: 0
   normalEnemy: 0
   eliteEnemy: 0
+  soundPlayed: 0
+  hasDroppedLoot: 0
+  isDead: 0
   normalEnemyImage: {fileID: 0}
   rangeImage: {fileID: 0}
   mobIcon: {fileID: 0}
+  hitVFXPrefab: {fileID: 0}
+  hitSoundClip: {fileID: 0}
+  audioSource: {fileID: 0}
+  agent: {fileID: 0}
+  experiencePoints: 50
 --- !u!95 &1219224284288706943
 Animator:
   serializedVersion: 5
@@ -382,4 +400,19 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   sliderBar: {fileID: 0}
   experiencePoints: 50
-  deathHandlerScript: {fileID: 4443576846558653284}
+--- !u!114 &-523545702172132263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371656967355225590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallDropChance: 50
+  lootTable:
+  - item: {fileID: 1392652238627834475, guid: 22475ecbdb5659d4aa194560414b15fb, type: 3}
+    dropChance: 100

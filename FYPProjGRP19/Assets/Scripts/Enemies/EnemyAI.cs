@@ -37,6 +37,9 @@ public class EnemyAI : MonoBehaviour
     private float jumpTimer = 0f;
 
     [SerializeField]
+    private EnemyHP enemyHPscript;
+
+    [SerializeField]
     private float jumpDistance = 6f;
 
     [Header("Enemy Bool Checks")]
@@ -114,6 +117,7 @@ public class EnemyAI : MonoBehaviour
         }
         //Setting the threshold for SFX
         nextHealthThreshold = maxHP * 0.6f;
+        enemyHPscript = this.gameObject.GetComponent<EnemyHP>();
     }
 
     void Update()
@@ -234,7 +238,7 @@ public class EnemyAI : MonoBehaviour
             // Play sound  below threshold
             PlayHitSound();
         }
-        if (currentHP <= 0)
+        if (currentHP <= 0 || enemyHPscript.IsDead())
         {
             HandleDeath();  // Trigger death when health is 0 or below
         }
@@ -400,7 +404,7 @@ public class EnemyAI : MonoBehaviour
         // Destroy the enemy game object after loot drop
         Destroy(gameObject);
     }
-    private void HandleDeath()
+    public void HandleDeath()
     {
         // Stop the enemy from moving and disable the NavMeshAgent
         agent.isStopped = true;

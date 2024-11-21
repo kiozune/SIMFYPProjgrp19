@@ -33,6 +33,10 @@ public class PlayerLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levelUpOverlay = GameObject.FindGameObjectWithTag("UpgradeScreen");
+        levelUpText = GameObject.FindGameObjectWithTag("LevelUPText").GetComponent<TMP_Text>();
+        xpSlider = GameObject.FindGameObjectWithTag("LevelUP").GetComponent<Slider>();
+
         UpdateXPSlider();
         Time.timeScale = 1.0f;
     }

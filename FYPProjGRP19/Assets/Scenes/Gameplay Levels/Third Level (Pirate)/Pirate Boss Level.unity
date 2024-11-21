@@ -2008,6 +2008,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 512688641779252232, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 512688641779252232, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1694998090}
+    - target: {fileID: 512688641779252232, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
+      propertyPath: bossHealthCanvas
+      value: 
+      objectReference: {fileID: 1635447152}
     - target: {fileID: 632371999090979353, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0041600335
@@ -3160,6 +3172,10 @@ PrefabInstance:
       propertyPath: m_Direction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5927784454309079457, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5959994683814954056, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.045063205
@@ -3964,7 +3980,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 3709504076905364326, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8585831378962559103, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1005510713}
   m_SourcePrefab: {fileID: 100100000, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
 --- !u!1 &907049388 stripped
 GameObject:
@@ -4115,6 +4134,38 @@ Transform:
   - {fileID: 1103256269}
   m_Father: {fileID: 223213748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1005510706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8585831378962559103, guid: 77bff03e2f7f5cb48b4d26a9845440c3, type: 3}
+  m_PrefabInstance: {fileID: 873218286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1005510713
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005510706}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1021727832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6121,6 +6172,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4175158066427793259, guid: 3ab6ecd809b6fda4a8e019087500ac62, type: 3}
   m_PrefabInstance: {fileID: 1631861107}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1635447152 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8432196253736134239, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
+  m_PrefabInstance: {fileID: 1063987775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1637263570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6282,6 +6338,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0082c0d7d60f300418a3e712aae975bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1694998090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4032427544688732886, guid: 42db1fdf3a9a7c549b35f1ff23170840, type: 3}
+  m_PrefabInstance: {fileID: 1063987775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1705047602

@@ -365,6 +365,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 19.961811, y: 23.28065, z: 66.58507}
   m_Center: {x: -9.480253, y: 11.140272, z: -8.106273}
+--- !u!114 &385523063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385523054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eea94e62905f674599af0ea9c7e601f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  bossHealthCanvas: {fileID: 0}
+  healthSlider: {fileID: 0}
+  nextScene: Main Menu
+--- !u!114 &385523064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385523054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6a3d7308cb011499664cb680e29300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overallDropChance: 50
+  lootTable:
+  - item: {fileID: 1392652238627834475, guid: 63502c18b52e70e44b13befd00c5ad34, type: 3}
+    dropChance: 100
 --- !u!1 &432505992
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +744,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d1d57d462a5972408655da452e579ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 385523062}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d1d57d462a5972408655da452e579ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 385523064}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d1d57d462a5972408655da452e579ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 385523063}
     - targetCorrespondingSourceObject: {fileID: -7937748392151699773, guid: 7d1d57d462a5972408655da452e579ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 269653572}

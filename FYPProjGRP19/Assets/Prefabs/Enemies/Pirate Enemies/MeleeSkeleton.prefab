@@ -1432,12 +1432,17 @@ MonoBehaviour:
   attackDamage: 20
   eliteDamage: 40
   nextHealthThreshold: 0
+  maxHP: 100
+  currentHP: 100
+  hpScript: {fileID: 1145300013274776321}
   dashDistance: 15
   rangeDistance: 10
   meleeDistance: 2.5
   attackCollider: {fileID: 8294450699172538}
   blockCollider: {fileID: 758945419544362009}
   projectilePrefab: {fileID: 0}
+  experiencePoints: 50
+  sliderBar: {fileID: 5121984596001668981}
   isRanged: 0
   isElite: 0
   meleeSprite: {fileID: 21300000, guid: 66b9dd5d626b66943bec73acce252335, type: 3}
@@ -1503,8 +1508,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.06
+  m_Radius: 0.8
+  m_Height: 2.54
   m_Direction: 1
   m_Center: {x: 0, y: 1.01, z: 0}
 --- !u!114 &1145300013274776321
@@ -2680,6 +2685,10 @@ PrefabInstance:
     - target: {fileID: 4732768992513304418, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: sliderOffset.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166916636217440959, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5568333194492857555, guid: 000d543ab98b0c140a96b863ca6f58c0, type: 3}
       propertyPath: m_Pivot.x
