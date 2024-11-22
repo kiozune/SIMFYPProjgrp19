@@ -120,4 +120,11 @@ public class EnemyHP : MonoBehaviour
     {
         return experiencePoints;
     }
+    public void Update()
+    {
+        if(currentHP < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

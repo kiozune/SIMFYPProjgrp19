@@ -44,5 +44,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay Levels/Second Level (16th Century)/16th Boss.unity
     guid: 1184b5b53c1190c4a834fa11b009b16b
+  - enabled: 1
+    path: Assets/Scenes/Gameplay Levels/Boss Level/Jp Boss/Japanese Boss.unity
+    guid: 9f35e9e7ede8ee04496cb0a34a71978b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a3224568d41ccfb488dab4201e5082fd, type: 2}
