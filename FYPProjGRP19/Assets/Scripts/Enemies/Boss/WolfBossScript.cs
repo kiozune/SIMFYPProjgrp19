@@ -1,31 +1,30 @@
 using UnityEngine;
-
+using System.Collections;
 public class WolfBossScript : MonoBehaviour
 {
     public Transform player; 
     public float detectionRange = 10f; 
+    public float attackRange = 2f; // New attack range variable
     public float moveSpeed = 2f; 
-    public float stoppingDistance = 2f; 
     public float rotationSpeed = 5f; 
     public float attackCooldown = 2f; 
     public int damage = 10; 
     
-    // Add HP-related variables
     public int maxHealth = 100;
     private int currentHealth;
 
     private bool isPlayerInRange = false;
     private bool isAttacking = false;
-    private bool isCharging = false; // New flag for charge attack phase
-    private bool isSecondPhase = false; // New flag for the 50% health threshold
+    private bool isCharging = false; 
+    private bool isSecondPhase = false; 
     private float attackTimer = 0f;
 
     private Animator animator; 
     private PlayerHealth playerHealth; 
 
-    public float chargeSpeed = 5f; // Speed during charge attack
-    public float chargeCooldown = 5f; // Cooldown between charges in second phase
-    private float chargeTimer = 0f; // Timer to manage charge cooldown
+    public float chargeSpeed = 5f; 
+    public float chargeCooldown = 5f; 
+    private float chargeTimer = 0f; 
 
     void Start()
     {
@@ -36,11 +35,10 @@ public class WolfBossScript : MonoBehaviour
             playerHealth = player.GetComponent<PlayerHealth>();
         }
 
-        // Initialize the boss's current health
         currentHealth = maxHealth;
     }
 
-  void Update()
+    void Update()
 {
     float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -48,22 +46,30 @@ public class WolfBossScript : MonoBehaviour
 
     if (isPlayerInRange)
     {
-        if (distanceToPlayer > stoppingDistance && !isAttacking && !isCharging)
+        if (distanceToPlayer > attackRange && !isCharging)
         {
+            // Player is out of attack range but within detection range
             MoveTowardsPlayer();
             animator.SetBool("isWalking", true);
+            animator.SetBool("isAttacking", false); // Stop attack animation if previously triggered
+            isAttacking = false; // Ensure attacking is reset
         }
-        else if (distanceToPlayer <= stoppingDistance && attackTimer <= 0f && !isCharging)
+        else if (distanceToPlayer <= attackRange && attackTimer <= 0f && !isCharging)
         {
+            // Player is in attack range
             AttackPlayer();
             animator.SetBool("isWalking", false);
         }
     }
     else
     {
+        // Player is out of detection range, reset states
         animator.SetBool("isWalking", false);
+        animator.SetBool("isAttacking", false); // Ensure attack animation stops
+        isAttacking = false; // Reset attack flag
     }
 
+    // Handle attack cooldown timer
     if (isAttacking)
     {
         attackTimer -= Time.deltaTime;
@@ -73,6 +79,7 @@ public class WolfBossScript : MonoBehaviour
         }
     }
 
+    // Handle charge cooldown timer
     if (isCharging)
     {
         chargeTimer -= Time.deltaTime;
@@ -83,8 +90,7 @@ public class WolfBossScript : MonoBehaviour
         }
     }
 }
-
-    void MoveTowardsPlayer()
+     void MoveTowardsPlayer()
     {
         Vector3 directionToPlayer = (player.position - transform.position).normalized;
         directionToPlayer.y = 0; 
@@ -97,26 +103,30 @@ public class WolfBossScript : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
-    void AttackPlayer()
+  void AttackPlayer()
 {
-    // Prevent triggering attack multiple times if already attacking
     if (attackTimer <= 0f && !isCharging && !isAttacking)
     {
+        Debug.Log("AttackPlayer triggered!");
         isAttacking = true;
-        animator.SetTrigger("Attack"); // Use SetTrigger instead of SetBool
+        animator.SetTrigger("Attack");
+        animator.SetBool("isAttacking", true);
+        animator.SetBool("isWalking", false);
 
         if (playerHealth != null)
         {
             playerHealth.takeDamage(damage);
+            Debug.Log($"Player damaged by {damage}!");
         }
 
-        attackTimer = attackCooldown; // Reset attack cooldown
+        attackTimer = attackCooldown; // Start cooldown
     }
 }
+
     void ChargeAttack()
     {
         isCharging = true;
-        animator.SetBool("isCharging", true); // Start charging animation
+        animator.SetBool("isCharging", true);
 
         Vector3 chargeDirection = (player.position - transform.position).normalized;
         transform.position += chargeDirection * chargeSpeed * Time.deltaTime;
@@ -124,37 +134,38 @@ public class WolfBossScript : MonoBehaviour
         chargeTimer = chargeCooldown;
     }
 
-    // New function to handle taking damage
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
 
-        // Check if health drops to zero or below
         if (currentHealth <= 0)
         {
             Die();
         }
+        else if (!isSecondPhase && currentHealth <= maxHealth / 2)
+        {
+            EnterSecondPhase();
+        }
     }
 
-    // Function to handle the boss's death
     void Die()
     {
-        // Play death animation
         animator.SetTrigger("Die");
-
-        // Disable the boss (you can also destroy it)
-        Destroy(gameObject, 2f); // Destroy after 2 seconds to allow death animation to play
+        Destroy(gameObject, 2f); 
     }
 
     void EnterSecondPhase()
     {
         isSecondPhase = true;
-        // Any setup you want for the 50% health phase (like special effects or speed boosts)
+        // Add any second-phase logic here
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red; 
-        Gizmos.DrawWireSphere(transform.position, detectionRange); 
+        Gizmos.DrawWireSphere(transform.position, detectionRange); // Detection range
+
+        Gizmos.color = Color.yellow; 
+        Gizmos.DrawWireSphere(transform.position, attackRange); // Attack range
     }
 }
