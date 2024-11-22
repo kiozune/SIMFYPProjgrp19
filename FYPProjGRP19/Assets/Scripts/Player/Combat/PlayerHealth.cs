@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthSlider = GameObject.FindWithTag("playerHP").GetComponent<Slider>();
         UpdateHealthSlider();
         gameOverScreen = GameObject.FindGameObjectWithTag("Gameover");
     }

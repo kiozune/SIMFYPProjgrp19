@@ -210,9 +210,10 @@ public class PirateBossAI : MonoBehaviour
         yield return new WaitForSeconds(7f); // when the boss is pointing
 
         foreach (GameObject cannon in cannons) 
-            cannon.SetActive(true); 
+            cannon.SetActive(true);
 
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length - 7f);
+        // animator.GetCurrentAnimatorClipInfo(0).Length - 7.29f
+        yield return new WaitForSeconds(7.29f - 7f);
 
         bossHPSliderImg.color = hpColor; // return to original color
         GetComponent<CapsuleCollider>().enabled = true;

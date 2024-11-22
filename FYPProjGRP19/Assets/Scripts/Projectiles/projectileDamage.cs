@@ -58,15 +58,18 @@ public class projectileDamage : MonoBehaviour
 
     private void ApplySingleTargetDamage(GameObject enemy)
     {
-        EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+        //Enemies
+        EnemyHP enemyAI = enemy.GetComponent<EnemyHP>();
         if (enemyAI != null)
         {
             enemyAI.TakeDamage(damage);
-            if (enemyAI.checkHealth())
+            if (enemyAI.GetCurrentHealth() < 0)
             {
                 AwardPlayerEXP(enemyAI);
             }
+            Destroy(gameObject);
         }
+        //Pirates
         PirateEnemyAI pirateAI = enemy.GetComponent<PirateEnemyAI>();
         if (pirateAI != null)
         {
@@ -75,7 +78,15 @@ public class projectileDamage : MonoBehaviour
             {
                 pirateAI.awardEXP();
             }
+            Destroy(gameObject);
         }
+        //Boss
+        BossHealth bossHP = enemy.GetComponent<BossHealth>();
+        if (bossHP != null)
+        {
+            bossHP.TakeDamage(damage);
+        }
+        Destroy(gameObject);
     }
 
     private void ApplyAOEDamage(Vector3 hitPosition, GameObject primaryTarget)
@@ -87,21 +98,22 @@ public class projectileDamage : MonoBehaviour
         {
             if (hit.CompareTag("Enemy") && hit.gameObject != primaryTarget)
             {
-                EnemyAI enemyAI = hit.GetComponent<EnemyAI>();
+                EnemyHP enemyAI = hit.GetComponent<EnemyHP>();
                 if (enemyAI != null)
                 {
                     // Any other target than the primary will take 25% of the damage thrown
                     enemyAI.TakeDamage(damage * 0.25f);
-                    if (enemyAI.checkHealth())
+                    if (enemyAI.GetCurrentHealth() < 0)
                     {
                         AwardPlayerEXP(enemyAI);
                     }
+                    Destroy(gameObject);
                 }
             }
         }
     }
 
-    private void AwardPlayerEXP(EnemyAI enemyAI)
+    private void AwardPlayerEXP(EnemyHP enemyAI)
     {
         // Find the player and award experience points
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -110,7 +122,7 @@ public class projectileDamage : MonoBehaviour
             PlayerLevel playerLevel = player.GetComponent<PlayerLevel>();
             if (playerLevel != null)
             {
-                playerLevel.AddEXP(enemyAI.awardEXP());
+                playerLevel.AddEXP(enemyAI.AwardEXP());
                 playerLevel.UpdateXPSlider();
             }
         }

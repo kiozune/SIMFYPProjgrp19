@@ -413,7 +413,7 @@ public class EnemyAI : MonoBehaviour
         // Trigger death animation
         if (!isDead)
         {
-            SoundManager.Instance.PlayDeathSound();  // Play death sound
+           // SoundManager.Instance.PlayDeathSound();  // Play death sound
             isDead = true;
         }
 
