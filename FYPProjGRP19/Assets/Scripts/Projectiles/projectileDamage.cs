@@ -49,7 +49,7 @@ public class projectileDamage : MonoBehaviour
             }
             else
             {
-                SoundManager.Instance.PlayArrowHitSound();
+                //SoundManager.Instance.PlayArrowHitSound();
                 // Single target damage
                 ApplySingleTargetDamage(other.gameObject);
             }

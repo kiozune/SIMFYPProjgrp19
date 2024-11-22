@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 826846903}
     - target: {fileID: 4747785800672721244, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
       propertyPath: m_VersionIndex
-      value: 6055
+      value: 6058
       objectReference: {fileID: 0}
     - target: {fileID: 5910378870395246436, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -564,20 +564,27 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 826846903}
-    - target: {fileID: 7106134819397694988, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 6271742909777806797, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7106134819397694988, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106134819397694988, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143471979507694940, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
+      propertyPath: m_TagString
+      value: BasicEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8932504944659186727, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 826846903}
     m_RemovedComponents:
-    - {fileID: 5930668364038991250, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
     - {fileID: 1844165802214028060, guid: 25bcc802afd9c4e4d9e9bb8be6b2d41d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -756,6 +763,7 @@ GameObject:
   - component: {fileID: 1847463762}
   - component: {fileID: 1847463761}
   - component: {fileID: 1847463760}
+  - component: {fileID: 1847463763}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -837,6 +845,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847463763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847463759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fed7e7ca15d754098d92dd7067bd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  offset: {x: 0, y: 8, z: -8}
+  smoothSpeed: 0.125
+  tiltAngle: 45
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
