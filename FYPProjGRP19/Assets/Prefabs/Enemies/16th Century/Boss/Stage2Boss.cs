@@ -33,7 +33,7 @@ public class Stage2Boss : MonoBehaviour
         animator = GetComponent<Animator>();    //Initialize Animator
         agent = GetComponent<NavMeshAgent>();  // Initialize NavMeshAgent
         bossHP = GetComponent<EnemyHP>();       //Get HP elements
-
+        player = GameObject.FindGameObjectWithTag("Player");
         agent.updateRotation = false;
 
         StartCoroutine(FindPlayer());

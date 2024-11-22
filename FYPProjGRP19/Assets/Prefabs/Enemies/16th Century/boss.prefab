@@ -1401,7 +1401,6 @@ GameObject:
   - component: {fileID: 3191525028748490958}
   - component: {fileID: 3759365817180373935}
   - component: {fileID: 6729465336565431443}
-  - component: {fileID: 8425525458045383844}
   - component: {fileID: 7376902769904640161}
   - component: {fileID: 5720155270813585052}
   m_Layer: 0
@@ -1510,26 +1509,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8425525458045383844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6315138670510335082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9fcc033f7103c04c9709155279f2188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 100
-  currentHP: 100
-  nextHealthThreshold: 0
-  hitVFXPrefab: {fileID: 0}
-  hitSoundClip: {fileID: 0}
-  audioSource: {fileID: 0}
-  sliderBar: {fileID: 0}
-  experiencePoints: 50
 --- !u!143 &7376902769904640161
 CharacterController:
   m_ObjectHideFlags: 0
