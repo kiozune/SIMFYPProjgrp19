@@ -46,30 +46,26 @@ public class WolfBossScript : MonoBehaviour
 
     if (isPlayerInRange)
     {
-        if (distanceToPlayer > attackRange && !isCharging)
+        if (distanceToPlayer > attackRange && !isAttacking && !isCharging)
         {
-            // Player is out of attack range but within detection range
             MoveTowardsPlayer();
             animator.SetBool("isWalking", true);
             animator.SetBool("isAttacking", false); // Stop attack animation if previously triggered
-            isAttacking = false; // Ensure attacking is reset
         }
         else if (distanceToPlayer <= attackRange && attackTimer <= 0f && !isCharging)
         {
-            // Player is in attack range
             AttackPlayer();
             animator.SetBool("isWalking", false);
         }
     }
     else
     {
-        // Player is out of detection range, reset states
+        // Player out of detection range, stop actions and reset states
         animator.SetBool("isWalking", false);
         animator.SetBool("isAttacking", false); // Ensure attack animation stops
         isAttacking = false; // Reset attack flag
     }
 
-    // Handle attack cooldown timer
     if (isAttacking)
     {
         attackTimer -= Time.deltaTime;
@@ -79,7 +75,6 @@ public class WolfBossScript : MonoBehaviour
         }
     }
 
-    // Handle charge cooldown timer
     if (isCharging)
     {
         chargeTimer -= Time.deltaTime;
@@ -119,9 +114,11 @@ public class WolfBossScript : MonoBehaviour
             Debug.Log($"Player damaged by {damage}!");
         }
 
-        attackTimer = attackCooldown; // Start cooldown
+        attackTimer = attackCooldown; 
+        ;
     }
 }
+
 
     void ChargeAttack()
     {
