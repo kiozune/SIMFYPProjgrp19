@@ -40,53 +40,46 @@ public class WolfBossScript : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    void Update()
+  void Update()
 {
     float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-    // Check if the boss should enter the second phase
-    if (currentHealth <= maxHealth * 0.5f && !isSecondPhase)
+    isPlayerInRange = distanceToPlayer <= detectionRange;
+
+    if (isPlayerInRange)
     {
-        EnterSecondPhase();
+        if (distanceToPlayer > stoppingDistance && !isAttacking && !isCharging)
+        {
+            MoveTowardsPlayer();
+            animator.SetBool("isWalking", true);
+        }
+        else if (distanceToPlayer <= stoppingDistance && attackTimer <= 0f && !isCharging)
+        {
+            AttackPlayer();
+            animator.SetBool("isWalking", false);
+        }
+    }
+    else
+    {
+        animator.SetBool("isWalking", false);
     }
 
-    // Handle different phases of behavior
-    if (isSecondPhase && chargeTimer <= 0f && !isCharging)
-    {
-        ChargeAttack();
-    }
-    else if (isPlayerInRange && distanceToPlayer > stoppingDistance && !isAttacking && !isCharging)
-    {
-        MoveTowardsPlayer();
-    }
-    else if (distanceToPlayer <= stoppingDistance && !isAttacking && attackTimer <= 0f && !isCharging)
-    {
-        AttackPlayer();
-    }
-
-    // Handle attack cooldown
     if (isAttacking)
     {
         attackTimer -= Time.deltaTime;
-
-        // Ensure the attack animation finishes before setting the state back
         if (attackTimer <= 0f)
         {
             isAttacking = false;
-            animator.SetBool("isAttacking", false);
         }
     }
 
-    // Handle charge cooldown
     if (isCharging)
     {
         chargeTimer -= Time.deltaTime;
-
         if (chargeTimer <= 0f)
         {
             isCharging = false;
-            animator.SetBool("isCharging", false); // Stop charging animation
-            chargeTimer = chargeCooldown; // Reset cooldown for next charge
+            chargeTimer = chargeCooldown;
         }
     }
 }
